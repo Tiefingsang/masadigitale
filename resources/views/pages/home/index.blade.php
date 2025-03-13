@@ -193,7 +193,7 @@
             <!-- Video Column -->
             <div class="video-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <figure class="image"><img src="images/resource/image-1.jpg" alt=""></figure>
+                    <figure class="image"><img src="{{ asset('assets/images/resource/image-1.jpg') }}" alt=""></figure>
                     <div class="link-box"><a href="https://www.youtube.com/watch?v=Fvae8nxzVz4" class="link" data-fancybox="gallery" data-caption=""><span class="icon la la-play-circle-o"></span></a></div>
                 </div>
             </div>
@@ -203,7 +203,7 @@
 <!-- End About Us -->
 
 <!-- Services Section -->
-<section class="services-section" style="background-image: url(images/background/1.jpg);">
+<section class="services-section" style="background-image: url({{ asset('assets/images/background/1.jpg') }});">
     <div class="auto-container">
         <div class="sec-title light">
             <span class="title">Our Services</span>
@@ -213,7 +213,7 @@
         <div class="services-carousel owl-carousel owl-theme">
             <!-- Service Block -->
             <div class="service-block">
-                <div class="inner-box" style="background-image: url(images/resource/service-1.jpg);">
+                <div class="inner-box" style="background-image: url({{ asset('assets/images/resource/service-1.jpg') }});">
                     <div class="content-box">
                         <span class="icon flaticon-pie-chart-1"></span>
                         <h3><a href="service-detail.html">Financial Planning</a></h3>
@@ -225,7 +225,7 @@
 
             <!-- Service Block -->
             <div class="service-block">
-                <div class="inner-box" style="background-image: url(images/resource/service-2.jpg);">
+                <div class="inner-box" style="background-image: url({{ asset('assets/images/resource/service-2.jpg') }});">
                     <div class="content-box">
                         <span class="icon flaticon-piggy-bank"></span>
                         <h3><a href="service-detail.html">Saving Strategy</a></h3>
@@ -237,7 +237,7 @@
 
             <!-- Service Block -->
             <div class="service-block">
-                <div class="inner-box" style="background-image: url(images/resource/service-3.jpg);">
+                <div class="inner-box" style="background-image: url({{ asset('assets/images/resource/service-3.jpg') }});">
                     <div class="content-box">
                         <span class="icon flaticon-stock"></span>
                         <h3><a href="service-detail.html">Trade & stock</a></h3>
@@ -249,7 +249,7 @@
 
             <!-- Service Block -->
             <div class="service-block">
-                <div class="inner-box" style="background-image: url(images/resource/service-1.jpg);">
+                <div class="inner-box" style="background-image: url({{ asset('assets/images/resource/service-1.jpg') }});">
                     <div class="content-box">
                         <span class="icon flaticon-pie-chart-1"></span>
                         <h3><a href="service-detail.html">Financial Planning</a></h3>
@@ -261,7 +261,7 @@
 
             <!-- Service Block -->
             <div class="service-block">
-                <div class="inner-box" style="background-image: url(images/resource/service-2.jpg);">
+                <div class="inner-box" style="background-image: url({{ asset('assets/images/resource/service-2.jpg') }});">
                     <div class="content-box">
                         <span class="icon flaticon-piggy-bank"></span>
                         <h3><a href="service-detail.html">Saving Strategy</a></h3>
@@ -273,7 +273,7 @@
 
             <!-- Service Block -->
             <div class="service-block">
-                <div class="inner-box" style="background-image: url(images/resource/service-3.jpg);">
+                <div class="inner-box" style="background-image: url({{ asset('assets/images/resource/service-3.jpg') }});">
                     <div class="content-box">
                         <span class="icon flaticon-stock"></span>
                         <h3><a href="service-detail.html">Trade & stock</a></h3>
@@ -299,29 +299,29 @@
                     <div class="text">This product is meant for educational purposes only. Resemblance to real persons, living or dead is purely coincidental. Void prohibited. Some assembly required. List each check separately by number.</div>
                 </div>
                 <ul class="list-style-one clearfix">
-                    <li><a href="services.html">Audit & Assurance</a></li>
-                    <li><a href="services.html">Dedicated Team</a></li>
-                    <li><a href="services.html">Best Advisors</a></li>
-                    <li><a href="services.html">Network Solutions</a></li>
-                    <li><a href="services.html">24/7 Supports</a></li>
-                    <li><a href="services.html">Work Deadline</a></li>
+                    <li><a href="{{ route('services.index') }}">Audit & Assurance</a></li>
+                    <li><a href="{{ route('services.index') }}">Dedicated Team</a></li>
+                    <li><a href="{{ route('services.index') }}">Best Advisors</a></li>
+                    <li><a href="{{ route('services.index') }}">Network Solutions</a></li>
+                    <li><a href="{{ route('services.index') }}">24/7 Supports</a></li>
+                    <li><a href="{{ route('services.index') }}">Work Deadline</a></li>
                 </ul>
                 <div class="btn-box">
-                    <a href="services.html" class="theme-btn btn-style-three">Get Start</a>
+                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Get Start</a>
                 </div>
             </div>
         </div>
 
         <!-- Image Column -->
-        <div class="image-column" style="background-image: url(images/resource/image-2.jpg);">
-            <figure class="image-box"><img src="images/resource/image-2.jpg" alt=""></figure>
+        <div class="image-column" style="background-image: url({{ asset('assets/images/resource/image-2.jpg') }});">
+            <figure class="image-box"><img src="{{ asset('assets/images/resource/image-2.jpg') }}" alt=""></figure>
         </div>
     </div>
 </section>
 <!--End Why Choose Us -->
 
 <!-- Call To Action -->
-<section class="call-to-action" style="background-image: url(images/background/2.jpg);">
+<section class="call-to-action" style="background-image: url({{ asset('assets/images/background/2.jpg') }});">
     <div class="auto-container">
         <div class="outer-box clearfix">
             <div class="title-column">
@@ -330,7 +330,7 @@
 
             <div class="btn-column">
                 <div class="btn-box">
-                    <a href="contact.html" class="theme-btn btn-style-one">Get a Quote</a>
+                    <a href="{{ route('contact.index') }}" class="theme-btn btn-style-one">Get a Quote</a>
                 </div>
             </div>
         </div>
@@ -350,7 +350,22 @@
             <!-- Cases Block -->
             <div class="case-block col-lg-4 col-md-6 col-sm-12">
                 <div class="image-box">
-                    <div class="image"><a href="images/gallery/1.jpg" class="lightbox-image" data-fancybox="gallery"><img src="images/gallery/1.jpg" alt=""></a></div>
+                    <div class="image"><a href="{{ asset('assets/images/gallery/1.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/gallery/1.jpg') }}" alt=""></a></div>
+                    <div class="caption-box">
+                        <h5><a href="#">Check Finance & Risk</a></h5>
+                        <ul class="info">
+                            <li>Business</li>
+                            <li>Corporate</li>
+                        </ul>
+                        <div class="icon-box"><a href="#"><i class="la la-angle-right"></i></a></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cases Block -->
+            <div class="case-block col-lg-4 col-md-6 col-sm-12">
+                <div class="image-box">
+                    <div class="image"><a href="{{ asset('assets/images/gallery/2.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/gallery/2.jpg') }}" alt=""></a></div>
                     <div class="caption-box">
                         <h5><a href="case-detail.html">Check Finance & Risk</a></h5>
                         <ul class="info">
@@ -365,7 +380,7 @@
             <!-- Cases Block -->
             <div class="case-block col-lg-4 col-md-6 col-sm-12">
                 <div class="image-box">
-                    <div class="image"><a href="images/gallery/2.jpg" class="lightbox-image" data-fancybox="gallery"><img src="images/gallery/2.jpg" alt=""></a></div>
+                    <div class="image"><a href="{{ asset('assets/images/gallery/3.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/gallery/3.jpg') }}" alt=""></a></div>
                     <div class="caption-box">
                         <h5><a href="case-detail.html">Check Finance & Risk</a></h5>
                         <ul class="info">
@@ -380,7 +395,7 @@
             <!-- Cases Block -->
             <div class="case-block col-lg-4 col-md-6 col-sm-12">
                 <div class="image-box">
-                    <div class="image"><a href="images/gallery/3.jpg" class="lightbox-image" data-fancybox="gallery"><img src="images/gallery/3.jpg" alt=""></a></div>
+                    <div class="image"><a href="{{ asset('assets/images/gallery/4.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/gallery/4.jpg') }}" alt=""></a></div>
                     <div class="caption-box">
                         <h5><a href="case-detail.html">Check Finance & Risk</a></h5>
                         <ul class="info">
@@ -395,7 +410,7 @@
             <!-- Cases Block -->
             <div class="case-block col-lg-4 col-md-6 col-sm-12">
                 <div class="image-box">
-                    <div class="image"><a href="images/gallery/4.jpg" class="lightbox-image" data-fancybox="gallery"><img src="images/gallery/4.jpg" alt=""></a></div>
+                    <div class="image"><a href="{{ asset('assets/images/gallery/5.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/gallery/5.jpg') }}" alt=""></a></div>
                     <div class="caption-box">
                         <h5><a href="case-detail.html">Check Finance & Risk</a></h5>
                         <ul class="info">
@@ -410,22 +425,7 @@
             <!-- Cases Block -->
             <div class="case-block col-lg-4 col-md-6 col-sm-12">
                 <div class="image-box">
-                    <div class="image"><a href="images/gallery/5.jpg" class="lightbox-image" data-fancybox="gallery"><img src="images/gallery/5.jpg" alt=""></a></div>
-                    <div class="caption-box">
-                        <h5><a href="case-detail.html">Check Finance & Risk</a></h5>
-                        <ul class="info">
-                            <li>Business</li>
-                            <li>Corporate</li>
-                        </ul>
-                        <div class="icon-box"><a href="case-detail.html"><i class="la la-angle-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cases Block -->
-            <div class="case-block col-lg-4 col-md-6 col-sm-12">
-                <div class="image-box">
-                    <div class="image"><a href="images/gallery/6.jpg" class="lightbox-image" data-fancybox="gallery"><img src="images/gallery/6.jpg" alt=""></a></div>
+                    <div class="image"><a href="{{ asset('assets/images/gallery/6.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/gallery/6.jpg') }}" alt=""></a></div>
                     <div class="caption-box">
                         <h5><a href="case-detail.html">Check Finance & Risk</a></h5>
                         <ul class="info">
@@ -439,14 +439,14 @@
         </div>
 
         <div class="btn-box">
-            <a href="services.html" class="theme-btn btn-style-three ">View All</a>
+            <a href="{{ route('services.index') }}" class="theme-btn btn-style-three ">View All</a>
         </div>
     </div>
 </section>
 <!--End Cases Section -->
 
 <!-- Call Back Section -->
-<section class="call-back-section" style="background-image: url(images/background/2.jpg);">
+<section class="call-back-section" style="background-image: url({{ asset('assets/images/background/2.jpg') }});">
     <div class="outer-box">        
         <div class="auto-container">
             <div class="row clearfix">
@@ -465,7 +465,7 @@
                                 <span>We are always ready</span>
                                 <h3>Request a call back</h3>
                             </div>
-                            <form method="post" action="https://ary-themes.com/html/mushawart/index.html">
+                            <form method="post" action="">
                                 <div class="form-group">
                                     <input type="text" name="username" placeholder="Name" required="">
                                 </div>
@@ -508,7 +508,7 @@
             <div class="team-block col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="images/resource/team-1.jpg" class="lightbox-image" data-fancybox="gallery"><img src="images/resource/team-1.jpg" alt=""></a></div>
+                        <div class="image"><a href="{{ asset('assets/images/resource/team-1.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/resource/team-1.jpg') }}" alt=""></a></div>
                         <ul class="social-links">
                             <li><a href="#"><i class="la la-facebook-official"></i></a></li>
                             <li><a href="#"><i class="la la-twitter"></i></a></li>
@@ -528,7 +528,7 @@
             <div class="team-block col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="images/resource/team-2.jpg" class="lightbox-image" data-fancybox="gallery"><img src="images/resource/team-2.jpg" alt=""></a></div>
+                        <div class="image"><a href="{{ asset('assets/images/resource/team-2.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="i{{ asset('assets/images/resource/team-2.jpg') }}" alt=""></a></div>
                         <ul class="social-links">
                             <li><a href="#"><i class="la la-facebook-official"></i></a></li>
                             <li><a href="#"><i class="la la-twitter"></i></a></li>
@@ -548,7 +548,7 @@
             <div class="team-block col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="images/resource/team-3.jpg" class="lightbox-image" data-fancybox="gallery"><img src="images/resource/team-3.jpg" alt=""></a></div>
+                        <div class="image"><a href="{{ asset('assets/images/resource/team-3.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/resource/team-3.jpg') }}" alt=""></a></div>
                         <ul class="social-links">
                             <li><a href="#"><i class="la la-facebook-official"></i></a></li>
                             <li><a href="#"><i class="la la-twitter"></i></a></li>
@@ -568,7 +568,7 @@
             <div class="team-block col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="images/resource/team-4.jpg" class="lightbox-image" data-fancybox="gallery"><img src="images/resource/team-4.jpg" alt=""></a></div>
+                        <div class="image"><a href="{{ asset('assets/images/resource/team-4.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/resource/team-4.jpg') }}" alt=""></a></div>
                         <ul class="social-links">
                             <li><a href="#"><i class="la la-facebook-official"></i></a></li>
                             <li><a href="#"><i class="la la-twitter"></i></a></li>
@@ -601,7 +601,7 @@
             <div class="news-block">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt=""></a></div>
+                        <div class="image"><a href="blog-detail.html"><img src="{{ asset('assets/images/resource/news-1.jpg') }}" alt=""></a></div>
                     </div>
                     <div class="lower-content">
                         <h3><a href="blog-detail.html">Explain quarterly forecasting...</a></h3>
@@ -616,7 +616,7 @@
             <div class="news-block">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="blog-detail.html"><img src="images/resource/news-2.jpg" alt=""></a></div>
+                        <div class="image"><a href="blog-detail.html"><img src="{{ asset('assets/images/resource/news-2.jpg') }}" alt=""></a></div>
                     </div>
                     <div class="lower-content">
                         <h3><a href="blog-detail.html">Explor new plan for business</a></h3>
@@ -631,7 +631,7 @@
             <div class="news-block">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="blog-detail.html"><img src="images/resource/news-3.jpg" alt=""></a></div>
+                        <div class="image"><a href="blog-detail.html"><img src="{{ asset('assets/images/resource/news-3.jpg') }}" alt=""></a></div>
                     </div>
                     <div class="lower-content">
                         <h3><a href="blog-detail.html">How select a good advisor</a></h3>
@@ -646,7 +646,7 @@
             <div class="news-block">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="blog-detail.html"><img src="images/resource/news-1.jpg" alt=""></a></div>
+                        <div class="image"><a href="blog-detail.html"><img src="{{ asset('assets/images/resource/news-1.jpg') }}" alt=""></a></div>
                     </div>
                     <div class="lower-content">
                         <h3><a href="blog-detail.html">Explain quarterly forecasting...</a></h3>
@@ -661,7 +661,7 @@
             <div class="news-block">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="blog-detail.html"><img src="images/resource/news-2.jpg" alt=""></a></div>
+                        <div class="image"><a href="blog-detail.html"><img src="{{ asset('assets/images/resource/news-2.jpg') }}" alt=""></a></div>
                     </div>
                     <div class="lower-content">
                         <h3><a href="blog-detail.html">Explor new plan for business</a></h3>
@@ -676,7 +676,7 @@
             <div class="news-block">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="blog-detail.html"><img src="images/resource/news-3.jpg" alt=""></a></div>
+                        <div class="image"><a href="blog-detail.html"><img src="{{ asset('assets/images/resource/news-3.jpg') }}" alt=""></a></div>
                     </div>
                     <div class="lower-content">
                         <h3><a href="blog-detail.html">How select a good advisor</a></h3>
@@ -692,14 +692,14 @@
 <!-- News Section -->
 
 <!-- Testimonial Section -->
-<section class="testimonial-section" style="background-image: url(images/background/3.jpg);">
+<section class="testimonial-section" style="background-image: url({{ asset('assets/images/background/3.jpg') }});">
     <div class="auto-container">
         <div class="testimonial-carousel owl-carousel owl-theme">
             <!-- Testimonial Block -->
             <div class="testimonial-block">
                 <div class="inner-box">
                     <div class="info-box">
-                        <div class="thumb"><img src="images/resource/thumb.jpg" alt=""></div>
+                        <div class="thumb"><img src="{{ asset('assets/images/resource/thumb.jpg') }}" alt=""></div>
                         <h3 class="name">Sarah Arevik</h3>
                         <span class="designation">Chief Executive</span>
                     </div>
@@ -711,7 +711,7 @@
             <div class="testimonial-block">
                 <div class="inner-box">
                     <div class="info-box">
-                        <div class="thumb"><img src="images/resource/thumb.jpg" alt=""></div>
+                        <div class="thumb"><img src="{{ asset('assets/images/resource/thumb.jpg') }}" alt=""></div>
                         <h3 class="name">Sarah Arevik</h3>
                         <span class="designation">Chief Executive</span>
                     </div>
@@ -723,7 +723,7 @@
             <div class="testimonial-block">
                 <div class="inner-box">
                     <div class="info-box">
-                        <div class="thumb"><img src="images/resource/thumb.jpg" alt=""></div>
+                        <div class="thumb"><img src="{{ asset('assets/images/resource/thumb.jpg') }}" alt=""></div>
                         <h3 class="name">Sarah Arevik</h3>
                         <span class="designation">Chief Executive</span>
                     </div>
@@ -741,16 +741,16 @@
         <div class="sponsors-outer">
             <!--Sponsors Carousel-->
             <ul class="sponsors-carousel owl-carousel owl-theme">
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/1.png" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/2.png" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/3.png" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/4.png" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="images/clients/5.png" alt=""></a></figure></li>
+                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/1.png') }}" alt=""></a></figure></li>
+                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/2.png') }}" alt=""></a></figure></li>
+                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/3.png') }}" alt=""></a></figure></li>
+                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/4.png') }}" alt=""></a></figure></li>
+                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/5.png') }}" alt=""></a></figure></li>
+                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/1.png') }}" alt=""></a></figure></li>
+                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/2.png') }}" alt=""></a></figure></li>
+                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/3.png') }}" alt=""></a></figure></li>
+                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/4.png') }}" alt=""></a></figure></li>
+                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/5.png') }}" alt=""></a></figure></li>
             </ul>
         </div>
     </div>

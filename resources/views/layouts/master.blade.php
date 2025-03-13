@@ -97,6 +97,15 @@
 <script src="{{ asset('assets/js/appear.js') }} "></script>
 <script src="{{ asset('assets/js/script.js') }} "></script>
 <script src="{{ asset('assets/js/color-settings.js') }} "></script>
+
+<!--form-->
+<script src="{{ asset('assets/js/validate.js') }}"></script>
+
+<!--Google Map APi Key-->
+<script src="http://maps.google.com/maps/api/js?key=AIzaSyBKS14AnP3HCIVlUpPKtGp7CbYuMtcXE2o"></script>
+<script src="{{ asset('assets/js/map-script.js') }}"></script>
+
+
 </body>
 
 

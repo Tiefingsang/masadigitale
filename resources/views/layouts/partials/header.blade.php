@@ -60,7 +60,9 @@
                                     <li class=""><a href="{{ route('blogs.index') }}">Blog</a>
                                         
                                     </li>
+                                    <li><a href="{{ route('team.index') }}">team</a></li>
                                     <li><a href="{{ route('contact.index') }}">Contact</a></li>
+                                    <li><a href="{{ route('gallery.index') }}">Galerie</a></li>
                                 </ul>
                             </div>
                         </nav><!-- Main Menu End-->
@@ -107,7 +109,7 @@
                 <nav class="main-menu navbar-expand-md navbar-light">
                     <div class="navbar-collapse collapse clearfix">
                         <ul class="navigation clearfix">
-                            <li class="current dropdown"><a href="#">Accueil</a>
+                            <li class="{{-- current dropdown --}}"><a href="{{ route('home.index') }}">Accueil</a>
                                 
                             </li>
                             <li><a href="{{ route('about.index') }}">Apropos</a></li>
@@ -120,10 +122,10 @@
                             </li>
                             
                             
-                            <li class="dropdown"><a href="{{ route("blogs.index") }}">Blog</a>
-                                
-                            </li>
-                            <li><a href="c{{ route('contact.index') }}">Contact</a></li>
+                            <li class="dropdown"><a href="{{ route("blogs.index") }}">Blog</a> </li>
+                            <li><a href="{{ route('team.index') }}">team</a></li>
+                            <li><a href="{{ route('contact.index') }}">Contact</a></li>
+                            <li><a href="{{ route('gallery.index') }}">Galerie</a></li>
                         </ul>
                     </div>
                 </nav><!-- Main Menu End-->

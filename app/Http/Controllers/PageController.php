@@ -25,4 +25,12 @@ class PageController extends Controller
     public function contact(){
         return view('pages.contacts.index');
     }
+
+    public function team(){
+        return view('pages.team.index');
+    }
+
+    public function gallery(){
+        return view('pages.gallery.index');
+    }
 }
