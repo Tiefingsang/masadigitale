@@ -17,9 +17,12 @@ return new class extends Migration
             $table->string('short')->nullable(); 
             $table->text('description')->nullable();
             $table->text('image')->nullable();
+            $table->string('icone')->nullable(); 
             $table->string('prix_min')->nullable();
             $table->string('prix_max')->nullable();
             $table->timestamps();
+
+            
         });
     }
 

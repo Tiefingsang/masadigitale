@@ -1,13 +1,36 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Slider;
+use App\Models\Service;
+use App\Models\About;
 //use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
     public function index(){
-        return view('pages.home.index');
+        $slider= Slider::where('id',1)->first();
+        $slider1= Slider::where('id',2)->first();
+        $slider2= Slider::where('id',3)->get();
+        
+        
+
+        $getServices= Service::get();
+        $getAbouts= About::get();
+
+
+
+        $data= [
+
+            'slider'=>$slider,
+            'slider1'=>$slider1,
+            'slider2'=>$slider2,
+            'getServices'=>$getServices,
+            'getAbouts'=>$getAbouts,
+        ];
+        //dd($getServices);
+        
+        return view('pages.home.index', $data);
     }
 
     public function about(){
@@ -33,4 +56,6 @@ class PageController extends Controller
     public function gallery(){
         return view('pages.gallery.index');
     }
+
+    
 }

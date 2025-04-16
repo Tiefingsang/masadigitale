@@ -7,9 +7,10 @@
         <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
             <ul>
                 <!-- Slide 1 -->
+                {{-- @foreach ($slider as $item) --}}
                 <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1688" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
                     
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset('assets/images/main-slider/image-1.jpg') }}"> 
+                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset( $slider->image) }}"> 
 
                     <div class="tp-caption" 
                     data-paddingbottom="[0,0,0,0]"
@@ -26,7 +27,7 @@
                     data-x="['left','left','left','left']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                        <h4>We Provide Solution to</h4>
+                        <h4>{{ $slider->title }}</h4>
                     </div>
 
                     <div class="tp-caption" 
@@ -45,7 +46,7 @@
                     data-x="['left','left','left','left']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"delay":500,"split":"chars","splitdelay":0.1,"speed":2000,"frame":"0","from":"x:[-105%];z:0;rX:0deg;rY:0deg;rZ:-90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                        <h2>Grow Your Business</h2>
+                        <h2>{{ $slider->short }}</h2>
                     </div>
 
                     <div class="tp-caption" 
@@ -63,7 +64,7 @@
                     data-x="['left','left','left','left']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                        <div class="text">Nobody’s more committed to connecting you with the exceptional top talents with the right fit for your business than us</div>
+                        <div class="text">{{ $slider->description }}</div>
                     </div>
                     
                     <div class="tp-caption" 
@@ -81,13 +82,17 @@
                     data-x="['left','left','left','left']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                        <a href="about.html" class="theme-btn btn-style-one"><span>Know MORE</span></a>
-                        <a href="contact.html" class="theme-btn btn-style-two"><span>Our Service</span></a>
+                    <a href="{{ route('about.index') }}" class="theme-btn btn-style-one"><span>En savoir plus</span></a>
+                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-two"><span>Nos services</span></a>
+                    
                     </div>
                 </li>
+                    
+                {{-- @endforeach --}}
+                
 
                 <!-- Slide 1 -->
-                <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
+                 <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
                     
                     <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset('assets/images/main-slider/image-6.jpg') }}">
 
@@ -107,7 +112,7 @@
                     data-x="['center','center','center','center']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                        <h4>Hight Quality Market</h4>
+                        <h4>{{ $slider1->short }}</h4>
                     </div>
 
                     <div class="tp-caption" 
@@ -144,7 +149,7 @@
                     data-x="['center','center','center','center']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                        <div class="text">Nobody’s more committed to connecting you with the exceptional top talents with the right fit for your business than us</div>
+                        <div class="text">{{ $slider1->description }}</div>
                     </div>
                     
                     <div class="tp-caption" 
@@ -163,8 +168,9 @@
                     data-x="['center','center','center','center']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                        <a href="about.html" class="theme-btn btn-style-one"><span>Know MORE</span></a>
-                        <a href="content.html" class="theme-btn btn-style-two"><span>Our Service</span></a>
+                    <a href="{{ route('about.index') }}" class="theme-btn btn-style-one"><span>En savoir plus</span></a>
+                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-two"><span>Nos services</span></a>
+                    
                     </div>
                 </li>
             </ul>
@@ -180,15 +186,18 @@
             <!-- Content Column -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <span class="title">About Mushawart</span>
-                    <h2>We Aim to Provide Expert Advice and Quality Service.</h2>
-                    <div class="text">We are rethoric question ran over her cheek When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</div>
+                    <span class="title">À propos de masatechnologie</span>
+                    <h2>Nous visons à fournir des conseils d’experts et un service de qualité.</h2>
+                    <div class="text">
+                        C’est une question rhétorique qui coulait sur sa joue. Lorsqu’elle atteignit les premières collines des montagnes italiennes, elle jeta un dernier regard vers la ligne d’horizon de sa ville natale Bookmarksgrove, le titre d’Alphabet Village et la ligne secondaire de sa propre route, la Line Lane.
+                    </div>
                     <div class="link-box">
-                        <a href="about.html" class="theme-btn btn-style-three">About More</a>
-                        <a href="#" class="theme-btn call-btn"><i class="icon la la-phone"></i> +880 258  58215</a>
+                        <a href="{{ route('about.index') }}" class="theme-btn btn-style-three">En savoir plus</a>
+                        <a href="#" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 78 79 40 89</a>
                     </div>
                 </div>
             </div>
+            
 
             <!-- Video Column -->
             <div class="video-column col-lg-6 col-md-12 col-sm-12">
@@ -211,77 +220,21 @@
         </div>
 
         <div class="services-carousel owl-carousel owl-theme">
-            <!-- Service Block -->
-            <div class="service-block">
-                <div class="inner-box" style="background-image: url({{ asset('assets/images/resource/service-1.jpg') }});">
-                    <div class="content-box">
-                        <span class="icon flaticon-pie-chart-1"></span>
-                        <h3><a href="service-detail.html">Financial Planning</a></h3>
-                        <div class="text">We possess within us two minds. So far I have written only of the conscious mind. I would now like to..</div>
-                        <div class="link-box"><a href="service-detail.html">Read More <i class="la la-angle-double-right"></i></a></div>
+           
+            @foreach ($getServices as $item)
+                <div class="service-block">
+                    <div class="inner-box" style="background-image: url('{{ $item->image }}')">
+                        <div class="content-box">
+                            <span class="{{ $item->icon }}"></span>
+                            <h3><a href="service-detail.html">{{ $item->title }}</a></h3>
+                            <div class="text">{{ $item->description }}</div>
+                            <div class="link-box"><a href="service-detail.html">Read More <i class="la la-angle-double-right"></i></a></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Service Block -->
-            <div class="service-block">
-                <div class="inner-box" style="background-image: url({{ asset('assets/images/resource/service-2.jpg') }});">
-                    <div class="content-box">
-                        <span class="icon flaticon-piggy-bank"></span>
-                        <h3><a href="service-detail.html">Saving Strategy</a></h3>
-                        <div class="text">We possess within us two minds. So far I have written only of the conscious mind. I would now like to..</div>
-                        <div class="link-box"><a href="service-detail.html">Read More <i class="la la-angle-double-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Service Block -->
-            <div class="service-block">
-                <div class="inner-box" style="background-image: url({{ asset('assets/images/resource/service-3.jpg') }});">
-                    <div class="content-box">
-                        <span class="icon flaticon-stock"></span>
-                        <h3><a href="service-detail.html">Trade & stock</a></h3>
-                        <div class="text">We possess within us two minds. So far I have written only of the conscious mind. I would now like to..</div>
-                        <div class="link-box"><a href="service-detail.html">Read More <i class="la la-angle-double-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Service Block -->
-            <div class="service-block">
-                <div class="inner-box" style="background-image: url({{ asset('assets/images/resource/service-1.jpg') }});">
-                    <div class="content-box">
-                        <span class="icon flaticon-pie-chart-1"></span>
-                        <h3><a href="service-detail.html">Financial Planning</a></h3>
-                        <div class="text">We possess within us two minds. So far I have written only of the conscious mind. I would now like to..</div>
-                        <div class="link-box"><a href="service-detail.html">Read More <i class="la la-angle-double-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Service Block -->
-            <div class="service-block">
-                <div class="inner-box" style="background-image: url({{ asset('assets/images/resource/service-2.jpg') }});">
-                    <div class="content-box">
-                        <span class="icon flaticon-piggy-bank"></span>
-                        <h3><a href="service-detail.html">Saving Strategy</a></h3>
-                        <div class="text">We possess within us two minds. So far I have written only of the conscious mind. I would now like to..</div>
-                        <div class="link-box"><a href="service-detail.html">Read More <i class="la la-angle-double-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Service Block -->
-            <div class="service-block">
-                <div class="inner-box" style="background-image: url({{ asset('assets/images/resource/service-3.jpg') }});">
-                    <div class="content-box">
-                        <span class="icon flaticon-stock"></span>
-                        <h3><a href="service-detail.html">Trade & stock</a></h3>
-                        <div class="text">We possess within us two minds. So far I have written only of the conscious mind. I would now like to..</div>
-                        <div class="link-box"><a href="service-detail.html">Read More <i class="la la-angle-double-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
+                
+            @endforeach
+            
         </div>
     </div>
 </section>
