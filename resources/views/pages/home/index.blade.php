@@ -9,10 +9,10 @@
                 <!-- Slide 1 -->
                 {{-- @foreach ($slider as $item) --}}
                 <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1688" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
-                    
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset( $slider->image) }}"> 
 
-                    <div class="tp-caption" 
+                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset( $slider->image) }}">
+
+                    <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
                     data-paddingleft="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]"
@@ -30,7 +30,7 @@
                         <h4>{{ $slider->title }}</h4>
                     </div>
 
-                    <div class="tp-caption" 
+                    <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
                     data-paddingleft="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]"
@@ -49,7 +49,7 @@
                         <h2>{{ $slider->short }}</h2>
                     </div>
 
-                    <div class="tp-caption" 
+                    <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
                     data-paddingleft="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]"
@@ -66,8 +66,8 @@
                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
                         <div class="text">{{ $slider->description }}</div>
                     </div>
-                    
-                    <div class="tp-caption" 
+
+                    <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
                     data-paddingleft="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]"
@@ -84,19 +84,19 @@
                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
                     <a href="{{ route('about.index') }}" class="theme-btn btn-style-one"><span>En savoir plus</span></a>
                     <a href="{{ route('services.index') }}" class="theme-btn btn-style-two"><span>Nos services</span></a>
-                    
+
                     </div>
                 </li>
-                    
+
                 {{-- @endforeach --}}
-                
+
 
                 <!-- Slide 1 -->
                  <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
-                    
+
                     <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset('assets/images/main-slider/image-6.jpg') }}">
 
-                    <div class="tp-caption" 
+                    <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
                     data-paddingleft="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]"
@@ -115,7 +115,7 @@
                         <h4>{{ $slider1->short }}</h4>
                     </div>
 
-                    <div class="tp-caption" 
+                    <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
                     data-paddingleft="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]"
@@ -133,7 +133,7 @@
                         <h2>Experaiences</h2>
                     </div>
 
-                    <div class="tp-caption" 
+                    <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
                     data-paddingleft="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]"
@@ -151,8 +151,8 @@
                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
                         <div class="text">{{ $slider1->description }}</div>
                     </div>
-                    
-                    <div class="tp-caption" 
+
+                    <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
                     data-paddingleft="[0,0,0,0]"
                     data-paddingright="[0,0,0,0]"
@@ -170,7 +170,7 @@
                     data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
                     <a href="{{ route('about.index') }}" class="theme-btn btn-style-one"><span>En savoir plus</span></a>
                     <a href="{{ route('services.index') }}" class="theme-btn btn-style-two"><span>Nos services</span></a>
-                    
+
                     </div>
                 </li>
             </ul>
@@ -197,7 +197,7 @@
                     </div>
                 </div>
             </div>
-            
+
 
             <!-- Video Column -->
             <div class="video-column col-lg-6 col-md-12 col-sm-12">
@@ -215,26 +215,30 @@
 <section class="services-section" style="background-image: url({{ asset('assets/images/background/1.jpg') }});">
     <div class="auto-container">
         <div class="sec-title light">
-            <span class="title">Our Services</span>
-            <h2>What We Provide</h2>
+            <span class="title">Nos Services</span>
+            <h2>Ce que nous proposons</h2>
         </div>
 
+
         <div class="services-carousel owl-carousel owl-theme">
-           
+
             @foreach ($getServices as $item)
                 <div class="service-block">
                     <div class="inner-box" style="background-image: url('{{ $item->image }}')">
                         <div class="content-box">
-                            <span class="{{ $item->icon }}"></span>
+                            <span class="{{ $item->icone }}"></span>
                             <h3><a href="service-detail.html">{{ $item->title }}</a></h3>
-                            <div class="text">{{ $item->description }}</div>
-                            <div class="link-box"><a href="service-detail.html">Read More <i class="la la-angle-double-right"></i></a></div>
+                            <div class="text">
+                                {{-- {{ $item->description }} --}}
+                                {{ \Illuminate\Support\Str::limit($item->description, 50, '...') }}
+                            </div>
+                            <div class="link-box"><a href="service-detail.html">En savoir plus <i class="la la-angle-double-right"></i></a></div>
                         </div>
                     </div>
                 </div>
-                
+
             @endforeach
-            
+
         </div>
     </div>
 </section>
@@ -247,22 +251,22 @@
         <div class="content-column">
             <div class="inner-column">
                 <div class="sec-title">
-                    <span class="title">Why Us</span>
-                    <h2>Read Why We Expert <br>in The Market</h2>
-                    <div class="text">This product is meant for educational purposes only. Resemblance to real persons, living or dead is purely coincidental. Void prohibited. Some assembly required. List each check separately by number.</div>
+                    <span class="title">Pourquoi nous choisir</span>
+                    <h2>Découvrez pourquoi nous sommes <br>experts sur le marché</h2>
+                    <div class="text">
+                        Nos solutions sont conçues pour répondre efficacement aux défis modernes de nos clients. Grâce à notre expertise, notre engagement et notre approche personnalisée, nous offrons des services de qualité adaptés à vos besoins spécifiques.
+                    </div>
                 </div>
                 <ul class="list-style-one clearfix">
-                    <li><a href="{{ route('services.index') }}">Audit & Assurance</a></li>
-                    <li><a href="{{ route('services.index') }}">Dedicated Team</a></li>
-                    <li><a href="{{ route('services.index') }}">Best Advisors</a></li>
-                    <li><a href="{{ route('services.index') }}">Network Solutions</a></li>
-                    <li><a href="{{ route('services.index') }}">24/7 Supports</a></li>
-                    <li><a href="{{ route('services.index') }}">Work Deadline</a></li>
+                    @foreach ($getServices as $item)
+                        <li><a href="{{ route('services-detail', ['title'=>$item->title]) }}">{{ $item->title }} </a></li>
+                    @endforeach
                 </ul>
                 <div class="btn-box">
-                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Get Start</a>
+                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Commencer</a>
                 </div>
             </div>
+
         </div>
 
         <!-- Image Column -->
@@ -278,14 +282,16 @@
     <div class="auto-container">
         <div class="outer-box clearfix">
             <div class="title-column">
-                <h3>We Offer Financial Strategies & Superior Services</h3>
+                <h3>Nous Offrons des Stratégies Numériques et des Services de Qualité Supérieure</h3>
             </div>
 
             <div class="btn-column">
                 <div class="btn-box">
-                    <a href="{{ route('contact.index') }}" class="theme-btn btn-style-one">Get a Quote</a>
+                    <a href="{{ route('contact.index') }}" class="theme-btn btn-style-one">Nous Contacter</a>
+
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -295,118 +301,70 @@
 <section class="cases-section">
     <div class="auto-container">
         <div class="sec-title text-center">
-            <span class="title">Our Best Work</span>
-            <h2>Our Successful Cases</h2>
+            <span class="title">Nos Meilleures Réalisations</span>
+            <h2>Nos Cas de Réussite</h2>
         </div>
 
         <div class="row clearfix">
-            <!-- Cases Block -->
+            <!-- Bloc Cas -->
             <div class="case-block col-lg-4 col-md-6 col-sm-12">
                 <div class="image-box">
-                    <div class="image"><a href="{{ asset('assets/images/gallery/1.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/gallery/1.jpg') }}" alt=""></a></div>
+                    <div class="image">
+                        <a href="{{ asset('assets/images/gallery/1.jpg') }}" class="lightbox-image" data-fancybox="gallery">
+                            <img src="{{ asset('assets/images/gallery/1.jpg') }}" alt="">
+                        </a>
+                    </div>
                     <div class="caption-box">
-                        <h5><a href="#">Check Finance & Risk</a></h5>
+                        <h5><a href="#">Analyse Financière & Risque</a></h5>
                         <ul class="info">
-                            <li>Business</li>
-                            <li>Corporate</li>
+                            <li>Technologie</li>
+                            <li>Entreprise</li>
                         </ul>
                         <div class="icon-box"><a href="#"><i class="la la-angle-right"></i></a></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Cases Block -->
+            <!-- Répéter pour chaque bloc... -->
             <div class="case-block col-lg-4 col-md-6 col-sm-12">
                 <div class="image-box">
-                    <div class="image"><a href="{{ asset('assets/images/gallery/2.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/gallery/2.jpg') }}" alt=""></a></div>
+                    <div class="image">
+                        <a href="{{ asset('assets/images/gallery/2.jpg') }}" class="lightbox-image" data-fancybox="gallery">
+                            <img src="{{ asset('assets/images/gallery/2.jpg') }}" alt="">
+                        </a>
+                    </div>
                     <div class="caption-box">
-                        <h5><a href="case-detail.html">Check Finance & Risk</a></h5>
+                        <h5><a href="case-detail.html">Analyse Financière & Risque</a></h5>
                         <ul class="info">
-                            <li>Business</li>
-                            <li>Corporate</li>
+                            <li>Technologie</li>
+                            <li>Entreprise</li>
                         </ul>
-                        <div class="icon-box"><a href="case-detail.html"><i class="la la-angle-right"></i></a></div>
+                        <div class="icon-box"><a href="#"><i class="la la-angle-right"></i></a></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Cases Block -->
-            <div class="case-block col-lg-4 col-md-6 col-sm-12">
-                <div class="image-box">
-                    <div class="image"><a href="{{ asset('assets/images/gallery/3.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/gallery/3.jpg') }}" alt=""></a></div>
-                    <div class="caption-box">
-                        <h5><a href="case-detail.html">Check Finance & Risk</a></h5>
-                        <ul class="info">
-                            <li>Business</li>
-                            <li>Corporate</li>
-                        </ul>
-                        <div class="icon-box"><a href="case-detail.html"><i class="la la-angle-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cases Block -->
-            <div class="case-block col-lg-4 col-md-6 col-sm-12">
-                <div class="image-box">
-                    <div class="image"><a href="{{ asset('assets/images/gallery/4.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/gallery/4.jpg') }}" alt=""></a></div>
-                    <div class="caption-box">
-                        <h5><a href="case-detail.html">Check Finance & Risk</a></h5>
-                        <ul class="info">
-                            <li>Business</li>
-                            <li>Corporate</li>
-                        </ul>
-                        <div class="icon-box"><a href="case-detail.html"><i class="la la-angle-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cases Block -->
-            <div class="case-block col-lg-4 col-md-6 col-sm-12">
-                <div class="image-box">
-                    <div class="image"><a href="{{ asset('assets/images/gallery/5.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/gallery/5.jpg') }}" alt=""></a></div>
-                    <div class="caption-box">
-                        <h5><a href="case-detail.html">Check Finance & Risk</a></h5>
-                        <ul class="info">
-                            <li>Business</li>
-                            <li>Corporate</li>
-                        </ul>
-                        <div class="icon-box"><a href="case-detail.html"><i class="la la-angle-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cases Block -->
-            <div class="case-block col-lg-4 col-md-6 col-sm-12">
-                <div class="image-box">
-                    <div class="image"><a href="{{ asset('assets/images/gallery/6.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/gallery/6.jpg') }}" alt=""></a></div>
-                    <div class="caption-box">
-                        <h5><a href="case-detail.html">Check Finance & Risk</a></h5>
-                        <ul class="info">
-                            <li>Business</li>
-                            <li>Corporate</li>
-                        </ul>
-                        <div class="icon-box"><a href="case-detail.html"><i class="la la-angle-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
+            <!-- Ajoutez les autres blocs de la même manière -->
         </div>
 
         <div class="btn-box">
-            <a href="{{ route('services.index') }}" class="theme-btn btn-style-three ">View All</a>
+            <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Voir Tout</a>
         </div>
+
     </div>
 </section>
 <!--End Cases Section -->
 
 <!-- Call Back Section -->
 <section class="call-back-section" style="background-image: url({{ asset('assets/images/background/2.jpg') }});">
-    <div class="outer-box">        
+    <div class="outer-box">
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="content-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
-                        <h3>You are <br> 10 minitues away from the Help you need</h3>
-                        <div class="text">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test.</div>
+                        <h3>Vous êtes à 10 minutes<br> de la solution numérique qu’il vous faut</h3>
+                        <div class="text">Saisissez les opportunités clés pour lancer des services innovants et performants en un temps record.</div>
+
                     </div>
                 </div>
 
@@ -415,14 +373,15 @@
                     <div class="inner-column">
                         <div class="appointment-form">
                             <div class="title-box">
-                                <span>We are always ready</span>
-                                <h3>Request a call back</h3>
+                                <span>Notre équipe est à votre écoute</span>
+                                <h3>Demandez à être rappelé</h3>
                             </div>
+
                             <form method="post" action="">
                                 <div class="form-group">
                                     <input type="text" name="username" placeholder="Name" required="">
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <input type="email" name="email" placeholder="Email" required="">
                                 </div>
@@ -430,14 +389,15 @@
                                 <div class="form-group">
                                     <input type="text" name="subject" placeholder="Subject">
                                 </div>
-                                
+
                                 <div class="form-group">
                                     <textarea name="message" placeholder="Massage"></textarea>
                                 </div>
 
                                 <div class="form-group text-right">
-                                    <button class="theme-btn btn-style-two" type="submit" name="submit-form">Send Massage</button>
+                                    <button class="theme-btn btn-style-two" type="submit" name="submit-form">Envoyer le message</button>
                                 </div>
+
                             </form>
                         </div>
                     </div>
@@ -452,8 +412,8 @@
 <section class="team-section">
     <div class="auto-container">
         <div class="sec-title text-center">
-            <span class="title">Our Team</span>
-            <h2>Operations Directors</h2>
+            <span class="title">L'équipe</span>
+            <h2>Operations Direction</h2>
         </div>
 
         <div class="row clearfix">
@@ -492,8 +452,9 @@
                     </div>
                     <div class="info-box">
                         <h4 class="name"><a href="team.html">Monika Joni</a></h4>
-                        <span class="designation">Finance Manager</span>
+                        <span class="designation">Responsable des Finances</span>
                     </div>
+
                 </div>
             </div>
 
@@ -511,9 +472,10 @@
                         </ul>
                     </div>
                     <div class="info-box">
-                        <h4 class="name"><a href="team.html">Robinal Rector</a></h4>
-                        <span class="designation">Marketing Manager</span>
+                        <h4 class="name"><a href="team.html">Monika Joni</a></h4>
+                        <span class="designation">Responsable des Finances</span>
                     </div>
+
                 </div>
             </div>
 
@@ -531,9 +493,10 @@
                         </ul>
                     </div>
                     <div class="info-box">
-                        <h4 class="name"><a href="team.html">Katrina Gone</a></h4>
-                        <span class="designation">CEO Management</span>
+                        <h4 class="name"><a href="team.html">Monika Joni</a></h4>
+                        <span class="designation">Responsable des Finances</span>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -545,100 +508,33 @@
 <section class="news-section">
     <div class="auto-container">
         <div class="sec-title">
-            <span class="title">Don't Miss</span>
-            <h2>Our Latest News</h2>
+            <span class="title">Ne manquez pas</span>
+            <h2>Nos dernières nouvelles</h2>
         </div>
 
         <div class="news-carousel owl-carousel owl-theme">
-            <!-- News Block -->
+            <!-- Bloc d'Actualités -->
+            @foreach ($getBlogs as $item)
             <div class="news-block">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="blog-detail.html"><img src="{{ asset('assets/images/resource/news-1.jpg') }}" alt=""></a></div>
+                        <div class="image"><a href="{{ route('blogs-detail', ['slug'=>$item->slug]) }}"><img src="{{ $item->image }}" alt=""></a></div>
                     </div>
                     <div class="lower-content">
-                        <h3><a href="blog-detail.html">Explain quarterly forecasting...</a></h3>
-                        <span class="date">Post: 15 April 2018</span>
-                        <div class="text">Nouvelle trouvait supplice lupanars revendre me. Crispent ethiopie philippe essaiera.</div>
-                        <div class="link-box"><a href="blog-detail.html">Read More</a></div>
+                        <h3><a href="{{ route('blogs-detail', ['slug'=>$item->slug]) }}">{{ $item->title }}</a></h3>
+                        <span class="date">Publié : {{ $item->created_at }}</span>
+                        <div class="text">{{ $item->contente }}</div>
+                        <div class="link-box"><a href="{{ route('blogs-detail', ['slug'=>$item->slug]) }}">Lire la suite</a></div>
                     </div>
                 </div>
             </div>
+            @endforeach
 
-            <!-- News Block -->
-            <div class="news-block">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <div class="image"><a href="blog-detail.html"><img src="{{ asset('assets/images/resource/news-2.jpg') }}" alt=""></a></div>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="blog-detail.html">Explor new plan for business</a></h3>
-                        <span class="date">Post: 15 April 2018</span>
-                        <div class="text">Nouvelle trouvait supplice lupanars revendre me. Crispent ethiopie philippe essaiera.</div>
-                        <div class="link-box"><a href="blog-detail.html">Read More</a></div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- News Block -->
-            <div class="news-block">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <div class="image"><a href="blog-detail.html"><img src="{{ asset('assets/images/resource/news-3.jpg') }}" alt=""></a></div>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="blog-detail.html">How select a good advisor</a></h3>
-                        <span class="date">Post: 15 April 2018</span>
-                        <div class="text">Nouvelle trouvait supplice lupanars revendre me. Crispent ethiopie philippe essaiera.</div>
-                        <div class="link-box"><a href="blog-detail.html">Read More</a></div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- News Block -->
-            <div class="news-block">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <div class="image"><a href="blog-detail.html"><img src="{{ asset('assets/images/resource/news-1.jpg') }}" alt=""></a></div>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="blog-detail.html">Explain quarterly forecasting...</a></h3>
-                        <span class="date">Post: 15 April 2018</span>
-                        <div class="text">Nouvelle trouvait supplice lupanars revendre me. Crispent ethiopie philippe essaiera.</div>
-                        <div class="link-box"><a href="blog-detail.html">Read More</a></div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- News Block -->
-            <div class="news-block">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <div class="image"><a href="blog-detail.html"><img src="{{ asset('assets/images/resource/news-2.jpg') }}" alt=""></a></div>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="blog-detail.html">Explor new plan for business</a></h3>
-                        <span class="date">Post: 15 April 2018</span>
-                        <div class="text">Nouvelle trouvait supplice lupanars revendre me. Crispent ethiopie philippe essaiera.</div>
-                        <div class="link-box"><a href="blog-detail.html">Read More</a></div>
-                    </div>
-                </div>
-            </div>
+        </div>
 
-            <!-- News Block -->
-            <div class="news-block">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <div class="image"><a href="blog-detail.html"><img src="{{ asset('assets/images/resource/news-3.jpg') }}" alt=""></a></div>
-                    </div>
-                    <div class="lower-content">
-                        <h3><a href="blog-detail.html">How select a good advisor</a></h3>
-                        <span class="date">Post: 15 April 2018</span>
-                        <div class="text">Nouvelle trouvait supplice lupanars revendre me. Crispent ethiopie philippe essaiera.</div>
-                        <div class="link-box"><a href="blog-detail.html">Read More</a></div>
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </section>
@@ -653,36 +549,37 @@
                 <div class="inner-box">
                     <div class="info-box">
                         <div class="thumb"><img src="{{ asset('assets/images/resource/thumb.jpg') }}" alt=""></div>
-                        <h3 class="name">Sarah Arevik</h3>
-                        <span class="designation">Chief Executive</span>
+                        <h3 class="name">Tiefing SANGARE</h3>
+                        <span class="designation">PDG</span>
                     </div>
-                    <div class="text">The Forexnic loan has been the most attractive loan products on the market, helping numerous businesses gain access to financing they would not be able to obtain conventionally and at extremely favorable rates and terms.</div>
+                    <div class="text">Le prêt Forexnic a été l'un des produits de prêt les plus attractifs sur le marché, aidant de nombreuses entreprises à accéder à un financement qu'elles n'auraient pas pu obtenir de manière conventionnelle et à des conditions extrêmement favorables.</div>
                 </div>
             </div>
 
-            <!-- Testimonial Block -->
+            <!-- Bloc de Témoignage -->
             <div class="testimonial-block">
                 <div class="inner-box">
                     <div class="info-box">
                         <div class="thumb"><img src="{{ asset('assets/images/resource/thumb.jpg') }}" alt=""></div>
                         <h3 class="name">Sarah Arevik</h3>
-                        <span class="designation">Chief Executive</span>
+                        <span class="designation">Directrice Générale</span>
                     </div>
-                    <div class="text">The Forexnic loan has been the most attractive loan products on the market, helping numerous businesses gain access to financing they would not be able to obtain conventionally and at extremely favorable rates and terms.</div>
+                    <div class="text">Le prêt Forexnic a été l'un des produits de prêt les plus attractifs sur le marché, aidant de nombreuses entreprises à accéder à un financement qu'elles n'auraient pas pu obtenir de manière conventionnelle et à des conditions extrêmement favorables.</div>
                 </div>
             </div>
 
-            <!-- Testimonial Block -->
+            <!-- Bloc de Témoignage -->
             <div class="testimonial-block">
                 <div class="inner-box">
                     <div class="info-box">
                         <div class="thumb"><img src="{{ asset('assets/images/resource/thumb.jpg') }}" alt=""></div>
                         <h3 class="name">Sarah Arevik</h3>
-                        <span class="designation">Chief Executive</span>
+                        <span class="designation">Directrice Générale</span>
                     </div>
-                    <div class="text">The Forexnic loan has been the most attractive loan products on the market, helping numerous businesses gain access to financing they would not be able to obtain conventionally and at extremely favorable rates and terms.</div>
+                    <div class="text">Le prêt Forexnic a été l'un des produits de prêt les plus attractifs sur le marché, aidant de nombreuses entreprises à accéder à un financement qu'elles n'auraient pas pu obtenir de manière conventionnelle et à des conditions extrêmement favorables.</div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -709,7 +606,7 @@
     </div>
 </section>
 <!--End Clients Section-->
-	
+
 
 @endsection
 

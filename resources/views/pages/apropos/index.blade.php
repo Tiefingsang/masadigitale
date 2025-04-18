@@ -17,125 +17,149 @@
  <section class="about-section-two alternate">
     <div class="auto-container">
         <div class="row clearfix">
-            <!-- Content Column -->
+
+            <!-- Colonne de contenu principal -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <span class="title">We Are Expert</span>
-                    <h2>20 Years Experience in <br> Financial & Business</h2>
-                    <div class="text">Apparently we had reached a great height in the atmosphere, for the sky was a dead black and the stars had ceased to twinkle, By the same illusion which lifts the horizon of the sea to the level of the speactator on press for miles on a hillside. Each business niche may require a unique functionality of its own… </div>
+                    <span class="title">Nous sommes experts</span>
+                    <h2>2 ans d’expérience en<br> Technologie & Innovation</h2>
 
+                    <!-- Description dynamique tirée de la base de données -->
+                    <div class="text">{{ $getAbouts->description }}</div>
+
+                    <!-- Compteurs de statistiques -->
                     <div class="fact-counter">
                         <div class="row clearfix">
-                            <!--Column-->
+
+                            <!-- Nombre de consultants -->
                             <div class="counter-column col-lg-4 col-md-4 col-sm-12">
                                 <div class="count-box">
                                     <span class="count-text" data-speed="3000" data-stop="350">0</span>
-                                    <h4 class="counter-title">Consultatns</h4>
+                                    <h4 class="counter-title">Consultants</h4>
                                 </div>
                             </div>
 
-                            <!--Column-->
+                            <!-- Nombre de récompenses -->
                             <div class="counter-column col-lg-4 col-md-4 col-sm-12">
                                 <div class="count-box">
                                     <span class="count-text" data-speed="3000" data-stop="25">0</span>
-                                    <h4 class="counter-title">Awards</h4>
+                                    <h4 class="counter-title">Prix & Distinctions</h4>
                                 </div>
                             </div>
 
-                            <!--Column-->
+                            <!-- Projets réalisés -->
                             <div class="counter-column col-lg-4 col-md-4 col-sm-12">
                                 <div class="count-box">
                                     <span class="count-text" data-speed="3000" data-stop="954">0</span>
-                                    <h4 class="counter-title">Cases Completed</h4>
+                                    <h4 class="counter-title">Projets réalisés</h4>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Blocks Column -->
+            <!-- Colonne avec les missions et visions -->
             <div class="block-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
                     <div class="row clearfix">
-                        <!-- Feature Block -->
+
+                        <!-- Bloc Mission -->
                         <div class="feature-block col-lg-6 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <div class="image"><a href="about.html"><img src="{{ asset('assets/images/resource/feature-1.jpg') }}" alt=""></a></div>
+                                    <div class="image">
+                                        <a href="about.html"><img src="{{ asset('assets/images/resource/feature-1.jpg') }}" alt="Mission"></a>
+                                    </div>
                                 </div>
                                 <div class="lower-content">
-                                    <h4><a href="about.html">Our Mission</a></h4>
-                                    <div class="text">Our Mission for the explorer of the truth, master who builder of human hapiness one but because those who do know.</div>
+                                    <h4><a href="about.html">Notre Mission</a></h4>
+                                    <div class="text">Offrir des solutions innovantes et accessibles pour un monde plus connecté et plus efficace.</div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Feature Block -->
+                        <!-- Bloc Vision -->
                         <div class="feature-block col-lg-6 col-md-6 col-sm-12">
                             <div class="inner-box">
                                 <div class="image-box">
-                                    <div class="image"><a href="about.html"><img src="{{ asset('assets/images/resource/feature-2.jpg') }}" alt=""></a></div>
+                                    <div class="image">
+                                        <a href="about.html"><img src="{{ asset('assets/images/resource/feature-2.jpg') }}" alt="Vision"></a>
+                                    </div>
                                 </div>
                                 <div class="lower-content">
-                                    <h4><a href="about.html">Our Vision</a></h4>
-                                    <div class="text">Our Mission for the explorer of the truth, master who builder of human hapiness one but because those who do know.</div>
+                                    <h4><a href="about.html">Notre Vision</a></h4>
+                                    <div class="text">Être un leader technologique en Afrique, en favorisant la transformation numérique et le développement durable.</div>
                                 </div>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
+
         </div>
+
     </div>
 </section>
 <!-- End About Us -->
 
 <!-- Call Back Section -->
 <section class="call-back-section" style="background-image: url({{ asset('assets/images/background/2.jpg') }});">
-    <div class="outer-box">        
+    <div class="outer-box">
         <div class="auto-container">
             <div class="row clearfix">
+                <!-- Colonne de contenu -->
                 <div class="content-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
-                        <h3>You are <br> 10 minitues away from the Help you need</h3>
-                        <div class="text">Capitalize on low hanging fruit to identify a ballpark value added activity to beta test.</div>
+                        <h3>Vous êtes à<br> 10 minutes de l’aide dont vous avez besoin</h3>
+                        <div class="text">
+                            Profitez des opportunités simples pour identifier rapidement une valeur ajoutée à tester.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Form Column -->
+                <!-- Colonne du formulaire -->
                 <div class="form-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="appointment-form">
                             <div class="title-box">
-                                <span>We are always ready</span>
-                                <h3>Request a call back</h3>
+                                <span>Nous sommes toujours disponibles</span>
+                                <h3>Demander un rappel</h3>
                             </div>
+
                             <form method="post" action="">
+                                @csrf <!-- Si tu es en Laravel, sinon retire cette ligne -->
+
                                 <div class="form-group">
-                                    <input type="text" name="username" placeholder="Name" required="">
-                                </div>
-                                
-                                <div class="form-group">
-                                    <input type="email" name="email" placeholder="Email" required="">
+                                    <input type="text" name="username" placeholder="Nom complet" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" name="subject" placeholder="Subject">
+                                    <input type="email" name="email" placeholder="Adresse email" required>
                                 </div>
-                                
+
                                 <div class="form-group">
-                                    <textarea name="message" placeholder="Massage"></textarea>
+                                    <input type="text" name="subject" placeholder="Sujet">
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea name="message" placeholder="Message"></textarea>
                                 </div>
 
                                 <div class="form-group text-right">
-                                    <button class="theme-btn btn-style-two" type="submit" name="submit-form">Send Massage</button>
+                                    <button class="theme-btn btn-style-two" type="submit" name="submit-form">
+                                        Envoyer le message
+                                    </button>
                                 </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -148,13 +172,22 @@
         <div class="content-column">
             <div class="inner-column">
                 <div class="sec-title">
-                    <span class="title">Integrity</span>
-                    <h2>Thinking of Building</h2>
-                    <div class="text">We help global leaders with their organization’s most critical issues and opportunities. Together, we create enduring change and results.</div>
+                    <span class="title">Innovation & Intégrité</span>
+                    <h2>Construisons le futur numérique</h2>
+                    <div class="text">
+                        Chez Massa Technologies, nous accompagnons les entreprises et institutions dans leur transformation digitale. Grâce à notre expertise, nous apportons des solutions technologiques durables, créons de la valeur et générons des résultats mesurables.
+                    </div>
                 </div>
-                <div class="graph-image"><img src="{{ asset('assets/images/resource/graph.png') }}" alt=""></div>
-                <div class="link-box"><a href="{{ route('services.index') }}" class="theme-btn">Explore All Cases</a></div>
+
+                <div class="graph-image">
+                    <img src="{{ asset('assets/images/resource/graph.png') }}" alt="Statistiques de croissance numérique">
+                </div>
+
+                <div class="link-box">
+                    <a href="{{ route('services.index') }}" class="theme-btn">Découvrir nos solutions</a>
+                </div>
             </div>
+
         </div>
 
         <div class="image-column" style="background-image: url({{ asset("assets/images/resource/image-3.png") }});">
@@ -173,97 +206,128 @@
         <div class="row clearfix">
             <div class="accordion-column col-lg-6 col-md-12 col-sm-12">
                 <div class="sec-title light">
-                    <span class="title">Some FAQ’s</span>
-                    <h2>Frequently Asked Questions</h2>
-                </div>             
-                <!--Accordian Box-->
+                    <span class="title">Support & Assistance</span>
+                    <h2>Questions Fréquentes</h2>
+                </div>
+
+                <!-- Accordion Box -->
                 <ul class="accordion-box">
-                    <!--Block-->
+                    <!-- Question -->
                     <li class="accordion block">
-                        <div class="acc-btn"><div class="icon">+</div>How to remove a business risk ?</div>
+                        <div class="acc-btn"><div class="icon">+</div>Comment Massa Technologies réduit-elle les risques numériques ?</div>
                         <div class="acc-content">
                             <div class="content">
-                                <div class="text">The perfect harmony between innovation and creativity, our bathroom tiles are produced in compliance with the international standards. High quality 20mm thick porcelain tiles that can be laid on pedestals.</div>
+                                <div class="text">
+                                    Nous proposons des solutions robustes de cybersécurité, de sauvegarde et de gestion proactive des infrastructures pour anticiper et limiter les menaces potentielles.
+                                </div>
                             </div>
                         </div>
                     </li>
 
-                    <!--Block-->
+                    <!-- Question active -->
                     <li class="accordion block active-block">
-                        <div class="acc-btn active"><div class="icon">+</div>Evidence shows advisers already working ?</div>
+                        <div class="acc-btn active"><div class="icon">+</div>Quels services sont déjà opérationnels ?</div>
                         <div class="acc-content current">
                             <div class="content">
-                                <div class="text">The perfect harmony between innovation and creativity, our bathroom tiles are produced in compliance with the international standards. High quality 20mm thick porcelain tiles that can be laid on pedestals.</div>
-                            </div>
-                        </div>
-                    </li>
-                    
-                    <!--Block-->
-                    <li class="accordion block">
-                        <div class="acc-btn"><div class="icon">+</div>Conflicted advice can substantially compromise ? Expression</div>
-                        <div class="acc-content">
-                            <div class="content">
-                                <div class="text">The perfect harmony between innovation and creativity, our bathroom tiles are produced in compliance with the international standards. High quality 20mm thick porcelain tiles that can be laid on pedestals.</div>
+                                <div class="text">
+                                    Nos plateformes e-commerce, nos outils de gestion cloud et nos systèmes de support client sont déjà actifs et en évolution continue pour mieux répondre à vos besoins.
+                                </div>
                             </div>
                         </div>
                     </li>
 
-                    <!--Block-->
+                    <!-- Question -->
                     <li class="accordion block">
-                        <div class="acc-btn"><div class="icon">+</div>Our ethos reflects our vision ?</div>
+                        <div class="acc-btn"><div class="icon">+</div>Comment garantir une stratégie technologique cohérente ?</div>
                         <div class="acc-content">
                             <div class="content">
-                                <div class="text">The perfect harmony between innovation and creativity, our bathroom tiles are produced in compliance with the international standards. High quality 20mm thick porcelain tiles that can be laid on pedestals.</div>
+                                <div class="text">
+                                    En collaborant avec nos experts en stratégie digitale, vous bénéficiez d’un accompagnement sur mesure, aligné sur vos objectifs métiers et votre vision à long terme.
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- Question -->
+                    <li class="accordion block">
+                        <div class="acc-btn"><div class="icon">+</div>Quelle est notre vision de la transformation digitale ?</div>
+                        <div class="acc-content">
+                            <div class="content">
+                                <div class="text">
+                                    Notre vision repose sur l'intégrité, l’innovation et l’impact. Nous croyons en une technologie accessible, utile et porteuse de changement durable.
+                                </div>
                             </div>
                         </div>
                     </li>
                 </ul>
             </div>
 
+            <!-- Column with Stats -->
             <div class="stat-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
                     <div class="sec-title light">
-                        <span class="title">Some State skill</span>
-                        <h2>Our Statistics Rate</h2>
-                        <div class="text">This product is meant for educational purposes only. Resemblance to real persons, living or dead is coincidental.</div>
-                    </div>             
+                        <span class="title">Nos Capacités Clés</span>
+                        <h2>Indicateurs de Performance</h2>
+                        <div class="text">
+                            Nos statistiques illustrent notre expertise et notre engagement envers l’excellence technologique et la satisfaction client.
+                        </div>
+                    </div>
 
                     <div class="progress-bars">
-                        <!--Skill Item-->
+                        <!-- Skill -->
                         <div class="bar-item">
                             <div class="skill-header clearfix">
-                                <div class="skill-title">Strategy &amp; Analysis</div>
+                                <div class="skill-title">Stratégie & Analyse</div>
                             </div>
                             <div class="skill-bar">
-                                <div class="bar-inner"><div class="bar progress-line" data-width="74"></div><div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="74">0</span>%</div></div>
+                                <div class="bar-inner">
+                                    <div class="bar progress-line" data-width="85"></div>
+                                    <div class="skill-percentage">
+                                        <div class="count-box">
+                                            <span class="count-text" data-speed="2000" data-stop="85">0</span>%
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!--Skill Item-->
+                        <!-- Skill -->
                         <div class="bar-item">
                             <div class="skill-header clearfix">
-                                <div class="skill-title">Eeconomic Growth</div>
+                                <div class="skill-title">Croissance Économique Digitale</div>
                             </div>
                             <div class="skill-bar">
-                                <div class="bar-inner"><div class="bar progress-line" data-width="90"></div><div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="90">0</span>%</div></div>
+                                <div class="bar-inner">
+                                    <div class="bar progress-line" data-width="92"></div>
+                                    <div class="skill-percentage">
+                                        <div class="count-box">
+                                            <span class="count-text" data-speed="2000" data-stop="92">0</span>%
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!--Skill Item-->
+                        <!-- Skill -->
                         <div class="bar-item">
                             <div class="skill-header clearfix">
-                                <div class="skill-title">Achieves Goals</div>
+                                <div class="skill-title">Objectifs Atteints</div>
                             </div>
                             <div class="skill-bar">
-                                <div class="bar-inner"><div class="bar progress-line" data-width="82"></div><div class="skill-percentage"><div class="count-box"><span class="count-text" data-speed="2000" data-stop="82">0</span>%</div></div>
+                                <div class="bar-inner">
+                                    <div class="bar progress-line" data-width="88"></div>
+                                    <div class="skill-percentage">
+                                        <div class="count-box">
+                                            <span class="count-text" data-speed="2000" data-stop="88">0</span>%
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </section>
@@ -276,22 +340,25 @@
         <div class="content-column">
             <div class="inner-column">
                 <div class="sec-title">
-                    <span class="title">Why Us</span>
-                    <h2>Read Why We Expert <br>in The Market</h2>
-                    <div class="text">This product is meant for educational purposes only. Resemblance to real persons, living or dead is purely coincidental. Void prohibited. Some assembly required. List each check separately by number.</div>
+                    <span class="title">Pourquoi Masatechnologie</span>
+                    <h2>Découvrez pourquoi nous sommes<br>experts sur le marché</h2>
+                    <div class="text">
+                        Masatechnologie s'impose comme un acteur clé de l'innovation numérique au Mali. Grâce à une expertise pointue, une équipe passionnée et des solutions adaptées, nous accompagnons nos clients dans leur transformation digitale, en leur garantissant performance, sécurité et fiabilité.
+                    </div>
                 </div>
                 <ul class="list-style-one clearfix">
-                    <li><a href="{{ route("services.index") }}">Audit & Assurance</a></li>
-                    <li><a href="{{ route("services.index") }}">Dedicated Team</a></li>
-                    <li><a href="{{ route("services.index") }}">Best Advisors</a></li>
-                    <li><a href="{{ route("services.index") }}">Network Solutions</a></li>
-                    <li><a href="{{ route("services.index") }}">24/7 Supports</a></li>
-                    <li><a href="{{ route("services.index") }}">Work Deadline</a></li>
+                    <li><a href="{{ route('services.index') }}">Audit & Conseil IT</a></li>
+                    <li><a href="{{ route('services.index') }}">Équipe Dédiée & Réactive</a></li>
+                    <li><a href="{{ route('services.index') }}">Experts en Stratégie Digitale</a></li>
+                    <li><a href="{{ route('services.index') }}">Solutions Réseau & Cloud</a></li>
+                    <li><a href="{{ route('services.index') }}">Support Technique 24/7</a></li>
+                    <li><a href="{{ route('services.index') }}">Respect des Délais & Livrables</a></li>
                 </ul>
                 <div class="btn-box">
-                    <a href="{{ route("services.index") }}" class="theme-btn btn-style-three">Get Start</a>
+                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Commencer avec Nous</a>
                 </div>
             </div>
+
         </div>
 
         <!-- Image Column -->
@@ -306,43 +373,44 @@
 <section class="work-section style-two">
     <div class="auto-container">
         <div class="sec-title">
-            <span class="title">How We Work</span>
-            <h2>We Make Successful Business in 4 Steps</h2>
+            <span class="title">Notre Méthodologie</span>
+            <h2>Réussir ensemble en 4 étapes clés</h2>
         </div>
         <div class="row clearfix">
-            <!-- Work Step -->
+            <!-- Étape 1 -->
             <div class="work-step col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
-                    <h3><span class="count">1</span> <a href="service-detail.html">Analize</a></h3>
-                    <div class="text">We deliver business results via hands-on execution and leading teams through complex change.</div>
+                    <h3><span class="count">1</span> <a href="{{ route('services.index') }}">Analyse</a></h3>
+                    <div class="text">Nous commençons par une compréhension approfondie de vos besoins pour identifier les solutions les plus adaptées.</div>
                 </div>
             </div>
 
-            <!-- Work Step -->
+            <!-- Étape 2 -->
             <div class="work-step col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
-                    <h3><span class="count">2</span> <a href="service-detail.html">Advise</a></h3>
-                    <div class="text">We deliver business results via hands-on execution and leading teams through complex change.</div>
+                    <h3><span class="count">2</span> <a href="{{ route('services.index') }}">Conseil</a></h3>
+                    <div class="text">Nous vous accompagnons avec des recommandations stratégiques basées sur notre expertise du digital et des technologies.</div>
                 </div>
             </div>
 
-            <!-- Work Step -->
+            <!-- Étape 3 -->
             <div class="work-step col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
-                    <h3><span class="count">3</span> <a href="service-detail.html">Strategy</a></h3>
-                    <div class="text">We deliver business results via hands-on execution and leading teams through complex change.</div>
+                    <h3><span class="count">3</span> <a href="{{ route('services.index') }}">Stratégie</a></h3>
+                    <div class="text">Nous élaborons une feuille de route claire et performante pour garantir la réussite de votre projet.</div>
                 </div>
             </div>
 
-            <!-- Work Step -->
+            <!-- Étape 4 -->
             <div class="work-step col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
-                    <h3><span class="count">4</span> <a href="service-detail.html">Result</a></h3>
-                    <div class="text">We deliver business results via hands-on execution and leading teams through complex change.</div>
+                    <h3><span class="count">4</span> <a href="{{ route('services.index') }}">Résultat</a></h3>
+                    <div class="text">Nous livrons des résultats concrets et mesurables, tout en assurant un suivi continu pour votre croissance.</div>
                 </div>
             </div>
         </div>
     </div>
+
 </section>
 <!--End Work Section -->
 
@@ -353,14 +421,18 @@
             <!-- Content Column -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <span class="title">About Mushawart</span>
-                    <h2>We Aim to Provide Expert Advice and Quality Service.</h2>
-                    <div class="text">We are rethoric question ran over her cheek When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane.</div>
+                    <span class="title">À propos de Masatechnologie</span>
+                    <h2>Notre mission : vous offrir des conseils d'experts et un service de qualité.</h2>
+                    <div class="text">
+                        Depuis notre création, nous accompagnons les entreprises et particuliers dans leur transformation digitale.
+                        Grâce à une approche centrée sur l’innovation et la performance, Masatechnologie s’impose comme un partenaire de confiance dans le développement de solutions technologiques sur mesure.
+                    </div>
                     <div class="link-box">
-                        <a href="about.html" class="theme-btn btn-style-three">About More</a>
-                        <a href="#" class="theme-btn call-btn"><i class="icon la la-phone"></i> +880 258  58215</a>
+                        <a href="{{ route('about.index') }}" class="theme-btn btn-style-three">En savoir plus</a>
+                        <a href="tel:+22378794089" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 78 79 40 89</a>
                     </div>
                 </div>
+
             </div>
 
             <!-- Video Column -->
@@ -378,46 +450,66 @@
     <!-- Testimonial Section -->
 <section class="testimonial-section" style="background-image: url({{ asset('assets/images/background/3.jpg') }});">
     <div class="auto-container">
+        <div class="inner-column">
+            <span class="title">À propos de Masatechnologie</span>
+            <h2>Notre ambition : offrir des conseils d’experts et des services technologiques de qualité.</h2>
+            <div class="text">
+                Masatechnologie est une entreprise innovante spécialisée dans les solutions numériques adaptées aux besoins des entreprises africaines.
+                Grâce à notre expertise en développement web, e-commerce, cybersécurité et transformation digitale, nous accompagnons nos clients vers la réussite de leurs projets.
+            </div>
+            <div class="link-box">
+                <a href="{{ route('about.index') }}" class="theme-btn btn-style-three">En savoir plus</a>
+                <a href="tel:+22378794089" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 78 79 40 89</a>
+            </div>
+        </div>
+
         <div class="testimonial-carousel owl-carousel owl-theme">
-            <!-- Testimonial Block -->
+            <!-- Témoignage 1 -->
             <div class="testimonial-block">
                 <div class="inner-box">
                     <div class="info-box">
-                        <div class="thumb"><img src="{{ asset('images/resource/thumb.jpg') }}" alt=""></div>
-                        <h3 class="name">Sarah Arevik</h3>
-                        <span class="designation">Chief Executive</span>
+                        <div class="thumb"><img src="{{ asset('images/resource/client1.jpg') }}" alt="Client 1"></div>
+                        <h3 class="name">Fatoumata Koné</h3>
+                        <span class="designation">Fondatrice de MaliShop</span>
                     </div>
-                    <div class="text">The Forexnic loan has been the most attractive loan products on the market, helping numerous businesses gain access to financing they would not be able to obtain conventionally and at extremely favorable rates and terms.</div>
+                    <div class="text">
+                        Grâce à Masatechnologie, j’ai pu lancer ma boutique en ligne rapidement avec un design professionnel. Leur accompagnement a été précieux du début à la fin.
+                    </div>
                 </div>
             </div>
 
-            <!-- Testimonial Block -->
+            <!-- Témoignage 2 -->
             <div class="testimonial-block">
                 <div class="inner-box">
                     <div class="info-box">
-                        <div class="thumb"><img src="{{ asset('assets/images/resource/thumb.jpg') }}" alt=""></div>
-                        <h3 class="name">Sarah Arevik</h3>
-                        <span class="designation">Chief Executive</span>
+                        <div class="thumb"><img src="{{ asset('images/resource/client2.jpg') }}" alt="Client 2"></div>
+                        <h3 class="name">Ibrahim Traoré</h3>
+                        <span class="designation">DG, SahelTech</span>
                     </div>
-                    <div class="text">The Forexnic loan has been the most attractive loan products on the market, helping numerous businesses gain access to financing they would not be able to obtain conventionally and at extremely favorable rates and terms.</div>
+                    <div class="text">
+                        Masatechnologie a développé pour nous une plateforme sur mesure, stable et sécurisée. Leur équipe est réactive et compétente.
+                    </div>
                 </div>
             </div>
 
-            <!-- Testimonial Block -->
+            <!-- Témoignage 3 -->
             <div class="testimonial-block">
                 <div class="inner-box">
                     <div class="info-box">
-                        <div class="thumb"><img src="{{ asset('assets/images/resource/thumb.jpg') }}" alt=""></div>
-                        <h3 class="name">Sarah Arevik</h3>
-                        <span class="designation">Chief Executive</span>
+                        <div class="thumb"><img src="{{ asset('images/resource/client3.jpg') }}" alt="Client 3"></div>
+                        <h3 class="name">Aminata Diallo</h3>
+                        <span class="designation">Consultante IT</span>
                     </div>
-                    <div class="text">The Forexnic loan has been the most attractive loan products on the market, helping numerous businesses gain access to financing they would not be able to obtain conventionally and at extremely favorable rates and terms.</div>
+                    <div class="text">
+                        Très satisfaite de la qualité des services offerts. Masatechnologie est devenue une référence pour mes projets technologiques.
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 <!-- End Testimonial Section -->
-	
+
 
 @endsection
