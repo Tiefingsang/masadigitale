@@ -12,7 +12,7 @@ class PageController extends Controller
     public function index(){
         $slider= Slider::where('id',1)->first();
         $slider1= Slider::where('id',2)->first();
-        $slider2= Slider::where('id',3)->get();
+        $slider2= Slider::where('id',3)->get(); 
 
         //blog
         $getBlogs= Blog::get();
