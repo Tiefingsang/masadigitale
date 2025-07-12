@@ -94,7 +94,7 @@
                 <!-- Slide 1 -->
                  <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
 
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset('assets/images/main-slider/image-6.jpg') }}">
+                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset( $slider1->image) }}">
 
                     <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
@@ -173,6 +173,88 @@
 
                     </div>
                 </li>
+
+                {{-- <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
+
+                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset( $slider2->image) }}">
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-whitespace="nowrap"
+                    data-textalign="center"
+                    data-width="auto"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['-165','-165','-165','-165']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                        <h4>{{ $slider2->short }}</h4>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-textalign="center"
+                    data-whitespace="nowrap"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['-75','-75','-75','-95']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"delay":0,"split":"chars","splitdelay":0.05,"speed":2000,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <h2>Experaiences</h2>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-whitespace="normal"
+                    data-textalign="center"
+                    data-width="['600','600','600','500']"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['15','15','15','15']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                        <div class="text">{{ $slider2->description }}</div>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-whitespace="nowrap"
+                    data-width="auto"
+                    data-textalign="center"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['140','140','140','160']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                    <a href="{{ route('about.index') }}" class="theme-btn btn-style-one"><span>En savoir plus</span></a>
+                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-two"><span>Nos services</span></a>
+
+                    </div>
+                </li> --}}
             </ul>
         </div>
     </div>
@@ -186,30 +268,30 @@
             <!-- Content Column -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <span class="title">À propos de masatechnologie</span>
-                    <h2>Nous visons à fournir des conseils d’experts et un service de qualité.</h2>
+                    <span class="title">À propos de EGS S.A.R.L</span>
+                    <h2>Une entreprise au service de l’innovation, du BTP et du développement au Mali.</h2>
                     <div class="text">
-                        C’est une question rhétorique qui coulait sur sa joue. Lorsqu’elle atteignit les premières collines des montagnes italiennes, elle jeta un dernier regard vers la ligne d’horizon de sa ville natale Bookmarksgrove, le titre d’Alphabet Village et la ligne secondaire de sa propre route, la Line Lane.
+                        Créée en 2011 sous le nom de SATEC, EGS S.A.R.L est une entreprise malienne spécialisée dans les services informatiques, le bâtiment et le commerce général. Grâce à une équipe jeune, dynamique et compétente, nous accompagnons les entreprises publiques et privées dans l’amélioration de leurs performances à travers des solutions sur mesure et un engagement de qualité.
                     </div>
                     <div class="link-box">
                         <a href="{{ route('about.index') }}" class="theme-btn btn-style-three">En savoir plus</a>
-                        <a href="#" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 78 79 40 89</a>
+                        <a href="tel:+22398256435" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 98 25 64 35</a>
                     </div>
                 </div>
             </div>
 
-
             <!-- Video Column -->
             <div class="video-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <figure class="image"><img src="{{ asset('assets/images/resource/image-1.jpg') }}" alt=""></figure>
-                    <div class="link-box"><a href="https://www.youtube.com/watch?v=Fvae8nxzVz4" class="link" data-fancybox="gallery" data-caption=""><span class="icon la la-play-circle-o"></span></a></div>
+                    <figure class="image"><img src="{{ asset( $slider1->image) }}" alt=""></figure>
+                    <div class="link-box"><a href="https://www.youtube.com/watch?v=SfFmnvikknQ&list=PPSV&t=1093s" class="link" data-fancybox="gallery" data-caption=""><span class="icon la la-play-circle-o"></span></a></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!-- End About Us -->
+
 
 <!-- Services Section -->
 <section class="services-section" style="background-image: url({{ asset('assets/images/background/1.jpg') }});">
@@ -251,10 +333,10 @@
         <div class="content-column">
             <div class="inner-column">
                 <div class="sec-title">
-                    <span class="title">Pourquoi nous choisir</span>
-                    <h2>Découvrez pourquoi nous sommes <br>experts sur le marché</h2>
+                    <span class="title">Pourquoi choisir EGS S.A.R.L</span>
+                    <h2>Une expertise multidisciplinaire <br>au service de votre performance</h2>
                     <div class="text">
-                        Nos solutions sont conçues pour répondre efficacement aux défis modernes de nos clients. Grâce à notre expertise, notre engagement et notre approche personnalisée, nous offrons des services de qualité adaptés à vos besoins spécifiques.
+                        Depuis plus de 10 ans, EGS S.A.R.L s'engage à fournir des prestations fiables, innovantes et adaptées aux réalités locales. Notre équipe jeune et dynamique combine savoir-faire technique et rigueur professionnelle pour répondre efficacement à vos besoins en informatique, BTP et services généraux.
                     </div>
                 </div>
                 <ul class="list-style-one clearfix">
@@ -266,7 +348,6 @@
                     <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Commencer</a>
                 </div>
             </div>
-
         </div>
 
         <!-- Image Column -->
@@ -275,6 +356,7 @@
         </div>
     </div>
 </section>
+
 <!--End Why Choose Us -->
 
 <!-- Call To Action -->
@@ -282,27 +364,26 @@
     <div class="auto-container">
         <div class="outer-box clearfix">
             <div class="title-column">
-                <h3>Nous Offrons des Stratégies Numériques et des Services de Qualité Supérieure</h3>
+                <h3>Des solutions informatiques, techniques et commerciales fiables pour faire évoluer votre activité</h3>
             </div>
 
             <div class="btn-column">
                 <div class="btn-box">
                     <a href="{{ route('contact.index') }}" class="theme-btn btn-style-one">Nous Contacter</a>
-
                 </div>
             </div>
-
         </div>
     </div>
 </section>
 <!--End Call To Action -->
+
 
 <!-- Cases Section Section -->
 <section class="cases-section">
     <div class="auto-container">
         <div class="sec-title text-center">
             <span class="title">Nos Meilleures Réalisations</span>
-            <h2>Nos Cas de Réussite</h2>
+            <h2>Projets réalisés par EGS S.A.R.L</h2>
         </div>
 
         <div class="row clearfix">
@@ -315,17 +396,17 @@
                         </a>
                     </div>
                     <div class="caption-box">
-                        <h5><a href="#">Analyse Financière & Risque</a></h5>
+                        <h5><a href="#">Installation de systèmes de vidéosurveillance</a></h5>
                         <ul class="info">
+                            <li>Sécurité</li>
                             <li>Technologie</li>
-                            <li>Entreprise</li>
                         </ul>
                         <div class="icon-box"><a href="#"><i class="la la-angle-right"></i></a></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Répéter pour chaque bloc... -->
+            <!-- Bloc Cas -->
             <div class="case-block col-lg-4 col-md-6 col-sm-12">
                 <div class="image-box">
                     <div class="image">
@@ -334,17 +415,34 @@
                         </a>
                     </div>
                     <div class="caption-box">
-                        <h5><a href="case-detail.html">Analyse Financière & Risque</a></h5>
+                        <h5><a href="case-detail.html">Développement d’applications de gestion</a></h5>
                         <ul class="info">
-                            <li>Technologie</li>
-                            <li>Entreprise</li>
+                            <li>Informatique</li>
+                            <li>Solutions sur mesure</li>
                         </ul>
                         <div class="icon-box"><a href="#"><i class="la la-angle-right"></i></a></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Ajoutez les autres blocs de la même manière -->
+            <!-- Bloc Cas -->
+            <div class="case-block col-lg-4 col-md-6 col-sm-12">
+                <div class="image-box">
+                    <div class="image">
+                        <a href="{{ asset('assets/images/gallery/3.jpg') }}" class="lightbox-image" data-fancybox="gallery">
+                            <img src="{{ asset('assets/images/gallery/3.jpg') }}" alt="">
+                        </a>
+                    </div>
+                    <div class="caption-box">
+                        <h5><a href="#">Construction de bâtiments administratifs</a></h5>
+                        <ul class="info">
+                            <li>BTP</li>
+                            <li>Infrastructure</li>
+                        </ul>
+                        <div class="icon-box"><a href="#"><i class="la la-angle-right"></i></a></div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="btn-box">
@@ -355,6 +453,7 @@
 </section>
 <!--End Cases Section -->
 
+
 <!-- Call Back Section -->
 <section class="call-back-section" style="background-image: url({{ asset('assets/images/background/2.jpg') }});">
     <div class="outer-box">
@@ -362,9 +461,8 @@
             <div class="row clearfix">
                 <div class="content-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
-                        <h3>Vous êtes à 10 minutes<br> de la solution numérique qu’il vous faut</h3>
-                        <div class="text">Saisissez les opportunités clés pour lancer des services innovants et performants en un temps record.</div>
-
+                        <h3>Vous êtes à quelques clics<br> d'une solution fiable et sur mesure</h3>
+                        <div class="text">Confiez vos projets à EGS S.A.R.L pour des résultats concrets en informatique, BTP et commerce général.</div>
                     </div>
                 </div>
 
@@ -379,7 +477,7 @@
 
                             <form method="post" action="">
                                 <div class="form-group">
-                                    <input type="text" name="username" placeholder="Name" required="">
+                                    <input type="text" name="username" placeholder="Nom" required="">
                                 </div>
 
                                 <div class="form-group">
@@ -387,11 +485,11 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" name="subject" placeholder="Subject">
+                                    <input type="text" name="subject" placeholder="Objet">
                                 </div>
 
                                 <div class="form-group">
-                                    <textarea name="message" placeholder="Massage"></textarea>
+                                    <textarea name="message" placeholder="Message"></textarea>
                                 </div>
 
                                 <div class="form-group text-right">
@@ -407,6 +505,7 @@
     </div>
 </section>
 <!--End Call Back Section -->
+
 
 <!-- Team Section -->
 <section class="team-section">

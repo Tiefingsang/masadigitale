@@ -157,6 +157,28 @@
         </li>
 
         <li class="nav-item">
+            <a data-bs-toggle="collapse" href="#gallery">
+              <i class="fas fa-table"></i>
+              <p>Gallery</p>
+              <span class="caret"></span>
+            </a>
+            <div class="collapse" id="gallery">
+              <ul class="nav nav-collapse">
+                <li>
+                  <a href="{{ route('admin.add.gallery') }}">
+                    <span class="sub-item">Créer nouveau gallery</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="{{ route('admin.gallery.list') }}">
+                    <span class="sub-item">Liste des gallery</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+
+        <li class="nav-item">
           <a data-bs-toggle="collapse" href="#partner">
             <i class="fas fa-table"></i>
             <p>Partenaire</p>
@@ -213,7 +235,7 @@
                 </a>
               </li>
               <li>
-                <a href="charts/sparkline.html">
+                <a href="{{ route('admin.blog') }}">
                   <span class="sub-item">Liste</span>
                 </a>
               </li>
@@ -236,7 +258,7 @@
           <div class="collapse" id="contact">
             <ul class="nav nav-collapse">
               <li>
-                <a href="charts/charts.html">
+                <a href="{{ route('admin.contact.list') }}">
                   <span class="sub-item">Messages</span>
                 </a>
               </li>

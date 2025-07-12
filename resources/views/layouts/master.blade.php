@@ -17,8 +17,8 @@
 <!--Color Themes-->
 <link id="theme-color-file" href="{{ asset('assets/css/color-themes/default-theme.css') }} " rel="stylesheet">
 
-<link rel="shortcut icon" href="{{ asset('assets/images/favicon.png') }} images/favicon.png" type="image/x-icon">
-<link rel="icon" href="{{ asset('assets/images/favicon.png') }} " type="image/x-icon">
+<link rel="shortcut icon" href="{{ asset('assets/images/favicon.jpg') }} images/favicon.jpg" type="image/x-icon">
+<link rel="icon" href="{{ asset('assets/images/favicon.jpg') }} " type="image/x-icon">
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -28,21 +28,43 @@
 
 <body>
 
-<div class="page-wrapper">
-    <!-- Preloader -->
-    <div class="preloader"></div>
-    
+    <div class="page-wrapper">
+        <!-- Preloader -->
+        <div class="preloader"></div>
+        @if (session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Succès',
+                text: '{{ session('success') }}',
+                confirmButtonColor: '#3085d6'
+            });
+        </script>
+    @endif
+
+    @if (session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Erreur',
+                text: '{{ session('error') }}',
+                confirmButtonColor: '#d33'
+            });
+        </script>
+    @endif
+
+
    @include('layouts.partials.header')
 
    @yield('content')
-    
-    
+
+
 
     @include('layouts.partials.footer')
 
-   
-    
-</div>  
+
+
+</div>
 <!--End pagewrapper-->
 
 <!-- Color Palate / Color Switcher -->
@@ -65,16 +87,16 @@
             <span class="palate redd-color" data-theme-file="css/color-themes/redd-color.css"></span>
         </div>
     </div>
-    
+
     <a target="_blank" href="https://themeforest.net/item/mushawartbusiness-consulting-and-professional-services-html-template/22589400" class="purchase-btn">Purchase now</a>
-    
+
     <div class="palate-foo">
         <span>You will find much more options for colors and styling in admin panel. This color picker is used only for demonstation purposes.</span>
     </div>
 </div> --}}
 
 <!--Scroll to top-->
-<script src="{{ asset('assets/js/jquery.js') }} "></script> 
+<script src="{{ asset('assets/js/jquery.js') }} "></script>
 <script src="{{ asset('assets/js/popper.min.js') }} "></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }} "></script>
 <!--Revolution Slider-->
@@ -100,6 +122,8 @@
 
 <!--form-->
 <script src="{{ asset('assets/js/validate.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 
 <!--Google Map APi Key-->
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyBKS14AnP3HCIVlUpPKtGp7CbYuMtcXE2o"></script>

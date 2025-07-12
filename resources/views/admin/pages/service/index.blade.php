@@ -45,10 +45,6 @@
                                     />
                                   </div>
 
-
-
-
-
                                   <div class="form-group">
                                     <label for="description">Description</label>
                                     <input
@@ -71,43 +67,17 @@
                                     />
                                   </div>
 
-
-
-
                                   <div class="form-group">
                                       <label for="image">Image</label>
                                       <input
                                         type="file"
                                         class="form-control"
                                         id="image"
-
                                         name="image"
                                       />
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="prix_min">prix_min</label>
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="prix_min"
-                                          value="{{ old('prix_min') }}"
-                                          name="prix_min"
-                                        />
-                                      </div>
-
-                                      <div class="form-group">
-                                        <label for="prix_max">prix_max</label>
-                                        <input
-                                          type="text"
-                                          class="form-control"
-                                          id="prix_max"
-                                          value="{{ old('prix_max') }}"
-                                          name="prix_max"
-                                        />
-                                      </div>
-
-                                  </div>
+                                <div>
                             </div>
                             <div class="card-action">
                                 <button class="btn btn-success">Ajouter</button>

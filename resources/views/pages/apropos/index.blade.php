@@ -129,20 +129,18 @@
                                 <h3>Demander un rappel</h3>
                             </div>
 
-                            <form method="post" action="">
+                            <form method="post" action="{{ route('contact.store') }}">
                                 @csrf <!-- Si tu es en Laravel, sinon retire cette ligne -->
 
                                 <div class="form-group">
-                                    <input type="text" name="username" placeholder="Nom complet" required>
+                                    <input type="text" name="name" placeholder="Nom complet" required>
                                 </div>
 
                                 <div class="form-group">
                                     <input type="email" name="email" placeholder="Adresse email" required>
                                 </div>
 
-                                <div class="form-group">
-                                    <input type="text" name="subject" placeholder="Sujet">
-                                </div>
+
 
                                 <div class="form-group">
                                     <textarea name="message" placeholder="Message"></textarea>

@@ -15,31 +15,48 @@
     <div class="auto-container">
         <div class="inner-container">
             <div class="sec-title text-center">
-                <span class="title">Write a Message</span>
-                <h2>Have Any Questions?</h2>
+                <span class="title">Écrire un message</span>
+                <h2>Vous avez des questions ?</h2>
             </div>
             <div class="contact-form-two">
-                <form method="post" action="" {{-- id="contact-form" --}} novalidate="novalidate">
+                <form method="post" action="{{ route('contact.store') }}" novalidate="novalidate">
+                    @csrf
                     <div class="row clearfix">
                         <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                            <input type="text" name="username" placeholder="Your Name" required="">
+                            <input type="text" name="name" placeholder="Votre nom" required="">
+                            @error('name')
+                                <div >
+                                    <p class="alert text-danger">{{ $message }}</p>
+                                </div>
+                            @enderror
                         </div>
-                        
+
                         <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                            <input type="email" name="email" placeholder="Your Email" required="">
+                            <input type="email" name="email" placeholder="Votre adresse e-mail" required="name">
+                            @error('email')
+                            <div >
+                                <p class="alert text-danger">{{ $message }}</p>
+                            </div>
+                        @enderror
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12 form-group">
-                            <textarea name="message" placeholder="Your Massage"></textarea>
+                            <textarea name="message" placeholder="Votre message"></textarea>
+                            @error('message')
+                                <div>
+                                    <p class="alert text-danger" >{{ $message }}</p>
+                                </div>
+                            @enderror
                         </div>
-                        
+
                         <div class="col-md-12 col-sm-12 col-xs-12 form-group text-center">
-                            <button class="theme-btn btn-style-three" type="submit" name="Submit">Send Massage</button>
+                            <button class="theme-btn btn-style-three" type="submit" name="Submit">Envoyer le message</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+
     </div>
 </section>
 
@@ -47,74 +64,84 @@
 <section class="contact-info-section">
     <div class="auto-container">
         <div class="row clearfix">
+
+            <!-- Email et Téléphone -->
             <div class="contact-info-box col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="icon-box"><span class="flaticon-mail"></span></div>
                     <ul>
-                        <li><a href="#">info@domain.com</a></li>
-                        <li>+880 258 158 58215</li>
+                        <li><strong>Email :</strong> <a href="mailto:tiefingsangare86@gmail.com">tiefingsangare86@gmail.com</a></li>
+                        <li><strong>Téléphone :</strong> <a href="tel:+22378794089">+223 78 79 40 89</a></li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Horaires d'ouverture -->
             <div class="contact-info-box col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="icon-box"><span class="flaticon-watch-2"></span></div>
                     <ul>
-                        <li>Mon - Sat 8.00 to 18.00</li>
-                        <li><strong>Sunday Closed</strong></li>
+                        <li><strong>Horaires :</strong></li>
+                        <li>Du lundi au samedi : 8h00 - 18h00</li>
+                        <li>Dimanche : Fermé</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Adresse -->
             <div class="contact-info-box col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="icon-box"><span class="flaticon-pin-1"></span></div>
                     <ul>
-                        <li><strong>Address</strong></li>
-                        <li>2A0, Queenstown St, USA.</li>
+                        <li><strong>Adresse :</strong></li>
+                        <li>Bamako, Mali</li>
                     </ul>
                 </div>
             </div>
 
+            <!-- Réseaux sociaux -->
             <div class="contact-info-box col-lg-3 col-md-6 col-sm-12">
-                <ul class="social-links">
-                    <li><strong>Follow Us:</strong></li>
-                    <li>
-                        <ul class="social-icon-one">
-                            <li><a href="#"><i class="la la-facebook-official"></i></a></li>
-                            <li><a href="#"><i class="la la-twitter"></i></a></li>
-                            <li><a href="#"><i class="la la-google-plus"></i></a></li>
-                            <li><a href="#"><i class="la la-dribbble"></i></a></li>
-                            <li><a href="#"><i class="la la-pinterest"></i></a></li>
-                        </ul>
-                    </li>
-                </ul>
+                <div class="inner-box">
+                    <ul class="social-links">
+                        <li><strong>Suivez-nous :</strong></li>
+                        <li>
+                            <ul class="social-icon-one">
+                                <li><a href="#"><i class="la la-facebook-official"></i></a></li>
+                                <li><a href="#"><i class="la la-twitter"></i></a></li>
+                                <li><a href="#"><i class="la la-instagram"></i></a></li>
+                                <li><a href="#"><i class="la la-linkedin"></i></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
         </div>
     </div>
 </section>
+
 <!-- End Contact Info Section -->
 
 <!-- Contact Map Section -->
 <section class="contact-map-section">
-    <!-- Map Column -->
+    <!-- Colonne Carte -->
     <div class="map-column">
-        <!--Map Outer-->
+        <!-- Carte Extérieure -->
         <div class="map-outer">
             <div class="map-canvas"
-                data-zoom="12"
-                data-lat="-37.817085"
-                data-lng="144.955631"
+                data-zoom="14"
+                data-lat="12.6392"   
+                data-lng="-8.0029"   
                 data-type="roadmap"
                 data-hue="#ffc400"
-                data-title="Envato"
+                data-title="Masatechnologie"
                 data-icon-path="{{ asset('assets/images/icons/map-marker-2.png') }}"
-                data-content="Melbourne VIC 3000, Australia<br><a href='mailto:info@youremail.com'>info@youremail.com</a>">
+                data-content="Bamako, Mali<br><a href='mailto:tiefingsangare86@gmail.com'>tiefingsangare86@gmail.com</a>">
             </div>
         </div>
     </div>
 </section>
+
 <!--End Contact Map Section -->
 
 <!-- Call To Action -->
@@ -122,12 +149,12 @@
     <div class="auto-container">
         <div class="outer-box clearfix">
             <div class="title-column">
-                <h3>Provide Solutions For the Realiable Growth</h3>
+                <h3>Offrez des solutions pour une croissance fiable</h3>
             </div>
 
             <div class="btn-column">
                 <div class="btn-box">
-                    <a href="contact.html" class="theme-btn btn-style-one">Get A Quotes</a>
+                    <a href="{{ route('contact.index') }}" class="theme-btn btn-style-one">Demander un devis</a>
                 </div>
             </div>
         </div>
@@ -135,6 +162,7 @@
 </section>
 
 
-	
+
+
 
 @endsection
