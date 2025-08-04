@@ -48,7 +48,7 @@
                                     </li>
                                     <li><a href="{{ route('about.index') }}">apropos</a></li>
                                     <li><a href="{{ route('services.index') }}">Services</a></li>
-                                    <li class=""><a href="{{ route('blogs.index') }}">Blog</a></li>
+                                    <!-- <li class=""><a href="{{ route('blogs.index') }}">Blog</a></li> -->
                                     <li><a href="{{ route('contact.index') }}">Contact</a></li>
                                     <li><a href="{{ route('gallery.index') }}">Galerie</a></li>
                                 </ul>
@@ -56,8 +56,8 @@
                         </nav><!-- Main Menu End-->
 
                         <!-- Main Menu End-->
-                        <div class="outer-box">
-                            <!--Search Box-->
+                        <!-- <div class="outer-box">
+                            
                             <div class="search-box-outer">
                                 <div class="dropdown">
                                     <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="la la-search"></span></button>
@@ -75,7 +75,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -102,8 +102,8 @@
                             </li>
                             <li><a href="{{ route('about.index') }}">Apropos</a></li>
                             <li><a href="{{ route('services.index') }}">Services</a></li>
-                            <li><a href="{{ route("blogs.index") }}">Blog</a> </li>
-                            {{-- <li><a href="{{ route('team.index') }}">team</a></li> --}}
+                            <!-- <li><a href="{{ route('blogs.index') }}">Blog</a> </li> -->
+                            <!-- {{-- <li><a href="{{ route('team.index') }}">team</a></li> --}} -->
                             <li><a href="{{ route('contact.index') }}">Contact</a></li>
                             <li><a href="{{ route('gallery.index') }}">Galerie</a></li>
                         </ul>

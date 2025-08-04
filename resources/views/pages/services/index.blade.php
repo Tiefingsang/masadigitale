@@ -11,28 +11,7 @@
     </div>
 </section>
 
-<section class="services-section style-two">
-    <div class="auto-container">
 
-        <div class="row clearfix">
-            @foreach ($getServices as $item)
-            <div class="service-block col-lg-4 col-md-6 col-sm-12">
-                <div class="inner-box" style="background-image: url({{ $item->image }});">
-                    <div class="content-box">
-                        <span class="{{ $item->icone }}"></span>
-                        <h3><a href="{{ route('services-detail', ['title'=>$item->title]) }}">{{ $item->short }}</a></h3>
-                        <div class="text">{{ $item->description }}</div>
-                        <div class="link-box"><a href="{{ route('services-detail', ['title'=>$item->title]) }}">En savoir plus <i class="la la-angle-double-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
-
-            @endforeach
-
-
-        </div>
-    </div>
-</section>
 <!-- End Services Section -->
 
 <!-- Services Section -->
@@ -46,13 +25,25 @@
 
         <div class="row clearfix">
             @foreach ($getServices as $item)
-                <div class="service-block-two col-lg-4 col-md-6 col-sm-12">
+                <a href="{{ route('services-detail', ['title' => $item->title]) }}">
+                    <div class="service-block-two col-lg-4 col-md-6 col-sm-12">
                     <div class="inner-box">
-                        <div class="icon-box"><span class="{{ $item->icone }}"></span></div>
+                       <div style="width: 250px; height: 200px; margin: auto; ">
+                        <img src="{{ asset('storage/'.$item->image) }}" alt="{{ $item->title }}"
+                         style="width: 250px; height: 200px; object-fit: cover; border-radius: 8px;">
+                    </div>
+
                         <h3><a href="{{ route('services-detail', ['title'=>$item->title]) }}">{{ $item->title }}</a></h3>
-                        <div class="text">{{ $item->description }}</div>
+                    <div class="text">{{ $item->description }}</div>
+                         <div class="link-box">
+                        <a href="{{ route('services-detail', ['title' => $item->title]) }}">
+                            En savoir plus <i class="la la-angle-double-right"></i>
+                        </a>
+                        </div>
                     </div>
                 </div>
+                </a>
+                
             @endforeach
 
 

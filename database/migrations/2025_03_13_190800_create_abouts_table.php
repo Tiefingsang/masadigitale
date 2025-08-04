@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->id();
+            $table->string('slug')->unique(); // Slug unique pour l'URL
             $table->string('title');
             $table->string('description');
             $table->string('image')->nallable();

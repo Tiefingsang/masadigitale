@@ -16,9 +16,11 @@ use App\Models\Project;
 use App\Models\Client;
 use App\Models\Newsletter;
 use App\Models\Contact;
+use App\Models\Gallery;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+
 
 class AdminController extends Controller
 {
@@ -27,11 +29,11 @@ class AdminController extends Controller
         return view('admin.pages.home.index');
     }
 
-    public function adminBlog(Request $request)
+    /* public function adminBlog(Request $request)
     {
         // code to get blog
         return view('admin.pages.blog.index');
-    }
+    } */
 
 
 
@@ -41,24 +43,41 @@ class AdminController extends Controller
         return view('admin.pages.about.edit', compact('data'));
     }
 
-    public function adminUpdate(Request $request)
-    {
-        // code to get blog
-        $about=About::first();
+    public function adminUpdate(Request $request){
+        // Validation des données
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+        ]);
 
-        $about->title=$request->title;
-        $about->description=$request->description;
-        $about->image=$request->image;
-        $saved=$about->save();
+        $about = About::first(); // ou About::find($id) si tu utilises un ID
 
-        if($saved){
-            session()->flash('seccess', 'Modifier avec success!');
-        }else{
-            session()->flash('error', 'Erreur de modification !');
+        if (!$about) {
+            return back()->with('error', 'Contenu introuvable.');
         }
-        return back();
-    }
 
+        $about->title = $request->title;
+        $about->description = $request->description;
+
+        // Gestion de l’image uploadée (si présente)
+        if ($request->hasFile('image')) {
+            // Supprimer l’ancienne image si elle existe
+            if ($about->image && Storage::disk('public')->exists($about->image)) {
+                Storage::disk('public')->delete($about->image);
+            }
+
+            // Sauvegarder la nouvelle image
+            $imagePath = $request->file('image')->store('uploads/about', 'public');
+            $about->image = $imagePath;
+        }
+
+        if ($about->save()) {
+            return back()->with('success', 'Modification effectuée avec succès !');
+        } else {
+            return back()->with('error', 'Une erreur est survenue lors de la modification.');
+        }
+    }
 
     public function adminBlogDetails(Request $request)
     {
@@ -67,16 +86,103 @@ class AdminController extends Controller
         return view('admin.pages.blog.show', compact('blog'));
     }
 
+    public function adminBlogEdite(Request $request){
+        $blog=Blog::findOrFail($request->id);
+
+        $data=[
+            'blog'=>$blog
+        ];
+
+        return view('admin.pages.blog.edite', $data);
+    }
+
     public function adminBlogUpdate(Request $request){
-        dd($request->slug);
-        $blog=Blog::first();
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'content' => 'required|string',
+            'slug' => 'required|string|unique:blogs,slug',
+            'user_id' => 'required|exists:users,id',
+            'category_id' => 'required|exists:categories,id',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
+        ], [
+            'image.required' => "L'image est requise.",
+            'image.image' => "Le fichier doit être une image.",
+            'image.mimes' => "Les formats autorisés sont : jpeg, png, jpg, gif.",
+            'image.max' => "L'image ne doit pas dépasser 2 Mo.",
+        ]);
+    
+        // 2. Upload de l'image
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('uploads/blog', 'public');
+        }
+    
+        // 3. Création de l'article
+        $blog = Blog::create([
+            'title' => $request->title,
+            'content' => $request->content,
+            'slug' => $request->slug,
+            'image' => $imagePath,
+            'user_id' => $request->user_id,
+            'category_id' => $request->category_id,
+        ]);
+    
+        // 4. Retour avec message de succès
+        if ($blog) {
+            return redirect()->route('admin.blog')->with('success', 'L\'article a été ajouté avec succès.');
+        } else {
+            return back()->with('error', 'Une erreur est survenue, veuillez réessayer.');
+        }
 
-        $blog->title= $request->title;
-        $blog->content= $request->content;
-        $blog->slug= $request->slug;
-        $blog->image= $request->image;
+    }
 
-        $saved=$blog->update();
+    public function adminBlog(){
+        $blog=Blog::get();
+
+        $data=[
+            'blog'=>$blog
+        ];
+        return view('admin.pages.blog.index', $data);
+
+    }
+
+    public function adminBlogStore(Request $request){
+
+        if ($request->hasFile('image')) {
+            $imagePath = $request->file('image')->store('uploads/blog', 'public');
+        } else {
+            return back()->withErrors(['image' => 'L\'image est requise.']);
+        }
+        
+
+        $blog=Blog::create([
+            'title'=> $request->title,
+            'content'=> $request->content,
+            'image' => $imagePath,
+            'slug'=> $request->slug,
+            'user_id'=> $request->user_id,
+            'category_id'=> $request->category_id,
+
+        ]);
+
+        if($blog){
+            return redirect()->route('admin.blog')->with('success','');
+        } else{
+            return back();
+        }
+
+    }
+
+    public function adminBlogIndex(){
+        
+        return view('admin.pages.blog.add');
+
+    }
+
+    public function adminBlogDelete(Request $request){
+        $blog=Blog::findOrFail($request->id);
+
+        $blog->delete();
+        return back();
     }
 
     public function adminContact(Request $request)
@@ -260,35 +366,46 @@ class AdminController extends Controller
         return view('admin.pages.service.index');
     }
 
-    public function adminServiceStore(Request $request){
-        $services=Service::get();
-        $request->validate([
-            'title'=>'required',
-            'short'=>'required',
-            'image'=>'required',
-            'prix_min'=>'required',
-        ],[
-            'name.required'=>'Entrer votre nom complet',
-            'email.required'=>'Entrer votre email',
-            'Password.required'=>'Entrer un mot de passe'
-        ]);
+    public function adminServiceStore(Request $request)
+{
+    //  Validation
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'short' => 'required|string',
+        'description' => 'nullable|string',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
+        //'icone' => 'nullable|string',
+    ], [
+        'title.required' => 'Le titre est requis.',
+        'short.required' => 'Le résumé est requis.',
+        'image.required' => 'L\'image est requise.',
+        'image.image' => 'Le fichier doit être une image valide.',
+    ]);
 
-        $service=Service::create([
-            'title'=>$request->title,
-            'short'=>$request->short,
-            'description'=>$request->description,
-            'image'=>$request->image,
-            'prix_min'=>$request->prix_min,
-            'prix_max'=>$request->prix_max,
-
-        ]);
-
-        if ($service) {
-            return view('admin.pages.service.show', compact('services'));
-        }else{
-            return back();
-        }
+    
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('uploads/service', 'public');
+    } else {
+        return back()->withErrors(['image' => 'L\'image est requise.']);
     }
+
+    
+    $service = Service::create([
+        'title' => $request->title,
+        'short' => $request->short,
+        'description' => $request->description,
+        'image' => $imagePath,
+        'icone' => $request->icone,
+    ]);
+
+   
+    if ($service) {
+        return redirect()->route('admin.service.list')->with('success', 'Service créé avec succès.');
+    } else {
+        return back()->with('error', 'Une erreur est survenue.');
+    }
+}
+
 
     public function adminServiceList(Request $request){
         $services=Service::get();
@@ -301,28 +418,63 @@ class AdminController extends Controller
         return view('admin.pages.service.edite', compact('service'));
     }
 
-    public function adminServiceUpdate(Request $request){
-        $service=Service::findOrFail($request->id);
+ 
 
-        $service->title= $request->title;
-        $service->description= $request->description;
-        $service->short= $request->short;
-        $service->image= $request->image;
-        $service->prix_min= $request->prix_min;
-        $service->prix_max= $request->prix_max;
+    public function adminServiceUpdate(Request $request)
+    {
+        // Validation
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'short' => 'required|string',
+            'description' => 'nullable|string',
+            'prix_min' => 'nullable|numeric',
+            'prix_max' => 'nullable|numeric',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,svg,gif',
+        ], [
+            'title.required' => 'Le titre est requis.',
+            'short.required' => 'Le résumé est requis.',
+            'prix_min.numeric' => 'Le prix minimum doit être un nombre.',
+            'prix_max.numeric' => 'Le prix maximum doit être un nombre.',
+            'image.image' => 'Le fichier doit être une image.',
+            'image.mimes' => 'Formats autorisés : jpeg, png, jpg, svg, gif.',
+        ]);
 
-        $saved=$service->update();
+        // Récupération du service
+        $service = Service::findOrFail($request->id);
 
-        if ($saved) {
-            session()->flash('seccess', 'Votre service a été modifier avec success!');
-            return redirect()->route('admin.service.list');
+        // Image update
+        if ($request->hasFile('image')) {
+            // Supprimer l’ancienne image si elle existe
+            if ($service->image && Storage::disk('public')->exists($service->image)) {
+                Storage::disk('public')->delete($service->image);
+            }
 
-        }else{
-            session()->flash('error', "Votre service n'a pas été modifier réessayer!");
-            return back();
+            // Stocker la nouvelle image
+            $imagePath = $request->file('image')->store('uploads/service', 'public');
+            $service->image = $imagePath;
         }
 
+        // Autres champs
+        $service->title = $request->title;
+        $service->short = $request->short;
+        $service->description = $request->description;
+        $service->prix_min = $request->prix_min;
+        $service->prix_max = $request->prix_max;
+
+        // Enregistrement
+        if ($service->save()) {
+                session()->flash('notify', ['type' => 'success', 'message' => 'Service modifié avec succès.']);
+                return redirect()->route('admin.service.list');
+            } else {
+                session()->flash('notify', ['type' => 'danger', 'message' => 'Erreur lors de la modification.']);
+                return back();
+            }
+
     }
+
+
+
+
 
     public function adminServiceDelete(Request $request){
         $service=Service::findOrFail($request->id);
@@ -411,38 +563,50 @@ class AdminController extends Controller
         return view('admin.pages.client.index');
     }
 
-    public function adminclientStore(Request $request){
+    
+
+    public function adminclientStore(Request $request)
+    {
+        // 1. Validation
         $request->validate([
-
-            'name'=>'required',
-            'email'=>'required',
-            'description'=>'required',
-            'telephone'=>'required',
-            'address'=>'required',
-            'image'=>'required',
-
-        ],[
-            'name.required'=>'Entrer le nom de la catégorie',
-            'email.required'=>'Entrer icone de la categorie',
-            'description.required'=>'Entrer une cescription de la catégorie'
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|max:255',
+            'description' => 'required|string',
+            'telephone' => 'required|string|max:20',
+            'address' => 'required|string|max:255',
+            'image' => 'required|image|mimes:jpeg,png,jpg,svg|max:2048',
+        ], [
+            'name.required' => 'Entrer le nom du client',
+            'email.required' => 'Entrer un email valide',
+            'description.required' => 'Entrer une description du client',
+            'telephone.required' => 'Entrer un numéro de téléphone',
+            'address.required' => 'Entrer l\'adresse du client',
+            'image.required' => 'Sélectionner une image',
         ]);
 
-        $client=Client::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'description'=>$request->description,
-            'telephone'=>$request->telephone,
-            'address'=>$request->address,
-            'image'=>$request->image,
+        // 2. Enregistrement de l’image
+        $imagePath = $request->file('image')->store('uploads/clients', 'public');
 
+        // 3. Création du client
+        $client = Client::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'description' => $request->description,
+            'telephone' => $request->telephone,
+            'address' => $request->address,
+            'image' => $imagePath,
         ]);
 
+        // 4. Retour
         if ($client) {
+            session()->flash('success', 'Client ajouté avec succès.');
             return redirect()->route('admin.client.list');
-        }else{
+        } else {
+            session()->flash('error', 'Erreur lors de l\'ajout du client.');
             return back();
         }
     }
+
 
     public function adminclientList(Request $request){
         $clients=client::get();
@@ -455,28 +619,53 @@ class AdminController extends Controller
         return view('admin.pages.client.edite', compact('clients'));
     }
 
-    public function adminclientUpdate(Request $request){
-        $clients=client::findOrFail($request->id);
+    
 
-        $clients->name= $request->name;
-        $clients->description= $request->description;
-        $clients->email= $request->email;
-        $clients->telephone= $request->telephone;
-        $clients->address= $request->address;
-        $clients->image= $request->image;
+    public function adminclientUpdate(Request $request)
+    {
+        // 1. Validation
+        $request->validate([
+            
+            'name' => 'required|string|max:255',
+            'description' => 'required|string',
+            'email' => 'required|email|max:255',
+            'telephone' => 'required|string|max:20',
+            'address' => 'required|string|max:255',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,svg',
+        ]);
 
+        // 2. Récupération du client
+        $client = Client::findOrFail($request->id);
 
-        $saved=$clients->update();
+        // 3. Gestion de l’image si nouvelle image envoyée
+        if ($request->hasFile('image')) {
+            // Supprimer l’ancienne image si elle existe
+            if ($client->image && Storage::disk('public')->exists($client->image)) {
+                Storage::disk('public')->delete($client->image);
+            }
 
-        if ($saved) {
-            return redirect()->route('admin.client.list');
-            session()->flash('seccess', 'Votre client a été modifier avec success!');
-        }else{
-            session()->flash('error', "Votre client n'a pas été modifier réessayer!");
-            return back();
+            // Enregistrer la nouvelle image
+            $imagePath = $request->file('image')->store('uploads/clients', 'public');
+            $client->image = $imagePath;
         }
 
+        // 4. Mise à jour des autres champs
+        $client->name = $request->name;
+        $client->description = $request->description;
+        $client->email = $request->email;
+        $client->telephone = $request->telephone;
+        $client->address = $request->address;
+
+        // 5. Sauvegarde
+        if ($client->save()) {
+            session()->flash('success', 'Le client a été modifié avec succès.');
+            return redirect()->route('admin.client.list');
+        } else {
+            session()->flash('error', 'Le client n\'a pas pu être modifié. Veuillez réessayer.');
+            return back();
+        }
     }
+
 
     public function adminclientDelete(Request $request){
         $client=Client::findOrFail($request->id);
@@ -560,5 +749,142 @@ class AdminController extends Controller
         return back();
     }
 
+
+    //gallery
+    public function adminGalleryAdd(Request $request){
+
+        return view('admin.pages.gallery.index');
+    }
+
+    public function adminGalleryStore(Request $request){
+        // Validation des données
+        $request->validate([
+            'title' => 'nullable|string|max:255',
+            'description' => 'nullable|string|max:1000',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg', // max 2 Mo
+        ]);
+
+        // Upload de l'image
+        $imagePath = $request->file('image')->store('uploads/gallery', 'public');
+
+        // Création du nouvel enregistrement
+        $gallery = Gallery::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'image' => $imagePath,
+        ]);
+
+        // Redirection avec message
+        if ($gallery) {
+            return redirect()->route('admin.gallery.list')->with('success', 'Image ajoutée avec succès.');
+        } else {
+            return back()->with('error', 'Une erreur est survenue, veuillez réessayer.');
+        }
+    }
+
+
+    public function adminGalleryList(Request $request){
+        $gallery=Gallery::get();
+        return view('admin.pages.gallery.show', compact('gallery'));
+    }
+
+    public function adminGalleryEdit(Request $request){
+        $gallery=Gallery::where('id', $request->id)->first();
+
+        return view('admin.pages.gallery.edite', compact('gallery'));
+    }
+
     
+
+    public function adminGalleryUpdate(Request $request){
+        $gallery = Gallery::findOrFail($request->id);
+
+        // Validation des champs
+        $request->validate([
+            'title' => 'nullable|string|max:255',
+            'description' => 'nullable|string|max:1000',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $gallery->title = $request->title;
+        $gallery->description = $request->description;
+
+        // Si une nouvelle image est soumise
+        if ($request->hasFile('image')) {
+            // Supprimer l’ancienne image si elle existe
+            if ($gallery->image && Storage::disk('public')->exists($gallery->image)) {
+                Storage::disk('public')->delete($gallery->image);
+            }
+
+            // Stocker la nouvelle image
+            $imagePath = $request->file('image')->store('uploads/gallery', 'public');
+            $gallery->image = $imagePath;
+        }
+
+        $saved = $gallery->save();
+
+        if ($saved) {
+            session()->flash('success', 'Votre galerie a été modifiée avec succès !');
+            return redirect()->route('admin.gallery.list');
+        } else {
+            session()->flash('error', "Échec de la modification, veuillez réessayer !");
+            return back();
+        }
+    }
+
+
+    public function adminGalleryDelete(Request $request){
+        $gallery=Gallery::findOrFail($request->id);
+
+        $gallery->delete();
+        return back();
+    }
+
+    // contact
+
+    public function adminContactList(){
+        $contact= Contact::get();
+
+        $data=[
+            'contact'=> $contact
+        ];
+        return view('admin.pages.contact.show', $data);
+
+    }
+
+    public function adminContactEdit(Request $request){
+        $contact=Contact::where('id', $request->id)->first();
+
+        return view('admin.pages.contact.edite', compact('contact'));
+    }
+
+    public function adminContactUpdate(Request $request)
+{
+    $contact = Contact::findOrFail($request->id);
+
+    $contact->name = $request->name;
+    $contact->message = $request->message;
+    $contact->email = $request->email;
+
+    $saved = $contact->save();
+
+    if ($saved) {
+        session()->flash('success', 'Votre contact a été modifié avec succès !');
+        return redirect()->route('admin.contact.list');
+    } else {
+        session()->flash('error', "Votre contact n'a pas été modifié, veuillez réessayer !");
+        return back();
+    }
+}
+
+
+    public function adminContactDelete(Request $request){
+        $contact=Contact::findOrFail($request->id);
+    //dd($contact);
+
+        $contact->delete();
+        return back();
+    }
+
+
 }

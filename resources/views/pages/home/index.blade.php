@@ -351,8 +351,8 @@
         </div>
 
         <!-- Image Column -->
-        <div class="image-column" style="background-image: url({{ asset('assets/images/resource/image-2.jpg') }});">
-            <figure class="image-box"><img src="{{ asset('assets/images/resource/image-2.jpg') }}" alt=""></figure>
+        <div class="image-column" style="background-image: url({{ asset('assets/images/about/about3.jpeg') }});">
+            <figure class="image-box"><img src="{{ asset('assets/images/resource/imag-2.jpg') }}" alt=""></figure>
         </div>
     </div>
 </section>
@@ -388,61 +388,32 @@
 
         <div class="row clearfix">
             <!-- Bloc Cas -->
-            <div class="case-block col-lg-4 col-md-6 col-sm-12">
-                <div class="image-box">
-                    <div class="image">
-                        <a href="{{ asset('assets/images/gallery/1.jpg') }}" class="lightbox-image" data-fancybox="gallery">
-                            <img src="{{ asset('assets/images/gallery/1.jpg') }}" alt="">
-                        </a>
-                    </div>
-                    <div class="caption-box">
-                        <h5><a href="#">Installation de systèmes de vidéosurveillance</a></h5>
-                        <ul class="info">
-                            <li>Sécurité</li>
-                            <li>Technologie</li>
-                        </ul>
-                        <div class="icon-box"><a href="#"><i class="la la-angle-right"></i></a></div>
+             @foreach ($latestServices as $item)
+                <div class="case-block col-lg-4 col-md-6 col-sm-12">
+                    <div class="image-box">
+                        <div class="image">
+                            <a href="{{ asset('storage/' . $item->image) }}" class="lightbox-image" data-fancybox="gallery">
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}">
+                            </a>
+                        </div>
+                        <div class="caption-box">
+                            <h5><a href="{{ route('services-detail', ['title' => $item->title]) }}">{{ $item->title }}</a></h5>
+                            <ul class="info">
+                                <li>{{ $item->short }}</li>
+                                
+                            </ul>
+                            <div class="icon-box">
+                                <a href="{{ route('services-detail', ['title' => $item->title]) }}"><i class="la la-angle-right"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
+            <!-- End Bloc Cas -->
 
-            <!-- Bloc Cas -->
-            <div class="case-block col-lg-4 col-md-6 col-sm-12">
-                <div class="image-box">
-                    <div class="image">
-                        <a href="{{ asset('assets/images/gallery/2.jpg') }}" class="lightbox-image" data-fancybox="gallery">
-                            <img src="{{ asset('assets/images/gallery/2.jpg') }}" alt="">
-                        </a>
-                    </div>
-                    <div class="caption-box">
-                        <h5><a href="case-detail.html">Développement d’applications de gestion</a></h5>
-                        <ul class="info">
-                            <li>Informatique</li>
-                            <li>Solutions sur mesure</li>
-                        </ul>
-                        <div class="icon-box"><a href="#"><i class="la la-angle-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Bloc Cas -->
-            <div class="case-block col-lg-4 col-md-6 col-sm-12">
-                <div class="image-box">
-                    <div class="image">
-                        <a href="{{ asset('assets/images/gallery/3.jpg') }}" class="lightbox-image" data-fancybox="gallery">
-                            <img src="{{ asset('assets/images/gallery/3.jpg') }}" alt="">
-                        </a>
-                    </div>
-                    <div class="caption-box">
-                        <h5><a href="#">Construction de bâtiments administratifs</a></h5>
-                        <ul class="info">
-                            <li>BTP</li>
-                            <li>Infrastructure</li>
-                        </ul>
-                        <div class="icon-box"><a href="#"><i class="la la-angle-right"></i></a></div>
-                    </div>
-                </div>
-            </div>
+           
+            
         </div>
 
         <div class="btn-box">
@@ -455,7 +426,7 @@
 
 
 <!-- Call Back Section -->
-<section class="call-back-section" style="background-image: url({{ asset('assets/images/background/2.jpg') }});">
+<section class="call-back-section" style="background-image: url({{ asset('assets/images/porte.jpeg') }});">
     <div class="outer-box">
         <div class="auto-container">
             <div class="row clearfix">
@@ -520,18 +491,18 @@
             <div class="team-block col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="{{ asset('assets/images/resource/team-1.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/resource/team-1.jpg') }}" alt=""></a></div>
-                        <ul class="social-links">
+                        <div class="image"><a href="{{ asset('assets/images/equipe/mohamed.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/equipe/mohamed.jpg') }}" alt=""></a></div>
+                        <!-- <ul class="social-links">
                             <li><a href="#"><i class="la la-facebook-official"></i></a></li>
                             <li><a href="#"><i class="la la-twitter"></i></a></li>
                             <li><a href="#"><i class="la la-google-plus"></i></a></li>
                             <li><a href="#"><i class="la la-dribbble"></i></a></li>
                             <li><a href="#"><i class="la la-pinterest"></i></a></li>
-                        </ul>
+                        </ul> -->
                     </div>
                     <div class="info-box">
-                        <h4 class="name"><a href="team.html">Felicia Eberly</a></h4>
-                        <span class="designation">Creative Director</span>
+                        <h4 class="name"><a href="team.html">M.SANGARE Mohamed</a></h4>
+                        <span class="designation">Directeur et Fondateur</span>
                     </div>
                 </div>
             </div>
@@ -540,7 +511,7 @@
             <div class="team-block col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="{{ asset('assets/images/resource/team-2.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="i{{ asset('assets/images/resource/team-2.jpg') }}" alt=""></a></div>
+                        <div class="image"><a href="{{ asset('assets/images/equipe/awa.jpeg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/equipe/awa.jpeg') }}" alt=""></a></div>
                         <ul class="social-links">
                             <li><a href="#"><i class="la la-facebook-official"></i></a></li>
                             <li><a href="#"><i class="la la-twitter"></i></a></li>
@@ -550,29 +521,8 @@
                         </ul>
                     </div>
                     <div class="info-box">
-                        <h4 class="name"><a href="team.html">Monika Joni</a></h4>
-                        <span class="designation">Responsable des Finances</span>
-                    </div>
-
-                </div>
-            </div>
-
-            <!-- Team Block -->
-            <div class="team-block col-lg-3 col-md-6 col-sm-12">
-                <div class="inner-box">
-                    <div class="image-box">
-                        <div class="image"><a href="{{ asset('assets/images/resource/team-3.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/resource/team-3.jpg') }}" alt=""></a></div>
-                        <ul class="social-links">
-                            <li><a href="#"><i class="la la-facebook-official"></i></a></li>
-                            <li><a href="#"><i class="la la-twitter"></i></a></li>
-                            <li><a href="#"><i class="la la-google-plus"></i></a></li>
-                            <li><a href="#"><i class="la la-dribbble"></i></a></li>
-                            <li><a href="#"><i class="la la-pinterest"></i></a></li>
-                        </ul>
-                    </div>
-                    <div class="info-box">
-                        <h4 class="name"><a href="team.html">Monika Joni</a></h4>
-                        <span class="designation">Responsable des Finances</span>
+                        <h4 class="name"><a href="team.html">COULIBALY Haoua</a></h4>
+                        <span class="designation">commerciale</span>
                     </div>
 
                 </div>
@@ -582,7 +532,7 @@
             <div class="team-block col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="{{ asset('assets/images/resource/team-4.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/resource/team-4.jpg') }}" alt=""></a></div>
+                        <div class="image"><a href="{{ asset('assets/images/equipe/kadi.png') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/equipe/kadi.png') }}" alt=""></a></div>
                         <ul class="social-links">
                             <li><a href="#"><i class="la la-facebook-official"></i></a></li>
                             <li><a href="#"><i class="la la-twitter"></i></a></li>
@@ -592,8 +542,29 @@
                         </ul>
                     </div>
                     <div class="info-box">
-                        <h4 class="name"><a href="team.html">Monika Joni</a></h4>
-                        <span class="designation">Responsable des Finances</span>
+                        <h4 class="name"><a href="team.html">DEMBELE Kafiatou</a></h4>
+                        <span class="designation">Sécretaire et comptable</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Team Block -->
+            <div class="team-block col-lg-3 col-md-6 col-sm-12">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <div class="image"><a href="{{ asset('assets/images/equipe/tiefing.jpeg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/equipe/tiefing.jpeg') }}" alt=""></a></div>
+                        <ul class="social-links">assets/images/resource/team-4.jpg
+                            <li><a href="#"><i class="la la-facebook-official"></i></a></li>
+                            <li><a href="#"><i class="la la-twitter"></i></a></li>
+                            <li><a href="#"><i class="la la-google-plus"></i></a></li>
+                            <li><a href="#"><i class="la la-dribbble"></i></a></li>
+                            <li><a href="#"><i class="la la-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="info-box">
+                        <h4 class="name"><a href="team.html">M.SANGARE Mohamed</a></h4>
+                        <span class="designation">Dévéloppeur</span>
                     </div>
 
                 </div>
@@ -611,8 +582,8 @@
             <h2>Nos dernières nouvelles</h2>
         </div>
 
-        <div class="news-carousel owl-carousel owl-theme">
-            <!-- Bloc d'Actualités -->
+        <!-- <div class="news-carousel owl-carousel owl-theme">
+           
             @foreach ($getBlogs as $item)
             <div class="news-block">
                 <div class="inner-box">
@@ -632,7 +603,7 @@
 
 
 
-        </div>
+        </div> -->
 
         </div>
     </div>
@@ -644,40 +615,24 @@
     <div class="auto-container">
         <div class="testimonial-carousel owl-carousel owl-theme">
             <!-- Testimonial Block -->
-            <div class="testimonial-block">
-                <div class="inner-box">
-                    <div class="info-box">
-                        <div class="thumb"><img src="{{ asset('assets/images/resource/thumb.jpg') }}" alt=""></div>
-                        <h3 class="name">Tiefing SANGARE</h3>
-                        <span class="designation">PDG</span>
+            @foreach ($getClients as $item)
+                <div class="testimonial-block">
+                    <div class="inner-box">
+                        <div class="info-box">
+                            <div class="thumb">
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->name }}">
+                            </div>
+                            <h3 class="name">{{ $item->name }}</h3>
+                            
+                        </div>
+                        <div class="text">{{ $item->description }}</div>
                     </div>
-                    <div class="text">Le prêt Forexnic a été l'un des produits de prêt les plus attractifs sur le marché, aidant de nombreuses entreprises à accéder à un financement qu'elles n'auraient pas pu obtenir de manière conventionnelle et à des conditions extrêmement favorables.</div>
                 </div>
-            </div>
+            @endforeach
+
 
             <!-- Bloc de Témoignage -->
-            <div class="testimonial-block">
-                <div class="inner-box">
-                    <div class="info-box">
-                        <div class="thumb"><img src="{{ asset('assets/images/resource/thumb.jpg') }}" alt=""></div>
-                        <h3 class="name">Sarah Arevik</h3>
-                        <span class="designation">Directrice Générale</span>
-                    </div>
-                    <div class="text">Le prêt Forexnic a été l'un des produits de prêt les plus attractifs sur le marché, aidant de nombreuses entreprises à accéder à un financement qu'elles n'auraient pas pu obtenir de manière conventionnelle et à des conditions extrêmement favorables.</div>
-                </div>
-            </div>
-
-            <!-- Bloc de Témoignage -->
-            <div class="testimonial-block">
-                <div class="inner-box">
-                    <div class="info-box">
-                        <div class="thumb"><img src="{{ asset('assets/images/resource/thumb.jpg') }}" alt=""></div>
-                        <h3 class="name">Sarah Arevik</h3>
-                        <span class="designation">Directrice Générale</span>
-                    </div>
-                    <div class="text">Le prêt Forexnic a été l'un des produits de prêt les plus attractifs sur le marché, aidant de nombreuses entreprises à accéder à un financement qu'elles n'auraient pas pu obtenir de manière conventionnelle et à des conditions extrêmement favorables.</div>
-                </div>
-            </div>
+            
 
         </div>
     </div>

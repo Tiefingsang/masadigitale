@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
+            $table->string('slug')->unique(); // Slug unique pour l'URL
             $table->string('name'); // Nom de l'expéditeur
             $table->string('email'); // Email de l'expéditeur
             $table->string('subject')->nullable(); // Numéro de téléphone

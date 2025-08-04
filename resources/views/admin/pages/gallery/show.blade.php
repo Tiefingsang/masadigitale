@@ -3,207 +3,72 @@
 <div class="container">
     <div class="page-inner">
         <div class="page-header">
-            <h3 class="fw-bold mb-3">Avatars</h3>
+            <h3 class="fw-bold mb-3">Galerie</h3>
             <ul class="breadcrumbs mb-3">
-                <li class="nav-home">
-                    <a href="#">
-                        <i class="icon-home"></i>
-                    </a>
-                </li>
-                <li class="separator">
-                    <i class="icon-arrow-right"></i>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Base</a>
-                </li>
-                <li class="separator">
-                    <i class="icon-arrow-right"></i>
-                </li>
-                <li class="nav-item">
-                    <a href="#">Avatars</a>
-                </li>
+                <li class="nav-home"><a href="#"><i class="icon-home"></i></a></li>
+                <li class="separator"><i class="icon-arrow-right"></i></li>
+                <li class="nav-item"><a href="#">Galerie</a></li>
+                <li class="separator"><i class="icon-arrow-right"></i></li>
+                <li class="nav-item"><a href="#">Liste</a></li>
             </ul>
         </div>
 
         <div class="row">
             <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <h4 class="card-title">Liste des images de la galerie</h4>
+                        <a class="btn btn-primary btn-sm" href="{{ route('admin.add.gallery') }}">
+                            <i class="fa fa-plus"></i> Ajouter une image
+                        </a>
+                    </div>
 
                     <div class="card-body">
-                        <div class="col-md-12">
-                            <div class="card">
-                              <div class="card-header">
-                                <div class="d-flex align-items-center">
-                                  <h4 class="card-title">Liste des catégories</h4>
-
-                                  <a  class="btn btn-primary btn-round ms-auto" href="{{ route('admin.add.gallery') }}">
-                                    <i class="fa fa-plus"></i>
-                                    Ajouter
-                                  </a>
-
-                                </div>
-                              </div>
-                              <div class="card-body">
-                                <!-- Modal -->
-                                <div
-                                  class="modal fade"
-                                  id="addRowModal"
-                                  tabindex="-1"
-                                  role="dialog"
-                                  aria-hidden="true"
-                                >
-                                  <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                      <div class="modal-header border-0">
-                                        <h5 class="modal-title">
-                                          <span class="fw-mediumbold"> New</span>
-                                          <span class="fw-light"> Row </span>
-                                        </h5>
-                                        <button
-                                          type="button"
-                                          class="close"
-                                          data-dismiss="modal"
-                                          aria-label="Close"
-                                        >
-                                          <span aria-hidden="true">&times;</span>
-                                        </button>
-                                      </div>
-                                      <div class="modal-body">
-                                        <p class="small">
-                                          Create a new row using this form, make sure you
-                                          fill them all
-                                        </p>
-                                        <form>
-                                          <div class="row">
-                                            <div class="col-sm-12">
-                                              <div class="form-group form-group-default">
-                                                <label>Name</label>
-                                                <input
-                                                  id="addName"
-                                                  type="text"
-                                                  class="form-control"
-                                                  placeholder="fill name"
-                                                />
-                                              </div>
-                                            </div>
-                                            <div class="col-md-6 pe-0">
-                                              <div class="form-group form-group-default">
-                                                <label>Position</label>
-                                                <input
-                                                  id="addPosition"
-                                                  type="text"
-                                                  class="form-control"
-                                                  placeholder="fill position"
-                                                />
-                                              </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                              <div class="form-group form-group-default">
-                                                <label>Office</label>
-                                                <input
-                                                  id="addOffice"
-                                                  type="text"
-                                                  class="form-control"
-                                                  placeholder="fill office"
-                                                />
-                                              </div>
-                                            </div>
-                                          </div>
-                                        </form>
-                                      </div>
-                                      <div class="modal-footer border-0">
-                                        <button
-                                          type="button"
-                                          id="addRowButton"
-                                          class="btn btn-primary"
-                                        >
-                                          Add
-                                        </button>
-                                        <button
-                                          type="button"
-                                          class="btn btn-danger"
-                                          data-dismiss="modal"
-                                        >
-                                          Close
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="table-responsive">
-                                  <table
-                                    id="add-row"
-                                    class="display table table-striped table-hover"
-                                  >
-                                    <thead>
+                        <div class="table-responsive">
+                            <table id="add-row" class="display table table-striped table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Image</th>
+                                        <th>Titre</th>
+                                        <th>Description</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($gallery as $item)
                                         <tr>
-                                            <th>Image</th>
-                                            <th>Description</th>
-
-                                            <th>Description</th>
-
-                                            <th>Action</th>
-                                          </tr>
-                                    </thead>
-                                    <tfoot>
-
-                                    </tfoot>
-                                    <tbody>
-                                        @foreach ($gallery as $item)
-                                        <tr>
-
                                             <td>
                                                 <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}" style="width: 100px; height: auto;">
                                             </td>
-
                                             <td>{{ $item->title }}</td>
-
-                                            <td>{{ $item->description }}</td>
-
-
+                                            <td>{{ \Illuminate\Support\Str::limit($item->description, 60) }}</td>
                                             <td>
-                                              <div class="form-button-action">
-                                                <a type="button"
-                                                data-bs-toggle="tooltip"
-                                                title=""
-                                                class="btn btn-link btn-primary btn-lg"
-                                                data-original-title="Edit Task"
-                                                href="{{ route('admin.gallery-edit', ['id'=>$item->id]) }}">
-                                                <i class="fa fa-edit"></i>
+                                                <div class="form-button-action d-flex">
+                                                    <a class="btn btn-sm btn-primary me-2"
+                                                    href="{{ route('admin.gallery-edit', ['id' => $item->id]) }}"
+                                                    title="Modifier">
+                                                        <i class="fa fa-edit"></i>
+                                                    </a>
 
-                                                </a>
-                                                <form action="{{ route('admin.gallery-delete',['id'=>$item->id]) }}" method="post">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button
-                                                  type="submit"
-                                                  data-bs-toggle="tooltip"
-                                                  title=""
-                                                  class="btn btn-link btn-danger"
-                                                  data-original-title="Remove"
-                                                >
-                                                  <i class="fa fa-times"></i>
-                                                </button>
-
-                                                </form>
-
-                                              </div>
+                                                    <form action="{{ route('admin.gallery-delete', ['id' => $item->id]) }}" method="POST" onsubmit="return confirm('Confirmer la suppression ?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-sm btn-danger" title="Supprimer">
+                                                            <i class="fa fa-times"></i>
+                                                        </button>
+                                                    </form>
+                                                </div>
                                             </td>
+                                        </tr>
 
-                                        @endforeach
-
-                                    </tbody>
-                                  </table>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                    </div>
-
-
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> <!-- card-body -->
+                </div>
             </div>
         </div>
     </div>
-  </div>
+</div>
 @endsection

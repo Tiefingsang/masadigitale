@@ -153,7 +153,7 @@
                                         @foreach ($clients as $item)
                                         <tr>
 
-                                            <td><img src="" alt=""></td>
+                                            <td><img src="{{ asset('storage/' . $item->image) }}" style="width: 80px; height: auto;" alt=""></td>
                                             <td>{{ $item->name }}</td>
                                             <td>{{ $item->email }}</td>
                                             <td>{{ $item->description }}</td>

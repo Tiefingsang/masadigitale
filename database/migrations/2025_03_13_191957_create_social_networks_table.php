@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('social_networks', function (Blueprint $table) {
             $table->id();
+            $table->string('title')->nullable(); // Titre de la plateforme de réseau social
             $table->string('name')->nullable();
             $table->string('link');
             $table->string('image')->nullable();

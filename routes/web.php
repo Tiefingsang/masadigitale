@@ -17,6 +17,8 @@ Route::get('/about', [PageController::class, 'about'])->name('about.index');
 Route::get('/services', [PageController::class, 'services'])->name('services.index');
 Route::get('/blogs', [PageController::class, 'blogs'])->name('blogs.index');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact.index');
+//contact
+Route::post('/contact/store', [PageController::class, 'contactStore'])->name('contact.store');
 Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery.index');
 Route::get('/team', [PageController::class, 'team'])->name('team.index');
 
@@ -39,8 +41,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/', [AdminController::class, 'admin'])->name('admin.index');
     Route::get('/blog', [AdminController::class, 'adminBlog'])->name('admin.blog');
     Route::get('/blog-index', [AdminController::class, 'adminBlogIndex'])->name('admin.blog.index');
-    Route::get('/blog-store', [AdminController::class, 'adminBlogStore'])->name('admin.blog.store');
+    Route::post('/blog-store', [AdminController::class, 'adminBlogStore'])->name('admin.blog.store');
     Route::get('/blog-details', [AdminController::class, 'adminBlogDetails'])->name('admin.blog.show');
+    Route::get('/blog-edite', [AdminController::class, 'adminBlogEdite'])->name('admin.blog.edite');
+    Route::delete('/blog-delete', [AdminController::class, 'adminBlogDelete'])->name('admin.blog.delete');
+
     Route::post('/blog-update', [AdminController::class, 'adminBlogUpdate'])->name('admin.blog.update');
     Route::get('/contact', [AdminController::class, 'adminContact'])->name('admin.contact');
     Route::get('/projects', [AdminController::class, 'adminProjects'])->name('admin.projects');
@@ -72,7 +77,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/category-edit', [AdminController::class, 'adminCategoryEdit'])->name('admin.category-edit');
     Route::post('/category-update', [AdminController::class, 'adminCategoryUpdate'])->name('admin.category-update');
     Route::delete('/category-delete', [AdminController::class, 'adminCategoryDelete'])->name('admin.category-delete');
- 
+
 
     Route::get('/client-add', [AdminController::class, 'adminclientAdd'])->name('admin.add.client');
     Route::post('/client-store', [AdminController::class, 'adminclientStore'])->name('admin.client.store');
@@ -96,6 +101,22 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/slider-edit', [AdminController::class, 'adminSliderEdit'])->name('admin.slider-edit');
     Route::post('/slider-update', [AdminController::class, 'adminSliderUpdate'])->name('admin.slider-update');
     Route::delete('/slider-delete', [AdminController::class, 'adminSliderDelete'])->name('admin.slider-delete');
+
+    //gallery
+    Route::get('/gallery-add', [AdminController::class, 'adminGalleryAdd'])->name('admin.add.gallery');
+    Route::post('/gallery-store', [AdminController::class, 'adminGalleryStore'])->name('admin.gallery.store');
+    Route::get('/gallery-list', [AdminController::class, 'adminGalleryList'])->name('admin.gallery.list');
+    Route::get('/gallery-edit', [AdminController::class, 'adminGalleryEdit'])->name('admin.gallery-edit');
+    Route::post('/gallery-update', [AdminController::class, 'adminGalleryUpdate'])->name('admin.gallery-update');
+    Route::delete('/gallery-delete', [AdminController::class, 'adminGalleryDelete'])->name('admin.gallery-delete');
+    //contact
+    Route::get('/contact-list', [AdminController::class, 'adminContactList'])->name('admin.contact.list');
+    Route::delete('/contact-delete', [AdminController::class, 'adminContactDelete'])->name('admin.contact-delete');
+    Route::get('/contact-edit', [AdminController::class, 'adminContactEdit'])->name('admin.contact-edit');
+    Route::post('/contact-update', [AdminController::class, 'adminContactUpdate'])->name('admin.contact-update');
+
+
+
 
 
 

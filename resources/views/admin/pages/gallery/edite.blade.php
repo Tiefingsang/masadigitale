@@ -69,6 +69,12 @@
                                       name="image"
                                     />
                                   </div>
+
+                                   <div class="form-group">
+                                    
+                                    <label>Aperçu de l'image</label><br>
+                                    <img id="imagePreview" src="{{ asset('storage/' . $gallery->image) }}" alt="Aperçu de l'image" style="max-width: 100%; height: auto; display: block; border-radius: 8px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+                                  </div>
                                 </div>
                             </div>
                             <div class="card-action">

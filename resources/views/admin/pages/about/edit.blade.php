@@ -73,6 +73,7 @@
                                         value="{{ $data->image }}"
                                         name="image"
                                       />
+                                      <td><img src="{{ asset('storage/'.$data->image) }}" width="50" /></td>
                                     </div>
 
                                   </div>

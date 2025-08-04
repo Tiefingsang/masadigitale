@@ -201,7 +201,7 @@ $.notify({
 		align: "right"
 	},
 	time: 1000,
-});
+}); 
 
 // Jsvectormap
 var world_map = new jsVectorMap({

@@ -5,6 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Cviebrock\EloquentSluggable\Sluggable;
+
 
 class Blog extends Model
 {
@@ -16,6 +18,16 @@ class Blog extends Model
         'user_id',
         'image',
     ];
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title'
+            ]
+        ];
+    }
+
     protected static function booted()
     {
         static::creating(function ($blog) {

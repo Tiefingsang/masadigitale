@@ -1,65 +1,57 @@
 <footer class="main-footer">
-    <!--footer upper-->
+    <!-- Footer Upper -->
     <div class="footer-upper">
         <div class="auto-container">
-
             <div class="row clearfix">
-                <!--Footer Column-->
+                <!-- Colonne 1 : À propos -->
                 <div class="footer-column col-lg-4 col-md-6 col-sm-12">
                     <div class="footer-widget about-widget">
                         <div class="logo">
-                            <a href="index.html"><img src="{{ asset('assets/images/footer-logo.png') }}" width="70" alt="" /></a>
+                            <a href="{{ route('home.index') }}"><img src="{{ asset('assets/images/footer-logo.png') }}" width="70" alt="EGS Logo" /></a>
                         </div>
                         <div class="text">
-                            Nous offrons un accompagnement professionnel en technologies et solutions numériques, aussi bien aux particuliers qu'aux entreprises. Avec plus de 30 ans d'expérience cumulée, nous vous garantissons les meilleurs conseils issus des experts du secteur.
+                            EGS vous accompagne dans la transformation digitale de vos activités grâce à des solutions innovantes et personnalisées. Notre équipe d’experts met à votre disposition son savoir-faire pour garantir votre succès.
                         </div>
                         <ul class="info-list">
-                            <li><span class="la la-clock-o"></span> Lundi - Samedi de 09h à 18h</li>
-                            <li><span class="la la-home"></span> Bamako, Mali – Siège Masatechnologie</li>
+                            <li><span class="la la-clock-o"></span> Lundi - Samedi : 08h30 à 17h30</li>
+                            <li><span class="la la-home"></span> Bamako, Mali – EGS HQ</li>
                         </ul>
-
                     </div>
                 </div>
 
-
-                <!--Footer Column-->
+                <!-- Colonne 2 : Articles récents -->
                 <div class="footer-column col-lg-4 col-md-6 col-sm-12">
-                    <!--Footer Column-->
                     <div class="footer-widget recent-posts">
-                        <h2 class="widget-title">Latest News</h2>
-                         <!--Footer Column-->
+                        <h2 class="widget-title">Actualités Récentes</h2>
                         <div class="widget-content">
                             <div class="post">
                                 <div class="thumb">
-                                    <a href="blog-detail.html"><img src="{{ asset('assets/images/resource/post-thumb-1.jpg') }}" alt=""></a>
+                                    <a href="#"><img src="{{ asset('assets/images/bureau.jpeg') }}" alt=""></a>
                                 </div>
-                                <h4><a href="blog-detail.html">Améliorer le processus de planification pour booster votre activité.</a></h4>
-                                <span class="date">28 Déc, 2017</span>
+                                <h4><a href="#">EGS lance une nouvelle plateforme pour les PME africaines.</a></h4>
+                                <span class="date">01 Juil, 2025</span>
                             </div>
-
                             <div class="post">
                                 <div class="thumb">
-                                    <a href="blog-detail.html"><img src="{{ asset('assets/images/resource/post-thumb-2.jpg') }}" alt=""></a>
+                                    <a href="#"><img src="{{ asset('assets/images/foot.jpeg') }}" alt=""></a>
                                 </div>
-                                <h4><a href="blog-detail.html">7 conseils pour faire avancer efficacement votre projet numérique.</a></h4>
-                                <span class="date">13 Oct, 2017</span>
+                                <h4><a href="#">Transformation digitale : Les clés de réussite avec EGS.</a></h4>
+                                <span class="date">18 Juin, 2025</span>
                             </div>
-
                         </div>
                     </div>
                 </div>
 
-
-                <!--Footer Column-->
+                <!-- Colonne 3 : Newsletter & Réseaux -->
                 <div class="footer-column col-lg-4 col-md-6 col-sm-12">
                     <div class="footer-widget newsletter-widget">
-                        <h2 class="widget-title">Newsletter</h2>
+                        <h2 class="widget-title">Restez Informé</h2>
                         <div class="widget-content">
-                            <div class="text">Inscrivez-vous à notre newsletter pour recevoir les dernières actualités et offres exclusives de Masatechnologie.</div>
+                            <div class="text">Abonnez-vous à notre newsletter pour recevoir nos dernières offres, projets et actualités.</div>
                             <div class="newsletter-form">
-                                <form method="post" action="https://masatechnologie.com/l">
+                                <form method="post" action="#">
                                     <div class="form-group">
-                                        <input type="email" name="email" value="" placeholder="Entrez votre adresse e-mail" required="">
+                                        <input type="email" name="email" placeholder="Votre adresse e-mail" required="">
                                         <button type="submit"><i class="la la-paper-plane"></i></button>
                                     </div>
                                 </form>
@@ -75,32 +67,20 @@
                                 </ul>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!--Footer Bottom-->
+    <!-- Footer Bottom -->
     <div class="footer-bottom">
         <div class="auto-container">
             <div class="inner-container clearfix">
-                {{-- <div class="footer-links">
-                    <ul class="bottom-links">
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="about.html">Privacy Policy</a></li>
-                        <li><a href="services.html">Investors</a></li>
-                        <li><a href="services.html">Legals</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>                                         --}}
                 <div class="copyright-text">
-                    <p> &copy; 2025 Masatechnologie. Conçu avec passion par <a href="https://masatechnologie.com">Masatechnologie</a></p>
+                    <p>&copy; {{ now()->year }} EGS. Conçu avec ❤️ par <a href="https://egs-mali.com">l'équipe EGS</a></p>
                 </div>
-                <!--Scroll to top-->
                 <div class="scroll-to-top scroll-to-target" data-target="html"><span class="la la-angle-up"></span></div>
-
             </div>
         </div>
     </div>

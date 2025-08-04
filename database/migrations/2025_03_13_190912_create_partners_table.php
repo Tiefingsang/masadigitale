@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('partners', function (Blueprint $table) {
             $table->id();
+            $table->string('slug')->unique(); // Slug unique pour l'URL
             $table->string('name');
             $table->string('description')->nullable();
             $table->string('site_web')->nullable();

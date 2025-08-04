@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('title'); // Titre de la publicité
             $table->text('description')->nullable(); // Description de la publicité
+            $table->string('slug')->unique(); // Slug unique pour la publicité
             $table->string('image')->nullable(); // Image de la publicité
             $table->string('link')->nullable(); // Lien associé à la publicité
             $table->timestamp('start_date')->nullable(); // Date de début de la publicité

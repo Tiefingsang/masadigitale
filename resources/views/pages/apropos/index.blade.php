@@ -70,12 +70,12 @@
                             <div class="inner-box">
                                 <div class="image-box">
                                     <div class="image">
-                                        <a href="about.html"><img src="{{ asset('assets/images/resource/feature-1.jpg') }}" alt="Mission"></a>
+                                        <a href="about.html"><img src="{{ asset('assets/images/about/bureau.jpeg') }}" alt="Mission EGS"></a>
                                     </div>
                                 </div>
                                 <div class="lower-content">
                                     <h4><a href="about.html">Notre Mission</a></h4>
-                                    <div class="text">Offrir des solutions innovantes et accessibles pour un monde plus connecté et plus efficace.</div>
+                                    <div class="text">Accompagner les PME et institutions dans leur transformation numérique grâce à des solutions innovantes, abordables et adaptées à leurs besoins.</div>
                                 </div>
                             </div>
                         </div>
@@ -85,12 +85,12 @@
                             <div class="inner-box">
                                 <div class="image-box">
                                     <div class="image">
-                                        <a href="about.html"><img src="{{ asset('assets/images/resource/feature-2.jpg') }}" alt="Vision"></a>
+                                        <a href="about.html"><img src="{{ asset('assets/images/about/about.jpeg') }}" alt="Vision EGS"></a>
                                     </div>
                                 </div>
                                 <div class="lower-content">
                                     <h4><a href="about.html">Notre Vision</a></h4>
-                                    <div class="text">Être un leader technologique en Afrique, en favorisant la transformation numérique et le développement durable.</div>
+                                    <div class="text">Devenir un acteur incontournable du digital en Afrique de l’Ouest, en rendant la technologie accessible à toutes les entreprises.</div>
                                 </div>
                             </div>
                         </div>
@@ -98,7 +98,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 
     </div>
@@ -188,9 +187,9 @@
 
         </div>
 
-        <div class="image-column" style="background-image: url({{ asset("assets/images/resource/image-3.png") }});">
+        <div class="image-column" style="background-image: url({{ asset('assets/images/about/directeur.jpg') }});">
             <div class="inner-column">
-                <div class="image-box"><img src="{{ asset('assets/images/resource/image-3.png') }}" alt=""></div>
+                <div class="image-box"><img src="{{ asset('assets/images/about/image-3.png') }}" alt=""></div>
             </div>
         </div>
     </div>
@@ -202,6 +201,7 @@
 <section class="faq-section style-two" style="background-image: url({{ asset('assets/images/background/7.jpg') }});">
     <div class="auto-container">
         <div class="row clearfix">
+            <!-- Colonne des FAQ EGS -->
             <div class="accordion-column col-lg-6 col-md-12 col-sm-12">
                 <div class="sec-title light">
                     <span class="title">Support & Assistance</span>
@@ -212,11 +212,11 @@
                 <ul class="accordion-box">
                     <!-- Question -->
                     <li class="accordion block">
-                        <div class="acc-btn"><div class="icon">+</div>Comment Massa Technologies réduit-elle les risques numériques ?</div>
+                        <div class="acc-btn"><div class="icon">+</div>Quels services propose EGS ?</div>
                         <div class="acc-content">
                             <div class="content">
                                 <div class="text">
-                                    Nous proposons des solutions robustes de cybersécurité, de sauvegarde et de gestion proactive des infrastructures pour anticiper et limiter les menaces potentielles.
+                                    EGS propose des services en développement web/mobile, infogérance, hébergement, maintenance informatique, cybersécurité, et bien plus pour les PME et institutions.
                                 </div>
                             </div>
                         </div>
@@ -224,11 +224,11 @@
 
                     <!-- Question active -->
                     <li class="accordion block active-block">
-                        <div class="acc-btn active"><div class="icon">+</div>Quels services sont déjà opérationnels ?</div>
+                        <div class="acc-btn active"><div class="icon">+</div>À qui s’adressent vos services ?</div>
                         <div class="acc-content current">
                             <div class="content">
                                 <div class="text">
-                                    Nos plateformes e-commerce, nos outils de gestion cloud et nos systèmes de support client sont déjà actifs et en évolution continue pour mieux répondre à vos besoins.
+                                    Nos solutions sont conçues pour les petites et moyennes entreprises, les institutions publiques et les organisations à la recherche d’une transformation digitale fiable et locale.
                                 </div>
                             </div>
                         </div>
@@ -236,11 +236,11 @@
 
                     <!-- Question -->
                     <li class="accordion block">
-                        <div class="acc-btn"><div class="icon">+</div>Comment garantir une stratégie technologique cohérente ?</div>
+                        <div class="acc-btn"><div class="icon">+</div>Proposez-vous des formations ?</div>
                         <div class="acc-content">
                             <div class="content">
                                 <div class="text">
-                                    En collaborant avec nos experts en stratégie digitale, vous bénéficiez d’un accompagnement sur mesure, aligné sur vos objectifs métiers et votre vision à long terme.
+                                    Oui, EGS offre des formations en outils numériques, bureautique, cybersécurité et gestion de systèmes informatiques pour renforcer les compétences internes de vos équipes.
                                 </div>
                             </div>
                         </div>
@@ -248,11 +248,11 @@
 
                     <!-- Question -->
                     <li class="accordion block">
-                        <div class="acc-btn"><div class="icon">+</div>Quelle est notre vision de la transformation digitale ?</div>
+                        <div class="acc-btn"><div class="icon">+</div>Comment contacter votre équipe technique ?</div>
                         <div class="acc-content">
                             <div class="content">
                                 <div class="text">
-                                    Notre vision repose sur l'intégrité, l’innovation et l’impact. Nous croyons en une technologie accessible, utile et porteuse de changement durable.
+                                    Notre support est disponible du lundi au samedi via téléphone, e-mail ou WhatsApp pour toute demande technique ou commerciale.
                                 </div>
                             </div>
                         </div>
@@ -260,63 +260,63 @@
                 </ul>
             </div>
 
-            <!-- Column with Stats -->
+            <!-- Colonne des statistiques EGS -->
             <div class="stat-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
                     <div class="sec-title light">
                         <span class="title">Nos Capacités Clés</span>
                         <h2>Indicateurs de Performance</h2>
                         <div class="text">
-                            Nos statistiques illustrent notre expertise et notre engagement envers l’excellence technologique et la satisfaction client.
+                            Depuis sa création, EGS s’engage à offrir des solutions technologiques efficaces et accessibles, en mettant la satisfaction client au centre de ses priorités.
                         </div>
                     </div>
 
                     <div class="progress-bars">
-                        <!-- Skill -->
+                        <!-- Compétence 1 -->
                         <div class="bar-item">
                             <div class="skill-header clearfix">
-                                <div class="skill-title">Stratégie & Analyse</div>
+                                <div class="skill-title">Déploiement de Solutions Numériques</div>
                             </div>
                             <div class="skill-bar">
                                 <div class="bar-inner">
-                                    <div class="bar progress-line" data-width="85"></div>
+                                    <div class="bar progress-line" data-width="90"></div>
                                     <div class="skill-percentage">
                                         <div class="count-box">
-                                            <span class="count-text" data-speed="2000" data-stop="85">0</span>%
+                                            <span class="count-text" data-speed="2000" data-stop="90">0</span>%
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Skill -->
+                        <!-- Compétence 2 -->
                         <div class="bar-item">
                             <div class="skill-header clearfix">
-                                <div class="skill-title">Croissance Économique Digitale</div>
+                                <div class="skill-title">Satisfaction Client</div>
                             </div>
                             <div class="skill-bar">
                                 <div class="bar-inner">
-                                    <div class="bar progress-line" data-width="92"></div>
+                                    <div class="bar progress-line" data-width="95"></div>
                                     <div class="skill-percentage">
                                         <div class="count-box">
-                                            <span class="count-text" data-speed="2000" data-stop="92">0</span>%
+                                            <span class="count-text" data-speed="2000" data-stop="95">0</span>%
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <!-- Skill -->
+                        <!-- Compétence 3 -->
                         <div class="bar-item">
                             <div class="skill-header clearfix">
-                                <div class="skill-title">Objectifs Atteints</div>
+                                <div class="skill-title">Réactivité du Support</div>
                             </div>
                             <div class="skill-bar">
                                 <div class="bar-inner">
-                                    <div class="bar progress-line" data-width="88"></div>
+                                    <div class="bar progress-line" data-width="87"></div>
                                     <div class="skill-percentage">
                                         <div class="count-box">
-                                            <span class="count-text" data-speed="2000" data-stop="88">0</span>%
+                                            <span class="count-text" data-speed="2000" data-stop="87">0</span>%
                                         </div>
                                     </div>
                                 </div>
@@ -325,6 +325,7 @@
                     </div>
                 </div>
             </div>
+
 
         </div>
     </div>
@@ -336,32 +337,35 @@
     <div class="outer-box clearfix">
         <!-- Content Column -->
         <div class="content-column">
-            <div class="inner-column">
+           <div class="inner-column">
                 <div class="sec-title">
-                    <span class="title">Pourquoi Masatechnologie</span>
-                    <h2>Découvrez pourquoi nous sommes<br>experts sur le marché</h2>
+                    <span class="title">Pourquoi choisir EGS ?</span>
+                    <h2>Découvrez ce qui fait<br>notre force sur le marché</h2>
                     <div class="text">
-                        Masatechnologie s'impose comme un acteur clé de l'innovation numérique au Mali. Grâce à une expertise pointue, une équipe passionnée et des solutions adaptées, nous accompagnons nos clients dans leur transformation digitale, en leur garantissant performance, sécurité et fiabilité.
+                        EGS S.A.R.L est une entreprise malienne engagée dans la transformation digitale, l’infogérance, le développement d’applications et l’accompagnement technologique des entreprises. Grâce à une équipe qualifiée et des solutions personnalisées, nous contribuons efficacement à la modernisation des PME, des ONG et des institutions publiques au Mali.
                     </div>
                 </div>
                 <ul class="list-style-one clearfix">
-                    <li><a href="{{ route('services.index') }}">Audit & Conseil IT</a></li>
-                    <li><a href="{{ route('services.index') }}">Équipe Dédiée & Réactive</a></li>
-                    <li><a href="{{ route('services.index') }}">Experts en Stratégie Digitale</a></li>
-                    <li><a href="{{ route('services.index') }}">Solutions Réseau & Cloud</a></li>
-                    <li><a href="{{ route('services.index') }}">Support Technique 24/7</a></li>
-                    <li><a href="{{ route('services.index') }}">Respect des Délais & Livrables</a></li>
+                    <li><a href="{{ route('services.index') }}">Développement Web & Mobile</a></li>
+                    <li><a href="{{ route('services.index') }}">Infogérance & Maintenance Informatique</a></li>
+                    <li><a href="{{ route('services.index') }}">Hébergement Sécurisé (Serveurs Maliens)</a></li>
+                    <li><a href="{{ route('services.index') }}">Consulting & Formation en Digitalisation</a></li>
+                    <li><a href="{{ route('services.index') }}">Solutions de Cybersécurité & Sauvegarde</a></li>
+                    <li><a href="{{ route('services.index') }}">Suivi de Projets & Support Personnalisé</a></li>
                 </ul>
                 <div class="btn-box">
-                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Commencer avec Nous</a>
+                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Commencer avec EGS</a>
+                    <a href="tel:+22398256435" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 98 25 64 35</a>
                 </div>
             </div>
+
+
 
         </div>
 
         <!-- Image Column -->
-        <div class="image-column" style="background-image: url({{ asset('assets/images/resource/image-2.jpg') }});">
-            <figure class="image-box"><img src="{{ asset("assets/images/resource/image-2.jpg") }}" alt=""></figure>
+        <div class="image-column" style="background-image: url({{ asset('assets/images/about/about3.jpeg') }});">
+            <figure class="image-box"><img src="{{ asset('assets/images/about/about3.jpeg') }}" alt=""></figure>
         </div>
     </div>
 </section>
@@ -398,7 +402,7 @@
                     <div class="text">Nous élaborons une feuille de route claire et performante pour garantir la réussite de votre projet.</div>
                 </div>
             </div>
-
+            
             <!-- Étape 4 -->
             <div class="work-step col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
@@ -419,20 +423,18 @@
             <!-- Content Column -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <span class="title">À propos de Masatechnologie</span>
-                    <h2>Notre mission : vous offrir des conseils d'experts et un service de qualité.</h2>
+                    <span class="title">À propos de EGS</span>
+                    <h2>Notre mission : accélérer votre transformation digitale avec des solutions fiables et innovantes.</h2>
                     <div class="text">
-                        Depuis notre création, nous accompagnons les entreprises et particuliers dans leur transformation digitale.
-                        Grâce à une approche centrée sur l’innovation et la performance, Masatechnologie s’impose comme un partenaire de confiance dans le développement de solutions technologiques sur mesure.
+                        EGS S.A.R.L est une entreprise malienne spécialisée dans les technologies de l'information, l’infogérance, le développement web & mobile, et la formation informatique. 
+                        Nous accompagnons les entreprises, les institutions et les particuliers dans leur digitalisation, avec une approche orientée résultats, proximité et expertise locale.
                     </div>
                     <div class="link-box">
                         <a href="{{ route('about.index') }}" class="theme-btn btn-style-three">En savoir plus</a>
-                        <a href="tel:+22378794089" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 78 79 40 89</a>
+                        <a href="tel:+22398256435" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 98 25 64 35</a>
                     </div>
                 </div>
-
             </div>
-
             <!-- Video Column -->
             <div class="video-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
@@ -444,22 +446,22 @@
     </div>
 </section>
 <!-- End About Us -->
-
     <!-- Testimonial Section -->
 <section class="testimonial-section" style="background-image: url({{ asset('assets/images/background/3.jpg') }});">
     <div class="auto-container">
         <div class="inner-column">
-            <span class="title">À propos de Masatechnologie</span>
-            <h2>Notre ambition : offrir des conseils d’experts et des services technologiques de qualité.</h2>
+            <span class="title">À propos de EGS</span>
+            <h2>Notre ambition : être votre partenaire de confiance en transformation numérique.</h2>
             <div class="text">
-                Masatechnologie est une entreprise innovante spécialisée dans les solutions numériques adaptées aux besoins des entreprises africaines.
-                Grâce à notre expertise en développement web, e-commerce, cybersécurité et transformation digitale, nous accompagnons nos clients vers la réussite de leurs projets.
+                EGS (Entreprise de Gestion et de Services) est une société malienne spécialisée dans le développement d’applications, l’infogérance, la formation informatique et le consulting digital.
+                Nous aidons les PME, les institutions et les particuliers à réussir leur transition numérique, en leur offrant des solutions efficaces, sécurisées et accessibles.
             </div>
             <div class="link-box">
                 <a href="{{ route('about.index') }}" class="theme-btn btn-style-three">En savoir plus</a>
-                <a href="tel:+22378794089" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 78 79 40 89</a>
+                <a href="tel:+22398256435" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 98 25 64 35</a>
             </div>
         </div>
+
 
         <div class="testimonial-carousel owl-carousel owl-theme">
             <!-- Témoignage 1 -->
@@ -467,44 +469,41 @@
                 <div class="inner-box">
                     <div class="info-box">
                         <div class="thumb"><img src="{{ asset('images/resource/client1.jpg') }}" alt="Client 1"></div>
-                        <h3 class="name">Fatoumata Koné</h3>
-                        <span class="designation">Fondatrice de MaliShop</span>
+                        <h3 class="name">Mamadou Diarra</h3>
+                        <span class="designation">Responsable IT, Groupe Malia</span>
                     </div>
                     <div class="text">
-                        Grâce à Masatechnologie, j’ai pu lancer ma boutique en ligne rapidement avec un design professionnel. Leur accompagnement a été précieux du début à la fin.
+                        EGS nous a accompagné dans la mise en place de notre infrastructure informatique. Leurs solutions sont fiables et leur support très réactif.
                     </div>
                 </div>
             </div>
-
             <!-- Témoignage 2 -->
             <div class="testimonial-block">
                 <div class="inner-box">
                     <div class="info-box">
                         <div class="thumb"><img src="{{ asset('images/resource/client2.jpg') }}" alt="Client 2"></div>
-                        <h3 class="name">Ibrahim Traoré</h3>
-                        <span class="designation">DG, SahelTech</span>
+                        <h3 class="name">Aïssata Coulibaly</h3>
+                        <span class="designation">Fondatrice de DigiEduc</span>
                     </div>
                     <div class="text">
-                        Masatechnologie a développé pour nous une plateforme sur mesure, stable et sécurisée. Leur équipe est réactive et compétente.
+                        Grâce à EGS, notre plateforme éducative a été lancée en un temps record. Leur expertise en développement web et formation est impressionnante.
                     </div>
                 </div>
             </div>
-
             <!-- Témoignage 3 -->
             <div class="testimonial-block">
                 <div class="inner-box">
                     <div class="info-box">
                         <div class="thumb"><img src="{{ asset('images/resource/client3.jpg') }}" alt="Client 3"></div>
-                        <h3 class="name">Aminata Diallo</h3>
-                        <span class="designation">Consultante IT</span>
+                        <h3 class="name">Sekou Bah</h3>
+                        <span class="designation">Directeur Général, Koura Services</span>
                     </div>
                     <div class="text">
-                        Très satisfaite de la qualité des services offerts. Masatechnologie est devenue une référence pour mes projets technologiques.
+                        EGS a su comprendre nos besoins en digitalisation et proposer des solutions parfaitement adaptées à notre environnement.
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </section>
 <!-- End Testimonial Section -->
