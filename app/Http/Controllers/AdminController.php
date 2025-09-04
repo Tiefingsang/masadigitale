@@ -33,7 +33,7 @@ class AdminController extends Controller
     {
         // code to get blog
         return view('admin.pages.blog.index');
-    } */
+    } */ 
 
 
 
