@@ -13,15 +13,15 @@
 </section>
 
 
- <!-- About Us -->
- <section class="about-section-two alternate">
+<!-- About Us -->
+<section class="about-section-two alternate">
     <div class="auto-container">
         <div class="row clearfix">
 
             <!-- Colonne de contenu principal -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <span class="title">Nous sommes experts</span>
+                    <span class="title">Nous sommes Masadigitale</span>
                     <h2>2 ans d’expérience en<br> Technologie & Innovation</h2>
 
                     <!-- Description dynamique tirée de la base de données -->
@@ -31,27 +31,27 @@
                     <div class="fact-counter">
                         <div class="row clearfix">
 
-                            <!-- Nombre de consultants -->
+                            <!-- Nombre de clients -->
                             <div class="counter-column col-lg-4 col-md-4 col-sm-12">
                                 <div class="count-box">
-                                    <span class="count-text" data-speed="3000" data-stop="350">0</span>
-                                    <h4 class="counter-title">Consultants</h4>
+                                    <span class="count-text" data-speed="3000" data-stop="150">0</span>
+                                    <h4 class="counter-title">Clients satisfaits</h4>
+                                </div>
+                            </div>
+
+                            <!-- Nombre de projets -->
+                            <div class="counter-column col-lg-4 col-md-4 col-sm-12">
+                                <div class="count-box">
+                                    <span class="count-text" data-speed="3000" data-stop="85">0</span>
+                                    <h4 class="counter-title">Applications & Projets</h4>
                                 </div>
                             </div>
 
                             <!-- Nombre de récompenses -->
                             <div class="counter-column col-lg-4 col-md-4 col-sm-12">
                                 <div class="count-box">
-                                    <span class="count-text" data-speed="3000" data-stop="25">0</span>
+                                    <span class="count-text" data-speed="3000" data-stop="12">0</span>
                                     <h4 class="counter-title">Prix & Distinctions</h4>
-                                </div>
-                            </div>
-
-                            <!-- Projets réalisés -->
-                            <div class="counter-column col-lg-4 col-md-4 col-sm-12">
-                                <div class="count-box">
-                                    <span class="count-text" data-speed="3000" data-stop="954">0</span>
-                                    <h4 class="counter-title">Projets réalisés</h4>
                                 </div>
                             </div>
 
@@ -70,12 +70,12 @@
                             <div class="inner-box">
                                 <div class="image-box">
                                     <div class="image">
-                                        <a href="about.html"><img src="{{ asset('assets/images/about/bureau.jpeg') }}" alt="Mission EGS"></a>
+                                        <a href="about.html"><img src="{{ asset('assets/images/about/bureau.jpeg') }}" alt="Mission Masadigitale"></a>
                                     </div>
                                 </div>
                                 <div class="lower-content">
                                     <h4><a href="about.html">Notre Mission</a></h4>
-                                    <div class="text">Accompagner les PME et institutions dans leur transformation numérique grâce à des solutions innovantes, abordables et adaptées à leurs besoins.</div>
+                                    <div class="text">Aider les entreprises et institutions à optimiser leur gestion et leur communication à travers des applications mobiles, solutions de gestion et outils digitaux adaptés.</div>
                                 </div>
                             </div>
                         </div>
@@ -85,12 +85,12 @@
                             <div class="inner-box">
                                 <div class="image-box">
                                     <div class="image">
-                                        <a href="about.html"><img src="{{ asset('assets/images/about/about.jpeg') }}" alt="Vision EGS"></a>
+                                        <a href="about.html"><img src="{{ asset('assets/images/about/about.jpeg') }}" alt="Vision Masadigitale"></a>
                                     </div>
                                 </div>
                                 <div class="lower-content">
                                     <h4><a href="about.html">Notre Vision</a></h4>
-                                    <div class="text">Devenir un acteur incontournable du digital en Afrique de l’Ouest, en rendant la technologie accessible à toutes les entreprises.</div>
+                                    <div class="text">Faire de Masadigitale un leader incontournable du digital en Afrique de l’Ouest en rendant la technologie simple, accessible et performante pour toutes les entreprises.</div>
                                 </div>
                             </div>
                         </div>
@@ -104,17 +104,21 @@
 </section>
 <!-- End About Us -->
 
+
 <!-- Call Back Section -->
 <section class="call-back-section" style="background-image: url({{ asset('assets/images/background/2.jpg') }});">
     <div class="outer-box">
         <div class="auto-container">
             <div class="row clearfix">
+                
                 <!-- Colonne de contenu -->
                 <div class="content-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
-                        <h3>Vous êtes à<br> 10 minutes de l’aide dont vous avez besoin</h3>
+                        <h3>Vous êtes à quelques clics<br> d'une solution digitale sur mesure</h3>
                         <div class="text">
-                            Profitez des opportunités simples pour identifier rapidement une valeur ajoutée à tester.
+                            Masadigitale vous accompagne dans le développement d’applications mobiles, 
+                            la gestion d’entreprise, de stock et la transformation digitale. 
+                            Confiez-nous vos projets pour des résultats rapides et fiables.
                         </div>
                     </div>
                 </div>
@@ -124,12 +128,12 @@
                     <div class="inner-column">
                         <div class="appointment-form">
                             <div class="title-box">
-                                <span>Nous sommes toujours disponibles</span>
-                                <h3>Demander un rappel</h3>
+                                <span>Notre équipe est à votre écoute</span>
+                                <h3>Demandez un rappel</h3>
                             </div>
 
                             <form method="post" action="{{ route('contact.store') }}">
-                                @csrf <!-- Si tu es en Laravel, sinon retire cette ligne -->
+                                @csrf <!-- Pour Laravel -->
 
                                 <div class="form-group">
                                     <input type="text" name="name" placeholder="Nom complet" required>
@@ -139,10 +143,8 @@
                                     <input type="email" name="email" placeholder="Adresse email" required>
                                 </div>
 
-
-
                                 <div class="form-group">
-                                    <textarea name="message" placeholder="Message"></textarea>
+                                    <textarea name="message" placeholder="Décrivez vos besoins (application, gestion, digitalisation...)"></textarea>
                                 </div>
 
                                 <div class="form-group text-right">
@@ -155,14 +157,15 @@
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
 </section>
 <!--End Call Back Section -->
 
-     <!-- Integrity Section -->
+
+    <!-- Integrity Section -->
 <section class="integrity-section">
     <div class="outer-container clearfix">
         <!--Content Column-->
@@ -172,7 +175,8 @@
                     <span class="title">Innovation & Intégrité</span>
                     <h2>Construisons le futur numérique</h2>
                     <div class="text">
-                        Chez Massa Technologies, nous accompagnons les entreprises et institutions dans leur transformation digitale. Grâce à notre expertise, nous apportons des solutions technologiques durables, créons de la valeur et générons des résultats mesurables.
+                        Chez <b>Masadigitale</b>, nous accompagnons les entreprises et institutions dans leur transformation digitale. 
+                        Grâce à notre expertise, nous apportons des solutions technologiques modernes, créons de la valeur et générons des résultats mesurables.
                     </div>
                 </div>
 
@@ -184,7 +188,6 @@
                     <a href="{{ route('services.index') }}" class="theme-btn">Découvrir nos solutions</a>
                 </div>
             </div>
-
         </div>
 
         <div class="image-column" style="background-image: url({{ asset('assets/images/about/directeur.jpg') }});">
@@ -201,7 +204,7 @@
 <section class="faq-section style-two" style="background-image: url({{ asset('assets/images/background/7.jpg') }});">
     <div class="auto-container">
         <div class="row clearfix">
-            <!-- Colonne des FAQ EGS -->
+            <!-- Colonne des FAQ Masadigitale -->
             <div class="accordion-column col-lg-6 col-md-12 col-sm-12">
                 <div class="sec-title light">
                     <span class="title">Support & Assistance</span>
@@ -212,11 +215,20 @@
                 <ul class="accordion-box">
                     <!-- Question -->
                     <li class="accordion block">
-                        <div class="acc-btn"><div class="icon">+</div>Quels services propose EGS ?</div>
+                        <div class="acc-btn"><div class="icon">+</div>Quels services propose Masadigitale ?</div>
                         <div class="acc-content">
                             <div class="content">
                                 <div class="text">
-                                    EGS propose des services en développement web/mobile, infogérance, hébergement, maintenance informatique, cybersécurité, et bien plus pour les PME et institutions.
+                                    Masadigitale propose : 
+                                    <ul>
+                                        <li>Développement d’applications mobiles</li>
+                                        <li>Solutions de gestion d’entreprise et de stock</li>
+                                        <li>Sites web professionnels</li>
+                                        <li>Marketing digital & Référencement SEO</li>
+                                        <li>Infogérance & Maintenance informatique</li>
+                                        <li>Hébergement et cybersécurité</li>
+                                        <li>Formations en outils numériques</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -228,7 +240,8 @@
                         <div class="acc-content current">
                             <div class="content">
                                 <div class="text">
-                                    Nos solutions sont conçues pour les petites et moyennes entreprises, les institutions publiques et les organisations à la recherche d’une transformation digitale fiable et locale.
+                                    Nos solutions sont conçues pour les petites et moyennes entreprises, les startups, 
+                                    les institutions publiques et toutes les organisations cherchant à réussir leur transformation digitale.
                                 </div>
                             </div>
                         </div>
@@ -236,11 +249,12 @@
 
                     <!-- Question -->
                     <li class="accordion block">
-                        <div class="acc-btn"><div class="icon">+</div>Proposez-vous des formations ?</div>
+                        <div class="acc-btn"><div class="icon">+</div>Proposez-vous des applications sur mesure ?</div>
                         <div class="acc-content">
                             <div class="content">
                                 <div class="text">
-                                    Oui, EGS offre des formations en outils numériques, bureautique, cybersécurité et gestion de systèmes informatiques pour renforcer les compétences internes de vos équipes.
+                                    Oui, nous développons des applications mobiles et logicielles entièrement personnalisées 
+                                    pour répondre aux besoins spécifiques de chaque entreprise (gestion commerciale, suivi de stock, reporting, etc.).
                                 </div>
                             </div>
                         </div>
@@ -252,7 +266,8 @@
                         <div class="acc-content">
                             <div class="content">
                                 <div class="text">
-                                    Notre support est disponible du lundi au samedi via téléphone, e-mail ou WhatsApp pour toute demande technique ou commerciale.
+                                    Notre support est disponible du lundi au samedi via téléphone, e-mail ou WhatsApp. 
+                                    Nous nous engageons à répondre rapidement à toutes vos demandes techniques ou commerciales.
                                 </div>
                             </div>
                         </div>
@@ -260,14 +275,15 @@
                 </ul>
             </div>
 
-            <!-- Colonne des statistiques EGS -->
+            <!-- Colonne des statistiques Masadigitale -->
             <div class="stat-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
                     <div class="sec-title light">
                         <span class="title">Nos Capacités Clés</span>
                         <h2>Indicateurs de Performance</h2>
                         <div class="text">
-                            Depuis sa création, EGS s’engage à offrir des solutions technologiques efficaces et accessibles, en mettant la satisfaction client au centre de ses priorités.
+                            Depuis sa création, <b>Masadigitale</b> s’engage à offrir des solutions numériques efficaces et accessibles, 
+                            en mettant la satisfaction client au cœur de ses priorités.
                         </div>
                     </div>
 
@@ -275,14 +291,14 @@
                         <!-- Compétence 1 -->
                         <div class="bar-item">
                             <div class="skill-header clearfix">
-                                <div class="skill-title">Déploiement de Solutions Numériques</div>
+                                <div class="skill-title">Développement d’Applications</div>
                             </div>
                             <div class="skill-bar">
                                 <div class="bar-inner">
-                                    <div class="bar progress-line" data-width="90"></div>
+                                    <div class="bar progress-line" data-width="92"></div>
                                     <div class="skill-percentage">
                                         <div class="count-box">
-                                            <span class="count-text" data-speed="2000" data-stop="90">0</span>%
+                                            <span class="count-text" data-speed="2000" data-stop="92">0</span>%
                                         </div>
                                     </div>
                                 </div>
@@ -313,10 +329,27 @@
                             </div>
                             <div class="skill-bar">
                                 <div class="bar-inner">
-                                    <div class="bar progress-line" data-width="87"></div>
+                                    <div class="bar progress-line" data-width="90"></div>
                                     <div class="skill-percentage">
                                         <div class="count-box">
-                                            <span class="count-text" data-speed="2000" data-stop="87">0</span>%
+                                            <span class="count-text" data-speed="2000" data-stop="90">0</span>%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Compétence 4 -->
+                        <div class="bar-item">
+                            <div class="skill-header clearfix">
+                                <div class="skill-title">Expertise en Marketing Digital</div>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="bar-inner">
+                                    <div class="bar progress-line" data-width="88"></div>
+                                    <div class="skill-percentage">
+                                        <div class="count-box">
+                                            <span class="count-text" data-speed="2000" data-stop="88">0</span>%
                                         </div>
                                     </div>
                                 </div>
@@ -332,40 +365,39 @@
 </section>
 <!-- Faq Section -->
 
-    <!-- Why Choose Us -->
+
+<!-- Why Choose Us -->
 <section class="why-us-section">
     <div class="outer-box clearfix">
         <!-- Content Column -->
         <div class="content-column">
            <div class="inner-column">
                 <div class="sec-title">
-                    <span class="title">Pourquoi choisir EGS ?</span>
-                    <h2>Découvrez ce qui fait<br>notre force sur le marché</h2>
+                    <span class="title">Pourquoi choisir Masadigitale ?</span>
+                    <h2>Nous transformons vos idées<br>en solutions numériques concrètes</h2>
                     <div class="text">
-                        EGS S.A.R.L est une entreprise malienne engagée dans la transformation digitale, l’infogérance, le développement d’applications et l’accompagnement technologique des entreprises. Grâce à une équipe qualifiée et des solutions personnalisées, nous contribuons efficacement à la modernisation des PME, des ONG et des institutions publiques au Mali.
+                        Masadigitale est une entreprise malienne spécialisée dans le développement d’applications mobiles, de logiciels de gestion d’entreprise et de solutions web modernes. 
+                        Grâce à notre expertise locale et une approche orientée résultats, nous aidons les PME, les ONG et les institutions à réussir leur transformation digitale.
                     </div>
                 </div>
                 <ul class="list-style-one clearfix">
-                    <li><a href="{{ route('services.index') }}">Développement Web & Mobile</a></li>
-                    <li><a href="{{ route('services.index') }}">Infogérance & Maintenance Informatique</a></li>
-                    <li><a href="{{ route('services.index') }}">Hébergement Sécurisé (Serveurs Maliens)</a></li>
-                    <li><a href="{{ route('services.index') }}">Consulting & Formation en Digitalisation</a></li>
-                    <li><a href="{{ route('services.index') }}">Solutions de Cybersécurité & Sauvegarde</a></li>
-                    <li><a href="{{ route('services.index') }}">Suivi de Projets & Support Personnalisé</a></li>
+                    <li><a href="{{ route('services.index') }}">Applications Mobiles (Android & iOS)</a></li>
+                    <li><a href="{{ route('services.index') }}">Logiciels de Gestion (Stock, Facturation, RH...)</a></li>
+                    <li><a href="{{ route('services.index') }}">Sites Web Vitrine & E-commerce</a></li>
+                    <li><a href="{{ route('services.index') }}">Hébergement Sécurisé & Cloud</a></li>
+                    <li><a href="{{ route('services.index') }}">Formation & Consulting Digital</a></li>
+                    <li><a href="{{ route('services.index') }}">Cybersécurité & Sauvegarde</a></li>
                 </ul>
                 <div class="btn-box">
-                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Commencer avec EGS</a>
-                    <a href="tel:+22398256435" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 98 25 64 35</a>
+                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Commencer avec Masadigitale</a>
+                    <a href="tel:+22366894475" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 66 89 44 75</a>
                 </div>
             </div>
-
-
-
         </div>
 
         <!-- Image Column -->
         <div class="image-column" style="background-image: url({{ asset('assets/images/about/about3.jpeg') }});">
-            <figure class="image-box"><img src="{{ asset('assets/images/about/about3.jpeg') }}" alt=""></figure>
+            <figure class="image-box"><img src="{{ asset('assets/images/about/about3.jpeg') }}" alt="Masadigitale"></figure>
         </div>
     </div>
 </section>
@@ -376,43 +408,39 @@
     <div class="auto-container">
         <div class="sec-title">
             <span class="title">Notre Méthodologie</span>
-            <h2>Réussir ensemble en 4 étapes clés</h2>
+            <h2>Votre projet, notre engagement en 4 étapes</h2>
         </div>
         <div class="row clearfix">
             <!-- Étape 1 -->
             <div class="work-step col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
-                    <h3><span class="count">1</span> <a href="{{ route('services.index') }}">Analyse</a></h3>
-                    <div class="text">Nous commençons par une compréhension approfondie de vos besoins pour identifier les solutions les plus adaptées.</div>
+                    <h3><span class="count">1</span> Analyse</h3>
+                    <div class="text">Nous étudions vos besoins et définissons la meilleure solution digitale adaptée à votre activité.</div>
                 </div>
             </div>
-
             <!-- Étape 2 -->
             <div class="work-step col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
-                    <h3><span class="count">2</span> <a href="{{ route('services.index') }}">Conseil</a></h3>
-                    <div class="text">Nous vous accompagnons avec des recommandations stratégiques basées sur notre expertise du digital et des technologies.</div>
+                    <h3><span class="count">2</span> Conseil</h3>
+                    <div class="text">Nous proposons des recommandations stratégiques et un accompagnement personnalisé.</div>
                 </div>
             </div>
-
             <!-- Étape 3 -->
             <div class="work-step col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
-                    <h3><span class="count">3</span> <a href="{{ route('services.index') }}">Stratégie</a></h3>
-                    <div class="text">Nous élaborons une feuille de route claire et performante pour garantir la réussite de votre projet.</div>
+                    <h3><span class="count">3</span> Développement</h3>
+                    <div class="text">Nous concevons vos applications et solutions web avec une technologie moderne et sécurisée.</div>
                 </div>
             </div>
-            
             <!-- Étape 4 -->
             <div class="work-step col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
-                    <h3><span class="count">4</span> <a href="{{ route('services.index') }}">Résultat</a></h3>
-                    <div class="text">Nous livrons des résultats concrets et mesurables, tout en assurant un suivi continu pour votre croissance.</div>
+                    <h3><span class="count">4</span> Résultat</h3>
+                    <div class="text">Nous livrons des solutions prêtes à l’emploi et assurons un suivi pour garantir votre succès.</div>
                 </div>
             </div>
         </div>
     </div>
-
 </section>
 <!--End Work Section -->
 
@@ -422,46 +450,55 @@
         <div class="row clearfix">
             <!-- Content Column -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                <div class="inner-column">
-                    <span class="title">À propos de EGS</span>
-                    <h2>Notre mission : accélérer votre transformation digitale avec des solutions fiables et innovantes.</h2>
-                    <div class="text">
-                        EGS S.A.R.L est une entreprise malienne spécialisée dans les technologies de l'information, l’infogérance, le développement web & mobile, et la formation informatique. 
-                        Nous accompagnons les entreprises, les institutions et les particuliers dans leur digitalisation, avec une approche orientée résultats, proximité et expertise locale.
-                    </div>
-                    <div class="link-box">
-                        <a href="{{ route('about.index') }}" class="theme-btn btn-style-three">En savoir plus</a>
-                        <a href="tel:+22398256435" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 98 25 64 35</a>
-                    </div>
+            <div class="inner-column">
+                <span class="title">À propos de Masadigitale</span>
+                <h2>Notre mission : accompagner la digitalisation au Mali et en Afrique.</h2>
+                <div class="text">
+                    Fondée par <strong>SANGARE Tiefing</strong>, Directeur Général et expert en <em>marketing digital</em>, 
+                    <em>création de contenu</em> et <em>publicité sur les réseaux sociaux</em>, Masadigitale est spécialisée dans 
+                    le développement d’applications mobiles, de logiciels de gestion et de sites web modernes. <br><br>
+                    
+                    Nous aidons les entreprises à booster leur présence en ligne et à améliorer leur performance grâce à des solutions 
+                    numériques fiables, sécurisées et évolutives. <br><br>
+                    
+                    En plus de Masadigitale, <strong>SANGARE Tiefing</strong> est le fondateur de 
+                    <strong>Masasugu</strong> 
+                    (<a href="https://masasugu.com" target="_blank">masasugu.com</a>), 
+                    une plateforme de <em>vente et d’achat en ligne</em> qui facilite le commerce digital 
+                    au Mali et en Afrique de l’Ouest. 
+                    Ce projet illustre parfaitement notre savoir-faire en matière de e-commerce et d’innovation digitale.
+                </div>
+                <div class="link-box">
+                    <a href="{{ route('about.index') }}" class="theme-btn btn-style-three">En savoir plus</a>
+                    <a href="tel:+22366894475" class="theme-btn call-btn">
+                        <i class="icon la la-phone"></i> +223 66 89 44 75
+                    </a>
                 </div>
             </div>
+        </div>
+
             <!-- Video Column -->
             <div class="video-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <figure class="image"><img src="{{ asset('assets/images/resource/image-1.jpg') }}" alt=""></figure>
-                    <div class="link-box"><a href="https://www.youtube.com/watch?v=Fvae8nxzVz4" class="link" data-fancybox="gallery" data-caption=""><span class="icon la la-play-circle-o"></span></a></div>
+                    <figure class="image"><img src="{{ asset('assets/images/resource/image-1.jpg') }}" alt="Masadigitale"></figure>
+                    <div class="link-box"><a href="https://www.youtube.com/watch?v=Fvae8nxzVz4" class="link" data-fancybox="gallery"><span class="icon la la-play-circle-o"></span></a></div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!-- End About Us -->
-    <!-- Testimonial Section -->
+
+<!-- Testimonial Section -->
 <section class="testimonial-section" style="background-image: url({{ asset('assets/images/background/3.jpg') }});">
     <div class="auto-container">
         <div class="inner-column">
-            <span class="title">À propos de EGS</span>
-            <h2>Notre ambition : être votre partenaire de confiance en transformation numérique.</h2>
+            <span class="title">Témoignages</span>
+            <h2>Ils nous ont fait confiance</h2>
             <div class="text">
-                EGS (Entreprise de Gestion et de Services) est une société malienne spécialisée dans le développement d’applications, l’infogérance, la formation informatique et le consulting digital.
-                Nous aidons les PME, les institutions et les particuliers à réussir leur transition numérique, en leur offrant des solutions efficaces, sécurisées et accessibles.
-            </div>
-            <div class="link-box">
-                <a href="{{ route('about.index') }}" class="theme-btn btn-style-three">En savoir plus</a>
-                <a href="tel:+22398256435" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 98 25 64 35</a>
+                Nos clients nous choisissent pour notre expertise locale, notre réactivité et la qualité de nos solutions digitales adaptées au marché africain.
             </div>
         </div>
-
 
         <div class="testimonial-carousel owl-carousel owl-theme">
             <!-- Témoignage 1 -->
@@ -469,11 +506,11 @@
                 <div class="inner-box">
                     <div class="info-box">
                         <div class="thumb"><img src="{{ asset('images/resource/client1.jpg') }}" alt="Client 1"></div>
-                        <h3 class="name">Mamadou Diarra</h3>
-                        <span class="designation">Responsable IT, Groupe Malia</span>
+                        <h3 class="name">Mariam Diallo</h3>
+                        <span class="designation">Fondatrice, StartUp Mali</span>
                     </div>
                     <div class="text">
-                        EGS nous a accompagné dans la mise en place de notre infrastructure informatique. Leurs solutions sont fiables et leur support très réactif.
+                        Masadigitale a développé notre application mobile de gestion interne. Résultat : gain de temps et meilleure productivité.
                     </div>
                 </div>
             </div>
@@ -482,11 +519,11 @@
                 <div class="inner-box">
                     <div class="info-box">
                         <div class="thumb"><img src="{{ asset('images/resource/client2.jpg') }}" alt="Client 2"></div>
-                        <h3 class="name">Aïssata Coulibaly</h3>
-                        <span class="designation">Fondatrice de DigiEduc</span>
+                        <h3 class="name">Ibrahim Konaté</h3>
+                        <span class="designation">DG, Kono Entreprise</span>
                     </div>
                     <div class="text">
-                        Grâce à EGS, notre plateforme éducative a été lancée en un temps record. Leur expertise en développement web et formation est impressionnante.
+                        Grâce à Masadigitale, notre site e-commerce est opérationnel et sécurisé. L’équipe est professionnelle et très disponible.
                     </div>
                 </div>
             </div>
@@ -495,11 +532,11 @@
                 <div class="inner-box">
                     <div class="info-box">
                         <div class="thumb"><img src="{{ asset('images/resource/client3.jpg') }}" alt="Client 3"></div>
-                        <h3 class="name">Sekou Bah</h3>
-                        <span class="designation">Directeur Général, Koura Services</span>
+                        <h3 class="name">Fatoumata Traoré</h3>
+                        <span class="designation">Responsable IT, ONG Vision</span>
                     </div>
                     <div class="text">
-                        EGS a su comprendre nos besoins en digitalisation et proposer des solutions parfaitement adaptées à notre environnement.
+                        Masadigitale nous accompagne sur la cybersécurité et l’hébergement de nos données. Un partenaire fiable au Mali.
                     </div>
                 </div>
             </div>
@@ -507,6 +544,7 @@
     </div>
 </section>
 <!-- End Testimonial Section -->
+
 
 
 @endsection

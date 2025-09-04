@@ -9,7 +9,7 @@ use Cviebrock\EloquentSluggable\Sluggable;
 
 class Service extends Model
 {
-    use HasFactory;
+    use HasFactory, Sluggable;
     protected $fillable = [
         'title',
         'slug',
@@ -19,7 +19,7 @@ class Service extends Model
         'icone',
 
     ];
-
+ 
     public function sluggable(): array
     {
         return [

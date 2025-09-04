@@ -85,6 +85,8 @@ class PageController extends Controller
 
     public function services(){
         $getServices= Service::get();
+        //
+    //dd($getServices);
 
         $data= [
             'getServices'=>$getServices,

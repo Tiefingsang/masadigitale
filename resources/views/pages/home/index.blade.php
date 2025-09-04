@@ -7,10 +7,10 @@
         <div class="rev_slider fullwidthabanner" id="rev_slider_one" data-version="5.4.1">
             <ul>
                 <!-- Slide 1 -->
-                {{-- @foreach ($slider as $item) --}}
+                
                 <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1688" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
 
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset( $slider->image) }}">
+                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset('assets/images/slides/slide1.png') }}">
 
                     <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
@@ -27,7 +27,7 @@
                     data-x="['left','left','left','left']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                        <h4>{{ $slider->title }}</h4>
+                        <h4>titre</h4>
                     </div>
 
                     <div class="tp-caption"
@@ -46,7 +46,7 @@
                     data-x="['left','left','left','left']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"delay":500,"split":"chars","splitdelay":0.1,"speed":2000,"frame":"0","from":"x:[-105%];z:0;rX:0deg;rY:0deg;rZ:-90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                        <h2>{{ $slider->short }}</h2>
+                        <h2> </h2>
                     </div>
 
                     <div class="tp-caption"
@@ -64,7 +64,7 @@
                     data-x="['left','left','left','left']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                        <div class="text">{{ $slider->description }}</div>
+                        <div class="text"></div>
                     </div>
 
                     <div class="tp-caption"
@@ -88,13 +88,13 @@
                     </div>
                 </li>
 
-                {{-- @endforeach --}}
+                
 
 
                 <!-- Slide 1 -->
                  <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
 
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset( $slider1->image) }}">
+                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src=" {{ asset('assets/images/slides/slide2.png') }}">
 
                     <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
@@ -112,7 +112,7 @@
                     data-x="['center','center','center','center']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                        <h4>{{ $slider1->short }}</h4>
+                        <h4> </h4>
                     </div>
 
                     <div class="tp-caption"
@@ -130,7 +130,7 @@
                     data-x="['center','center','center','center']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"delay":0,"split":"chars","splitdelay":0.05,"speed":2000,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                        <h2>Experaiences</h2>
+                        <h2> </h2>
                     </div>
 
                     <div class="tp-caption"
@@ -149,7 +149,7 @@
                     data-x="['center','center','center','center']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                        <div class="text">{{ $slider1->description }}</div>
+                        <div class="text"> </div>
                     </div>
 
                     <div class="tp-caption"
@@ -174,9 +174,9 @@
                     </div>
                 </li>
 
-                {{-- <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
+                <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
 
-                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset( $slider2->image) }}">
+                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset('assets/images/slides/slide3.png') }}">
 
                     <div class="tp-caption"
                     data-paddingbottom="[0,0,0,0]"
@@ -194,7 +194,7 @@
                     data-x="['center','center','center','center']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                        <h4>{{ $slider2->short }}</h4>
+                        <h4></h4>
                     </div>
 
                     <div class="tp-caption"
@@ -212,7 +212,7 @@
                     data-x="['center','center','center','center']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"delay":0,"split":"chars","splitdelay":0.05,"speed":2000,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
-                        <h2>Experaiences</h2>
+                        <h2> </h2>
                     </div>
 
                     <div class="tp-caption"
@@ -231,7 +231,7 @@
                     data-x="['center','center','center','center']"
                     data-y="['middle','middle','middle','middle']"
                     data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
-                        <div class="text">{{ $slider2->description }}</div>
+                        <div class="text"></div>
                     </div>
 
                     <div class="tp-caption"
@@ -254,7 +254,251 @@
                     <a href="{{ route('services.index') }}" class="theme-btn btn-style-two"><span>Nos services</span></a>
 
                     </div>
-                </li> --}}
+                </li> 
+                <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
+
+                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset('assets/images/slides/slide4.png') }}">
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-whitespace="nowrap"
+                    data-textalign="center"
+                    data-width="auto"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['-165','-165','-165','-165']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                        <h4></h4>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-textalign="center"
+                    data-whitespace="nowrap"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['-75','-75','-75','-95']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"delay":0,"split":"chars","splitdelay":0.05,"speed":2000,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <h2> </h2>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-whitespace="normal"
+                    data-textalign="center"
+                    data-width="['600','600','600','500']"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['15','15','15','15']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                        <div class="text"></div>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-whitespace="nowrap"
+                    data-width="auto"
+                    data-textalign="center"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['140','140','140','160']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                    <a href="{{ route('about.index') }}" class="theme-btn btn-style-one"><span>En savoir plus</span></a>
+                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-two"><span>Nos services</span></a>
+
+                    </div>
+                </li> 
+
+                <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
+
+                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset('assets/images/slides/slide5.jpg') }}">
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-whitespace="nowrap"
+                    data-textalign="center"
+                    data-width="auto"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['-165','-165','-165','-165']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                        <h4></h4>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-textalign="center"
+                    data-whitespace="nowrap"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['-75','-75','-75','-95']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"delay":0,"split":"chars","splitdelay":0.05,"speed":2000,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <h2> </h2>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-whitespace="normal"
+                    data-textalign="center"
+                    data-width="['600','600','600','500']"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['15','15','15','15']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                        <div class="text"></div>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-whitespace="nowrap"
+                    data-width="auto"
+                    data-textalign="center"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['140','140','140','160']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                    <a href="{{ route('about.index') }}" class="theme-btn btn-style-one"><span>En savoir plus</span></a>
+                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-two"><span>Nos services</span></a>
+
+                    </div>
+                </li> 
+                <li data-description="Slide Description" data-easein="default" data-easeout="default" data-fsmasterspeed="1500" data-fsslotamount="7" data-fstransition="fade" data-hideafterloop="0" data-hideslideonmobile="off" data-index="rs-1689" data-masterspeed="default" data-param1="" data-param10="" data-param2="" data-param3="" data-param4="" data-param5="" data-param6="" data-param7="" data-param8="" data-param9="" data-rotate="0" data-saveperformance="off" data-slotamount="default" data-thumb="images/main-slider/image-2.jpg" data-title="Slide Title" data-transition="parallaxvertical">
+
+                    <img alt="" class="rev-slidebg" data-bgfit="cover" data-bgparallax="10" data-bgposition="center center" data-bgrepeat="no-repeat" data-no-retina="" src="{{ asset('assets/images/slides/slide6.jpg') }}">
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-whitespace="nowrap"
+                    data-textalign="center"
+                    data-width="auto"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['-165','-165','-165','-165']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                        <h4></h4>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-textalign="center"
+                    data-whitespace="nowrap"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['-75','-75','-75','-95']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"delay":0,"split":"chars","splitdelay":0.05,"speed":2000,"frame":"0","from":"x:[105%];z:0;rX:45deg;rY:0deg;rZ:90deg;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","to":"o:1;","ease":"Power4.easeInOut"},{"delay":"wait","speed":300,"frame":"999","to":"auto:auto;","ease":"Power3.easeInOut"}]'>
+                        <h2> </h2>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-whitespace="normal"
+                    data-textalign="center"
+                    data-width="['600','600','600','500']"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['15','15','15','15']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"from":"y:[-100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                        <div class="text"></div>
+                    </div>
+
+                    <div class="tp-caption"
+                    data-paddingbottom="[0,0,0,0]"
+                    data-paddingleft="[0,0,0,0]"
+                    data-paddingright="[0,0,0,0]"
+                    data-paddingtop="[0,0,0,0]"
+                    data-responsive_offset="on"
+                    data-type="text"
+                    data-height="none"
+                    data-whitespace="nowrap"
+                    data-width="auto"
+                    data-textalign="center"
+                    data-hoffset="['0','0','0','0']"
+                    data-voffset="['140','140','140','160']"
+                    data-x="['center','center','center','center']"
+                    data-y="['middle','middle','middle','middle']"
+                    data-frames='[{"from":"y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;","mask":"x:0px;y:0px;s:inherit;e:inherit;","speed":1500,"to":"o:1;","delay":1000,"ease":"Power3.easeInOut"},{"delay":"wait","speed":1000,"to":"auto:auto;","mask":"x:0;y:0;s:inherit;e:inherit;","ease":"Power3.easeInOut"}]'>
+                    <a href="{{ route('about.index') }}" class="theme-btn btn-style-one"><span>En savoir plus</span></a>
+                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-two"><span>Nos services</span></a>
+
+                    </div>
+                </li> 
             </ul>
         </div>
     </div>
@@ -268,14 +512,16 @@
             <!-- Content Column -->
             <div class="content-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <span class="title">À propos de EGS S.A.R.L</span>
-                    <h2>Une entreprise au service de l’innovation, du BTP et du développement au Mali.</h2>
+                    <span class="title">À propos de Masadigitale</span>
+                    <h2>Nous aidons les entreprises à grandir grâce au digital et au marketing moderne.</h2>
                     <div class="text">
-                        Créée en 2011 sous le nom de SATEC, EGS S.A.R.L est une entreprise malienne spécialisée dans les services informatiques, le bâtiment et le commerce général. Grâce à une équipe jeune, dynamique et compétente, nous accompagnons les entreprises publiques et privées dans l’amélioration de leurs performances à travers des solutions sur mesure et un engagement de qualité.
+                        Masadigitale est une entreprise spécialisée dans le marketing digital, la création de solutions web et la communication en ligne. 
+                        Notre mission est d’accompagner les entrepreneurs, PME et grandes entreprises dans leur transformation digitale afin d’augmenter leur visibilité, attirer plus de clients et développer leurs performances.  
+                        Avec une équipe jeune, créative et passionnée, nous mettons en place des stratégies personnalisées et innovantes adaptées au marché malien et international.
                     </div>
                     <div class="link-box">
                         <a href="{{ route('about.index') }}" class="theme-btn btn-style-three">En savoir plus</a>
-                        <a href="tel:+22398256435" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 98 25 64 35</a>
+                        <a href="tel:+22366894475" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 66 89 44 75</a>
                     </div>
                 </div>
             </div>
@@ -283,14 +529,19 @@
             <!-- Video Column -->
             <div class="video-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
-                    <figure class="image"><img src="{{ asset( $slider1->image) }}" alt=""></figure>
-                    <div class="link-box"><a href="https://www.youtube.com/watch?v=SfFmnvikknQ&list=PPSV&t=1093s" class="link" data-fancybox="gallery" data-caption=""><span class="icon la la-play-circle-o"></span></a></div>
+                    <figure class="image"><img src="{{ asset('assets/images/slides/slide6.jpg') }}" alt="Présentation Masadigitale"></figure>
+                    <div class="link-box">
+                        <a href="https://www.youtube.com/watch?v=SfFmnvikknQ" class="link" data-fancybox="gallery" data-caption="Présentation de Masadigitale">
+                            <span class="icon la la-play-circle-o"></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!-- End About Us -->
+
 
 
 <!-- Services Section -->
@@ -333,10 +584,11 @@
         <div class="content-column">
             <div class="inner-column">
                 <div class="sec-title">
-                    <span class="title">Pourquoi choisir EGS S.A.R.L</span>
-                    <h2>Une expertise multidisciplinaire <br>au service de votre performance</h2>
+                    <span class="title">Pourquoi choisir Masadigitale</span>
+                    <h2>Le partenaire digital <br>qui fait grandir votre entreprise</h2>
                     <div class="text">
-                        Depuis plus de 10 ans, EGS S.A.R.L s'engage à fournir des prestations fiables, innovantes et adaptées aux réalités locales. Notre équipe jeune et dynamique combine savoir-faire technique et rigueur professionnelle pour répondre efficacement à vos besoins en informatique, BTP et services généraux.
+                        Dans un monde en pleine transformation numérique, Masadigitale accompagne les entreprises maliennes et africaines dans leur croissance grâce à des solutions digitales modernes, efficaces et adaptées à leur marché.  
+                        Notre équipe jeune et créative combine expertise en <strong>marketing digital, communication en ligne et développement web</strong> pour booster votre visibilité, attirer plus de clients et améliorer vos performances.
                     </div>
                 </div>
                 <ul class="list-style-one clearfix">
@@ -345,18 +597,19 @@
                     @endforeach
                 </ul>
                 <div class="btn-box">
-                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Commencer</a>
+                    <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Découvrir nos services</a>
                 </div>
             </div>
         </div>
 
         <!-- Image Column -->
         <div class="image-column" style="background-image: url({{ asset('assets/images/about/about3.jpeg') }});">
-            <figure class="image-box"><img src="{{ asset('assets/images/resource/imag-2.jpg') }}" alt=""></figure>
+            <figure class="image-box">
+                <img src="{{ asset('assets/images/resource/imag-2.jpg') }}" alt="Pourquoi choisir Masadigitale">
+            </figure>
         </div>
     </div>
 </section>
-
 <!--End Why Choose Us -->
 
 <!-- Call To Action -->
@@ -364,7 +617,7 @@
     <div class="auto-container">
         <div class="outer-box clearfix">
             <div class="title-column">
-                <h3>Des solutions informatiques, techniques et commerciales fiables pour faire évoluer votre activité</h3>
+                <h3>Des solutions digitales fiables et innovantes pour faire évoluer votre activité</h3>
             </div>
 
             <div class="btn-column">
@@ -378,12 +631,14 @@
 <!--End Call To Action -->
 
 
-<!-- Cases Section Section -->
+
+<!-- Cases Section -->
 <section class="cases-section">
     <div class="auto-container">
         <div class="sec-title text-center">
-            <span class="title">Nos Meilleures Réalisations</span>
-            <h2>Projets réalisés par EGS S.A.R.L</h2>
+            <span class="title">Nos Réalisations</span>
+            <h2>Projets digitaux signés Masadigitale</h2>
+            <p>Découvrez quelques-unes de nos meilleures créations en <strong>marketing digital, conception de sites web et communication en ligne</strong>, réalisées pour accompagner nos clients vers plus de visibilité et de performance.</p>
         </div>
 
         <div class="row clearfix">
@@ -393,35 +648,37 @@
                     <div class="image-box">
                         <div class="image">
                             <a href="{{ asset('storage/' . $item->image) }}" class="lightbox-image" data-fancybox="gallery">
-                                <img src="{{ asset('storage/' . $item->image) }}" alt="{{ $item->title }}">
+                                <img src="{{ asset('storage/' . $item->image) }}" alt="Projet digital : {{ $item->title }}">
                             </a>
                         </div>
                         <div class="caption-box">
-                            <h5><a href="{{ route('services-detail', ['title' => $item->title]) }}">{{ $item->title }}</a></h5>
+                            <h5>
+                                <a href="{{ route('services-detail', ['title' => $item->title]) }}">
+                                    {{ $item->title }}
+                                </a>
+                            </h5>
                             <ul class="info">
                                 <li>{{ $item->short }}</li>
-                                
                             </ul>
                             <div class="icon-box">
-                                <a href="{{ route('services-detail', ['title' => $item->title]) }}"><i class="la la-angle-right"></i></a>
+                                <a href="{{ route('services-detail', ['title' => $item->title]) }}">
+                                    <i class="la la-angle-right"></i>
+                                </a>
                             </div>
                         </div>
                     </div>
                 </div>
             @endforeach
             <!-- End Bloc Cas -->
-
-
-           
-            
         </div>
 
-        <div class="btn-box">
-            <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Voir Tout</a>
+        <div class="btn-box text-center">
+            <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Voir tous nos projets</a>
         </div>
-
     </div>
 </section>
+<!-- End Cases Section -->
+
 <!--End Cases Section -->
 
 
@@ -430,14 +687,19 @@
     <div class="outer-box">
         <div class="auto-container">
             <div class="row clearfix">
+                <!-- Texte -->
                 <div class="content-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
-                        <h3>Vous êtes à quelques clics<br> d'une solution fiable et sur mesure</h3>
-                        <div class="text">Confiez vos projets à EGS S.A.R.L pour des résultats concrets en informatique, BTP et commerce général.</div>
+                        <h3>Des solutions digitales sur mesure<br> pour votre entreprise</h3>
+                        <div class="text">
+                            Que ce soit pour développer votre <strong>application mobile</strong>, créer un <strong>site web professionnel</strong>, 
+                            mettre en place une <strong>application de gestion d’entreprise ou de stock</strong>, ou encore booster votre 
+                            <strong>visibilité digitale</strong> via les réseaux sociaux, Masadigitale est votre partenaire de confiance.
+                        </div>
                     </div>
                 </div>
 
-                <!-- Form Column -->
+                <!-- Formulaire -->
                 <div class="form-column col-lg-6 col-md-12 col-sm-12">
                     <div class="inner-column">
                         <div class="appointment-form">
@@ -456,34 +718,40 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <input type="text" name="subject" placeholder="Objet">
+                                    <input type="text" name="subject" placeholder="Votre besoin (ex: appli mobile, gestion de stock, site web)">
                                 </div>
 
                                 <div class="form-group">
-                                    <textarea name="message" placeholder="Message"></textarea>
+                                    <textarea name="message" placeholder="Décrivez votre projet..."></textarea>
                                 </div>
 
                                 <div class="form-group text-right">
-                                    <button class="theme-btn btn-style-two" type="submit" name="submit-form">Envoyer le message</button>
+                                    <button class="theme-btn btn-style-two" type="submit" name="submit-form">
+                                        Envoyer la demande
+                                    </button>
                                 </div>
-
                             </form>
                         </div>
                     </div>
                 </div>
+                <!-- Fin Formulaire -->
             </div>
         </div>
     </div>
 </section>
-<!--End Call Back Section -->
+<!-- End Call Back Section -->
+
 
 
 <!-- Team Section -->
 <section class="team-section">
     <div class="auto-container">
         <div class="sec-title text-center">
-            <span class="title">L'équipe</span>
-            <h2>Operations Direction</h2>
+            <span class="title">Notre Équipe</span>
+            <h2>Les talents derrière Masadigitale</h2>
+            <p>Une équipe jeune, dynamique et passionnée, spécialisée dans la création 
+               d’<strong>applications mobiles</strong>, de <strong>logiciels de gestion</strong>, 
+               et de <strong>solutions digitales</strong> adaptées aux entreprises africaines.</p>
         </div>
 
         <div class="row clearfix">
@@ -491,18 +759,16 @@
             <div class="team-block col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="{{ asset('assets/images/equipe/mohamed.jpg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/equipe/mohamed.jpg') }}" alt=""></a></div>
-                        <!-- <ul class="social-links">
-                            <li><a href="#"><i class="la la-facebook-official"></i></a></li>
-                            <li><a href="#"><i class="la la-twitter"></i></a></li>
-                            <li><a href="#"><i class="la la-google-plus"></i></a></li>
-                            <li><a href="#"><i class="la la-dribbble"></i></a></li>
-                            <li><a href="#"><i class="la la-pinterest"></i></a></li>
-                        </ul> -->
+                        <div class="image">
+                            <a href="{{ asset('assets/images/equipe/tiefing.jpeg') }}" 
+                               class="lightbox-image" data-fancybox="gallery">
+                               <img src="{{ asset('assets/images/equipe/tiefing.jpeg') }}" alt="Directeur Masadigitale">
+                            </a>
+                        </div>
                     </div>
                     <div class="info-box">
-                        <h4 class="name"><a href="team.html">M.SANGARE Mohamed</a></h4>
-                        <span class="designation">Directeur et Fondateur</span>
+                        <h4 class="name">SANGARE Tiefing</h4>
+                        <span class="designation">Directeur Général & Fondateur</span>
                     </div>
                 </div>
             </div>
@@ -511,20 +777,17 @@
             <div class="team-block col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="{{ asset('assets/images/equipe/awa.jpeg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/equipe/awa.jpeg') }}" alt=""></a></div>
-                        <ul class="social-links">
-                            <li><a href="#"><i class="la la-facebook-official"></i></a></li>
-                            <li><a href="#"><i class="la la-twitter"></i></a></li>
-                            <li><a href="#"><i class="la la-google-plus"></i></a></li>
-                            <li><a href="#"><i class="la la-dribbble"></i></a></li>
-                            <li><a href="#"><i class="la la-pinterest"></i></a></li>
-                        </ul>
+                        <div class="image">
+                            <a href="{{ asset('assets/images/equipe/awa.jpeg') }}" 
+                               class="lightbox-image" data-fancybox="gallery">
+                               <img src="{{ asset('assets/images/equipe/awa.jpeg') }}" alt="Commerciale Masadigitale">
+                            </a>
+                        </div>
                     </div>
                     <div class="info-box">
-                        <h4 class="name"><a href="team.html">COULIBALY Haoua</a></h4>
-                        <span class="designation">commerciale</span>
+                        <h4 class="name">COULIBALY Haoua</h4>
+                        <span class="designation">Responsable Commerciale</span>
                     </div>
-
                 </div>
             </div>
 
@@ -532,20 +795,17 @@
             <div class="team-block col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="{{ asset('assets/images/equipe/kadi.png') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/equipe/kadi.png') }}" alt=""></a></div>
-                        <ul class="social-links">
-                            <li><a href="#"><i class="la la-facebook-official"></i></a></li>
-                            <li><a href="#"><i class="la la-twitter"></i></a></li>
-                            <li><a href="#"><i class="la la-google-plus"></i></a></li>
-                            <li><a href="#"><i class="la la-dribbble"></i></a></li>
-                            <li><a href="#"><i class="la la-pinterest"></i></a></li>
-                        </ul>
+                        <div class="image">
+                            <a href="{{ asset('assets/images/equipe/kadi.png') }}" 
+                               class="lightbox-image" data-fancybox="gallery">
+                               <img src="{{ asset('assets/images/equipe/kadi.png') }}" alt="Comptable Masadigitale">
+                            </a>
+                        </div>
                     </div>
                     <div class="info-box">
-                        <h4 class="name"><a href="team.html">DEMBELE Kafiatou</a></h4>
-                        <span class="designation">Sécretaire et comptable</span>
+                        <h4 class="name">DEMBELE Kafiatou</h4>
+                        <span class="designation">Secrétaire & Comptable</span>
                     </div>
-
                 </div>
             </div>
 
@@ -553,26 +813,24 @@
             <div class="team-block col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
-                        <div class="image"><a href="{{ asset('assets/images/equipe/tiefing.jpeg') }}" class="lightbox-image" data-fancybox="gallery"><img src="{{ asset('assets/images/equipe/tiefing.jpeg') }}" alt=""></a></div>
-                        <ul class="social-links">assets/images/resource/team-4.jpg
-                            <li><a href="#"><i class="la la-facebook-official"></i></a></li>
-                            <li><a href="#"><i class="la la-twitter"></i></a></li>
-                            <li><a href="#"><i class="la la-google-plus"></i></a></li>
-                            <li><a href="#"><i class="la la-dribbble"></i></a></li>
-                            <li><a href="#"><i class="la la-pinterest"></i></a></li>
-                        </ul>
+                        <div class="image">
+                            <a href="{{ asset('assets/images/equipe/mohamed.jpg') }}" 
+                               class="lightbox-image" data-fancybox="gallery">
+                               <img src="{{ asset('assets/images/equipe/mohamed.jpg') }}" alt="Développeur Masadigitale">
+                            </a>
+                        </div>
                     </div>
                     <div class="info-box">
-                        <h4 class="name"><a href="team.html">M.SANGARE Mohamed</a></h4>
-                        <span class="designation">Dévéloppeur</span>
+                        <h4 class="name">SANGARE Mohamed</h4>
+                        <span class="designation">Développeur</span>
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
 </section>
-<!--End Team Section -->
+<!-- End Team Section -->
+
 
 <!-- News Section -->
 <section class="news-section">
@@ -640,26 +898,18 @@
 <!-- End Testimonial Section -->
 
 <!--Clients Section-->
-<section class="clients-section">
+<!-- <section class="clients-section">
     <div class="auto-container">
         <div class="sponsors-outer">
-            <!--Sponsors Carousel-->
+            
             <ul class="sponsors-carousel owl-carousel owl-theme">
                 <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/1.png') }}" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/2.png') }}" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/3.png') }}" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/4.png') }}" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/5.png') }}" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/1.png') }}" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/2.png') }}" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/3.png') }}" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/4.png') }}" alt=""></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/5.png') }}" alt=""></a></figure></li>
+                
             </ul>
         </div>
     </div>
-</section>
-<!--End Clients Section-->
+</section>-->
+<!--End Clients Section--> 
 
 
 @endsection

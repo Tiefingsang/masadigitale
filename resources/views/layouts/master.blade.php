@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 
 <head>
 <meta charset="utf-8">
-<title>EGS</title>
+<title>masadigitale</title>
 <!-- Stylesheets -->
 <link href="{{ asset("assets/css/bootstrap.css") }}" rel="stylesheet">
 <link href="{{ asset("assets/plugins/revolution/css/settings.css") }}" rel="stylesheet" type="text/css">
@@ -17,8 +17,8 @@
 <!--Color Themes-->
 <link id="theme-color-file" href="{{ asset('assets/css/color-themes/default-theme.css') }} " rel="stylesheet">
 
-<link rel="shortcut icon" href="{{ asset('assets/images/favicon.jpg') }} images/favicon.jpg" type="image/x-icon">
-<link rel="icon" href="{{ asset('assets/images/favicon.jpg') }} " type="image/x-icon">
+<link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }} images/logo.png" type="image/x-icon">
+<link rel="icon" href="{{ asset('assets/images/logo.png') }} " type="image/x-icon">
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">

@@ -6,15 +6,15 @@
             <div class="inner-container clearfix">
                 <div class="top-left">
                     <ul class="contact-list clearfix">
-                        <li><i class="flaticon-call-1"></i> <a href="tel:+22398256435">+223 98 25 64 35</a></li>
+                        <li><i class="flaticon-call-1"></i> <a href="tel:+22366894475">+223 66894475</a></li>
                         <li><i class="flaticon-mail"></i> <a href="contactegssarl@gmail.com">contactegssarl@gmail.com</a></li>
-                        {{-- <li><i class="flaticon-watch-2"></i> Mon - Sat 8.00 to 18.00 Sunday Closed</li> --}}
+                        <li><i class="flaticon-watch-2"></i> Toujours ouvert</li>
                     </ul>
                 </div>
                 <div class="top-right clearfix">
                     <ul class="social-icon-one">
                         <li><a href="https://www.facebook.com/EGSsarl.mali/"><i class="la la-facebook-official"></i></a></li>
-                        <li><a href="www.tiktok.com/@egssarl"><i class="la la-twitter"></i></a>Tiktok</li>
+                        <li><a href="www.tiktok.com/@masadigitale"><i class="la la-tiktok"></i></a>Tiktok</li>
                     </ul>
                 </div>
             </div>
@@ -27,7 +27,7 @@
         <div class="auto-container">
             <div class="inner-container clearfix">
                 <div class="logo-box">
-                    <div class="logo"><a href="{{ route('home.index') }}"><img src="{{ asset('assets/images/logo.jpg') }}" width="100" alt="" title=""></a></div>
+                    <div class="logo"><a href="{{ route('home.index') }}"><img src="{{ asset('assets/images/logorect.png') }}"  alt="" title=""></a></div>
                 </div>
 
                 <div class="nav-outer">
@@ -50,7 +50,7 @@
                                     <li><a href="{{ route('services.index') }}">Services</a></li>
                                     <!-- <li class=""><a href="{{ route('blogs.index') }}">Blog</a></li> -->
                                     <li><a href="{{ route('contact.index') }}">Contact</a></li>
-                                    <li><a href="{{ route('gallery.index') }}">Galerie</a></li>
+                                    <!-- <li><a href="{{ route('gallery.index') }}">Galerie</a></li> -->
                                 </ul>
                             </div>
                         </nav><!-- Main Menu End-->
@@ -88,7 +88,7 @@
         <div class="auto-container clearfix">
             <!--Logo-->
             <div class="logo pull-left">
-                <a href="{{ route('home.index') }}" title=""><img src="{{ asset('assets/images/logo.jpg') }} " width="40"  alt="" title=""></a>
+                <a href="{{ route('home.index') }}" title=""><img src="{{ asset('assets/images/logolargtransp.png') }} "   alt="" title=""></a>
             </div>
 
             <!--Right Col-->
@@ -105,7 +105,7 @@
                             <!-- <li><a href="{{ route('blogs.index') }}">Blog</a> </li> -->
                             <!-- {{-- <li><a href="{{ route('team.index') }}">team</a></li> --}} -->
                             <li><a href="{{ route('contact.index') }}">Contact</a></li>
-                            <li><a href="{{ route('gallery.index') }}">Galerie</a></li>
+                            <!-- <li><a href="{{ route('gallery.index') }}">Galerie</a></li> -->
                         </ul>
                     </div>
                 </nav><!-- Main Menu End-->

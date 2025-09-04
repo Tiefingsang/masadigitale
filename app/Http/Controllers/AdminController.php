@@ -382,7 +382,7 @@ class AdminController extends Controller
         'image.image' => 'Le fichier doit être une image valide.',
     ]);
 
-    
+     
     if ($request->hasFile('image')) {
         $imagePath = $request->file('image')->store('uploads/service', 'public');
     } else {
