@@ -34,7 +34,7 @@
                             <!-- Nombre de clients -->
                             <div class="counter-column col-lg-4 col-md-4 col-sm-12">
                                 <div class="count-box">
-                                    <span class="count-text" data-speed="3000" data-stop="150">0</span>
+                                    <span class="count-text" data-speed="3000" data-stop="3">0</span>
                                     <h4 class="counter-title">Clients satisfaits</h4>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                             <!-- Nombre de projets -->
                             <div class="counter-column col-lg-4 col-md-4 col-sm-12">
                                 <div class="count-box">
-                                    <span class="count-text" data-speed="3000" data-stop="85">0</span>
+                                    <span class="count-text" data-speed="3000" data-stop="10">0</span>
                                     <h4 class="counter-title">Applications & Projets</h4>
                                 </div>
                             </div>
@@ -50,7 +50,7 @@
                             <!-- Nombre de récompenses -->
                             <div class="counter-column col-lg-4 col-md-4 col-sm-12">
                                 <div class="count-box">
-                                    <span class="count-text" data-speed="3000" data-stop="12">0</span>
+                                    <span class="count-text" data-speed="3000" data-stop="1">0</span>
                                     <h4 class="counter-title">Prix & Distinctions</h4>
                                 </div>
                             </div>
@@ -471,7 +471,7 @@
                 <div class="link-box">
                     <a href="{{ route('about.index') }}" class="theme-btn btn-style-three">En savoir plus</a>
                     <a href="tel:+22366894475" class="theme-btn call-btn">
-                        <i class="icon la la-phone"></i> +223 66 89 44 75
+                        <i class="icon la la-phone"></i> +223 92 51 64 05
                     </a>
                 </div>
             </div>
@@ -481,7 +481,7 @@
             <div class="video-column col-lg-6 col-md-12 col-sm-12">
                 <div class="inner-column">
                     <figure class="image"><img src="{{ asset('assets/images/resource/image-1.jpg') }}" alt="Masadigitale"></figure>
-                    <div class="link-box"><a href="https://www.youtube.com/watch?v=Fvae8nxzVz4" class="link" data-fancybox="gallery"><span class="icon la la-play-circle-o"></span></a></div>
+                    <div class="link-box"><a href="https://youtube.com/@masadigitale?si=IE7ggFBmOyzMRXYP" class="link" data-fancybox="gallery"><span class="icon la la-play-circle-o"></span></a></div>
                 </div>
             </div>
         </div>
@@ -501,39 +501,15 @@
         </div>
 
         <div class="testimonial-carousel owl-carousel owl-theme">
-            <!-- Témoignage 1 -->
-            <div class="testimonial-block">
-                <div class="inner-box">
-                    <div class="info-box">
-                        <div class="thumb"><img src="{{ asset('images/resource/client1.jpg') }}" alt="Client 1"></div>
-                        <h3 class="name">Mariam Diallo</h3>
-                        <span class="designation">Fondatrice, StartUp Mali</span>
-                    </div>
-                    <div class="text">
-                        Masadigitale a développé notre application mobile de gestion interne. Résultat : gain de temps et meilleure productivité.
-                    </div>
-                </div>
-            </div>
-            <!-- Témoignage 2 -->
-            <div class="testimonial-block">
-                <div class="inner-box">
-                    <div class="info-box">
-                        <div class="thumb"><img src="{{ asset('images/resource/client2.jpg') }}" alt="Client 2"></div>
-                        <h3 class="name">Ibrahim Konaté</h3>
-                        <span class="designation">DG, Kono Entreprise</span>
-                    </div>
-                    <div class="text">
-                        Grâce à Masadigitale, notre site e-commerce est opérationnel et sécurisé. L’équipe est professionnelle et très disponible.
-                    </div>
-                </div>
-            </div>
+            
+            
             <!-- Témoignage 3 -->
             <div class="testimonial-block">
                 <div class="inner-box">
                     <div class="info-box">
-                        <div class="thumb"><img src="{{ asset('images/resource/client3.jpg') }}" alt="Client 3"></div>
-                        <h3 class="name">Fatoumata Traoré</h3>
-                        <span class="designation">Responsable IT, ONG Vision</span>
+                        <div class="thumb"><img src="{{ asset('assets/images/clients/mohamed.png') }}" alt="MOHAMED"></div>
+                        <h3 class="name">Mohamed cherif SANGARE</h3>
+                        <span class="designation">Directeur et Fondateur de l'entreprise EGS</span>
                     </div>
                     <div class="text">
                         Masadigitale nous accompagne sur la cybersécurité et l’hébergement de nos données. Un partenaire fiable au Mali.

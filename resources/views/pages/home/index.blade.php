@@ -521,7 +521,7 @@
                     </div>
                     <div class="link-box">
                         <a href="{{ route('about.index') }}" class="theme-btn btn-style-three">En savoir plus</a>
-                        <a href="tel:+22366894475" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 66 89 44 75</a>
+                        <a href="tel:+22392516405" class="theme-btn call-btn"><i class="icon la la-phone"></i> +223 92516405</a>
                     </div>
                 </div>
             </div>
@@ -531,7 +531,7 @@
                 <div class="inner-column">
                     <figure class="image"><img src="{{ asset('assets/images/slides/slide6.jpg') }}" alt="Présentation Masadigitale"></figure>
                     <div class="link-box">
-                        <a href="https://www.youtube.com/watch?v=SfFmnvikknQ" class="link" data-fancybox="gallery" data-caption="Présentation de Masadigitale">
+                        <a href="https://youtube.com/@masadigitale?si=IE7ggFBmOyzMRXYP" class="link" data-fancybox="gallery" data-caption="Présentation de Masadigitale">
                             <span class="icon la la-play-circle-o"></span>
                         </a>
                     </div>

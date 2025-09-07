@@ -134,7 +134,7 @@
                 data-lng="-8.0029"   
                 data-type="roadmap"
                 data-hue="#ffc400"
-                data-title="Masatechnologie"
+                data-title="masadigitale"
                 data-icon-path="{{ asset('assets/images/icons/map-marker-2.png') }}"
                 data-content="Bamako, Mali<br><a href='mailto:tiefingsangare86@gmail.com'>tiefingsangare86@gmail.com</a>">
             </div>

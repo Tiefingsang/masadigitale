@@ -20,13 +20,13 @@
                             <div class="row clearfix">
                                 <div class="info-column col-lg-6 col-md-12 col-sm-12">
                                     <h3>Stratégie Digitale & Opérations</h3>
-                                    <p>Chez Masatechnologie, nous aidons les entreprises à structurer leur présence numérique et à optimiser leurs opérations. Grâce à une combinaison de stratégie digitale, d’outils technologiques et d’analyse des données, nous accompagnons nos clients dans la modernisation de leurs processus, la gestion efficace de leurs plateformes e-commerce et l'amélioration de leur performance globale.</p>
+                                    <p>Chez masadigitale, nous aidons les entreprises à structurer leur présence numérique et à optimiser leurs opérations. Grâce à une combinaison de stratégie digitale, d’outils technologiques et d’analyse des données, nous accompagnons nos clients dans la modernisation de leurs processus, la gestion efficace de leurs entreprise et l'amélioration de leur performance globale.</p>
                                 </div>
                         
                                 <div class="image-column col-lg-6 col-md-12 col-sm-12">
                                     <div class="image">
                                         <a href="{{ $serviceFindByTitle->image }}" class="lightbox-image">
-                                            <img src="{{ $serviceFindByTitle->image }}" alt="Stratégie digitale Masatechnologie">
+                                            <img src="{{ $serviceFindByTitle->image }}" alt="Stratégie digitale masadigitale">
                                         </a>
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                                 <div class="acc-btn active">Objectifs d’Investissement Technologique <div class="icon la la-plus-circle"></div></div>
                                 <div class="acc-content current">
                                     <div class="content">
-                                        <div class="text">Chez Masatechnologie, nous accompagnons les entreprises dans la définition et l’atteinte de leurs objectifs en matière de digitalisation, en proposant des solutions technologiques sur mesure à fort retour sur investissement.</div>
+                                        <div class="text">Chez masadigitale, nous accompagnons les entreprises dans la définition et l’atteinte de leurs objectifs en matière de digitalisation, en proposant des solutions technologiques sur mesure à fort retour sur investissement.</div>
                                     </div>
                                 </div>
                             </li>
@@ -78,8 +78,8 @@
                                 <!-- Boutons des onglets -->
                                 <ul class="tab-btns tab-buttons clearfix">
                                     <li data-tab="#info-1" class="tab-btn">Avantages</li>
-                                    <li data-tab="#info-2" class="tab-btn active-btn">Solutions E-commerce</li>
-                                    <li data-tab="#info-3" class="tab-btn">Croissance de Masatechnologie</li>
+                                    <li data-tab="#info-2" class="tab-btn active-btn">Solutions masadigitale</li>
+                                    <li data-tab="#info-3" class="tab-btn">Croissance de masadigitale</li>
                                 </ul>
                     
                                 <!-- Contenu des onglets -->
@@ -105,7 +105,7 @@
                                     <div class="tab" id="info-3">
                                         <div class="content">
                                             <figure class="thumb"><img src="{{ asset('assets/images/resource/thumb-2.jpg') }}" alt=""></figure>
-                                            <p>Depuis sa création, Masatechnologie ne cesse d’évoluer pour répondre aux besoins numériques du marché malien. Grâce à une équipe passionnée et à une vision axée sur l’innovation, nous accélérons la transformation digitale de nombreuses entreprises.</p>
+                                            <p>Depuis sa création, masadigitale ne cesse d’évoluer pour répondre aux besoins numériques du marché malien et africain. Grâce à une équipe passionnée et à une vision axée sur l’innovation, nous accélérons la transformation digitale de nombreuses entreprises.</p>
                                         </div>
                                     </div>
                                 </div>
