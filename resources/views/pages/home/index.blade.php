@@ -825,7 +825,7 @@
                     </div>
                     <div class="info-box">
                         <h4 class="name">Abdoulaye A DIALLO</h4>
-                        <span class="designation">Développeur</span>
+                        <span class="designation">Développeur</span> 
                     </div>
                 </div>
             </div>
