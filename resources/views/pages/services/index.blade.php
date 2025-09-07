@@ -1,4 +1,5 @@
 @extends('layouts.master')
+<title>yield('title', 'Services Masadigitale')</title>
 @section('content')
 
 <section class="page-title" style="background-image:url({{ asset('assets/images/background/8.jpg') }});">

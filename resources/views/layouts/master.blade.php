@@ -3,48 +3,63 @@
 
 
 <head>
-<meta charset="utf-8">
-<title>masadigitale</title>
-<!-- Stylesheets -->
-<link href="{{ asset("assets/css/bootstrap.css") }}" rel="stylesheet">
-<link href="{{ asset("assets/plugins/revolution/css/settings.css") }}" rel="stylesheet" type="text/css">
-<link href="{{ asset('assets/plugins/revolution/css/layers.css') }} " rel="stylesheet" type="text/css">
-<link href="{{ asset('assets/plugins/revolution/css/navigation.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-<link href="{{ asset('assets/css/responsive.css') }} " rel="stylesheet">
-<!--Color Switcher Mockup-->
-<link href="{{ asset('assets/css/color-switcher-design.css') }} " rel="stylesheet">
-<!--Color Themes-->
-<link id="theme-color-file" href="{{ asset('assets/css/color-themes/default-theme.css') }} " rel="stylesheet">
+    <meta charset="utf-8">
+    
+    <title>@yield('title', 'Masadigitale - Agence digitale au Mali')</title>
 
-<link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }} images/logo.png" type="image/x-icon">
-<link rel="icon" href="{{ asset('assets/images/logo.png') }} " type="image/x-icon">
-<!-- Responsive -->
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
-<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
-    @if(session('notify'))
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <meta name="description" content="Masadigitale est une agence de marketing digital et de développement technologique basée à Bamako. Publicité Facebook & Instagram, SEO, création de sites web et applications, accompagnement digital.">
+    <meta name="keywords" content="marketing digital Mali, création site web Bamako, agence digitale Mali, SEO Bamako, publicité Facebook Mali, Masadigitale">
+    <meta name="author" content="Masadigitale">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.masadigitale.com/">
+    <meta property="og:title" content="Masadigitale 🚀 Votre agence de marketing digital au Mali">
+    <meta property="og:description" content="De l’idée au digital, nous construisons le succès de votre entreprise. Découvrez nos services : sites web, applications, publicité en ligne, SEO, réseaux sociaux.">
+    <meta property="og:image" content="https://www.masadigitale.com/assets/images/logo.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.masadigitale.com/">
+    <meta property="twitter:title" content="Masadigitale 🚀 Votre agence digitale au Mali">
+    <meta property="twitter:description" content="Agence de marketing digital et développement web au Mali. Publicité, SEO, réseaux sociaux, applications et plus.">
+    <meta property="twitter:image" content="https://www.masadigitale.com/assets/images/logo.png">
+
+    <!-- Stylesheets -->
+    <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/plugins/revolution/css/settings.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/plugins/revolution/css/layers.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/plugins/revolution/css/navigation.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/color-switcher-design.css') }}" rel="stylesheet">
+    <link id="theme-color-file" href="{{ asset('assets/css/color-themes/default-theme.css') }}" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ asset('assets/images/logo.png') }}" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+
+    <!-- Responsive -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-990CYP3GJJ"></script>
     <script>
-        $(document).ready(function() {
-            $.notify({
-                icon: 'fa fa-bell',
-                title: 'Notification',
-                message: "{{ session('notify')['message'] }}"
-            }, {
-                type: "{{ session('notify')['type'] }}", // success, danger, warning...
-                placement: {
-                    from: "bottom",
-                    align: "right"
-                },
-                delay: 2000,
-                timer: 500,
-            });
-        });
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-990CYP3GJJ');
     </script>
-    @endif
-
 </head>
+
 
 <body>
 

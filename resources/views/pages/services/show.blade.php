@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('title', 'Nos services digitaux - Masadigitale Mali')
+@section('meta_description', 'Découvrez nos services digitaux : création de sites web, SEO, publicité Facebook, design graphique et applications au Mali.')
+
 @section('content')
 
 <div class="service-detail-section">

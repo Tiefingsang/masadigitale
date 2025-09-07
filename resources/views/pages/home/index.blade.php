@@ -1,4 +1,7 @@
 @extends('layouts.master')
+@section('title', 'Masadigitale - Agence de marketing digital et développement web au Mali')
+@section('meta_description', 'De l’idée au digital, Masadigitale accompagne les entreprises au Mali avec des solutions digitales : SEO, publicité Facebook, sites web et applications.')
+
 @section('content')
 
 <!--Main Slider-->

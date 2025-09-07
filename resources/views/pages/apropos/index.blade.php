@@ -1,5 +1,11 @@
 @extends('layouts.master')
+
+@section('title', 'Apropos de nous - Masadigitale Mali')
+@section('meta_description', 'De l’idée au digital, Masadigitale accompagne les entreprises au Mali avec des solutions digitales : SEO, publicité Facebook, sites web et applications.')
+
 @section('content')
+
+
 
 
 <section class="page-title" style="background-image:url({{ asset('assets/images/background/8.jpg') }});">

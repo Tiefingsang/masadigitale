@@ -1,5 +1,9 @@
 @extends('layouts.master')
+@section('title', 'Contactez Masadigitale - Agence digitale au Mali')
+@section('meta_description', 'Vous souhaitez développer votre business avec le digital au Mali ? Contactez Masadigitale pour un accompagnement personnalisé.')
+
 @section('content')
+
 
 <section class="page-title" style="background-image:url({{ asset('assets/images/background/8.jpg') }});">
     <div class="auto-container">
@@ -62,6 +66,7 @@
 
 
 <section class="contact-info-section">
+
     <div class="auto-container">
         <div class="row clearfix">
 

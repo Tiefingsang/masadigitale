@@ -1,14 +1,43 @@
 <!--Clients Section-->
 <section class="clients-section">
     <div class="auto-container">
-        <div class="sponsors-outer">
-            <!--Sponsors Carousel-->
-            <ul class="sponsors-carousel owl-carousel owl-theme">
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/egs.jpg') }}" alt="EGS"></a></figure></li><li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/egs.jpg') }}" alt="EGS"></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="https://masasugu.com"><img src="{{ asset('assets/images/clients/masasugu.jpeg') }}" alt="Masasugu"></a></figure></li>
-                <li class="slide-item"><figure class="image-box"><a href="#"><img src="{{ asset('assets/images/clients/logo.png') }}" alt="Masadigitale"></a></figure></li>
-            </ul>
-        </div>
+<div class="sponsors-outer">
+    <!--Sponsors Carousel-->
+    <ul class="sponsors-carousel owl-carousel owl-theme">
+        <li class="slide-item">
+            <figure class="image-box">
+                <a href="#"><img src="{{ asset('assets/images/clients/egs.jpg') }}" alt="EGS"></a>
+            </figure>
+        </li>
+        <li class="slide-item">
+            <figure class="image-box">
+                <a href="#"><img src="{{ asset('assets/images/clients/egs.jpg') }}" alt="EGS"></a>
+            </figure>
+        </li>
+        <li class="slide-item">
+            <figure class="image-box">
+                <a href="https://masasugu.com"><img src="{{ asset('assets/images/clients/masasugu.jpeg') }}" alt="Masasugu"></a>
+            </figure>
+        </li>
+        <li class="slide-item">
+            <figure class="image-box">
+                <a href="#"><img src="{{ asset('assets/images/clients/logo.png') }}" alt="Masadigitale"></a>
+            </figure>
+        </li>
+    </ul>
+</div>
+
+<!-- Ajoute ce style dans ton fichier CSS ou dans un <style> -->
+<style>
+.sponsors-carousel .image-box img {
+    max-height: 80px; /* Ajuste ici : 60px, 80px, 100px */
+    width: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+}
+</style>
+
     </div>
 </section>
 <!--End Clients Section-->
