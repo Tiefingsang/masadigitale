@@ -817,14 +817,14 @@
                 <div class="inner-box">
                     <div class="image-box">
                         <div class="image">
-                            <a href="{{ asset('assets/images/equipe/mohamed.jpg') }}" 
+                            <a href="{{ asset('assets/images/equipe/ablo.jpeg') }}" 
                                class="lightbox-image" data-fancybox="gallery">
-                               <img src="{{ asset('assets/images/equipe/mohamed.jpg') }}" alt="Développeur Masadigitale">
+                               <img src="{{ asset('assets/images/equipe/ablo.jpeg') }}" alt="Développeur chez Masadigitale">
                             </a>
                         </div>
                     </div>
                     <div class="info-box">
-                        <h4 class="name">SANGARE Mohamed</h4>
+                        <h4 class="name">Abdoulaye A DIALLO</h4>
                         <span class="designation">Développeur</span>
                     </div>
                 </div>
