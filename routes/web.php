@@ -37,7 +37,7 @@ Route::get('/team-datail', [PageController::class, 'teamDetail'])->name('team.de
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 
 // list element routing  admin lists
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'adminlllllllllllllllll'], function () {
     Route::get('/', [AdminController::class, 'admin'])->name('admin.index');
     Route::get('/blog', [AdminController::class, 'adminBlog'])->name('admin.blog');
     Route::get('/blog-index', [AdminController::class, 'adminBlogIndex'])->name('admin.blog.index');
