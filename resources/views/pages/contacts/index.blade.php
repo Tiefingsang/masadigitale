@@ -70,7 +70,7 @@
                 <div class="inner-box">
                     <div class="icon-box"><span class="flaticon-mail"></span></div>
                     <ul>
-                        <li><strong>Email :</strong> <a href="mailto:tiefingsangare86@gmail.com">masadigitale@gmail.com</a></li>
+                        <li><strong>Email :</strong> <a href="mailto:masadigitale@gmail.com">masadigitale@gmail.com</a></li>
                         <li><strong>Téléphone :</strong> <a href="tel:+22392516405">+223 92516405</a></li>
                     </ul>
                 </div>
