@@ -6,14 +6,14 @@
             <div class="inner-container clearfix">
                 <div class="top-left">
                     <ul class="contact-list clearfix">
-                        <li><i class="flaticon-call-1"></i> <a href="tel:+22366894475">+223 66894475</a></li>
-                        <li><i class="flaticon-mail"></i> <a href="contactegssarl@gmail.com">contactegssarl@gmail.com</a></li>
+                        <li><i class="flaticon-call-1"></i> <a href="tel:+22392516405">+223 92516405</a></li>
+                        <li><i class="flaticon-mail"></i> <a href="contactegssarl@gmail.com">masadigitale.com</a></li>
                         <li><i class="flaticon-watch-2"></i> Toujours ouvert</li>
                     </ul>
                 </div>
                 <div class="top-right clearfix">
                     <ul class="social-icon-one">
-                        <li><a href="https://www.facebook.com/EGSsarl.mali/"><i class="la la-facebook-official"></i></a></li>
+                        <li><a href="https://www.facebook.com/share/1GuoWeSH5i/"><i class="la la-facebook-official"></i></a></li>
                         <li><a href="www.tiktok.com/@masadigitale"><i class="la la-tiktok"></i></a>Tiktok</li>
                     </ul>
                 </div>
