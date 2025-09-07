@@ -380,13 +380,15 @@
                         Grâce à notre expertise locale et une approche orientée résultats, nous aidons les PME, les ONG et les institutions à réussir leur transformation digitale.
                     </div>
                 </div>
+                
                 <ul class="list-style-one clearfix">
-                    <li><a href="{{ route('services.index') }}">Applications Mobiles (Android & iOS)</a></li>
-                    <li><a href="{{ route('services.index') }}">Logiciels de Gestion (Stock, Facturation, RH...)</a></li>
-                    <li><a href="{{ route('services.index') }}">Sites Web Vitrine & E-commerce</a></li>
-                    <li><a href="{{ route('services.index') }}">Hébergement Sécurisé & Cloud</a></li>
-                    <li><a href="{{ route('services.index') }}">Formation & Consulting Digital</a></li>
-                    <li><a href="{{ route('services.index') }}">Cybersécurité & Sauvegarde</a></li>
+                    @if(isset($getServices) && count($getServices) > 0)
+                        @foreach ($getServices as $item)
+                            <li><a href="{{ route('services-detail', ['slug' => $item->slug]) }}">{{ $item->title }}</a></li>
+                        @endforeach
+                    @else
+                        <li>Aucun service disponible pour le moment.</li>
+                    @endif
                 </ul>
                 <div class="btn-box">
                     <a href="{{ route('services.index') }}" class="theme-btn btn-style-three">Commencer avec Masadigitale</a>

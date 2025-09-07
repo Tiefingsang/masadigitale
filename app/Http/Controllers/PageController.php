@@ -53,12 +53,15 @@ class PageController extends Controller
 
     public function about(Request $request){
         $getAbouts= About::first();
+        $getServices= Service::get();
 
         $data= [
 
             'getAbouts'=>$getAbouts,
+            'getServices'=>$getServices,
 
         ];
+        //dd($data);
         return view('pages.apropos.index', $data);
     }
 

@@ -5,7 +5,7 @@
         <div class="auto-container">
             <div class="inner-container clearfix">
                 <div class="top-left">
-                    <ul class="contact-list clearfix">
+                    <ul class="contact-list clearfix"> 
                         <li><i class="flaticon-call-1"></i> <a href="tel:+22392516405">+223 92516405</a></li>
                         <li><i class="flaticon-mail"></i> <a href="contactegssarl@gmail.com">masadigitale.com</a></li>
                         <li><i class="flaticon-watch-2"></i> Toujours ouvert</li>

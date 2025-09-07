@@ -70,8 +70,8 @@
                 <div class="inner-box">
                     <div class="icon-box"><span class="flaticon-mail"></span></div>
                     <ul>
-                        <li><strong>Email :</strong> <a href="mailto:tiefingsangare86@gmail.com">tiefingsangare86@gmail.com</a></li>
-                        <li><strong>Téléphone :</strong> <a href="tel:+22378794089">+223 78 79 40 89</a></li>
+                        <li><strong>Email :</strong> <a href="mailto:tiefingsangare86@gmail.com">masadigitale@gmail.com</a></li>
+                        <li><strong>Téléphone :</strong> <a href="tel:+22392516405">+223 92516405</a></li>
                     </ul>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                         <li><strong>Adresse :</strong></li>
                         <li>Bamako, Mali</li>
                     </ul>
-                </div>
+                </div> 
             </div>
 
             <!-- Réseaux sociaux -->
@@ -106,10 +106,10 @@
                         <li><strong>Suivez-nous :</strong></li>
                         <li>
                             <ul class="social-icon-one">
-                                <li><a href="#"><i class="la la-facebook-official"></i></a></li>
-                                <li><a href="#"><i class="la la-twitter"></i></a></li>
-                                <li><a href="#"><i class="la la-instagram"></i></a></li>
-                                <li><a href="#"><i class="la la-linkedin"></i></a></li>
+                                <li><a href="https://www.facebook.com/share/1GuoWeSH5i/"><i class="la la-facebook-official"></i></a></li>
+                                <li><a href="https://x.com/masadigitale?t=gFB_8Yck0dMPPfEo4cVH_A&s=09"><i class="la la-twitter"></i></a></li>
+                                <li><a href="https://www.instagram.com/masadigitale?utm_source=qr&igsh=MTNrdXdjcWR2dDYybw=="><i class="la la-instagram"></i></a></li>
+                                
                             </ul>
                         </li>
                     </ul>

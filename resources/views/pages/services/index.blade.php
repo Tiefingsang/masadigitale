@@ -30,8 +30,8 @@
                     <div class="inner-box">
                        <div style="width: 250px; height: 200px; margin: auto; ">
                         <img src="{{ asset('storage/'.$item->image) }}" 
-     alt="{{ $item->title }}" 
-     style="width:250px; height:200px; object-fit:cover; border-radius:8px;">
+                        alt="{{ $item->title }}" 
+                        style="width:250px; height:200px; object-fit:cover; border-radius:8px;">
 
                     </div>
 

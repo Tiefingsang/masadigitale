@@ -25,8 +25,8 @@
                         
                                 <div class="image-column col-lg-6 col-md-12 col-sm-12">
                                     <div class="image">
-                                        <a href="{{ $serviceFindByTitle->image }}" class="lightbox-image">
-                                            <img src="{{ $serviceFindByTitle->image }}" alt="Stratégie digitale masadigitale">
+                                        <a href="{{ asset('storage/' . $serviceFindByTitle->image) }}" class="lightbox-image">
+                                            <img src="{{ asset('storage/' . $serviceFindByTitle->image) }}" alt="{{ $serviceFindByTitle->image }}">
                                         </a>
                                     </div>
                                 </div>
@@ -142,7 +142,7 @@
                     <div class="sidebar-widget brochure">
                         <div class="brochure-box">
                             <span>Téléchargez notre brochure</span>
-                            <h4>Brochure financière 2017</h4>
+                            <h4>Brochure financière</h4>
                             <p>Ici.</p>
                             <a href="#" class="theme-btn btn-style-two">Télécharger</a>
                         </div>
