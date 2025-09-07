@@ -1,5 +1,7 @@
 @extends('layouts.master')
-<title>yield('title', 'Services Masadigitale')</title>
+@section('title', 'Nos services digitaux - Masadigitale Mali')
+@section('meta_description', 'Découvrez nos services digitaux : création de sites web, SEO, publicité Facebook, design graphique et applications au Mali.')
+
 @section('content')
 
 <section class="page-title" style="background-image:url({{ asset('assets/images/background/8.jpg') }});">
