@@ -287,41 +287,45 @@ class AdminController extends Controller
         return view('admin.pages.login.login');
     }
 
-    public function adminLoginStore(Request $request){
-        $request->validate([
+    
 
-            'email'=> 'required|email|exists:users,email',
-            'password'=>'required|min:6',
-        ],[
-            'email.required'=>'Veillez entrer votre nom ou votre email',
-            //'password.min'=>'Veillez entrer un mot de passe plus de 6 caractères',
-            'password.required'=>'Veillez entrer un mot de passe correct',
-            //'login_id.required'=>'Veillez entrer votre adresse email',
-            //'login_id.email'=>'Votre email n\'est pas correct',
-            //'login_id.unique'=>'Votre email est déjà utiliser',
+    public function adminLoginStore(Request $request)
+    {
+        // Validation
+        $request->validate([
+            'email'    => 'required|email|exists:users,email',
+            'password' => 'required|min:6',
+        ], [
+            'email.required'    => 'Veuillez entrer votre adresse email',
+            'email.email'       => 'Votre email n\'est pas valide',
+            'email.exists'      => 'Cet email n\'existe pas dans nos enregistrements',
+            'password.required' => 'Veuillez entrer un mot de passe',
+            'password.min'      => 'Le mot de passe doit contenir au moins 6 caractères',
         ]);
 
+        // Tentative d'authentification
+        $credentials = $request->only('email', 'password');
+        $remember    = $request->has('remember'); // support "se souvenir de moi"
 
-        $cle=array(
-            'email'=>$request->email,
-            'password'=>$request->password,
+        if (Auth::attempt($credentials, $remember)) {
+            $request->session()->regenerate();
 
-        );
-        if (Auth::attempt($cle)) {
-            session()->regenerate();
-
-            return redirect()->route('admin.index');
-            session()->flash('seccess', 'Connexion success!');
-        }else{
-            session()->flash('fail', 'Erreur de connexion. Veuillez réessayer.');
-            return redirect()->back();
+            return redirect()
+                ->route('admin.index')
+                ->with('success', 'Connexion réussie !');
         }
+
+        // Si échec
+        return back()
+            ->withInput($request->only('email'))
+            ->with('fail', 'Erreur de connexion. Veuillez réessayer.');
     }
+
 
     public function logout(){
         Auth::logout();
 
-        return to_route('admin.login')->with('vous êtes deconnecté');
+        return to_route('login')->with('vous êtes deconnecté');
     }
 
     public function adminProfilUpdate(Request $request){

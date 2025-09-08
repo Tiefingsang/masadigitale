@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>masadigitale - Admin Dashboard</title>
@@ -9,7 +9,7 @@
     />
     <link
       rel="icon"
-      href="/assets/admin/assets/img/kaiadmin/favicon.ico"
+      href="{{ asset('assets/images/logo.png') }}"
       type="image/x-icon"
     />
 

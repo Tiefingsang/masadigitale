@@ -34,10 +34,20 @@ Route::get('/team-datail', [PageController::class, 'teamDetail'])->name('team.de
     Route::get('/', [AdminController::class, 'admin'])->name('admin.index');
 }); */
 
+
 Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 
 // list element routing  admin lists
-Route::group(['prefix' => 'adminlllllllllllllllll'], function () {
+/* Route::get('/admin/login', [AdminController::class, 'adminLogin'])->name('login');
+Route::post('/admin/login-store', [AdminController::class, 'adminLoginStore'])->name('admin.login.store');
+Route::post('/admin-logout', [AdminController::class, 'logout'])->name('admin.logout'); */
+Route::get('/register', [AdminController::class, 'adminRegister'])->name('admin.register');
+Route::post('/register-store', [AdminController::class, 'adminRegisterStore'])->name('admin.register.store');
+Route::get('/login', [AdminController::class, 'adminLogin'])->name('login');
+Route::post('/login-store', [AdminController::class, 'adminLoginStore'])->name('admin.login.store');
+Route::post('/admin-logout', [AdminController::class, 'logout'])->name('admin.logout');
+Route::group(['prefix' => 'admin',
+    'middleware' => ['auth'] ], function () {
     Route::get('/', [AdminController::class, 'admin'])->name('admin.index');
     Route::get('/blog', [AdminController::class, 'adminBlog'])->name('admin.blog');
     Route::get('/blog-index', [AdminController::class, 'adminBlogIndex'])->name('admin.blog.index');
@@ -120,10 +130,6 @@ Route::group(['prefix' => 'adminlllllllllllllllll'], function () {
 
 
 
-    Route::get('/register', [AdminController::class, 'adminRegister'])->name('admin.register');
-    Route::post('/register-store', [AdminController::class, 'adminRegisterStore'])->name('admin.register.store');
-    Route::get('/login', [AdminController::class, 'adminLogin'])->name('admin.login');
-    Route::post('/login-store', [AdminController::class, 'adminLoginStore'])->name('admin.login.store');
-    Route::post('/admin-logout', [AdminController::class, 'logout'])->name('admin.logout');
+    
 
 });
