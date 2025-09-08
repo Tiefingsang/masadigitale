@@ -125,7 +125,10 @@ Route::group(['prefix' => 'admin',
     Route::get('/contact-edit', [AdminController::class, 'adminContactEdit'])->name('admin.contact-edit');
     Route::post('/contact-update', [AdminController::class, 'adminContactUpdate'])->name('admin.contact-update');
 
-
+    //redirection en cas de mauvaise route
+    Route::fallback(function () {
+        return abort(404);
+    });
 
 
 
