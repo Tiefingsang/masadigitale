@@ -70,7 +70,7 @@
             </div>
 
             <button type="submit" class="btn btn-success w-100">Se connecter</button>
-        </form>
+        </form> 
     </div>
 
 </body>
