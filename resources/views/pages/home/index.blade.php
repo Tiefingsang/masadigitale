@@ -720,7 +720,7 @@
 
                                 <div class="form-group">
                                     <input type="email" name="email" placeholder="Email" required="">
-                                </div>
+                                </div> 
 
                                 <div class="form-group">
                                     <input type="text" name="subject" placeholder="Votre besoin (ex: appli mobile, gestion de stock, site web)">
