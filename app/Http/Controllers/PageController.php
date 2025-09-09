@@ -12,6 +12,8 @@ use App\Models\Client;
 use App\Models\Blog;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
 
 class PageController extends Controller
 {
@@ -116,38 +118,34 @@ class PageController extends Controller
         return view('pages.contacts.index');
     }
 
-    public function contactStore(Request $request){
-        //dd($request);
-    $request->validate([
+    public function contactStore(Request $request)
+{
+    $validated = $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|email',
+        'subject' => 'nullable|string',
         'message' => 'required|string',
     ], [
         'name.required' => 'Le nom est obligatoire.',
-        'name.string' => 'Le nom doit être une chaîne de caractères.',
-        'name.max' => 'Le nom ne doit pas dépasser 255 caractères.',
         'email.required' => 'L\'email est obligatoire.',
         'email.email' => 'Veuillez entrer une adresse email valide.',
         'message.required' => 'Le message est obligatoire.',
-        'message.string' => 'Le message doit être une chaîne de caractères.',
+        
+        'subject.string' => 'Le sujet doit contenir des caractères.',
     ]);
 
+    // Enregistrement du contact
+    $contact = Contact::create($validated);
 
-    // Création du contact
-    $contact= Contact::create([
-        'name' => $request->name,
-        'email' => $request->email,
-        'message' => $request->message,
-    ]);
-
-    $admin = User::first(); // récupère l'admin
+    // Comme tu n’as qu’un seul admin → on prend le premier user
+    /* $admin = User::first();
     if ($admin) {
         $admin->notify(new NewContactMessage($contact));
-    }
+    } */
 
-    // Redirection avec un message de succès
-    return redirect()->back()->with('success', 'Votre message a été envoyé avec succès.');
+    return back()->with('success', '✅ Votre message a été envoyé avec succès.');
 }
+
 
 
     public function team(){

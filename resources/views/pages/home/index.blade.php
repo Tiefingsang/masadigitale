@@ -710,10 +710,12 @@
                                 <span>Notre équipe est à votre écoute</span>
                                 <h3>Demandez à être rappelé</h3>
                             </div>
+                            
 
-                            <form method="post" action="">
+                            <form method="post" action="{{ route('contact.store') }}">
+                                @csrf
                                 <div class="form-group">
-                                    <input type="text" name="username" placeholder="Nom" required="">
+                                    <input type="text" name="name" placeholder="Nom" required="">
                                 </div>
 
                                 <div class="form-group">

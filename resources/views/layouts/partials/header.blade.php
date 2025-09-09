@@ -112,5 +112,40 @@
             </div>
         </div>
     </div>
+    @if(session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Succès',
+        text: "{{ session('success') }}",
+        showConfirmButton: false,
+        timer: 3000
+    })
+</script>
+@endif
+
+@if(session('fail'))
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Erreur',
+        text: "{{ session('fail') }}",
+        showConfirmButton: true,
+    })
+</script>
+@endif
+
+@if ($errors->any())
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Erreurs de validation',
+        html: `{!! implode('<br>', $errors->all()) !!}`,
+        showConfirmButton: true,
+    })
+</script>
+@endif
+
+
 </header>
 <!--End Main Header -->

@@ -157,12 +157,50 @@
 
 <!--form-->
 <script src="{{ asset('assets/js/validate.js') }}"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
 
 
 <!--Google Map APi Key-->
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyBKS14AnP3HCIVlUpPKtGp7CbYuMtcXE2o"></script>
 <script src="{{ asset('assets/js/map-script.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+@if (session('success'))
+<script>
+    Swal.fire({
+        icon: 'success',
+        title: 'Succès',
+        text: '{{ session('success') }}',
+        confirmButtonColor: '#3085d6',
+        timer: 3000,
+        showConfirmButton: false
+    });
+</script>
+@endif
+
+@if (session('error'))
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Erreur',
+        text: '{{ session('error') }}',
+        confirmButtonColor: '#d33'
+    });
+</script>
+@endif
+
+@if ($errors->any())
+<script>
+    Swal.fire({
+        icon: 'error',
+        title: 'Erreur de validation',
+        html: `{!! implode('<br>', $errors->all()) !!}`,
+        confirmButtonColor: '#d33'
+    });
+</script>
+@endif
+
 
 
 </body>

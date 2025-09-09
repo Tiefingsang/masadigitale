@@ -9,7 +9,7 @@
     <div class="auto-container">
         <h1>Contact</h1>
         <ul class="bread-crumb clearfix">
-            <li><a href="i{{ route('home.index') }}">Accueil </a></li>
+            <li><a href="{{ route('home.index') }}">Accueil </a></li>
             <li>Contact</li>
         </ul>
     </div>
@@ -36,7 +36,8 @@
                         </div>
 
                         <div class="col-md-6 col-sm-12 col-xs-12 form-group">
-                            <input type="email" name="email" placeholder="Votre adresse e-mail" required="name">
+                            <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+
                             @error('email')
                             <div >
                                 <p class="alert text-danger">{{ $message }}</p>

@@ -42,7 +42,8 @@
     <link rel="stylesheet" href="/assets/admin/assets/css/demo.css" />
   </head>
   <body>
-    <div class="wrapper">
+    
+
       <!-- Sidebar -->
       @include('admin.layouts.partials.sidebar')
       <!-- End Sidebar -->

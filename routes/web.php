@@ -128,7 +128,7 @@ Route::group(['prefix' => 'admin',
     //redirection en cas de mauvaise route
     Route::fallback(function () {
         return abort(404);
-    });
+    });       
 
 
 
