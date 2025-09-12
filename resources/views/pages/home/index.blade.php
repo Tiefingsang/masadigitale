@@ -831,6 +831,22 @@
                     </div>
                 </div>
             </div>
+            <div class="team-block col-lg-3 col-md-6 col-sm-12">
+                <div class="inner-box">
+                    <div class="image-box">
+                        <div class="image">
+                            <a href="{{ asset('assets/images/equipe/ablo.jpeg') }}" 
+                               class="lightbox-image" data-fancybox="gallery">
+                               <img src="{{ asset('assets/images/equipe/felix.jpeg') }}" alt="Développeur chez Masadigitale">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <h4 class="name">Abdoulaye A DIALLO</h4>
+                        <span class="designation">Graphiste</span> 
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
