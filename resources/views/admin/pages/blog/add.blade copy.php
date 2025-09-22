@@ -72,20 +72,26 @@
                                 </div>
 
                                 <!-- Contenu -->
+                                {{-- <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="content">Contenu</label>
+                                        <textarea class="form-control" name="content" id="content" rows="5" required>{{ old('content') }}</textarea>
+                                    </div>
+                                </div> --}}
+                                <!-- Contenu -->
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label for="editor">Contenu</label>
-                                        <!-- ⚠️ textarea sans name ni required -->
-                                        <textarea class="form-control" id="editor" rows="10">{{ old('content') }}</textarea>
-                                        <!-- ✅ champ caché pour la vraie valeur -->
-                                        <input type="hidden" name="content" id="content_hidden" value="{{ old('content') }}" required>
+                                        <label for="content">Contenu</label>
+                                        <textarea class="form-control" name="content" id="editor" rows="10" required>{{ old('content') }}</textarea>
                                     </div>
                                 </div>
 
                             </div>
 
                             <div class="card-action text-end">
+                                {{-- <button class="btn btn-success">Ajouter</button> --}}
                                 <button type="submit" class="btn btn-success">Ajouter</button>
+
                                 <a href="{{ route('admin.blog') }}" class="btn btn-danger">Annuler</a>
                             </div>
                         </form>
@@ -130,7 +136,9 @@ class MyUploadAdapter {
                 .then(response => response.json())
                 .then(result => {
                     if (result.url) {
-                        resolve({ default: result.url });
+                        resolve({
+                            default: result.url
+                        });
                     } else {
                         reject(result.error?.message ?? 'Erreur upload');
                     }
@@ -141,7 +149,9 @@ class MyUploadAdapter {
             }));
     }
 
-    abort() {}
+    abort() {
+        // Optionnel
+    }
 }
 
 function MyCustomUploadAdapterPlugin(editor) {
@@ -165,21 +175,28 @@ ClassicEditor
     .then(editor => {
         console.log('Editor prêt', editor);
 
-        const hiddenInput = document.querySelector('#content_hidden');
         const form = document.querySelector('form');
 
-        // 🔁 Sync en temps réel
-        editor.model.document.on('change:data', () => {
-            hiddenInput.value = editor.getData();
+        // ✅ Mettre à jour le textarea avant submit
+        form.addEventListener('submit', () => {
+            editor.updateSourceElement();
         });
 
-        // 🔁 Sécurité au submit
-        form.addEventListener('submit', () => {
-            hiddenInput.value = editor.getData();
+        // ✅ Optionnel : capturer la touche Entrée (submit direct)
+        form.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+                editor.updateSourceElement();
+                form.submit();
+            }
         });
     })
     .catch(error => {
         console.error(error);
     });
+
+
+
 </script>
+
+
 @endsection

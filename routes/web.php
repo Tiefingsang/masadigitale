@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UploadController;
 
 /* Route::get('/', function () {
     return view('welcome');
@@ -16,6 +17,7 @@ Route::get('/', [PageController::class, 'index'])->name('home.index');
 Route::get('/about', [PageController::class, 'about'])->name('about.index');
 Route::get('/services', [PageController::class, 'services'])->name('services.index');
 Route::get('/blogs', [PageController::class, 'blogs'])->name('blogs.index');
+Route::get('/blogs/category/{slug}', [PageController::class, 'category'])->name('blogs.category');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact.index');
 //contact
 Route::post('/contact/store', [PageController::class, 'contactStore'])->name('contact.store');
@@ -25,6 +27,8 @@ Route::get('/team', [PageController::class, 'team'])->name('team.index');
 Route::get('/about-detail', [PageController::class, 'aboutDetail'])->name('about-detail');
 Route::get('/services-detail', [PageController::class, 'servicesDetail'])->name('services-detail');
 Route::get('/blogs-detail', [PageController::class, 'blogsDetail'])->name('blogs-detail');
+Route::post('/ckeditor/upload', [UploadController::class, 'upload'])->name('ckeditor.upload');
+
 Route::get('/contact-detail', [PageController::class, 'contactDetail'])->name('contact-detail');
 Route::get('/gallery-detail', [PageController::class, 'galleryDetail'])->name('gallery-detail');
 Route::get('/team-datail', [PageController::class, 'teamDetail'])->name('team.detail');
@@ -35,7 +39,7 @@ Route::get('/team-datail', [PageController::class, 'teamDetail'])->name('team.de
 }); */
 
 
-Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store'); 
 
 // list element routing  admin lists
 /* Route::get('/admin/login', [AdminController::class, 'adminLogin'])->name('login');
@@ -46,6 +50,7 @@ Route::post('/register-store', [AdminController::class, 'adminRegisterStore'])->
 Route::get('/login', [AdminController::class, 'adminLogin'])->name('login');
 Route::post('/login-store', [AdminController::class, 'adminLoginStore'])->name('admin.login.store');
 Route::post('/admin-logout', [AdminController::class, 'logout'])->name('admin.logout');
+
 Route::group(['prefix' => 'admin',
     'middleware' => ['auth'] ], function () {
     Route::get('/', [AdminController::class, 'admin'])->name('admin.index');

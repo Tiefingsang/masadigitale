@@ -150,7 +150,7 @@
 
                                     </tfoot>
                                     <tbody>
-                                        @foreach ($blog as $item)
+                                        @foreach ($blogs as $item)
                                         <tr>
 
                                             <td>

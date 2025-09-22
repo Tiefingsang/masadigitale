@@ -68,6 +68,7 @@ class PageController extends Controller
     }
 
     public function blogs(){
+        
         $blogs=Blog::get();
 
         $data= ['blogs'=> $blogs
@@ -78,9 +79,14 @@ class PageController extends Controller
 
     public function blogsDetail(Request $request){
         $getBlogBySlug= Blog::where('slug', $request->slug)->first();
+        $recentBlogs = Blog::latest()->take(5)->get();
+        $categories= \App\Models\Category::withCount('blogs')->get();
 
         $data= [
             'getBlogBySlug'=>$getBlogBySlug,
+            'recentBlogs'=>$recentBlogs,
+            'categories'=>$categories,
+
         ];
 
         //dd($getBlogBySlug->title);

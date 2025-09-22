@@ -29,11 +29,12 @@ class AdminController extends Controller
         return view('admin.pages.home.index');
     }
 
-    /* public function adminBlog(Request $request)
+     /* public function adminBlog(Request $request)
     {
+        
         // code to get blog
         return view('admin.pages.blog.index');
-    } */ 
+    }  */
 
 
 
@@ -79,111 +80,137 @@ class AdminController extends Controller
         }
     }
 
-    public function adminBlogDetails(Request $request)
+    // Afficher les détails d’un blog
+public function adminBlogDetails($id)
+{
+    $blog = Blog::findOrFail($id);
+    return view('admin.pages.blog.show', compact('blog'));
+}
+
+// Formulaire d’édition
+public function adminBlogEdit($id)
+{
+    $blog = Blog::findOrFail($id);
+    return view('admin.pages.blog.edit', compact('blog'));
+}
+
+// Mise à jour
+public function adminBlogUpdate(Request $request, $id)
+{
+    $blog = Blog::findOrFail($id);
+
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'content' => 'required|string',
+        'slug' => 'required|string|unique:blogs,slug,' . $id,
+        'user_id' => 'required|exists:users,id',
+        'category_id' => 'required|exists:categories,id',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
+    ], [
+        'image.image' => "Le fichier doit être une image.",
+        'image.mimes' => "Les formats autorisés sont : jpeg, png, jpg, gif.",
+        'image.max' => "L'image ne doit pas dépasser 2 Mo.",
+    ]);
+
+    $data = $request->only(['title','content','slug','user_id','category_id']);
+
+    if ($request->hasFile('image')) {
+        $data['image'] = $request->file('image')->store('uploads/blog', 'public');
+    }
+
+    $blog->update($data);
+
+    return redirect()->route('admin.blog')->with('success', 'Article mis à jour avec succès.');
+}
+
+// Liste des blogs
+public function adminBlog()
+{
+    $blogs = Blog::latest()->get();
+    $categories= Category::all();
+    $data=[
+        'blogs'=>$blogs,
+        'categories'=>$categories,
+    ];
+    return view('admin.pages.blog.index', $data);
+}
+
+// Formulaire d’ajout
+public function adminBlogIndex()
+{
+    $categories= Category::all();
+    $data=[
+        
+        'categories'=>$categories,
+    ];
+    return view('admin.pages.blog.add', $data);
+}
+
+// Stockage nouvel article
+/* public function adminBlogStore(Request $request)
+{
+    
+    $request->validate([
+        'title' => 'required|string|max:255',
+        'content' => 'required',
+        'slug' => 'required|string|unique:blogs,slug',
+        'user_id' => 'required|exists:users,id',
+        'category_id' => 'required|exists:categories,id',
+        'image' => 'required|image|mimes:jpeg,png,jpg,gif',
+    ]);
+
+    $imagePath = $request->file('image')->store('uploads/blog', 'public');
+
+    Blog::create([
+    'title'       => $request->title,
+    'content'     => $request->content,
+    'slug'        => $slug,
+    'user_id'     => $request->user_id,
+    'category_id' => $request->category_id,
+    'image'       => $imagePath,
+]);
+
+    return redirect()->route('admin.blog')->with('success','Article ajouté avec succès.');
+} */
+public function adminBlogStore(Request $request)
     {
-        $blog=Blog::first();
-        // code to get blog details
-        return view('admin.pages.blog.show', compact('blog'));
-    }
-
-    public function adminBlogEdite(Request $request){
-        $blog=Blog::findOrFail($request->id);
-
-        $data=[
-            'blog'=>$blog
-        ];
-
-        return view('admin.pages.blog.edite', $data);
-    }
-
-    public function adminBlogUpdate(Request $request){
         $request->validate([
-            'title' => 'required|string|max:255',
-            'content' => 'required|string',
-            'slug' => 'required|string|unique:blogs,slug',
-            'user_id' => 'required|exists:users,id',
+            'title'       => 'required|string|max:255',
+            'content'     => 'required',
+            'slug'        => 'required|string|unique:blogs,slug',
+            'user_id'     => 'required|exists:users,id',
             'category_id' => 'required|exists:categories,id',
-            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
-        ], [
-            'image.required' => "L'image est requise.",
-            'image.image' => "Le fichier doit être une image.",
-            'image.mimes' => "Les formats autorisés sont : jpeg, png, jpg, gif.",
-            'image.max' => "L'image ne doit pas dépasser 2 Mo.",
+            'image'       => 'required|image|mimes:jpeg,png,jpg,gif',
         ]);
-    
-        // 2. Upload de l'image
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('uploads/blog', 'public');
-        }
-    
-        // 3. Création de l'article
-        $blog = Blog::create([
-            'title' => $request->title,
-            'content' => $request->content,
-            'slug' => $request->slug,
-            'image' => $imagePath,
-            'user_id' => $request->user_id,
+
+        // Upload image
+        $imagePath = $request->file('image')->store('uploads/blog', 'public');
+
+        // Définir le slug (celui soumis par l’admin)
+        $slug = $request->slug;
+
+        Blog::create([
+            'title'       => $request->title,
+            'content'     => $request->content,
+            'slug'        => $slug,
+            'user_id'     => $request->user_id,
             'category_id' => $request->category_id,
-        ]);
-    
-        // 4. Retour avec message de succès
-        if ($blog) {
-            return redirect()->route('admin.blog')->with('success', 'L\'article a été ajouté avec succès.');
-        } else {
-            return back()->with('error', 'Une erreur est survenue, veuillez réessayer.');
-        }
-
-    }
-
-    public function adminBlog(){
-        $blog=Blog::get();
-
-        $data=[
-            'blog'=>$blog
-        ];
-        return view('admin.pages.blog.index', $data);
-
-    }
-
-    public function adminBlogStore(Request $request){
-
-        if ($request->hasFile('image')) {
-            $imagePath = $request->file('image')->store('uploads/blog', 'public');
-        } else {
-            return back()->withErrors(['image' => 'L\'image est requise.']);
-        }
-        
-
-        $blog=Blog::create([
-            'title'=> $request->title,
-            'content'=> $request->content,
-            'image' => $imagePath,
-            'slug'=> $request->slug,
-            'user_id'=> $request->user_id,
-            'category_id'=> $request->category_id,
-
+            'image'       => $imagePath,
         ]);
 
-        if($blog){
-            return redirect()->route('admin.blog')->with('success','');
-        } else{
-            return back();
-        }
-
+        return redirect()
+            ->route('admin.blog')
+            ->with('success', 'Article ajouté avec succès.');
     }
 
-    public function adminBlogIndex(){
-        
-        return view('admin.pages.blog.add');
+// Suppression
+public function adminBlogDelete($id)
+{
+    $blog = Blog::findOrFail($id);
+    $blog->delete();
+    return back()->with('success', 'Article supprimé avec succès.');
+}
 
-    }
-
-    public function adminBlogDelete(Request $request){
-        $blog=Blog::findOrFail($request->id);
-
-        $blog->delete();
-        return back();
-    }
 
     public function adminContact(Request $request)
     {

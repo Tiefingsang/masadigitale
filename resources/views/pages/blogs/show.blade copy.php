@@ -25,18 +25,18 @@
                             <h3>{{ $getBlogBySlug->title }}</h3>
                             <ul class="info">
                                 <li>{{ $getBlogBySlug->created_at }}</li>
-                                <li><a href="#">Par masadigitale</a></li>
+                                <li><a href="#">by Adam Smith</a></li>
                             </ul>
                         </div>
                         <div class="content-box sticky-container">
                             <!-- Post Share Option -->
                             <div class="post-share-options">
                                 <div class="social-links {{-- sticky-box --}}">
-                                    {{-- <a href="https://web.facebook.com/profile.php?id=61580110868596"><span class="la la-facebook"></span></a> --}}
-                                    <a href="https://x.com/masadigitale?t=gFB_8Yck0dMPPfEo4cVH_A&s=09"><span class="la la-twitter"></span></a>
-                                    <a href="masadigitale.com"><span class="la la-google-plus"></span></a>
-                                    <a href="https://www.linkedin.com/in/masadigitale/"><span class="la la-linkedin"></span></a>
-
+                                    <a href="#"><span class="la la-facebook"></span></a>
+                                    <a href="#"><span class="la la-twitter"></span></a>
+                                    <a href="#"><span class="la la-google-plus"></span></a>
+                                    <a href="#"><span class="la la-dribbble"></span></a>
+                                    <a href="#"><span class="la la-pinterest"></span></a>
                                     <h4>Share:</h4>
                                 </div>
                             </div>
@@ -45,13 +45,107 @@
                         </div>
                     </div>
 
-                    {{-- <div class="post-control">
+                    <div class="post-control">
                         <ul class="clearfix">
                             <li class="prev pull-left"><a href="#"><i class="la la-angle-double-left"></i> Prev</a></li>
                             <li class="next pull-right"><a href="#">Next <i class="la la-angle-double-right"></i></a></li>
                         </ul>
-                    </div> --}}
+                    </div>
+
+
+                    <!--Comments Area-->
+                    <div class="comments-area">
+                    <div class="group-title"><h2>Commentaires des utilisateurs</h2></div>
+
+                    <!--Comment Box-->
+                    <div class="comment-box">
+                        <div class="comment">
+                            <div class="author-thumb"><img src="{{ asset('assets/images/resource/thumb-3.jpg') }}" alt=""></div>
+                            <div class="comment-inner">
+                                <div class="text">
+                                    L’homme sage, dans ces situations, s’en tient toujours à ce principe de sélection : il rejette certains plaisirs pour en obtenir de plus grands, ou bien il endure des peines afin d’éviter de plus grandes souffrances.
+                                </div>
+                                <div class="comment-info">
+                                    <h4 class="name">Callahan James</h4>
+                                    <span class="designation">Université de Californie</span>
+                                </div>
+                            </div>
+                            <a class="comment-reply" href="#">Répondre maintenant</a>
+                        </div>
+                    </div>
+
+                    <!--Comment Box-->
+                    <div class="comment-box reply-comment">
+                        <div class="comment">
+                            <div class="author-thumb"><img src="images/resource/thumb-4.jpg" alt=""></div>
+                            <div class="comment-inner">
+                                <div class="text">
+                                    L’homme sage, dans ces situations, s’en tient toujours à ce principe de sélection : il rejette certains plaisirs pour en obtenir de plus grands.
+                                </div>
+                                <div class="comment-info">
+                                    <h4 class="name">Sean Bean</h4>
+                                    <span class="designation">Université de Californie</span>
+                                </div>
+                            </div>
+                            <a class="comment-reply" href="#">Répondre maintenant</a>
+                        </div>
+                    </div>
+
+                    <!--Comment Box-->
+                    <div class="comment-box">
+                        <div class="comment">
+                            <div class="author-thumb"><img src="images/resource/thumb-5.jpg" alt=""></div>
+                            <div class="comment-inner">
+                                <div class="text">
+                                    L’homme sage, dans ces situations, s’en tient toujours à ce principe de sélection : il rejette certains plaisirs pour en obtenir de plus grands, ou bien il endure des peines afin d’éviter de plus grandes souffrances.
+                                </div>
+                                <div class="comment-info">
+                                    <h4 class="name">James Dean</h4>
+                                    <span class="designation">James Dean</span>
+                                </div>
+                            </div>
+                            <a class="comment-reply" href="#">Répondre maintenant</a>
+                        </div>
+                    </div>
+
                 </div>
+
+                    <!--End Comments Area-->
+
+                    <!-- Comment Form -->
+                    <div class="comment-form">
+                        <div class="group-title"><h2>Leave a Reply</h2></div>
+
+                        <!--Comment Form-->
+                        <form method="post" action="">
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <input type="text" name="username" placeholder="Name" required>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                                    <input type="email" name="email" placeholder="Email" required>
+                                </div>
+
+                                <div class="col-lg-6 col-md-12 col-sm-12 form-group">
+                                    <input type="text" name="subject" placeholder="Subject" required>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <textarea name="message" placeholder="Your Comments"></textarea>
+                                </div>
+
+                                <div class="col-lg-12 col-md-12 col-sm-12 form-group">
+                                    <button class="theme-btn btn-style-three" type="submit" name="submit-form">Post Comment</button>
+                                </div>
+
+                            </div>
+                        </form>
+
+                    </div>
+                    <!--End Comment Form -->
+
+                </div><!-- Blog List -->
             </div>
 
             <!--Sidebar Side-->
@@ -137,12 +231,12 @@
     <div class="auto-container">
         <div class="outer-box clearfix">
             <div class="title-column">
-                <h3>Fournir des solutions pour une croissance fiable</h3>
+                <h3>Provide Solutions For the Realiable Growth</h3>
             </div>
 
             <div class="btn-column">
                 <div class="btn-box">
-                    <a href="c" class="theme-btn btn-style-one">Masadigitale</a>
+                    <a href="c" class="theme-btn btn-style-one">Get A Quotes</a>
                 </div>
             </div>
         </div>

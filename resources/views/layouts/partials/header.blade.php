@@ -48,7 +48,7 @@
                                     </li>
                                     <li><a href="{{ route('about.index') }}">apropos</a></li>
                                     <li><a href="{{ route('services.index') }}">Services</a></li>
-                                    <!-- <li class=""><a href="{{ route('blogs.index') }}">Blog</a></li> -->
+                                    <li class=""><a href="{{ route('blogs.index') }}">Blog</a></li>
                                     <li><a href="{{ route('contact.index') }}">Contact</a></li>
                                     <!-- <li><a href="{{ route('gallery.index') }}">Galerie</a></li> -->
                                 </ul>
@@ -102,7 +102,7 @@
                             </li>
                             <li><a href="{{ route('about.index') }}">Apropos</a></li>
                             <li><a href="{{ route('services.index') }}">Services</a></li>
-                            <!-- <li><a href="{{ route('blogs.index') }}">Blog</a> </li> -->
+                            <li><a href="{{ route('blogs.index') }}">Blog</a> </li>
                             <!-- {{-- <li><a href="{{ route('team.index') }}">team</a></li> --}} -->
                             <li><a href="{{ route('contact.index') }}">Contact</a></li>
                             <!-- <li><a href="{{ route('gallery.index') }}">Galerie</a></li> -->
