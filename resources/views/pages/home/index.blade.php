@@ -861,14 +861,16 @@
             <h2>Nos dernières nouvelles</h2>
         </div>
 
-        <!-- <div class="news-carousel owl-carousel owl-theme">
+         <div class="news-carousel owl-carousel owl-theme">
            
             @foreach ($getBlogs as $item)
             <div class="news-block">
                 <div class="inner-box">
-                    <div class="image-box">
-                        <div class="image"><a href="{{ route('blogs-detail', ['slug'=>$item->slug]) }}"><img src="{{ $item->image }}" alt=""></a></div>
-                    </div>
+                    <a href="{{ route('blogs-detail', ['slug'=>$item->slug]) }}">
+                        <div class="image-box">
+                            <img src="{{ asset('storage/' . $item->image) }}" alt="" style="width:100%; height:250px; object-fit:cover;">
+                        </div>
+                    </a>
                     <div class="lower-content">
                         <h3><a href="{{ route('blogs-detail', ['slug'=>$item->slug]) }}">{{ $item->title }}</a></h3>
                         <span class="date">Publié : {{ $item->created_at }}</span>
@@ -882,7 +884,7 @@
 
 
 
-        </div> -->
+        </div>
 
         </div>
     </div>

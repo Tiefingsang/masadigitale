@@ -31,15 +31,40 @@
                         <div class="content-box sticky-container">
                             <!-- Post Share Option -->
                             <div class="post-share-options">
-                                <div class="social-links {{-- sticky-box --}}">
-                                    {{-- <a href="https://web.facebook.com/profile.php?id=61580110868596"><span class="la la-facebook"></span></a> --}}
-                                    <a href="https://x.com/masadigitale?t=gFB_8Yck0dMPPfEo4cVH_A&s=09"><span class="la la-twitter"></span></a>
-                                    <a href="masadigitale.com"><span class="la la-google-plus"></span></a>
-                                    <a href="https://www.linkedin.com/in/masadigitale/"><span class="la la-linkedin"></span></a>
+                            <div class="social-links">
+                                <h4>Partager :</h4>
 
-                                    <h4>Share:</h4>
-                                </div>
+                                {{-- Facebook --}}
+                                <a href="https://www.facebook.com/sharer/sharer.php?u={{ urlencode(request()->fullUrl()) }}" 
+                                target="_blank">
+                                    <span class="la la-facebook"></span>
+                                </a>
+
+                                {{-- Twitter (X) --}}
+                                <a href="https://twitter.com/intent/tweet?url={{ urlencode(request()->fullUrl()) }}&text={{ urlencode($getBlogBySlug->title) }}" 
+                                target="_blank">
+                                    <span class="la la-twitter"></span>
+                                </a>
+
+                                {{-- WhatsApp --}}
+                                <a href="https://api.whatsapp.com/send?text={{ urlencode($getBlogBySlug->title . ' ' . request()->fullUrl()) }}" 
+                                target="_blank">
+                                    <span class="la la-whatsapp"></span>
+                                </a>
+
+                                {{-- LinkedIn --}}
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ urlencode(request()->fullUrl()) }}" 
+                                target="_blank">
+                                    <span class="la la-linkedin"></span>
+                                </a>
+
+                                {{-- Email --}}
+                                <a href="mailto:?subject={{ urlencode($getBlogBySlug->title) }}&body={{ urlencode(request()->fullUrl()) }}">
+                                    <span class="la la-envelope"></span>
+                                </a>
                             </div>
+                        </div>
+
                             <p>{!! $getBlogBySlug->content !!}</p>
                             
                         </div>
@@ -59,14 +84,14 @@
                 <aside class="sidebar default-sidebar">
 
                     <!--search box-->
-                    <div class="sidebar-widget search-box">
+                    {{-- <div class="sidebar-widget search-box">
                         <form method="post" action="">
                             <div class="form-group">
                                 <input type="search" name="search-field" value="" placeholder="Search....." required="">
                                 <button type="submit"><span class="icon la la-search"></span></button>
                             </div>
                         </form>
-                    </div>
+                    </div> --}}
 
                                             <!-- Latest News -->
                     <div class="sidebar-widget latest-news">

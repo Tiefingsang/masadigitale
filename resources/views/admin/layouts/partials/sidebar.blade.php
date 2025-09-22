@@ -251,7 +251,7 @@
 
         <li class="nav-item">
           <a data-bs-toggle="collapse" href="#contact">
-            <i class="far fa-chart-bar"></i>
+            <i class="fas fa-envelope"></i>
             <p>Contact</p>
             <span class="caret"></span>
           </a>

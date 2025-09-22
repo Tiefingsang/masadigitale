@@ -36,6 +36,8 @@
     <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/color-switcher-design.css') }}" rel="stylesheet">
     <link id="theme-color-file" href="{{ asset('assets/css/color-themes/default-theme.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/logo.png') }}" type="image/x-icon">

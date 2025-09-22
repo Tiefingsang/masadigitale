@@ -14,7 +14,7 @@
                 <div class="top-right clearfix">
                     <ul class="social-icon-one">
                         <li><a href="https://www.facebook.com/share/1GuoWeSH5i/"><i class="la la-facebook-official"></i></a></li>
-                        <li><a href="www.tiktok.com/@masadigitale"><i class="la la-tiktok"></i></a>Tiktok</li>
+                        <li><a href="www.tiktok.com/@masadigitale"><i class="fab fa-tiktok"></i></a></li>
                     </ul>
                 </div>
             </div>
@@ -43,16 +43,27 @@
 
                             <div class="collapse navbar-collapse clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li class="current "><a href="{{ route('home.index') }}">Accueils</a>
-
+                                    <li class="{{ Route::is('home.index') ? 'current' : '' }}">
+                                        <a href="{{ route('home.index') }}">Accueils</a>
                                     </li>
-                                    <li><a href="{{ route('about.index') }}">apropos</a></li>
-                                    <li><a href="{{ route('services.index') }}">Services</a></li>
-                                    <li class=""><a href="{{ route('blogs.index') }}">Blog</a></li>
-                                    <li><a href="{{ route('contact.index') }}">Contact</a></li>
-                                    <!-- <li><a href="{{ route('gallery.index') }}">Galerie</a></li> -->
+                                    <li class="{{ Route::is('about.index') ? 'current' : '' }}">
+                                        <a href="{{ route('about.index') }}">A propos</a>
+                                    </li>
+                                    <li class="{{ Route::is('services.index') ? 'current' : '' }}">
+                                        <a href="{{ route('services.index') }}">Services</a>
+                                    </li>
+                                    <li class="{{ Route::is('blogs.index') ? 'current' : '' }}">
+                                        <a href="{{ route('blogs.index') }}">Blog</a>
+                                    </li>
+                                    <li class="{{ Route::is('contact.index') ? 'current' : '' }}">
+                                        <a href="{{ route('contact.index') }}">Contact</a>
+                                    </li>
+                                    <!-- <li class="{{ Route::is('gallery.index') ? 'current' : '' }}">
+                                        <a href="{{ route('gallery.index') }}">Galerie</a>
+                                    </li> -->
                                 </ul>
                             </div>
+
                         </nav><!-- Main Menu End-->
 
                         <!-- Main Menu End-->
@@ -97,16 +108,29 @@
                 <nav class="main-menu navbar-expand-md navbar-light">
                     <div class="navbar-collapse collapse clearfix">
                         <ul class="navigation clearfix">
-                            <li class="{{-- current dropdown --}}"><a href="{{ route('home.index') }}">Accueil</a>
-
+                            <li class="{{ request()->routeIs('home.index') ? 'current dropdown' : '' }}">
+                                <a href="{{ route('home.index') }}">Accueil</a>
                             </li>
-                            <li><a href="{{ route('about.index') }}">Apropos</a></li>
-                            <li><a href="{{ route('services.index') }}">Services</a></li>
-                            <li><a href="{{ route('blogs.index') }}">Blog</a> </li>
-                            <!-- {{-- <li><a href="{{ route('team.index') }}">team</a></li> --}} -->
-                            <li><a href="{{ route('contact.index') }}">Contact</a></li>
-                            <!-- <li><a href="{{ route('gallery.index') }}">Galerie</a></li> -->
+                            <li class="{{ request()->routeIs('about.index') ? 'current' : '' }}">
+                                <a href="{{ route('about.index') }}">Apropos</a>
+                            </li>
+                            <li class="{{ request()->routeIs('services.*') ? 'current' : '' }}">
+                                <a href="{{ route('services.index') }}">Services</a>
+                            </li>
+                            <li class="{{ request()->routeIs('blogs.*') ? 'current' : '' }}">
+                                <a href="{{ route('blogs.index') }}">Blog</a>
+                            </li>
+                            <!-- <li class="{{ request()->routeIs('team.index') ? 'current' : '' }}">
+                                <a href="{{ route('team.index') }}">Team</a>
+                            </li> -->
+                            <li class="{{ request()->routeIs('contact.index') ? 'current' : '' }}">
+                                <a href="{{ route('contact.index') }}">Contact</a>
+                            </li>
+                            <!-- <li class="{{ request()->routeIs('gallery.index') ? 'current' : '' }}">
+                                <a href="{{ route('gallery.index') }}">Galerie</a>
+                            </li> -->
                         </ul>
+
                     </div>
                 </nav><!-- Main Menu End-->
             </div>
