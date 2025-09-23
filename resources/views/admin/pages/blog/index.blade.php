@@ -158,7 +158,7 @@
                                             </td>
 
                                             <td>{{ $item->title }}</td>
-                                            <td>{{ $item->content }}</td>
+                                            <td>{!! $item->content !!}</td>
                                             <td>{{ $item->slug }}</td>
 
                                             <td>

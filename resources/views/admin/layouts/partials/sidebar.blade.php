@@ -3,7 +3,7 @@
   <div class="sidebar-logo">
     <!-- Logo Header -->
     <div class="logo-header" data-background-color="dark">
-      <a href="index.html" class="logo">
+      <a href="" class="logo">
         <img
           src="{{ asset('assets/images/logorect.png') }}"
           alt="navbar brand"
@@ -92,7 +92,7 @@
         </li>
         <li class="nav-item">
           <a data-bs-toggle="collapse" href="#tables">
-            <i class="fas fa-table"></i>
+           <i class="fas fa-cogs"></i>
             <p>Services</p>
             <span class="caret"></span>
           </a>
@@ -134,7 +134,7 @@
           </div>
         </li>
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a data-bs-toggle="collapse" href="#client">
             <i class="fas fa-table"></i>
             <p>Client</p>
@@ -154,9 +154,9 @@
               </li>
             </ul>
           </div>
-        </li>
+        </li> --}}
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a data-bs-toggle="collapse" href="#gallery">
               <i class="fas fa-table"></i>
               <p>Gallery</p>
@@ -176,9 +176,9 @@
                 </li>
               </ul>
             </div>
-          </li>
+          </li> --}}
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a data-bs-toggle="collapse" href="#partner">
             <i class="fas fa-table"></i>
             <p>Partenaire</p>
@@ -198,9 +198,9 @@
               </li>
             </ul>
           </div>
-        </li>
+        </li> --}}
 
-        <li class="nav-item">
+        {{-- <li class="nav-item">
           <a data-bs-toggle="collapse" href="#maps">
             <i class="fas fa-map-marker-alt"></i>
             <p>Projets</p>
@@ -220,7 +220,7 @@
               </li>
             </ul>
           </div>
-        </li>
+        </li> --}}
         <li class="nav-item">
           <a data-bs-toggle="collapse" href="#charts">
             <i class="far fa-chart-bar"></i>
@@ -229,21 +229,21 @@
           </a>
           <div class="collapse" id="charts">
             <ul class="nav nav-collapse">
-              <li>
+              {{-- <li>
                 <a href="{{ route('admin.blog.show') }}">
                   <span class="sub-item">Edite</span>
                 </a>
-              </li>
+              </li> --}}
               <li>
                 <a href="{{ route('admin.blog') }}">
                   <span class="sub-item">Liste</span>
                 </a>
               </li>
-              <li>
+              {{-- <li>
                   <a href="charts/sparkline.html">
                     <span class="sub-item">Commentaires</span>
                   </a>
-                </li>
+                </li> --}}
             </ul>
           </div>
 

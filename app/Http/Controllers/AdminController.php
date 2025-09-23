@@ -88,10 +88,15 @@ public function adminBlogDetails($id)
 }
 
 // Formulaire d’édition
-public function adminBlogEdit($id)
+public function adminBlogEdite($id)
 {
     $blog = Blog::findOrFail($id);
-    return view('admin.pages.blog.edit', compact('blog'));
+    $categories= Category::all();
+    $data=[
+        'blog'=>$blog,
+        'categories'=>$categories,
+    ];
+    return view('admin.pages.blog.edite',$data);
 }
 
 // Mise à jour

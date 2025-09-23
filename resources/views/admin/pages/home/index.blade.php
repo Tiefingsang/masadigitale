@@ -4,7 +4,7 @@
     <div class="page-inner">
       <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4">
     <div>
-      <h3 class="fw-bold mb-3">Tableau de bord</h3>
+      <h3 class="fw-bold mb-3">Admin</h3>
       <h6 class="op-7 mb-2">
         Bienvenue sur l’espace administrateur de <b>Masadigitale</b>
       </h6>
@@ -22,49 +22,55 @@
   <div class="row">
   <!-- Contacts -->
     <div class="col-sm-6 col-md-3">
-      <div class="card card-stats card-round">
-        <div class="card-body">
-          <div class="row align-items-center">
-            <div class="col-icon">
-              <div class="icon-big text-center icon-primary bubble-shadow-small">
-                <i class="fas fa-envelope"></i>
+      <a href="">
+        <div class="card card-stats card-round">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-icon">
+                <div class="icon-big text-center icon-primary bubble-shadow-small">
+                  <i class="fas fa-envelope"></i>
+                </div>
               </div>
-            </div>
-            <div class="col col-stats ms-3 ms-sm-0">
-              <div class="numbers">
-                <p class="card-category">Contacts</p>
-                <h4 class="card-title">{{ $contactsCount ?? 0 }}</h4>
+              <div class="col col-stats ms-3 ms-sm-0">
+                <div class="numbers">
+                  <p class="card-category">Contacts</p>
+                  <h4 class="card-title">{{ $contactsCount ?? 0 }}</h4>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </a>
     </div>
 
     <!-- Newsletter -->
     <div class="col-sm-6 col-md-3">
-      <div class="card card-stats card-round">
-        <div class="card-body">
-          <div class="row align-items-center">
-            <div class="col-icon">
-              <div class="icon-big text-center icon-info bubble-shadow-small">
-                <i class="fas fa-users"></i>
+      <a href="">
+        <div class="card card-stats card-round">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-icon">
+                <div class="icon-big text-center icon-info bubble-shadow-small">
+                  <i class="fas fa-users"></i>
+                </div>
               </div>
-            </div>
-            <div class="col col-stats ms-3 ms-sm-0">
-              <div class="numbers">
-                <p class="card-category">Newsletter</p>
-                <h4 class="card-title">{{ $newsletterCount ?? 0 }}</h4>
+              <div class="col col-stats ms-3 ms-sm-0">
+                <div class="numbers">
+                  <p class="card-category">Newsletter</p>
+                  <h4 class="card-title">{{ $newsletterCount ?? 0 }}</h4>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </a>
+      
     </div>
 
     <!-- Projets -->
     <div class="col-sm-6 col-md-3">
-      <div class="card card-stats card-round">
+      <a href="">
+          <div class="card card-stats card-round">
         <div class="card-body">
           <div class="row align-items-center">
             <div class="col-icon">
@@ -81,6 +87,7 @@
           </div>
         </div>
       </div>
+      </a>
     </div>
 
     <!-- Services -->

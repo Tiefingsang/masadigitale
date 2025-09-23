@@ -58,10 +58,10 @@ Route::group(['prefix' => 'admin',
     Route::get('/blog-index', [AdminController::class, 'adminBlogIndex'])->name('admin.blog.index');
     Route::post('/blog-store', [AdminController::class, 'adminBlogStore'])->name('admin.blog.store');
     Route::get('/blog-details', [AdminController::class, 'adminBlogDetails'])->name('admin.blog.show');
-    Route::get('/blog-edite', [AdminController::class, 'adminBlogEdite'])->name('admin.blog.edite');
-    Route::delete('/blog-delete', [AdminController::class, 'adminBlogDelete'])->name('admin.blog.delete');
+    Route::get('/blog-edite/{id}', [AdminController::class, 'adminBlogEdite'])->name('admin.blog.edite');
+    Route::delete('/blog-delete/{id}', [AdminController::class, 'adminBlogDelete'])->name('admin.blog.delete');
 
-    Route::post('/blog-update', [AdminController::class, 'adminBlogUpdate'])->name('admin.blog.update');
+    Route::post('/blog-updatee/{id}', [AdminController::class, 'adminBlogUpdate'])->name('admin.blog.update');
     Route::get('/contact', [AdminController::class, 'adminContact'])->name('admin.contact');
     Route::get('/projects', [AdminController::class, 'adminProjects'])->name('admin.projects');
     Route::get('/projects-detaile', [AdminController::class, 'adminProjectDetail'])->name('admin.projects-detaile');
