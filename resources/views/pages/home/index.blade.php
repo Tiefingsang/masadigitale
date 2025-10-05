@@ -560,15 +560,15 @@
 
             @foreach ($getServices as $item)
                 <div class="service-block">
-                    <div class="inner-box" style="background-image: url('{{ $item->image }}')">
+                    <div class="inner-box" style="background-image: url('{{ asset('storage/' . $item->image) }}');">
                         <div class="content-box">
                             <span class="{{ $item->icone }}"></span>
-                            <h3><a href="service-detail.html">{{ $item->title }}</a></h3>
+                            <h3><a href="{{ route('blogs-detail', ['slug'=>$item->slug]) }}">{{ $item->title }}</a></h3>
                             <div class="text">
                                 {{-- {{ $item->description }} --}}
                                 {{ \Illuminate\Support\Str::limit($item->description, 50, '...') }}
                             </div>
-                            <div class="link-box"><a href="service-detail.html">En savoir plus <i class="la la-angle-double-right"></i></a></div>
+                            <div class="link-box"><a href="{{ route('blogs-detail', ['slug'=>$item->slug]) }}">En savoir plus <i class="la la-angle-double-right"></i></a></div>
                         </div>
                     </div>
                 </div>
