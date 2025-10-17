@@ -74,7 +74,7 @@
                         <div class="widget-content">
                             <div class="post">
                                 <div class="thumb">
-                                    <a href="#"><img src="{{ asset('assets/images/bureau.jpeg') }}" alt=""></a>
+                                    <a href="#"><img src="{{ asset('assets/images/about/directeur.jpeg') }}" alt=""></a>
                                 </div>
                                 <h4><a href="#">Masadigitale lance une app de gestion pour les PME au Mali.</a></h4>
                                 <span class="date">15 Août, 2025</span>

@@ -101,12 +101,12 @@
                             @foreach($recentBlogs as $recent)
                                 <article class="post">
                                     <div class="post-thumb">
-                                        <a href="{{ route('blogs-detail', $recent->slug) }}">
+                                        <a href="{{ route('blogs-detail', ['slug'=>$recent->slug]) }}">
                                             <img src="{{ asset('storage/'.$recent->image) }}" alt="{{ $recent->title }}" style="width:80px; height:80px; ">
                                         </a>
                                     </div>
                                     <h3>
-                                        <a href="{{ route('blogs-detail', $recent->slug) }}">
+                                        <a href="{{ route('blogs-detail', ['slug'=>$recent->slug]) }}">
                                             {{ \Illuminate\Support\Str::limit($recent->title, 40) }}
                                         </a>
                                     </h3>

@@ -815,7 +815,7 @@
             </div>
 
             <!-- Team Block -->
-            <div class="team-block col-lg-3 col-md-6 col-sm-12">
+            {{-- <div class="team-block col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
                         <div class="image">
@@ -830,7 +830,7 @@
                         <span class="designation">Développeur</span> 
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="team-block col-lg-3 col-md-6 col-sm-12">
                 <div class="inner-box">
                     <div class="image-box">
@@ -842,7 +842,7 @@
                         </div>
                     </div>
                     <div class="info-box">
-                        <h4 class="name">Abdoulaye A DIALLO</h4>
+                        <h4 class="name">Felix Keïta</h4>
                         <span class="designation">Graphiste</span> 
                     </div>
                 </div>

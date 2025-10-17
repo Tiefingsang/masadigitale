@@ -196,9 +196,9 @@
             </div>
         </div>
 
-        <div class="image-column" style="background-image: url({{ asset('assets/images/about/directeur.jpg') }});">
+        <div class="image-column" style="background-image: url({{ asset('assets/images/about/directeur.jpeg') }});">
             <div class="inner-column">
-                <div class="image-box"><img src="{{ asset('assets/images/about/image-3.png') }}" alt=""></div>
+                <div class="image-box"><img src="{{ asset('assets/images/about/directeur.jpeg') }}" alt=""></div>
             </div>
         </div>
     </div>
