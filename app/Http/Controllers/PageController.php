@@ -108,9 +108,9 @@ class PageController extends Controller
     }
 
     public function servicesDetail( Request $request){
-        $serviceFindByTitle= Service::where('id','like','%'.$request->id.'%')->first();
+        $serviceFindByTitle= Service::where('title', $request->title)->first();
         $getServices= Service::get();
-        //zdd($serviceFindByTitle);
+        //dd($serviceFindByTitle);
 
         $data=[
             'serviceFindByTitle'=>$serviceFindByTitle,
@@ -118,7 +118,7 @@ class PageController extends Controller
         ];
 
         return view('pages.services.show', $data);
-    }
+    }    
 
     public function contact(){
         return view('pages.contacts.index');
