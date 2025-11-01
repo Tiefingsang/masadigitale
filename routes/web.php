@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\Form;
 
 /* Route::get('/', function () {
     return view('welcome');
@@ -50,6 +51,15 @@ Route::post('/register-store', [AdminController::class, 'adminRegisterStore'])->
 Route::get('/login', [AdminController::class, 'adminLogin'])->name('login');
 Route::post('/login-store', [AdminController::class, 'adminLoginStore'])->name('admin.login.store');
 Route::post('/admin-logout', [AdminController::class, 'logout'])->name('admin.logout');
+
+
+//form
+Route::get('/form-inscription/formation', [Form::class, 'index'])->name('get.formPage');
+Route::post('/form-inscription/formation/store', [Form::class, 'store'])->name('form.store');
+
+// Admin (optionnel)
+
+
 
 Route::group(['prefix' => 'admin',
     'middleware' => ['auth'] ], function () {
@@ -129,6 +139,11 @@ Route::group(['prefix' => 'admin',
     Route::delete('/contact-delete', [AdminController::class, 'adminContactDelete'])->name('admin.contact-delete');
     Route::get('/contact-edit', [AdminController::class, 'adminContactEdit'])->name('admin.contact-edit');
     Route::post('/contact-update', [AdminController::class, 'adminContactUpdate'])->name('admin.contact-update');
+
+    //formulaire d'inscription
+    Route::get('/admin/form-liste', [AdminController::class, 'index'])->name('admin.form-liste');
+    Route::delete('/inscriptions/{id}', [AdminController::class, 'destroy'])->name('admin.inscriptions.destroy');
+
 
     //redirection en cas de mauvaise route
     Route::fallback(function () {

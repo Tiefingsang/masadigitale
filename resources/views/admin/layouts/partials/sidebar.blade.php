@@ -134,27 +134,23 @@
           </div>
         </li>
 
-        {{-- <li class="nav-item">
+         <li class="nav-item">
           <a data-bs-toggle="collapse" href="#client">
             <i class="fas fa-table"></i>
-            <p>Client</p>
+            <p>Formulaire</p>
             <span class="caret"></span>
           </a>
           <div class="collapse" id="client">
             <ul class="nav nav-collapse">
               <li>
-                <a href="{{ route('admin.add.client') }}">
-                  <span class="sub-item">Créer nouveau client</span>
+                <a href="{{ route('admin.form-liste') }}">
+                  <span class="sub-item">Liste</span>
                 </a>
               </li>
-              <li>
-                <a href="{{ route('admin.client.list') }}">
-                  <span class="sub-item">Liste des client</span>
-                </a>
-              </li>
+              
             </ul>
           </div>
-        </li> --}}
+        </li>
 
         {{-- <li class="nav-item">
             <a data-bs-toggle="collapse" href="#gallery">

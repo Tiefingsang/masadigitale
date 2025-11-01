@@ -1,5 +1,67 @@
 <header class="main-header">
 
+    <!-- Bandeau d'information sur la formation -->
+<div class="formation-banner" 
+     style="background: linear-gradient(90deg, #007bff, #cbf191, #07213c);
+            background-size: 300% 300%;
+            color: #fff;
+            text-align: center;
+            padding: 14px 10px;
+            font-size: 17px;
+            font-weight: 500;
+            animation: gradientMove 6s ease infinite;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);">
+    <strong> Formation en cours : Photoshop pour débutants !</strong>
+    <span style="margin-left: 8px;">Rejoignez-nous pour apprendre à maîtriser Photoshop </span>
+    <a href="{{ route('get.formPage') }}" 
+       class="btn-inscription">
+        S'inscrire maintenant
+    </a>
+</div>
+
+<style>
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.btn-inscription {
+    background-color: #fff;
+    color: #007bff;
+    font-weight: bold;
+    padding: 6px 18px;
+    border-radius: 25px;
+    margin-left: 15px;
+    display: inline-block;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    animation: pulseButton 2s infinite;
+}
+
+.btn-inscription:hover {
+    background-color: #0056b3;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+@keyframes pulseButton {
+    0% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+}
+</style>
+
+
+
+
     <!--Header Top-->
     <div class="header-top">
         <div class="auto-container">
@@ -57,6 +119,9 @@
                                     </li>
                                     <li class="{{ Route::is('contact.index') ? 'current' : '' }}">
                                         <a href="{{ route('contact.index') }}">Contact</a>
+                                    </li>
+                                    <li class="{{ Route::is('get.formPage') ? 'current' : '' }}">
+                                        <a href="{{ route('get.formPage') }}">Formations</a>
                                     </li>
                                     <!-- <li class="{{ Route::is('gallery.index') ? 'current' : '' }}">
                                         <a href="{{ route('gallery.index') }}">Galerie</a>
@@ -126,6 +191,9 @@
                             <li class="{{ request()->routeIs('contact.index') ? 'current' : '' }}">
                                 <a href="{{ route('contact.index') }}">Contact</a>
                             </li>
+                            <li class="{{ Route::is('get.formPage') ? 'current' : '' }}">
+                                        <a href="{{ route('get.formPage') }}">Formations</a>
+                                    </li>
                             <!-- <li class="{{ request()->routeIs('gallery.index') ? 'current' : '' }}">
                                 <a href="{{ route('gallery.index') }}">Galerie</a>
                             </li> -->

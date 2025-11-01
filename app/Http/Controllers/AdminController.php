@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Blog;
+use App\Models\form;
 use App\Models\Category;
 use App\Models\SocialNetwork;
 use App\Models\User;
@@ -920,6 +921,20 @@ public function adminBlogDelete($id)
 
         $contact->delete();
         return back();
+    }
+
+    //formulaire d'inscription
+    public function index(){
+        $inscriptions= form::get();  
+        return view('admin.pages.form.index', compact('inscriptions'));
+    }
+
+    public function destroy($id)
+    {
+        $inscription = form::findOrFail($id);
+        $inscription->delete();
+
+        return back()->with('success', 'Inscription supprimée avec succès.');
     }
 
 
