@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="/assets/admin/assets/css/demo.css" />
   </head>
   <body>
-    
+
 
       <!-- Sidebar -->
       @include('admin.layouts.partials.sidebar')
@@ -315,5 +315,43 @@
         fillColor: "rgba(255, 165, 52, .14)",
       });
     </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  @if (session('success'))
+      <script>
+          Swal.fire({
+              icon: 'success',
+              title: 'Succès',
+              text: '{{ session('success') }}',
+              confirmButtonColor: '#3085d6',
+              timer: 3000,
+              showConfirmButton: false
+          });
+      </script>
+  @endif
+
+  @if (session('error'))
+      <script>
+          Swal.fire({
+              icon: 'error',
+              title: 'Erreur',
+              text: '{{ session('error') }}',
+              confirmButtonColor: '#d33'
+          });
+      </script>
+  @endif
+
+  @if ($errors->any())
+      <script>
+          Swal.fire({
+              icon: 'error',
+              title: 'Erreur de validation',
+              html: `{!! implode('<br>', $errors->all()) !!}`,
+              confirmButtonColor: '#d33'
+          });
+      </script>
+  @endif
+  @stack('scripts')
   </body>
 </html>

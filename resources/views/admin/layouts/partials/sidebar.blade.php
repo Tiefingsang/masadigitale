@@ -137,20 +137,42 @@
          <li class="nav-item">
           <a data-bs-toggle="collapse" href="#client">
             <i class="fas fa-table"></i>
-            <p>Formulaire</p>
+            <p>Formations</p>
             <span class="caret"></span>
           </a>
           <div class="collapse" id="client">
             <ul class="nav nav-collapse">
               <li>
-                <a href="{{ route('admin.form-liste') }}">
-                  <span class="sub-item">Liste</span>
+                <a href="{{ route('admin.formations.create') }}">
+                  <span class="sub-item">Ajouter</span>
                 </a>
               </li>
-              
+              <li>
+                <a href="{{ route('admin.formations.list') }}">
+                  <span class="sub-item">Liste des formations</span>
+                </a>
+              </li>
             </ul>
           </div>
         </li>
+
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#client">
+            <i class="fas fa-table"></i>
+            <p>Inscription</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="client">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="{{ route('admin.formations.index') }}">
+                  <span class="sub-item">Liste des inscriptions</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
 
         {{-- <li class="nav-item">
             <a data-bs-toggle="collapse" href="#gallery">
@@ -174,49 +196,6 @@
             </div>
           </li> --}}
 
-        {{-- <li class="nav-item">
-          <a data-bs-toggle="collapse" href="#partner">
-            <i class="fas fa-table"></i>
-            <p>Partenaire</p>
-            <span class="caret"></span>
-          </a>
-          <div class="collapse" id="partner">
-            <ul class="nav nav-collapse">
-              <li>
-                <a href="{{ route('admin.add.partner') }}">
-                  <span class="sub-item">Créer nouveau partenaire</span>
-                </a>
-              </li>
-              <li>
-                <a href="{{ route('admin.partner.list') }}">
-                  <span class="sub-item">Liste des partenaire</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li> --}}
-
-        {{-- <li class="nav-item">
-          <a data-bs-toggle="collapse" href="#maps">
-            <i class="fas fa-map-marker-alt"></i>
-            <p>Projets</p>
-            <span class="caret"></span>
-          </a>
-          <div class="collapse" id="maps">
-            <ul class="nav nav-collapse">
-              <li>
-                <a href="maps/googlemaps.html">
-                  <span class="sub-item">AJouter</span>
-                </a>
-              </li>
-              <li>
-                <a href="maps/jsvectormap.html">
-                  <span class="sub-item">Liste des projets</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </li> --}}
         <li class="nav-item">
           <a data-bs-toggle="collapse" href="#charts">
             <i class="far fa-chart-bar"></i>

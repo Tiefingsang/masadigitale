@@ -1,0 +1,60 @@
+version: '3.8'
+
+services:
+  # Base de données MySQL
+  db:
+    image: mysql:8.0
+    container_name: masadigitale_db
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: masadigitale
+      MYSQL_USER: masadigitale
+      MYSQL_PASSWORD: secret
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - masadigitale_network
+    command: --default-authentication-plugin=mysql_native_password
+
+  # Application Laravel
+  app:
+    build: .
+    container_name: masadigitale_app
+    restart: unless-stopped
+    working_dir: /var/www
+    volumes:
+      - .:/var/www
+    networks:
+      - masadigitale_network
+    depends_on:
+      - db
+    environment:
+      - DB_HOST=db
+      - DB_DATABASE=masadigitale
+      - DB_USERNAME=root
+      - DB_PASSWORD=root
+
+  # Serveur Nginx
+  web:
+    image: nginx:alpine
+    container_name: masadigitale_web
+    restart: unless-stopped
+    ports:
+      - "8000:80"
+    volumes:
+      - .:/var/www
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - masadigitale_network
+    depends_on:
+      - app
+
+volumes:
+  mysql_data:
+
+networks:
+  masadigitale_network:
+    driver: bridge

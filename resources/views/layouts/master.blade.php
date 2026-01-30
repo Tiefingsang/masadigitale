@@ -23,12 +23,15 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://www.masadigitale.com/">
-    <meta property="twitter:title" content="Masadigitale 🚀 Votre agence digitale au Mali">
+    <meta property="twitter:title" content="Masadigitale  Votre agence digitale au Mali">
     <meta property="twitter:description" content="Agence de marketing digital et développement web au Mali. Publicité, SEO, réseaux sociaux, applications et plus.">
     <meta property="twitter:image" content="https://www.masadigitale.com/assets/images/logo.png">
 
     <!-- Stylesheets -->
     <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
+    
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('assets/plugins/revolution/css/settings.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/plugins/revolution/css/layers.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/plugins/revolution/css/navigation.css') }}" rel="stylesheet" type="text/css">
@@ -61,6 +64,7 @@
       gtag('config', 'G-990CYP3GJJ');
     </script>
 </head>
+
 
 
 <body>
@@ -136,6 +140,13 @@
 <script src="{{ asset('assets/js/jquery.js') }} "></script>
 <script src="{{ asset('assets/js/popper.min.js') }} "></script>
 <script src="{{ asset('assets/js/bootstrap.min.js') }} "></script>
+<!-- Bootstrap CSS -->
+
+
+<!-- Bootstrap JS (IMPORTANT : bundle) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+
 <!--Revolution Slider-->
 <script src="{{ asset('assets/plugins/revolution/js/jquery.themepunch.revolution.min.js') }} "></script>
 <script src="{{ asset('assets/plugins/revolution/js/jquery.themepunch.tools.min.js') }} "></script>
@@ -169,42 +180,42 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @if (session('success'))
-<script>
-    Swal.fire({
-        icon: 'success',
-        title: 'Succès',
-        text: '{{ session('success') }}',
-        confirmButtonColor: '#3085d6',
-        timer: 3000,
-        showConfirmButton: false
-    });
-</script>
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Succès',
+            text: '{{ session('success') }}',
+            confirmButtonColor: '#3085d6',
+            timer: 3000,
+            showConfirmButton: false
+        });
+    </script>
 @endif
 
 @if (session('error'))
-<script>
-    Swal.fire({
-        icon: 'error',
-        title: 'Erreur',
-        text: '{{ session('error') }}',
-        confirmButtonColor: '#d33'
-    });
-</script>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Erreur',
+            text: '{{ session('error') }}',
+            confirmButtonColor: '#d33'
+        });
+    </script>
 @endif
 
 @if ($errors->any())
-<script>
-    Swal.fire({
-        icon: 'error',
-        title: 'Erreur de validation',
-        html: `{!! implode('<br>', $errors->all()) !!}`,
-        confirmButtonColor: '#d33'
-    });
-</script>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Erreur de validation',
+            html: `{!! implode('<br>', $errors->all()) !!}`,
+            confirmButtonColor: '#d33'
+        });
+    </script>
 @endif
 
 
-
+@stack('scripts')
 </body>
 
 

@@ -5,6 +5,9 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\Form;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\FormationController;
+use App\Http\Controllers\InscriptionController;
 
 /* Route::get('/', function () {
     return view('welcome');
@@ -57,9 +60,29 @@ Route::post('/admin-logout', [AdminController::class, 'logout'])->name('admin.lo
 Route::get('/form-inscription/formation', [Form::class, 'index'])->name('get.formPage');
 Route::post('/form-inscription/formation/store', [Form::class, 'store'])->name('form.store');
 
+//formations routing
+
+Route::get('/formations', [FormationController::class, 'index'])->name('formations.index');
+Route::get('/formations/{slug}', [FormationController::class, 'show'])->name('formations.show');
+Route::get('/formations/{slug}/popup', [FormationController::class, 'popup'])
+    ->name('formations.popup');
+
+/* Route::get('/inscription/{slug}', [FormationController::class, 'inscription'])
+    ->name('inscription.show'); */
+
+    
+
+Route::get('/inscription/{slug}', [InscriptionController::class, 'show'])->name('inscriptions.show');
+Route::post('/inscription/{slug}', [InscriptionController::class, 'store'])->name('inscriptions.store');
+
+
+
+
+   
+
+
+
 // Admin (optionnel)
-
-
 
 Route::group(['prefix' => 'admin',
     'middleware' => ['auth'] ], function () {
@@ -143,6 +166,28 @@ Route::group(['prefix' => 'admin',
     //formulaire d'inscription
     Route::get('/admin/form-liste', [AdminController::class, 'index'])->name('admin.form-liste');
     Route::delete('/inscriptions/{id}', [AdminController::class, 'destroy'])->name('admin.inscriptions.destroy');
+
+
+    Route::get('/formations', [InscriptionController::class, 'index'])
+        ->name('admin.formations.index');
+
+    Route::get('/create', [FormationController::class, 'create'])
+        ->name('admin.formations.create');
+
+    Route::get('/list', [FormationController::class, 'listFormations'])
+        ->name('admin.formations.list'); 
+
+    Route::post('/store', [FormationController::class, 'store'])
+        ->name('admin.formations.store');
+
+    Route::get('/{id}/edit', [FormationController::class, 'edit'])
+        ->name('admin.formations.edit');
+
+    Route::put('/{id}', [FormationController::class, 'update'])
+        ->name('admin.formations.update');
+
+    Route::delete('/{id}', [FormationController::class, 'destroy'])
+        ->name('admin.formations.destroy');
 
 
     //redirection en cas de mauvaise route

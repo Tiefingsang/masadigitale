@@ -6,7 +6,7 @@
         <div class="page-header">
             <h3 class="fw-bold mb-3">Liste des inscriptions</h3>
             <ul class="breadcrumbs mb-3">
-                <li class="nav-home"><a href="#"><i class="icon-home"></i></a></li>
+                <li class="nav-home"><a href="{{ route('admin.index') }}"><i class="icon-home"></i></a></li>
                 <li class="separator"><i class="icon-arrow-right"></i></li>
                 <li class="nav-item"><a href="#">Formations</a></li>
                 <li class="separator"><i class="icon-arrow-right"></i></li>
@@ -32,38 +32,46 @@
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Nom & Prénom</th>
+                                        <th>Nom</th>
+                                        <th>Prénom</th>
                                         <th>Quartier</th>
                                         <th>Téléphone</th>
-                                        <th>Ordinateur</th>
-                                        <th>Niveau d’étude</th>
-                                        <th>Métier</th>
+                                        <th>Pays</th>
+                                        <th>Ville</th>
+                                        <th>Dernier diplôme</th>
+                                        <th>Sexe</th>
                                         <th>Date d’inscription</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($inscriptions as $item)
+                                    @forelse ($inscriptions as $item)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $item->nom }}</td>
-                                            <td>{{ $item->quartier }}</td>
+                                            <td>{{ $item->prenom }}</td>
+                                            <td>{{ $item->quartier ?? '-' }}</td>
                                             <td>{{ $item->telephone }}</td>
-                                            <td>{{ $item->ordinateur }}</td>
-                                            <td>{{ $item->niveau_etude }}</td>
-                                            <td>{{ $item->metier }}</td>
+                                            <td>{{ $item->pays ?? '-' }}</td>
+                                            <td>{{ $item->ville ?? '-' }}</td>
+                                            <td>{{ $item->dernier_diplome ?? '-' }}</td>
+                                            <td>{{ $item->sexe ?? '-' }}</td>
                                             <td>{{ $item->created_at->format('d/m/Y H:i') }}</td>
                                             <td>
-                                                <form action="{{ route('admin.inscriptions.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cette inscription ?');">
+                                                <form action="{{ route('admin.formations.destroy', $item->id) }}" method="POST" onsubmit="return confirm('Voulez-vous vraiment supprimer cette inscription ?');">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button class="btn btn-sm btn-danger">
+                                                    <button type="submit" class="btn btn-sm btn-danger">
                                                         <i class="fa fa-trash"></i>
                                                     </button>
                                                 </form>
                                             </td>
                                         </tr>
-                                    @endforeach
+                                    @empty
+                                        <tr>
+                                            <td colspan="11" class="text-center">Aucune inscription trouvée.</td>
+                                        </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>

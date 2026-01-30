@@ -36,6 +36,7 @@ class DatabaseSeeder extends Seeder
             ClientSeeder::class,
             NewsletterSeeder::class,
             SliderSeeder::class,
+            FormationSeeder::class,
         ]);
     }
 }

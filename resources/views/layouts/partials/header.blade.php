@@ -1,7 +1,7 @@
 <header class="main-header">
 
     <!-- Bandeau d'information sur la formation -->
-<div class="formation-banner" 
+{{-- <div class="formation-banner"
      style="background: linear-gradient(90deg, #007bff, #cbf191, #07213c);
             background-size: 300% 300%;
             color: #fff;
@@ -13,11 +13,11 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.15);">
     <strong> Formation en cours : Photoshop pour débutants !</strong>
     <span style="margin-left: 8px;">Rejoignez-nous pour apprendre à maîtriser Photoshop </span>
-    <a href="{{ route('get.formPage') }}" 
+    <a href="{{ route('get.formPage') }}"
        class="btn-inscription">
         S'inscrire maintenant
     </a>
-</div>
+</div> --}}
 
 <style>
 @keyframes gradientMove {
@@ -67,7 +67,7 @@
         <div class="auto-container">
             <div class="inner-container clearfix">
                 <div class="top-left">
-                    <ul class="contact-list clearfix"> 
+                    <ul class="contact-list clearfix">
                         <li><i class="flaticon-call-1"></i> <a href="tel:+22392516405">+223 92516405</a></li>
                         <li><i class="flaticon-mail"></i> <a href="contactegssarl@gmail.com">masadigitale@gmail.com</a></li>
                         <li><i class="flaticon-watch-2"></i> Toujours ouvert</li>
@@ -120,8 +120,8 @@
                                     <li class="{{ Route::is('contact.index') ? 'current' : '' }}">
                                         <a href="{{ route('contact.index') }}">Contact</a>
                                     </li>
-                                    <li class="{{ Route::is('get.formPage') ? 'current' : '' }}">
-                                        <a href="{{ route('get.formPage') }}">Formations</a>
+                                    <li class="{{ Route::is('formations.index') ? 'current' : '' }}">
+                                        <a href="{{ route('formations.index') }}">Formations</a>
                                     </li>
                                     <!-- <li class="{{ Route::is('gallery.index') ? 'current' : '' }}">
                                         <a href="{{ route('gallery.index') }}">Galerie</a>
@@ -133,7 +133,7 @@
 
                         <!-- Main Menu End-->
                         <!-- <div class="outer-box">
-                            
+
                             <div class="search-box-outer">
                                 <div class="dropdown">
                                     <button class="search-box-btn dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="la la-search"></span></button>
@@ -191,9 +191,9 @@
                             <li class="{{ request()->routeIs('contact.index') ? 'current' : '' }}">
                                 <a href="{{ route('contact.index') }}">Contact</a>
                             </li>
-                            <li class="{{ Route::is('get.formPage') ? 'current' : '' }}">
-                                        <a href="{{ route('get.formPage') }}">Formations</a>
-                                    </li>
+                            <li class="{{ Route::is('formations.index') ? 'current' : '' }}">
+                                <a href="{{ route('formations.index') }}">Formations</a>
+                            </li>
                             <!-- <li class="{{ request()->routeIs('gallery.index') ? 'current' : '' }}">
                                 <a href="{{ route('gallery.index') }}">Galerie</a>
                             </li> -->
