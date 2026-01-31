@@ -32,7 +32,7 @@ class AdminController extends Controller
 
      /* public function adminBlog(Request $request)
     {
-        
+
         // code to get blog
         return view('admin.pages.blog.index');
     }  */
@@ -146,7 +146,7 @@ public function adminBlogIndex()
 {
     $categories= Category::all();
     $data=[
-        
+
         'categories'=>$categories,
     ];
     return view('admin.pages.blog.add', $data);
@@ -155,7 +155,7 @@ public function adminBlogIndex()
 // Stockage nouvel article
 /* public function adminBlogStore(Request $request)
 {
-    
+
     $request->validate([
         'title' => 'required|string|max:255',
         'content' => 'required',
@@ -320,7 +320,7 @@ public function adminBlogDelete($id)
         return view('admin.pages.login.login');
     }
 
-    
+
 
     public function adminLoginStore(Request $request)
     {
@@ -419,14 +419,14 @@ public function adminBlogDelete($id)
         'image.image' => 'Le fichier doit être une image valide.',
     ]);
 
-     
+
     if ($request->hasFile('image')) {
         $imagePath = $request->file('image')->store('uploads/service', 'public');
     } else {
         return back()->withErrors(['image' => 'L\'image est requise.']);
     }
 
-    
+
     $service = Service::create([
         'title' => $request->title,
         'short' => $request->short,
@@ -435,7 +435,7 @@ public function adminBlogDelete($id)
         'icone' => $request->icone,
     ]);
 
-   
+
     if ($service) {
         return redirect()->route('admin.service.list')->with('success', 'Service créé avec succès.');
     } else {
@@ -455,7 +455,7 @@ public function adminBlogDelete($id)
         return view('admin.pages.service.edite', compact('service'));
     }
 
- 
+
 
     public function adminServiceUpdate(Request $request)
     {
@@ -600,7 +600,7 @@ public function adminBlogDelete($id)
         return view('admin.pages.client.index');
     }
 
-    
+
 
     public function adminclientStore(Request $request)
     {
@@ -656,13 +656,13 @@ public function adminBlogDelete($id)
         return view('admin.pages.client.edite', compact('clients'));
     }
 
-    
+
 
     public function adminclientUpdate(Request $request)
     {
         // 1. Validation
         $request->validate([
-            
+
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'email' => 'required|email|max:255',
@@ -831,7 +831,7 @@ public function adminBlogDelete($id)
         return view('admin.pages.gallery.edite', compact('gallery'));
     }
 
-    
+
 
     public function adminGalleryUpdate(Request $request){
         $gallery = Gallery::findOrFail($request->id);
@@ -925,7 +925,7 @@ public function adminBlogDelete($id)
 
     //formulaire d'inscription
     public function index(){
-        $inscriptions= form::get();  
+        $inscriptions= form::get();
         return view('admin.pages.form.index', compact('inscriptions'));
     }
 

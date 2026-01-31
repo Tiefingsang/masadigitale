@@ -9,6 +9,8 @@ use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\InscriptionController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\ProjetController;
+use App\Http\Controllers\Admin\ProjetController as AdminProjetController;
 
 
 /* Route::get('/', function () {
@@ -43,6 +45,12 @@ Route::get('/gallery-detail', [PageController::class, 'galleryDetail'])->name('g
 Route::get('/equipe', [TeamController::class, 'publicIndex'])->name('team.index');
 Route::get('/equipe/{team}', [TeamController::class, 'show'])->name('team.show');
 Route::get('/equipe/{team}', [TeamController::class, 'show'])->name('team.show');
+
+// Projets
+Route::get('/projets', [ProjetController::class, 'index'])->name('projets.index');
+Route::get('/projets/{slug}', [ProjetController::class, 'show'])->name('projets.show');
+Route::get('/projets/categorie/{category}', [ProjetController::class, 'byCategory'])->name('projets.category');
+Route::get('/projets/statut/{statut}', [ProjetController::class, 'byStatut'])->name('projets.statut');
 /* Route::get('/team', [TeamController::class, 'publicIndex']);
 Route::get('/team/{team}', [TeamController::class, 'show']); */
 
@@ -125,7 +133,7 @@ Route::group(['prefix' => 'admin',
     Route::get('/service-list', [AdminController::class, 'adminServiceList'])->name('admin.service.list');
     Route::get('/service-edit', [AdminController::class, 'adminServiceEdit'])->name('admin.service-edit');
     Route::post('/service-update', [AdminController::class, 'adminServiceUpdate'])->name('admin.service-update');
-    Route::delete('/service-delete', [AdminController::class, 'adminServiceDelete'])->name('admin.service-delete'); 
+    Route::delete('/service-delete', [AdminController::class, 'adminServiceDelete'])->name('admin.service-delete');
 
 
     Route::get('/category-add', [AdminController::class, 'adminCategoryAdd'])->name('admin.add.categories');
@@ -218,6 +226,21 @@ Route::group(['prefix' => 'admin',
     Route::delete('/{id}', [FormationController::class, 'destroy'])
         ->name('admin.formations.destroy');
 
+
+
+    Route::get('/projets', [AdminProjetController::class, 'index'])->name('admin.projets.index');
+    Route::get('/projets/create', [AdminProjetController::class, 'create'])->name('admin.projets.create');
+    Route::post('/projets', [AdminProjetController::class, 'store'])->name('admin.projets.store');
+    Route::get('/projets/{projet}', [AdminProjetController::class, 'show'])->name('admin.projets.show');
+    Route::get('/projets/{projet}/edit', [AdminProjetController::class, 'edit'])->name('admin.projets.edit');
+    Route::put('/projets/{projet}', [AdminProjetController::class, 'update'])->name('admin.projets.update');
+    Route::delete('/projets/{projet}', [AdminProjetController::class, 'destroy'])->name('admin.projets.destroy');
+    Route::post('/projets/update-order', [AdminProjetController::class, 'updateOrder'])->name('admin.projets.updateOrder');
+    Route::patch('/projets/{projet}/toggle-featured', [AdminProjetController::class, 'toggleFeatured'])->name('admin.projets.toggleFeatured');
+
+    // Gardez l'ancienne route pour la compatibilité
+    Route::get('/projects', [AdminController::class, 'adminProjects'])->name('admin.projects');
+    Route::get('/projects-detaile', [AdminController::class, 'adminProjectDetail'])->name('admin.projects-detaile');
 
     //redirection en cas de mauvaise route
     Route::fallback(function () {

@@ -136,6 +136,29 @@
           </div>
         </li>
 
+
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#projets">
+           <i class="fas fa-cogs"></i>
+            <p>Projets</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="projets">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="{{ route('admin.projets.create') }}">
+                  <span class="sub-item">Créer</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{ route('admin.projets.index') }}">
+                  <span class="sub-item">Liste de la projets</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
         <li class="nav-item">
           <a data-bs-toggle="collapse" href="#category">
             <i class="fas fa-table"></i>
