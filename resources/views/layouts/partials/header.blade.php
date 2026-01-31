@@ -126,6 +126,9 @@
                                      <li class="{{ Route::is('team.index') ? 'current' : '' }}">
                                         <a href="{{ route('team.index') }}">Team</a>
                                     </li>
+                                    <li class="{{ Route::is('projets.index') ? 'current' : '' }}">
+                                        <a href="{{ route('projets.index') }}">Projets</a>
+                                    </li>
                                 </ul>
                             </div>
 

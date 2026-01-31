@@ -36,7 +36,7 @@
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="counter-box text-center">
                         <div class="count-outer count-box">
-                            <span class="count-text" data-speed="3000" data-stop="{{ $counts['realises'] }}">0</span>+
+                            <span class="count-text" data-speed="3000" data-stop="{{ $counts['realises'] ?? 0 }}">0</span>+
                         </div>
                         <h4 class="counter-title">Projets Réalisés</h4>
                     </div>
@@ -44,7 +44,7 @@
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="counter-box text-center">
                         <div class="count-outer count-box">
-                            <span class="count-text" data-speed="3000" data-stop="{{ $counts['en_cours'] }}">0</span>+
+                            <span class="count-text" data-speed="3000" data-stop="{{ $counts['en_cours'] ?? 0 }}">0</span>+
                         </div>
                         <h4 class="counter-title">Projets en Cours</h4>
                     </div>
@@ -52,7 +52,7 @@
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="counter-box text-center">
                         <div class="count-outer count-box">
-                            <span class="count-text" data-speed="3000" data-stop="{{ $counts['avenir'] }}">0</span>+
+                            <span class="count-text" data-speed="3000" data-stop="{{ $counts['avenir'] ?? 0 }}">0</span>+
                         </div>
                         <h4 class="counter-title">Projets à Venir</h4>
                     </div>
@@ -60,7 +60,7 @@
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="counter-box text-center">
                         <div class="count-outer count-box">
-                            <span class="count-text" data-speed="3000" data-stop="{{ $projetsFeatured->count() }}">0</span>+
+                            <span class="count-text" data-speed="3000" data-stop="{{ $projetsFeatured->count() ?? 0 }}">0</span>+
                         </div>
                         <h4 class="counter-title">Projets Mis en Avant</h4>
                     </div>
@@ -76,9 +76,31 @@
                     <li class="filter-btn" data-filter=".realises">Réalisés</li>
                     <li class="filter-btn" data-filter=".en_cours">En cours</li>
                     <li class="filter-btn" data-filter=".avenir">À venir</li>
-                   {{--  @foreach($categories as $category)
-                        <li class="filter-btn" data-filter=".{{ $category->slug }}">{{ $category->name }}</li>
-                    @endforeach --}}
+                    @php
+                        $categories = collect();
+                        foreach($projetsRealises as $projet) {
+                            if($projet->categorie) {
+                                $categories->push($projet->categorie);
+                            }
+                        }
+                        foreach($projetsEnCours as $projet) {
+                            if($projet->categorie) {
+                                $categories->push($projet->categorie);
+                            }
+                        }
+                        foreach($projetsAvenir as $projet) {
+                            if($projet->categorie) {
+                                $categories->push($projet->categorie);
+                            }
+                        }
+                        $categories = $categories->unique()->values();
+                    @endphp
+
+                    @foreach($categories as $categorie)
+                        @if($categorie)
+                            <li class="filter-btn" data-filter=".{{ $categorie }}">{{ ucfirst(str_replace('-', ' ', $categorie)) }}</li>
+                        @endif
+                    @endforeach
                 </ul>
             </div>
         </div>
@@ -224,7 +246,7 @@
         </div>
 
         <!-- Technologies utilisées -->
-        @if($technologies->count() > 0)
+        @if(isset($technologies) && $technologies->count() > 0)
         <div class="technologies-section mt-5 pt-5">
             <div class="sec-title text-center">
                 <h3>Technologies que nous maîtrisons</h3>

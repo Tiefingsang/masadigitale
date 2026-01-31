@@ -24,7 +24,6 @@
                     <div class="card-body">
                         <form action="{{ route('admin.team.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-
                             <div class="row">
                                 <!-- Informations de base -->
                                 <div class="col-md-6 mb-3">
