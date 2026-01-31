@@ -13,6 +13,7 @@ use App\Models\Blog;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use App\Models\Team;
 
 
 class PageController extends Controller
@@ -33,6 +34,10 @@ class PageController extends Controller
 
         $getServices= Service::get();
         $getAbouts= About::get();
+        $teamMembers = Team::where('is_active', true)
+            ->orderBy('order')
+            ->limit(4)
+            ->get();
 
 
 
@@ -47,6 +52,7 @@ class PageController extends Controller
             'getAbouts'=>$getAbouts,
             'getBlogs'=>$getBlogs,
             'getGallery'=>$getGallery,
+            'teamMembers'=>$teamMembers,
         ];
         //dd($data);
 
@@ -68,7 +74,7 @@ class PageController extends Controller
     }
 
     public function blogs(){
-        
+
         $blogs=Blog::get();
 
         $data= ['blogs'=> $blogs
@@ -118,7 +124,7 @@ class PageController extends Controller
         ];
 
         return view('pages.services.show', $data);
-    }    
+    }
 
     public function contact(){
         return view('pages.contacts.index');
@@ -136,7 +142,7 @@ class PageController extends Controller
         'email.required' => 'L\'email est obligatoire.',
         'email.email' => 'Veuillez entrer une adresse email valide.',
         'message.required' => 'Le message est obligatoire.',
-        
+
         'subject.string' => 'Le sujet doit contenir des caractères.',
     ]);
 
