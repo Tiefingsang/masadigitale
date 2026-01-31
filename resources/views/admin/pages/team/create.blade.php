@@ -9,7 +9,7 @@
                 <li class="separator"><i class="icon-arrow-right"></i></li>
                 <li class="nav-item"><a href="#">Base</a></li>
                 <li class="separator"><i class="icon-arrow-right"></i></li>
-                <li class="nav-item"><a href="{{ route('admin.team.index') }}">Équipe</a></li>
+                <li class="nav-item"><a href="{{ route('team.index') }}">Équipe</a></li>
                 <li class="separator"><i class="icon-arrow-right"></i></li>
                 <li class="nav-item"><a href="#">Ajouter</a></li>
             </ul>
@@ -133,7 +133,7 @@
                             </div>
 
                             <div class="card-action text-end">
-                                <a href="{{ route('admin.team.index') }}" class="btn btn-secondary mr-2">Annuler</a>
+                                <a href="{{ route('team.index') }}" class="btn btn-secondary mr-2">Annuler</a>
                                 <button type="submit" class="btn btn-success">Ajouter le membre</button>
                             </div>
                         </form>

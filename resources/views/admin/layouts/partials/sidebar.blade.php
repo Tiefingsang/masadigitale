@@ -65,7 +65,7 @@
             <ul class="nav nav-collapse">
               <li>
                 <a href="{{ route('admin.profil.index') }}">
-                    
+
                   <span class="sub-item">Modifier</span>
                 </a>
               </li>
@@ -115,12 +115,12 @@
 
         </li>
         <li class="nav-item">
-          <a data-bs-toggle="collapse" href="#tables">
+          <a data-bs-toggle="collapse" href="#team">
            <i class="fas fa-cogs"></i>
             <p>Team</p>
             <span class="caret"></span>
           </a>
-          <div class="collapse" id="tables">
+          <div class="collapse" id="team">
             <ul class="nav nav-collapse">
               <li>
                 <a href="{{ route('admin.team.create') }}">
@@ -128,7 +128,7 @@
                 </a>
               </li>
               <li>
-                <a href="{{ route('team.index') }}">
+                <a href="{{ route('admin.team.index') }}">
                   <span class="sub-item">Liste de la team</span>
                 </a>
               </li>

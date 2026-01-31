@@ -76,18 +76,22 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <form action="{{ route('admin.team.update-order') }}" method="POST" class="d-inline order-form">
+                                            {{-- Version simplifiée sans formulaire AJAX --}}
+                                            <form action="{{ route('admin.team.update', $member) }}" method="POST" class="d-inline">
                                                 @csrf
                                                 @method('PUT')
+                                                <input type="hidden" name="order" value="{{ $member->order }}">
                                                 <input type="number" name="order" value="{{ $member->order }}"
-                                                       min="0" max="100" class="form-control form-control-sm order-input"
-                                                       style="width: 80px;" data-id="{{ $member->id }}">
+                                                    min="0" max="100" class="form-control form-control-sm"
+                                                    style="width: 80px;" onchange="this.form.submit()">
                                             </form>
                                         </td>
                                         <td>
-                                            <form action="{{ route('admin.team.toggle-active', $member) }}" method="POST" class="d-inline">
+                                            {{-- Version simplifiée pour toggle-active --}}
+                                            <form action="{{ route('admin.team.update', $member) }}" method="POST" class="d-inline">
                                                 @csrf
-                                                @method('PATCH')
+                                                @method('PUT')
+                                                <input type="hidden" name="is_active" value="{{ $member->is_active ? '0' : '1' }}">
                                                 <button type="submit" class="btn btn-sm btn-link">
                                                     @if($member->is_active)
                                                         <span class="badge badge-success">Actif</span>
@@ -104,7 +108,7 @@
                                                    title="Modifier">
                                                     <i class="fa fa-edit"></i>
                                                 </a>
-                                                <a href="{{ route('team.show', $member) }}"
+                                                <a href="{{ route('admin.team.show', $member) }}"
                                                    target="_blank"
                                                    class="btn btn-link btn-info btn-sm mr-2"
                                                    title="Voir">

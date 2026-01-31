@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Team;
@@ -13,7 +13,7 @@ class TeamController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+  /*   public function index()
     {
         // Récupérer tous les membres triés par ordre
         $members = Team::orderBy('order')->orderBy('created_at', 'desc')->get();
@@ -25,14 +25,60 @@ class TeamController extends Controller
 
         // Pour la vue publique
         return view('team.index', compact('members'));
-    }
+    } */
 
+        public function index()
+        {
+            // UNIQUEMENT pour l'administration
+            $members = Team::orderBy('order')->orderBy('created_at', 'desc')->get();
+            return view('admin.pages.team.index', compact('members'));
+        }
+
+        /* public function publicIndex()
+        {
+            // UNIQUEMENT pour le public
+            $members = Team::where('is_active', true)
+                ->orderBy('order')
+                ->orderBy('name')
+                ->get();
+
+            return view('pages.team.index', compact('members'));
+        }
+ */
+
+        public function publicIndex()
+        {
+            // Récupérer tous les membres actifs triés par ordre
+            $members = Team::where('is_active', true)
+                ->orderBy('order')
+                ->orderBy('name')
+                ->get();
+
+            // Récupérer les catégories distinctes
+            $categories = Team::where('is_active', true)
+                ->whereNotNull('category')
+                ->select('category')
+                ->distinct()
+                ->get()
+                ->map(function($item) {
+                    return (object)[
+                        'slug' => $item->category,
+                        'name' => ucfirst($item->category)
+                    ];
+                });
+
+            // Statistiques (vous pouvez adapter ces valeurs)
+            $totalProjects = 50; // À remplacer par votre logique
+            $totalExperience = 15; // À remplacer par votre logique
+
+            return view('pages.team.index', compact('members', 'categories', 'totalProjects', 'totalExperience'));
+        }
     /**
      * Show the form for creating a new resource.
      */
     public function create()
     {
-        return view('admin.team.create');
+        return view('admin.pages.team.create');
     }
 
     /**
@@ -110,7 +156,7 @@ class TeamController extends Controller
             'is_active' => $request->boolean('is_active'),
         ]);
 
-        return redirect()->route('admin.team.index')
+        return redirect()->route('team.index')
             ->with('success', 'Membre de l\'équipe ajouté avec succès!');
     }
 
@@ -120,7 +166,14 @@ class TeamController extends Controller
     public function show(Team $team)
     {
         // Pour la vue publique d'un membre
-        return view('team.show', compact('team'));
+        return view('pages.team.show', compact('team'));
+    }
+
+
+    public function showAdmin(Team $team)
+    {
+        // Pour la vue publique d'un membre
+        return view('admin.pages.team.show', compact('team'));
     }
 
     /**
@@ -128,7 +181,7 @@ class TeamController extends Controller
      */
     public function edit(Team $team)
     {
-        return view('admin.team.edit', compact('team'));
+        return view('admin.pages.team.edite', compact('team'));
     }
 
     /**
@@ -141,7 +194,7 @@ class TeamController extends Controller
             'name' => 'required|string|max:255',
             'position' => 'required|string|max:255',
             'bio' => 'nullable|string',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:2048',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp',
             'order' => 'nullable|integer',
             'category' => 'nullable|string|max:100',
             'email' => 'nullable|email|max:255',
@@ -256,7 +309,7 @@ class TeamController extends Controller
     /**
      * Afficher la page équipe publique
      */
-    public function publicIndex()
+  /*   public function publicIndex()
     {
         $members = Team::where('is_active', true)
             ->orderBy('order')
@@ -264,13 +317,13 @@ class TeamController extends Controller
             ->get()
             ->groupBy('category'); // Grouper par catégorie si besoin
 
-        return view('team.index', compact('members'));
-    }
+        return view('admin.pages.team.index', compact('members'));
+    } */
 
     /**
      * Mettre à jour l'ordre des membres (pour drag & drop)
      */
-    public function updateOrder(Request $request)
+    /* public function updateOrder(Request $request)
     {
         $request->validate([
             'order' => 'required|array',
@@ -282,12 +335,12 @@ class TeamController extends Controller
         }
 
         return response()->json(['success' => true]);
-    }
+    } */
 
     /**
      * Toggle l'état actif/inactif
      */
-    public function toggleActive(Team $team)
+   /*  public function toggleActive(Team $team)
     {
         $team->update([
             'is_active' => !$team->is_active
@@ -296,5 +349,38 @@ class TeamController extends Controller
         $status = $team->is_active ? 'activé' : 'désactivé';
         return redirect()->back()
             ->with('success', "Membre $status avec succès!");
+    } */
+
+
+    /**
+ * Mettre à jour l'ordre des membres (pour drag & drop)
+ */
+public function updateOrder(Request $request)
+{
+    $request->validate([
+        'order' => 'required|array',
+        'order.*' => 'integer|exists:teams,id',
+    ]);
+
+    foreach ($request->order as $index => $id) {
+        Team::where('id', $id)->update(['order' => $index]);
     }
+
+    return response()->json(['success' => true]);
+}
+
+/**
+ * Toggle l'état actif/inactif
+ */
+public function toggleActive(Team $team)
+{
+
+    $team->update([
+        'is_active' => !$team->is_active
+    ]);
+
+    $status = $team->is_active ? 'activé' : 'désactivé';
+    return redirect()->back()
+        ->with('success', "Membre $status avec succès!");
+}
 }

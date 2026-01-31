@@ -123,9 +123,9 @@
                                     <li class="{{ Route::is('formations.index') ? 'current' : '' }}">
                                         <a href="{{ route('formations.index') }}">Formations</a>
                                     </li>
-                                    <!-- <li class="{{ Route::is('gallery.index') ? 'current' : '' }}">
-                                        <a href="{{ route('gallery.index') }}">Galerie</a>
-                                    </li> -->
+                                     <li class="{{ Route::is('team.index') ? 'current' : '' }}">
+                                        <a href="{{ route('team.index') }}">Team</a>
+                                    </li>
                                 </ul>
                             </div>
 
@@ -194,9 +194,9 @@
                             <li class="{{ Route::is('formations.index') ? 'current' : '' }}">
                                 <a href="{{ route('formations.index') }}">Formations</a>
                             </li>
-                            <!-- <li class="{{ request()->routeIs('gallery.index') ? 'current' : '' }}">
-                                <a href="{{ route('gallery.index') }}">Galerie</a>
-                            </li> -->
+                            <li class="{{ Route::is('team.index') ? 'current' : '' }}">
+                                        <a href="{{ route('team.index') }}">Team</a>
+                            </li>
                         </ul>
 
                     </div>

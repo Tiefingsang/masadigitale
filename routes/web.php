@@ -42,7 +42,7 @@ Route::get('/gallery-detail', [PageController::class, 'galleryDetail'])->name('g
 
 Route::get('/equipe', [TeamController::class, 'publicIndex'])->name('team.index');
 Route::get('/equipe/{team}', [TeamController::class, 'show'])->name('team.show');
-
+Route::get('/equipe/{team}', [TeamController::class, 'show'])->name('team.show');
 /* Route::get('/team', [TeamController::class, 'publicIndex']);
 Route::get('/team/{team}', [TeamController::class, 'show']); */
 
@@ -167,22 +167,16 @@ Route::group(['prefix' => 'admin',
     Route::post('/team-update', [TeamController::class, 'adminTeamUpdate'])->name('admin.team-update');
     Route::delete('/team-delete', [TeamController::class, 'adminTeamDelete'])->name('admin.team-delete'); */
         // INDEX - Liste des membres
-    //Route::get('/team', [TeamController::class, 'index'])->name('team.index');
-<<<<<<< HEAD
-    Route::get('/team/create', [TeamController::class, 'create'])->name('team.create');
-    Route::post('/team', [TeamController::class, 'store'])->name('team.store');
-    //Route::get('/team/{team}', [TeamController::class, 'show'])->name('team.show');
-    Route::get('/team/{team}/edit', [TeamController::class, 'edit'])->name('team.edit');
-    Route::put('/team/{team}', [TeamController::class, 'update'])->name('team.update');
-    Route::delete('/team/{team}', [TeamController::class, 'destroy'])->name('team.destroy');
-=======
+    Route::get('/team', [TeamController::class, 'index'])->name('admin.team.index');
     Route::get('/team/create', [TeamController::class, 'create'])->name('admin.team.create');
     Route::post('/team', [TeamController::class, 'store'])->name('admin.team.store');
 
     Route::get('/team/{team}/edit', [TeamController::class, 'edit'])->name('admin.team.edit');
     Route::put('/team/{team}', [TeamController::class, 'update'])->name('admin.team.update');
     Route::delete('/team/{team}', [TeamController::class, 'destroy'])->name('admin.team.destroy');
->>>>>>> 40d1a3c6d39b64b96f31d15ed86c127801ca63eb
+     Route::post('team/update-order', [TeamController::class, 'updateOrder'])->name('team.update-order');
+     Route::patch('team/{team}/toggle-active', [TeamController::class, 'toggleActive'])->name('team.toggle-active');
+     Route::get('/equipe/{team}', [TeamController::class, 'showAdmin'])->name('admin.team.show');
 
 
     //gallery
