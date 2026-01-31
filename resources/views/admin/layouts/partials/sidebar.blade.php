@@ -116,7 +116,7 @@
         <li class="nav-item">
           <a data-bs-toggle="collapse" href="#tables">
            <i class="fas fa-cogs"></i>
-            <p>team</p>
+            <p>Team</p>
             <span class="caret"></span>
           </a>
           <div class="collapse" id="tables">
@@ -127,8 +127,8 @@
                 </a>
               </li>
               <li>
-                <a href="{{ route('admin.team.index') }}">
-                  <span class="sub-item">Liste des services</span>
+                <a href="{{ route('team.index') }}">
+                  <span class="sub-item">Liste de la team</span>
                 </a>
               </li>
             </ul>
