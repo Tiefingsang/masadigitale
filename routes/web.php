@@ -125,7 +125,7 @@ Route::group(['prefix' => 'admin',
     Route::get('/service-list', [AdminController::class, 'adminServiceList'])->name('admin.service.list');
     Route::get('/service-edit', [AdminController::class, 'adminServiceEdit'])->name('admin.service-edit');
     Route::post('/service-update', [AdminController::class, 'adminServiceUpdate'])->name('admin.service-update');
-    Route::delete('/service-delete', [AdminController::class, 'adminServiceDelete'])->name('admin.service-delete');
+    Route::delete('/service-delete', [AdminController::class, 'adminServiceDelete'])->name('admin.service-delete'); 
 
 
     Route::get('/category-add', [AdminController::class, 'adminCategoryAdd'])->name('admin.add.categories');
