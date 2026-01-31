@@ -112,6 +112,29 @@
           </div>
         </li>
 
+        </li>
+        <li class="nav-item">
+          <a data-bs-toggle="collapse" href="#tables">
+           <i class="fas fa-cogs"></i>
+            <p>team</p>
+            <span class="caret"></span>
+          </a>
+          <div class="collapse" id="tables">
+            <ul class="nav nav-collapse">
+              <li>
+                <a href="{{ route('admin.team.create') }}">
+                  <span class="sub-item">Créer</span>
+                </a>
+              </li>
+              <li>
+                <a href="{{ route('admin.team.index') }}">
+                  <span class="sub-item">Liste des services</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </li>
+
         <li class="nav-item">
           <a data-bs-toggle="collapse" href="#category">
             <i class="fas fa-table"></i>
@@ -135,12 +158,12 @@
         </li>
 
          <li class="nav-item">
-          <a data-bs-toggle="collapse" href="#client">
+          <a data-bs-toggle="collapse" href="#formations">
             <i class="fas fa-table"></i>
             <p>Formations</p>
             <span class="caret"></span>
           </a>
-          <div class="collapse" id="client">
+          <div class="collapse" id="formations">
             <ul class="nav nav-collapse">
               <li>
                 <a href="{{ route('admin.formations.create') }}">
@@ -157,7 +180,7 @@
         </li>
 
         <li class="nav-item">
-          <a data-bs-toggle="collapse" href="#client">
+          <a data-bs-toggle="collapse" href="#formations">
             <i class="fas fa-table"></i>
             <p>Inscription</p>
             <span class="caret"></span>
@@ -242,7 +265,7 @@
 
         </li>
 
-        
+
       </ul>
     </div>
   </div>
