@@ -65,6 +65,7 @@
             <ul class="nav nav-collapse">
               <li>
                 <a href="{{ route('admin.profil.index') }}">
+                    
                   <span class="sub-item">Modifier</span>
                 </a>
               </li>
