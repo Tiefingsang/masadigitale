@@ -8,6 +8,8 @@ use App\Http\Controllers\Form;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\FormationController;
 use App\Http\Controllers\InscriptionController;
+use App\Http\Controllers\TeamController;
+
 
 /* Route::get('/', function () {
     return view('welcome');
@@ -26,7 +28,7 @@ Route::get('/contact', [PageController::class, 'contact'])->name('contact.index'
 //contact
 Route::post('/contact/store', [PageController::class, 'contactStore'])->name('contact.store');
 Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery.index');
-Route::get('/team', [PageController::class, 'team'])->name('team.index');
+//Route::get('/team', [PageController::class, 'team'])->name('team.index');
 
 Route::get('/about-detail', [PageController::class, 'aboutDetail'])->name('about-detail');
 Route::get('/services-detail', [PageController::class, 'servicesDetail'])->name('services-detail');
@@ -35,7 +37,14 @@ Route::post('/ckeditor/upload', [UploadController::class, 'upload'])->name('cked
 
 Route::get('/contact-detail', [PageController::class, 'contactDetail'])->name('contact-detail');
 Route::get('/gallery-detail', [PageController::class, 'galleryDetail'])->name('gallery-detail');
-Route::get('/team-datail', [PageController::class, 'teamDetail'])->name('team.detail');
+//Route::get('/team-datail', [PageController::class, 'teamDetail'])->name('team.detail');
+
+
+Route::get('/equipe', [TeamController::class, 'publicIndex'])->name('team.index');
+Route::get('/equipe/{team}', [TeamController::class, 'show'])->name('team.show');
+
+/* Route::get('/team', [TeamController::class, 'publicIndex']);
+Route::get('/team/{team}', [TeamController::class, 'show']); */
 
 
 /* Route::group(['prefix' => 'admin'], function () {
@@ -43,7 +52,7 @@ Route::get('/team-datail', [PageController::class, 'teamDetail'])->name('team.de
 }); */
 
 
-Route::post('/comments', [CommentController::class, 'store'])->name('comments.store'); 
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 
 // list element routing  admin lists
 /* Route::get('/admin/login', [AdminController::class, 'adminLogin'])->name('login');
@@ -70,7 +79,7 @@ Route::get('/formations/{slug}/popup', [FormationController::class, 'popup'])
 /* Route::get('/inscription/{slug}', [FormationController::class, 'inscription'])
     ->name('inscription.show'); */
 
-    
+
 
 Route::get('/inscription/{slug}', [InscriptionController::class, 'show'])->name('inscriptions.show');
 Route::post('/inscription/{slug}', [InscriptionController::class, 'store'])->name('inscriptions.store');
@@ -78,7 +87,7 @@ Route::post('/inscription/{slug}', [InscriptionController::class, 'store'])->nam
 
 
 
-   
+
 
 
 
@@ -150,6 +159,23 @@ Route::group(['prefix' => 'admin',
     Route::post('/slider-update', [AdminController::class, 'adminSliderUpdate'])->name('admin.slider-update');
     Route::delete('/slider-delete', [AdminController::class, 'adminSliderDelete'])->name('admin.slider-delete');
 
+    //team
+    /* Route::get('/team-add', [TeamController::class, 'adminTeamAdd'])->name('admin.add.team');
+    Route::post('/team-store', [TeamController::class, 'adminTeamStore'])->name('admin.team.store');
+    Route::get('/team-list', [TeamController::class, 'adminTeamList'])->name('admin.team.list');
+    Route::get ('/team-edit', [TeamController::class, 'adminTeamEdit'])->name('admin.team-edit');
+    Route::post('/team-update', [TeamController::class, 'adminTeamUpdate'])->name('admin.team-update');
+    Route::delete('/team-delete', [TeamController::class, 'adminTeamDelete'])->name('admin.team-delete'); */
+        // INDEX - Liste des membres
+    //Route::get('/team', [TeamController::class, 'index'])->name('team.index');
+    Route::get('/team/create', [TeamController::class, 'create'])->name('admin.team.create');
+    Route::post('/team', [TeamController::class, 'store'])->name('admin.team.store');
+
+    Route::get('/team/{team}/edit', [TeamController::class, 'edit'])->name('admin.team.edit');
+    Route::put('/team/{team}', [TeamController::class, 'update'])->name('admin.team.update');
+    Route::delete('/team/{team}', [TeamController::class, 'destroy'])->name('admin.team.destroy');
+
+
     //gallery
     Route::get('/gallery-add', [AdminController::class, 'adminGalleryAdd'])->name('admin.add.gallery');
     Route::post('/gallery-store', [AdminController::class, 'adminGalleryStore'])->name('admin.gallery.store');
@@ -175,7 +201,7 @@ Route::group(['prefix' => 'admin',
         ->name('admin.formations.create');
 
     Route::get('/list', [FormationController::class, 'listFormations'])
-        ->name('admin.formations.list'); 
+        ->name('admin.formations.list');
 
     Route::post('/store', [FormationController::class, 'store'])
         ->name('admin.formations.store');
@@ -193,11 +219,11 @@ Route::group(['prefix' => 'admin',
     //redirection en cas de mauvaise route
     Route::fallback(function () {
         return abort(404);
-    });       
+    });
 
 
 
 
-    
+
 
 });
