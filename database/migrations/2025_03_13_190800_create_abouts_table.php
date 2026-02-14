@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('slug')->unique(); // Slug unique pour l'URL
             $table->string('title');
             $table->string('description');
-            $table->string('image')->nallable();
+            $table->string('image')->nullable();
 
             $table->timestamps();
         });

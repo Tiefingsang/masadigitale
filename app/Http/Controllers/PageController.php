@@ -76,7 +76,7 @@ class PageController extends Controller
     public function blogs(){
 
         $blogs=Blog::get();
-
+        dd($blogs);
         $data= ['blogs'=> $blogs
         ];
         //dd($data);
