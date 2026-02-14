@@ -130,8 +130,7 @@ class PageController extends Controller
         return view('pages.contacts.index');
     }
 
-    public function contactStore(Request $request) 
-{
+    public function contactStore(Request $request){
     $validated = $request->validate([
         'name' => 'required|string|max:255',
         'email' => 'required|email',
@@ -177,8 +176,6 @@ class PageController extends Controller
 
 
     }
-
-
 
 
 }
