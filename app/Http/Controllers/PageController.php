@@ -60,7 +60,8 @@ class PageController extends Controller
     }
 
     public function about(Request $request){
-        $getAbouts= About::first();
+        // Ensure we always pass an object to the view to avoid "property on null" errors
+        $getAbouts = About::first() ?? new About(['description' => '']);
         $getServices= Service::get();
 
         $data= [

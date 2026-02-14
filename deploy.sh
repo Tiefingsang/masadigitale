@@ -15,6 +15,10 @@ docker compose build --no-cache app
 docker compose up -d
 
 echo "Installing PHP deps and optimizing autoload..."
+# Ensure git won't refuse the mounted repo and fix ownership so Composer can modify vendor files
+docker compose exec app git config --global --add safe.directory /var/www || true
+docker compose exec --user root app chown -R laravel:laravel /var/www || true
+
 docker compose exec app composer install --no-dev --optimize-autoloader --no-interaction --prefer-dist
 
 echo "Running migrations..."
