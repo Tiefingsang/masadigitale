@@ -48,24 +48,26 @@ class TeamController extends Controller
 
         public function publicIndex()
         {
-            // Récupérer tous les membres actifs triés par ordre
-            $members = Team::where('is_active', true)
-                ->orderBy('order')
-                ->orderBy('name')
-                ->get();
+            $members = cache()->remember('team.public.members', 60, fn() =>
+                Team::where('is_active', true)
+                    ->orderBy('order')
+                    ->orderBy('name')
+                    ->get()
+            );
 
-            // Récupérer les catégories distinctes
-            $categories = Team::where('is_active', true)
-                ->whereNotNull('category')
-                ->select('category')
-                ->distinct()
-                ->get()
-                ->map(function($item) {
-                    return (object)[
-                        'slug' => $item->category,
-                        'name' => ucfirst($item->category)
-                    ];
-                });
+            $categories = cache()->remember('team.public.categories', 60, fn() =>
+                Team::where('is_active', true)
+                    ->whereNotNull('category')
+                    ->select('category')
+                    ->distinct()
+                    ->get()
+                    ->map(function($item) {
+                        return (object)[
+                            'slug' => $item->category,
+                            'name' => ucfirst($item->category)
+                        ];
+                    })
+            );
 
             // Statistiques (vous pouvez adapter ces valeurs)
             $totalProjects = 50; // À remplacer par votre logique

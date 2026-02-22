@@ -180,7 +180,7 @@
 
                                 @foreach ($getServices as $item)
                                     <li class="{{ request('title') == $item->title || request('id') == $item->id ? 'active' : '' }}">
-                                        <a href="{{ route('services-detail', ['title' => $item->title]) }}">
+                                        <a href="{{ route('services-detail', ['slug' => $item->slug]) }}">
                                             <i class="fa fa-chevron-right"></i> {{ $item->title }}
                                         </a>
                                     </li>
@@ -237,7 +237,7 @@
                                 <ul class="related-list">
                                     @foreach($relatedServices as $related)
                                         <li>
-                                            <a href="{{ route('services-detail', ['title' => $related->title]) }}">
+                                            <a href="{{ route('services-detail', ['slug' => $related->slug]) }}">
                                                 <div class="related-item">
                                                     @if($related->image)
                                                         <img src="{{ asset('storage/' . $related->image) }}"

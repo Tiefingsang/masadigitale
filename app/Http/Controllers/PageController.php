@@ -19,112 +19,76 @@ use App\Models\Team;
 class PageController extends Controller
 {
     public function index(){
-        $slider= Slider::where('id',1)->first();
-        $slider1= Slider::where('id',2)->first();
-        $slider2= Slider::where('id',3)->first();
+        // homepage data is relatively static, cache for one hour
+        $slider = cache()->remember('home.slider.1', 60, fn() => Slider::find(1));
+        $slider1 = cache()->remember('home.slider.2', 60, fn() => Slider::find(2));
+        $slider2 = cache()->remember('home.slider.3', 60, fn() => Slider::find(3));
 
-        //blog
-        $getClients= Client::get();
-        $getBlogs= Blog::get();
-        //gallery
-        $getGallery= Gallery::get();
+        $getClients = cache()->remember('home.clients', 60, fn() => Client::all());
+        $getBlogs   = cache()->remember('home.blogs', 60, fn() => Blog::all());
+        $getGallery = cache()->remember('home.gallery', 60, fn() => Gallery::all());
 
-        //services
-        $latestServices = Service::latest()->take(3)->get();
+        $latestServices = cache()->remember('home.latest_services', 60, fn() => Service::latest()->take(3)->get());
+        $getServices    = cache()->remember('home.services', 60, fn() => Service::all());
+        $getAbouts      = cache()->remember('home.abouts', 60, fn() => About::all());
+        $teamMembers    = cache()->remember('home.team_members', 60, fn() =>
+            Team::where('is_active', true)
+                ->orderBy('order')
+                ->limit(4)
+                ->get()
+        );
 
-        $getServices= Service::get();
-        $getAbouts= About::get();
-        $teamMembers = Team::where('is_active', true)
-            ->orderBy('order')
-            ->limit(4)
-            ->get();
-
-
-
-        $data= [
-
-            'latestServices'=>$latestServices,
-            'slider'=>$slider,
-            'slider1'=>$slider1,
-            'slider2'=>$slider2,
-            'getClients'=>$getClients,
-            'getServices'=>$getServices,
-            'getAbouts'=>$getAbouts,
-            'getBlogs'=>$getBlogs,
-            'getGallery'=>$getGallery,
-            'teamMembers'=>$teamMembers,
+        $data = [
+            'latestServices' => $latestServices,
+            'slider' => $slider,
+            'slider1' => $slider1,
+            'slider2' => $slider2,
+            'getClients' => $getClients,
+            'getServices' => $getServices,
+            'getAbouts' => $getAbouts,
+            'getBlogs' => $getBlogs,
+            'getGallery' => $getGallery,
+            'teamMembers' => $teamMembers,
         ];
-        //dd($data);
 
         return view('pages.home.index', $data);
     }
 
     public function about(Request $request){
-        // Ensure we always pass an object to the view to avoid "property on null" errors
-        $getAbouts = About::first() ?? new About(['description' => '']);
-        $getServices= Service::get();
+        $getAbouts = cache()->rememberForever('page.about', fn() => About::first() ?? new About(['description' => '']));
+        $getServices = cache()->remember('page.about.services', 60, fn() => Service::all());
 
-        $data= [
-
-            'getAbouts'=>$getAbouts,
-            'getServices'=>$getServices,
-
+        $data = [
+            'getAbouts' => $getAbouts,
+            'getServices' => $getServices,
         ];
-        //dd($data);
+
         return view('pages.apropos.index', $data);
     }
 
     public function blogs(){
-
-        $blogs=Blog::get();
-
-        $data= ['blogs'=> $blogs
-        ];
-        //dd($data);
-        return view('pages.blogs.index', $data);
+        $blogs = cache()->remember('page.blogs.list', 60, fn() => Blog::all());
+        return view('pages.blogs.index', ['blogs' => $blogs]);
     }
 
     public function blogsDetail(Request $request){
-        $getBlogBySlug= Blog::where('slug', $request->slug)->first();
-        $recentBlogs = Blog::latest()->take(5)->get();
-        $categories= \App\Models\Category::withCount('blogs')->get();
+        $getBlogBySlug = cache()->remember("page.blogs.detail.{$request->slug}", 60, fn() => Blog::where('slug', $request->slug)->first());
+        $recentBlogs = cache()->remember('page.blogs.recent', 60, fn() => Blog::latest()->take(5)->get());
+        $categories = cache()->remember('page.blogs.categories', 60, fn() => \App\Models\Category::withCount('blogs')->get());
 
-        $data= [
-            'getBlogBySlug'=>$getBlogBySlug,
-            'recentBlogs'=>$recentBlogs,
-            'categories'=>$categories,
-
-        ];
-
-        //dd($getBlogBySlug->title);
-        return view('pages.blogs.show', $data);
-
+        return view('pages.blogs.show', compact('getBlogBySlug', 'recentBlogs', 'categories'));
     }
 
     public function services(){
-        $getServices= Service::get();
-        //
-    //dd($getServices);
-
-        $data= [
-            'getServices'=>$getServices,
-        ];
-
-
-        return view('pages.services.index', $data);
+        $getServices = cache()->remember('page.services.list', 60, fn() => Service::all());
+        return view('pages.services.index', ['getServices' => $getServices]);
     }
 
     public function servicesDetail( Request $request){
-        $serviceFindByTitle= Service::where('title', $request->title)->first();
-        $getServices= Service::get();
-        //dd($serviceFindByTitle);
+        $serviceFindByTitle = cache()->remember("page.services.detail.{$request->slug}", 60, fn() => Service::where('slug', $request->slug)->first());
+        $getServices = cache()->remember('page.services.list', 60, fn() => Service::all());
 
-        $data=[
-            'serviceFindByTitle'=>$serviceFindByTitle,
-            'getServices'=>$getServices,
-        ];
-
-        return view('pages.services.show', $data);
+        return view('pages.services.show', compact('serviceFindByTitle', 'getServices'));
     }
 
     public function contact(){
@@ -165,17 +129,8 @@ class PageController extends Controller
     }
 
     public function gallery(){
-        $getGallery= Gallery::get();
-        //dd($getGallery);
-
-        $data=[
-            'getGallery'=>$getGallery,
-
-        ];
-
-        return view('pages.gallery.index', $data);
-
-
+        $getGallery = cache()->remember('page.gallery', 60, fn() => Gallery::all());
+        return view('pages.gallery.index', ['getGallery' => $getGallery]);
     }
 
 

@@ -61,6 +61,42 @@ In order to ensure that the Laravel community is welcoming to all, please review
 
 If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
+## Performance Tips
+
+To keep this site fast in production, consider the following steps:
+
+1. **Cache configuration, routes and views** after deployment:
+   ```bash
+   php artisan config:cache
+   php artisan route:cache
+   php artisan view:cache
+   php artisan optimize
+   ```
+   Remember to clear the cache during development or after changing `.env`:
+   ```bash
+   php artisan config:clear
+   php artisan cache:clear
+   php artisan route:clear
+   php artisan view:clear
+   ```
+
+2. **Use persistent cache store** such as Redis or Memcached (`CACHE_DRIVER=redis`). The default file cache works but is slower for frequent reads.
+
+3. **Build your front‑end assets** with Vite in production mode and serve them from `/public/build` or a CDN:
+   ```bash
+   npm ci && npm run build
+   ```
+
+4. **Enable OPcache** in PHP and tune `php-fpm` workers according to available memory.
+
+5. **Database optimizations**: add indexes on frequently used columns (many `slug` fields already unique), eager-load relationships to avoid N+1 queries (see `App\Http\Controllers\AdminController`, `PageController`), and paginate large collections.
+
+6. **Fragment caching**: controllers use `Cache::remember` for lists and homepage data, and the app automatically clears these caches when models are saved or deleted (see `AppServiceProvider`).
+
+7. **Serve static files with long `Cache-Control` headers** and enable gzip/brotli compression in your web server.
+
+8. **Monitor performance** with tools like Laravel Telescope, Debugbar (disabled in production), or external services (NewRelic, Blackfire).
+
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).

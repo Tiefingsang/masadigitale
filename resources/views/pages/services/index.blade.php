@@ -68,7 +68,7 @@
                             <!-- Contenu du service -->
                             <div class="content-box">
                                 <h3>
-                                    <a href="{{ route('services-detail', ['title' => $item->title]) }}"
+                                    <a href="{{ route('services-detail', ['slug' => $item->slug]) }}"
                                        class="service-title">
                                         {{ $item->title }}
                                     </a>
@@ -94,7 +94,7 @@
 
                                 <!-- Lien de détail -->
                                 <div class="link-box">
-                                    <a href="{{ route('services-detail', ['title' => $item->title]) }}"
+                                    <a href="{{ route('services-detail', ['slug' => $item->slug]) }}"
                                        class="service-link">
                                         <span>En savoir plus</span>
                                         <i class="la la-angle-double-right"></i>

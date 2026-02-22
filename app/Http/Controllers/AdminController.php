@@ -230,11 +230,12 @@ public function adminBlogUpdate(Request $request, $id)
 // Liste des blogs
 public function adminBlog()
 {
-    $blogs = Blog::latest()->get();
-    $categories= Category::all();
-    $data=[
-        'blogs'=>$blogs,
-        'categories'=>$categories,
+    // Eager-load relations to avoid N+1 database queries in views
+    $blogs = Blog::with(['category', 'user'])->latest()->get();
+    $categories = Category::all();
+    $data = [
+        'blogs' => $blogs,
+        'categories' => $categories,
     ];
     return view('admin.pages.blog.index', $data);
 }
@@ -375,19 +376,21 @@ public function adminBlogDelete($id)
     public function adminRegisterStore(Request $request){
 
         $request->validate([
-            'name'=>'required',
-            'email'=>'required',
-            'password'=>'required',
+            'name' => 'required',
+            'email' => 'required|email',
+            'password' => 'required|min:6',
         ],[
-            'name.required'=>'Entrer votre nom complet',
-            'email.required'=>'Entrer votre email',
-            'Password.required'=>'Entrer un mot de passe'
+            'name.required' => 'Entrer votre nom complet',
+            'email.required' => 'Entrer votre email',
+            'email.email' => 'L\'adresse email n\'est pas valide',
+            'password.required' => 'Entrer un mot de passe',
+            'password.min' => 'Le mot de passe doit contenir au moins 6 caractères',
         ]);
 
-        $user=User::create([
-            'name'=>$request->name,
-            'email'=>$request->email,
-            'Password'=>Hash::make($request->password),
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
         ]);
 
         if ($user) {

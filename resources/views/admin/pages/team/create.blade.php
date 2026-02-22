@@ -51,11 +51,48 @@
                                     <label for="category">Catégorie</label>
                                     <select name="category" class="form-control">
                                         <option value="">Sélectionner une catégorie</option>
+
+                                        <!-- Direction / Management -->
                                         <option value="direction" {{ old('category') == 'direction' ? 'selected' : '' }}>Direction</option>
-                                        <option value="technique" {{ old('category') == 'technique' ? 'selected' : '' }}>Technique</option>
-                                        <option value="commercial" {{ old('category') == 'commercial' ? 'selected' : '' }}>Commercial</option>
+                                        <option value="management" {{ old('category') == 'management' ? 'selected' : '' }}>Management</option>
+                                        <option value="chef_projet" {{ old('category') == 'chef_projet' ? 'selected' : '' }}>Chef de Projet</option>
+                                        <option value="product_owner" {{ old('category') == 'product_owner' ? 'selected' : '' }}>Product Owner</option>
+                                        <option value="scrum_master" {{ old('category') == 'scrum_master' ? 'selected' : '' }}>Scrum Master</option>
+
+                                        <!-- Développement -->
+                                        <option value="developpeur_frontend" {{ old('category') == 'developpeur_frontend' ? 'selected' : '' }}>Développeur Frontend</option>
+                                        <option value="developpeur_backend" {{ old('category') == 'developpeur_backend' ? 'selected' : '' }}>Développeur Backend</option>
+                                        <option value="developpeur_fullstack" {{ old('category') == 'developpeur_fullstack' ? 'selected' : '' }}>Développeur Full Stack</option>
+                                        <option value="developpeur_mobile" {{ old('category') == 'developpeur_mobile' ? 'selected' : '' }}>Développeur Mobile</option>
+                                        <option value="developpeur_web" {{ old('category') == 'developpeur_web' ? 'selected' : '' }}>Développeur Web</option>
+                                        <option value="ingenieur_logiciel" {{ old('category') == 'ingenieur_logiciel' ? 'selected' : '' }}>Ingénieur Logiciel</option>
+
+                                        <!-- Data & Infrastructure -->
+                                        <option value="devops" {{ old('category') == 'devops' ? 'selected' : '' }}>Ingénieur DevOps</option>
+                                        <option value="administrateur_systeme" {{ old('category') == 'administrateur_systeme' ? 'selected' : '' }}>Administrateur Système</option>
+                                        <option value="administrateur_reseau" {{ old('category') == 'administrateur_reseau' ? 'selected' : '' }}>Administrateur Réseau</option>
+                                        <option value="data_analyst" {{ old('category') == 'data_analyst' ? 'selected' : '' }}>Data Analyst</option>
+                                        <option value="data_scientist" {{ old('category') == 'data_scientist' ? 'selected' : '' }}>Data Scientist</option>
+
+                                        <!-- Design -->
+                                        <option value="ui_ux_designer" {{ old('category') == 'ui_ux_designer' ? 'selected' : '' }}>UI/UX Designer</option>
+                                        <option value="graphiste" {{ old('category') == 'graphiste' ? 'selected' : '' }}>Graphiste</option>
+
+                                        <!-- Marketing & Commercial -->
                                         <option value="marketing" {{ old('category') == 'marketing' ? 'selected' : '' }}>Marketing</option>
-                                        <option value="support" {{ old('category') == 'support' ? 'selected' : '' }}>Support</option>
+                                        <option value="digital_marketing" {{ old('category') == 'digital_marketing' ? 'selected' : '' }}>Digital Marketing</option>
+                                        <option value="community_manager" {{ old('category') == 'community_manager' ? 'selected' : '' }}>Community Manager</option>
+                                        <option value="commercial" {{ old('category') == 'commercial' ? 'selected' : '' }}>Commercial</option>
+                                        <option value="business_developer" {{ old('category') == 'business_developer' ? 'selected' : '' }}>Business Developer</option>
+
+                                        <!-- Support & Administration -->
+                                        <option value="support" {{ old('category') == 'support' ? 'selected' : '' }}>Support Technique</option>
+                                        <option value="service_client" {{ old('category') == 'service_client' ? 'selected' : '' }}>Service Client</option>
+                                        <option value="ressources_humaines" {{ old('category') == 'ressources_humaines' ? 'selected' : '' }}>Ressources Humaines</option>
+                                        <option value="comptabilite" {{ old('category') == 'comptabilite' ? 'selected' : '' }}>Comptabilité</option>
+
+                                        <!-- Autre -->
+                                        <option value="autre" {{ old('category') == 'autre' ? 'selected' : '' }}>Autre</option>
                                     </select>
                                 </div>
 

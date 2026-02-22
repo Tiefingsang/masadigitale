@@ -553,12 +553,12 @@
                     <div class="inner-box" style="background-image: url('{{ asset('storage/' . $item->image) }}');">
                         <div class="content-box">
                             <span class="{{ $item->icone }}"></span>
-                            <h3><a href="{{ route('blogs-detail', ['slug'=>$item->slug]) }}">{{ $item->title }}</a></h3>
+                            <h3><a href="{{ route('services-detail', ['slug' => $item->slug]) }}">{{ $item->title }}</a></h3>
                             <div class="text">
                                 {{-- {{ $item->description }} --}}
                                 {{ \Illuminate\Support\Str::limit($item->description, 50, '...') }}
                             </div>
-                            <div class="link-box"><a href="{{ route('blogs-detail', ['slug'=>$item->slug]) }}">En savoir plus <i class="la la-angle-double-right"></i></a></div>
+                            <div class="link-box"><a href="{{ route('services-detail', ['slug' => $item->slug]) }}">En savoir plus <i class="la la-angle-double-right"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -586,7 +586,7 @@
                 </div>
                 <ul class="list-style-one clearfix">
                     @foreach ($getServices as $item)
-                        <li><a href="{{ route('services-detail', ['title'=>$item->title]) }}">{{ $item->title }} </a></li>
+                        <li><a href="{{ route('services-detail', ['slug' => $item->slug]) }}">{{ $item->title }} </a></li>
                     @endforeach
                 </ul>
                 <div class="btn-box">
