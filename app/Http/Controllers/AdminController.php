@@ -21,6 +21,13 @@ use App\Models\Gallery;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
+use Intervention\Image\ImageManagerStatic as Image;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Notification;
+
+
 
 
 class AdminController extends Controller
@@ -30,12 +37,7 @@ class AdminController extends Controller
         return view('admin.pages.home.index');
     }
 
-     /* public function adminBlog(Request $request)
-    {
 
-        // code to get blog
-        return view('admin.pages.blog.index');
-    }  */
 
 
 
@@ -100,28 +102,124 @@ public function adminBlogEdite($id)
     return view('admin.pages.blog.edite',$data);
 }
 
+private function processImage($file, $destinationPath)
+    {
+        $extension = strtolower($file->getClientOriginalExtension());
+        $filename = time() . '_' . uniqid() . '.' . $extension;
+        $fullPath = public_path('storage/' . $destinationPath . '/' . $filename);
+
+        // Créer le dossier
+        if (!file_exists(public_path('storage/' . $destinationPath))) {
+            mkdir(public_path('storage/' . $destinationPath), 0777, true);
+        }
+
+        // Obtenir les dimensions
+        list($width, $height) = getimagesize($file);
+        $originalSize = $file->getSize();
+
+        // Redimensionnement intelligent
+        $maxWidth = 1200;
+        $maxHeight = 1200;
+
+        if ($width > $maxWidth || $height > $maxHeight) {
+            if ($width > $height) {
+                $newWidth = $maxWidth;
+                $newHeight = floor($height * ($maxWidth / $width));
+            } else {
+                $newHeight = $maxHeight;
+                $newWidth = floor($width * ($maxHeight / $height));
+            }
+        } else {
+            $newWidth = $width;
+            $newHeight = $height;
+        }
+
+        // Créer l'image redimensionnée
+        $thumb = imagecreatetruecolor($newWidth, $newHeight);
+
+        // Qualité de compression adaptative
+        $quality = 70; // Qualité de base
+
+        // Traitement selon le type
+        switch ($extension) {
+            case 'jpg':
+            case 'jpeg':
+                $source = imagecreatefromjpeg($file);
+                imagecopyresampled($thumb, $source, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+                imagejpeg($thumb, $fullPath, $quality);
+                break;
+
+            case 'png':
+                $source = imagecreatefrompng($file);
+                imagealphablending($thumb, false);
+                imagesavealpha($thumb, true);
+                imagecopyresampled($thumb, $source, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+                imagepng($thumb, $fullPath, 8); // 8 = compression élevée
+                break;
+
+            case 'gif':
+                $source = imagecreatefromgif($file);
+                imagecopyresampled($thumb, $source, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+                imagegif($thumb, $fullPath);
+                break;
+
+            case 'webp':
+                $source = imagecreatefromwebp($file);
+                imagecopyresampled($thumb, $source, 0, 0, 0, 0, $newWidth, $newHeight, $width, $height);
+                imagewebp($thumb, $fullPath, $quality);
+                break;
+
+            default:
+                return null;
+        }
+
+        // Nettoyer
+        imagedestroy($thumb);
+        imagedestroy($source);
+
+        // Log de l'optimisation
+        $finalSize = filesize($fullPath);
+        \Log::info("Image optimisée: " . round($originalSize/1048576,2) . "MB → " . round($finalSize/1048576,2) . "MB");
+
+        return $destinationPath . '/' . $filename;
+    }
+
 // Mise à jour
 public function adminBlogUpdate(Request $request, $id)
 {
+    //dd($request->all());
     $blog = Blog::findOrFail($id);
+
 
     $request->validate([
         'title' => 'required|string|max:255',
         'content' => 'required|string',
         'slug' => 'required|string|unique:blogs,slug,' . $id,
-        'user_id' => 'required|exists:users,id',
+
         'category_id' => 'required|exists:categories,id',
         'image' => 'nullable|image|mimes:jpeg,png,jpg,gif',
     ], [
         'image.image' => "Le fichier doit être une image.",
         'image.mimes' => "Les formats autorisés sont : jpeg, png, jpg, gif.",
-        'image.max' => "L'image ne doit pas dépasser 2 Mo.",
+
     ]);
 
-    $data = $request->only(['title','content','slug','user_id','category_id']);
+    $data = [
+        'title' => $request->title,
+        'content' => $request->content,
+        'slug' => $request->slug,
+        'user_id' => $request->user_id,
+        'category_id' => $request->category_id,
+    ];
 
     if ($request->hasFile('image')) {
-        $data['image'] = $request->file('image')->store('uploads/blog', 'public');
+        // Supprimer l'ancienne image
+        if ($blog->image && file_exists(public_path('storage/' . $blog->image))) {
+            unlink(public_path('storage/' . $blog->image));
+        }
+
+        // Utiliser la fonction processImage pour optimiser l'image
+        $data['image'] = $this->processImage($request->file('image'), 'uploads/blog');
     }
 
     $blog->update($data);
@@ -152,62 +250,50 @@ public function adminBlogIndex()
     return view('admin.pages.blog.add', $data);
 }
 
-// Stockage nouvel article
-/* public function adminBlogStore(Request $request)
-{
 
-    $request->validate([
-        'title' => 'required|string|max:255',
-        'content' => 'required',
-        'slug' => 'required|string|unique:blogs,slug',
-        'user_id' => 'required|exists:users,id',
-        'category_id' => 'required|exists:categories,id',
-        'image' => 'required|image|mimes:jpeg,png,jpg,gif',
-    ]);
 
-    $imagePath = $request->file('image')->store('uploads/blog', 'public');
 
-    Blog::create([
-    'title'       => $request->title,
-    'content'     => $request->content,
-    'slug'        => $slug,
-    'user_id'     => $request->user_id,
-    'category_id' => $request->category_id,
-    'image'       => $imagePath,
-]);
 
-    return redirect()->route('admin.blog')->with('success','Article ajouté avec succès.');
-} */
-public function adminBlogStore(Request $request)
+    public function adminBlogStore(Request $request)
     {
+        // CORRECTION: Validation correcte de l'image
         $request->validate([
             'title'       => 'required|string|max:255',
-            'content'     => 'required',
+            'content'     => 'required|string',
             'slug'        => 'required|string|unique:blogs,slug',
             'user_id'     => 'required|exists:users,id',
             'category_id' => 'required|exists:categories,id',
-            'image'       => 'required|image|mimes:jpeg,png,jpg,gif',
+            'image'       => 'required|image|mimes:jpeg,png,jpg,gif|max:10240', 
+        ], [
+            'image.required' => 'L\'image est requise',
+            'image.image' => 'Le fichier doit être une image',
+            'image.mimes' => 'Formats acceptés: jpeg, png, jpg, gif',
+            'image.max' => 'L\'image ne doit pas dépasser 10MB',
         ]);
 
-        // Upload image
-        $imagePath = $request->file('image')->store('uploads/blog', 'public');
+        try {
+            // Traiter et compresser l'image
+            $imagePath = $this->processImage($request->file('image'), 'uploads/blog');
 
-        // Définir le slug (celui soumis par l’admin)
-        $slug = $request->slug;
+            Blog::create([
+                'title'       => $request->title,
+                'content'     => $request->content,
+                'slug'        => $request->slug,
+                'user_id'     => $request->user_id,
+                'category_id' => $request->category_id,
+                'image'       => $imagePath,
+            ]);
 
-        Blog::create([
-            'title'       => $request->title,
-            'content'     => $request->content,
-            'slug'        => $slug,
-            'user_id'     => $request->user_id,
-            'category_id' => $request->category_id,
-            'image'       => $imagePath,
-        ]);
+            return redirect()->route('admin.blog')
+                ->with('success', 'Article ajouté avec succès.');
 
-        return redirect()
-            ->route('admin.blog')
-            ->with('success', 'Article ajouté avec succès.');
+        } catch (\Exception $e) {
+            return redirect()->back()
+                ->with('error', 'Erreur lors de l\'upload: ' . $e->getMessage())
+                ->withInput();
+        }
     }
+
 
 // Suppression
 public function adminBlogDelete($id)

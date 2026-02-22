@@ -35,7 +35,14 @@ Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery.index'
 Route::get('/about-detail', [PageController::class, 'aboutDetail'])->name('about-detail');
 Route::get('/services-detail', [PageController::class, 'servicesDetail'])->name('services-detail');
 Route::get('/blogs-detail', [PageController::class, 'blogsDetail'])->name('blogs-detail');
-Route::post('/ckeditor/upload', [UploadController::class, 'upload'])->name('ckeditor.upload');
+//Route::post('/ckeditor/upload', [UploadController::class, 'upload'])->name('ckeditor.upload');
+
+// Assurez-vous que la route est bien définie comme ceci
+Route::post('/ckeditor/upload', [App\Http\Controllers\UploadController::class, 'upload'])
+    ->name('ckeditor.upload');
+
+
+
 
 Route::get('/contact-detail', [PageController::class, 'contactDetail'])->name('contact-detail');
 Route::get('/gallery-detail', [PageController::class, 'galleryDetail'])->name('gallery-detail');
@@ -111,7 +118,7 @@ Route::group(['prefix' => 'admin',
     Route::get('/blog-edite/{id}', [AdminController::class, 'adminBlogEdite'])->name('admin.blog.edite');
     Route::delete('/blog-delete/{id}', [AdminController::class, 'adminBlogDelete'])->name('admin.blog.delete');
 
-    Route::post('/blog-updatee/{id}', [AdminController::class, 'adminBlogUpdate'])->name('admin.blog.update');
+    Route::put('/blog-updatee/{id}', [AdminController::class, 'adminBlogUpdate'])->name('admin.blog.update');
     Route::get('/contact', [AdminController::class, 'adminContact'])->name('admin.contact');
     Route::get('/projects', [AdminController::class, 'adminProjects'])->name('admin.projects');
     Route::get('/projects-detaile', [AdminController::class, 'adminProjectDetail'])->name('admin.projects-detaile');

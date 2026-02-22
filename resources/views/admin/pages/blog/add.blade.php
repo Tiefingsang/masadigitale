@@ -32,7 +32,10 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="title">Titre</label>
-                                        <input type="text" class="form-control" name="title" value="{{ old('title') }}" required>
+                                        <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{ old('title') }}" required>
+                                        @error('title')
+                                            <span class="invalid-feedback">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -40,7 +43,10 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="slug">Slug</label>
-                                        <input type="text" class="form-control" name="slug" value="{{ old('slug') }}" required>
+                                        <input type="text" class="form-control @error('slug') is-invalid @enderror" name="slug" value="{{ old('slug') }}" required>
+                                        @error('slug')
+                                            <span class="invalid-feedback">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -48,7 +54,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="category_id">Catégorie</label>
-                                        <select name="category_id" class="form-control" required>
+                                        <select name="category_id" class="form-control @error('category_id') is-invalid @enderror" required>
                                             <option value="">-- Choisir une catégorie --</option>
                                             @foreach($categories as $category)
                                                 <option value="{{ $category->id }}" {{ old('category_id') == $category->id ? 'selected' : '' }}>
@@ -56,6 +62,9 @@
                                                 </option>
                                             @endforeach
                                         </select>
+                                        @error('category_id')
+                                            <span class="invalid-feedback">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -63,8 +72,11 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label for="image">Image</label>
-                                        <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
-                                        <small class="form-text text-muted">Formats acceptés: jpeg, png, jpg, gif (max: 2 Mo)</small>
+                                        <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image" accept="image/*" required>
+                                        
+                                        @error('image')
+                                            <span class="invalid-feedback">{{ $message }}</span>
+                                        @enderror
                                         <div class="mt-2">
                                             <img id="preview" src="#" alt="Aperçu" style="max-width: 200px; display: none; border-radius: 5px;">
                                         </div>
@@ -75,10 +87,11 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label for="editor">Contenu</label>
-                                        <!-- ⚠️ textarea sans name ni required -->
-                                        <textarea class="form-control" id="editor" rows="10">{{ old('content') }}</textarea>
-                                        <!-- ✅ champ caché pour la vraie valeur -->
-                                        <input type="hidden" name="content" id="content_hidden" value="{{ old('content') }}" required>
+                                        <!-- ✅ AJOUT DU name="content" ICI -->
+                                        <textarea class="form-control @error('content') is-invalid @enderror" name="content" id="editor" rows="10">{{ old('content') }}</textarea>
+                                        @error('content')
+                                            <span class="invalid-feedback">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
 
@@ -111,6 +124,7 @@
 <script src="https://cdn.ckeditor.com/ckeditor5/41.4.2/classic/ckeditor.js"></script>
 
 <script>
+// Adaptateur personnalisé pour l'upload
 class MyUploadAdapter {
     constructor(loader) {
         this.loader = loader;
@@ -123,63 +137,109 @@ class MyUploadAdapter {
                 data.append('upload', file);
                 data.append('_token', '{{ csrf_token() }}');
 
-                fetch("{{ route('ckeditor.upload') }}", {
+                fetch('{{ route("ckeditor.upload") }}', {
                     method: 'POST',
-                    body: data
+                    body: data,
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest'
+                    }
                 })
-                .then(response => response.json())
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Erreur réseau');
+                    }
+                    return response.json();
+                })
                 .then(result => {
-                    if (result.url) {
-                        resolve({ default: result.url });
+                    if (result.uploaded) {
+                        resolve({
+                            default: result.url
+                        });
                     } else {
-                        reject(result.error?.message ?? 'Erreur upload');
+                        reject(result.error?.message || 'Erreur lors de l\'upload');
                     }
                 })
                 .catch(error => {
-                    reject('Erreur serveur: ' + error);
+                    reject(error.message);
                 });
             }));
     }
 
-    abort() {}
+    abort() {
+        // Nécessaire pour CKEditor
+    }
 }
 
+// Plugin pour CKEditor
 function MyCustomUploadAdapterPlugin(editor) {
     editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
         return new MyUploadAdapter(loader);
     };
 }
 
+// Initialisation de CKEditor
 ClassicEditor
     .create(document.querySelector('#editor'), {
-        extraPlugins: [ MyCustomUploadAdapterPlugin ],
-        toolbar: [
-            'heading', '|',
-            'bold', 'italic', 'underline', 'strikethrough', '|',
-            'link', 'blockQuote', 'insertTable', 'mediaEmbed', '|',
-            'bulletedList', 'numberedList', '|',
-            'imageUpload', 'undo', 'redo', '|',
-            'fontColor', 'fontBackgroundColor', 'fontSize'
-        ]
+        extraPlugins: [MyCustomUploadAdapterPlugin],
+        toolbar: {
+            items: [
+                'heading',
+                '|',
+                'bold',
+                'italic',
+                'underline',
+                'strikethrough',
+                '|',
+                'link',
+                'blockQuote',
+                'insertTable',
+                'mediaEmbed',
+                '|',
+                'bulletedList',
+                'numberedList',
+                '|',
+                'imageUpload',
+                'undo',
+                'redo',
+                '|',
+                'fontColor',
+                'fontBackgroundColor',
+                'fontSize'
+            ]
+        },
+        image: {
+            toolbar: [
+                'imageStyle:inline',
+                'imageStyle:block',
+                'imageStyle:side',
+                '|',
+                'toggleImageCaption',
+                'imageTextAlternative'
+            ],
+            styles: [
+                'inline',
+                'block',
+                'side'
+            ]
+        },
+        table: {
+            contentToolbar: [
+                'tableColumn',
+                'tableRow',
+                'mergeTableCells'
+            ]
+        },
+        // Augmenter la limite de mémoire pour les gros fichiers
+        maxFileSize: 5000000 // 5MB
     })
     .then(editor => {
-        console.log('Editor prêt', editor);
+        console.log('CKEditor initialisé avec succès', editor);
 
-        const hiddenInput = document.querySelector('#content_hidden');
-        const form = document.querySelector('form');
-
-        // 🔁 Sync en temps réel
-        editor.model.document.on('change:data', () => {
-            hiddenInput.value = editor.getData();
-        });
-
-        // 🔁 Sécurité au submit
-        form.addEventListener('submit', () => {
-            hiddenInput.value = editor.getData();
-        });
+        // Sauvegarder l'instance pour une utilisation ultérieure si nécessaire
+        window.editor = editor;
     })
     .catch(error => {
-        console.error(error);
+        console.error('Erreur d\'initialisation CKEditor:', error);
     });
 </script>
 @endsection

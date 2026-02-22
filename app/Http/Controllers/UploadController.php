@@ -8,26 +8,43 @@ class UploadController extends Controller
 {
     public function upload(Request $request)
     {
+        // Vérifier si un fichier a été uploadé
         if ($request->hasFile('upload')) {
             $file = $request->file('upload');
 
-            // Nom unique
-            $filename = time().'_'.$file->getClientOriginalName();
+            // Valider le fichier
+            $request->validate([
+                'upload' => 'required|image|mimes:jpeg,png,jpg,gif|max:5120', // 5MB max
+            ]);
 
-            // Enregistre dans public/uploads/ckeditor
-            $file->move(public_path('uploads/ckeditor'), $filename);
+            // Générer un nom unique
+            $filename = time() . '_' . uniqid() . '.' . $file->getClientOriginalExtension();
 
-            // URL accessible
-            $url = asset('uploads/ckeditor/'.$filename);
+            // Créer le dossier s'il n'existe pas
+            $uploadPath = public_path('uploads/ckeditor');
+            if (!file_exists($uploadPath)) {
+                mkdir($uploadPath, 0777, true);
+            }
 
-            // ⚡ Réponse attendue par CKEditor 5
+            // Déplacer le fichier
+            $file->move($uploadPath, $filename);
+
+            // Créer l'URL
+            $url = asset('uploads/ckeditor/' . $filename);
+
+            // Réponse pour CKEditor
             return response()->json([
+                'uploaded' => true,
                 'url' => $url
             ]);
         }
 
+        // Si pas de fichier
         return response()->json([
-            'error' => ['message' => 'Aucun fichier reçu']
+            'uploaded' => false,
+            'error' => [
+                'message' => 'Aucun fichier reçu. Veuillez sélectionner une image.'
+            ]
         ], 400);
     }
 }
