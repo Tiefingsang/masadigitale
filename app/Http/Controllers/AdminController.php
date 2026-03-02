@@ -264,7 +264,7 @@ public function adminBlogIndex()
             'slug'        => 'required|string|unique:blogs,slug',
             'user_id'     => 'required|exists:users,id',
             'category_id' => 'required|exists:categories,id',
-            'image'       => 'required|image|mimes:jpeg,png,jpg,gif|max:10240', 
+            'image'       => 'required|image|mimes:jpeg,png,jpg,gif|max:10240',
         ], [
             'image.required' => 'L\'image est requise',
             'image.image' => 'Le fichier doit être une image',
@@ -500,7 +500,7 @@ public function adminBlogDelete($id)
         'short' => 'required|string',
         'description' => 'nullable|string',
         'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg',
-        //'icone' => 'nullable|string',
+
     ], [
         'title.required' => 'Le titre est requis.',
         'short.required' => 'Le résumé est requis.',
@@ -549,21 +549,22 @@ public function adminBlogDelete($id)
     public function adminServiceUpdate(Request $request)
     {
         // Validation
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'short' => 'required|string',
-            'description' => 'nullable|string',
-            'prix_min' => 'nullable|numeric',
-            'prix_max' => 'nullable|numeric',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,svg,gif',
-        ], [
-            'title.required' => 'Le titre est requis.',
-            'short.required' => 'Le résumé est requis.',
-            'prix_min.numeric' => 'Le prix minimum doit être un nombre.',
-            'prix_max.numeric' => 'Le prix maximum doit être un nombre.',
-            'image.image' => 'Le fichier doit être une image.',
-            'image.mimes' => 'Formats autorisés : jpeg, png, jpg, svg, gif.',
-        ]);
+            $request->validate([
+        'title' => 'required|string|max:255',
+        'short' => 'required|string',
+        'description' => 'nullable|string',
+        'prix_min' => 'nullable|numeric',
+        'prix_max' => 'nullable|numeric',
+        'image' => 'nullable|image|mimes:jpeg,png,jpg,svg,gif|max:51200',
+    ], [
+        'title.required' => 'Le titre est requis.',
+        'short.required' => 'Le résumé est requis.',
+        'prix_min.numeric' => 'Le prix minimum doit être un nombre.',
+        'prix_max.numeric' => 'Le prix maximum doit être un nombre.',
+        'image.image' => 'Le fichier doit être une image valide (jpeg, png, jpg, svg, gif).',
+        'image.mimes' => 'Formats autorisés : jpeg, png, jpg, svg, gif.',
+        'image.max' => 'L\'image ne doit pas dépasser 50 Mo.',
+    ]);
 
         // Récupération du service
         $service = Service::findOrFail($request->id);
