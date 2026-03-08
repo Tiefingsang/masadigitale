@@ -136,6 +136,136 @@
     </div>
 </div> --}}
 
+<div id="whatsapp-widget">
+
+    <div id="wa-button">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" width="55">
+    </div>
+
+    <div id="wa-popup">
+
+        <div class="wa-header">
+            Assistance WhatsApp
+        </div>
+
+        <div class="wa-messages">
+            <div class="wa-msg">Bonjour 👋</div>
+            <div class="wa-msg">Je voudrais plus d'informations</div>
+            <div class="wa-msg">Je souhaite prendre un rendez-vous</div>
+        </div>
+
+        <input type="text" id="wa-input" placeholder="Votre message...">
+
+        <button id="wa-send">Envoyer</button>
+
+    </div>
+
+</div>
+
+<style>
+    #whatsapp-widget{
+        position: fixed;
+        bottom:20px;
+        right:20px;
+        z-index:999999;
+    }
+
+    #wa-button{
+        cursor:pointer;
+    }
+
+    #wa-popup{
+        position:absolute;
+        bottom:70px;
+        right:0;
+        width:280px;
+        background:white;
+        border-radius:10px;
+        box-shadow:0 4px 15px rgba(0,0,0,0.2);
+        display:none;
+    }
+
+    .wa-header{
+        background:#25D366;
+        color:white;
+        padding:12px;
+        border-radius:10px 10px 0 0;
+        font-weight:bold;
+    }
+
+    .wa-messages{
+        padding:10px;
+    }
+
+    .wa-msg{
+        background:#f1f1f1;
+        padding:8px;
+        border-radius:6px;
+        margin-bottom:6px;
+        cursor:pointer;
+    }
+
+    .wa-msg:hover{
+        background:#e3e3e3;
+    }
+
+    #wa-input{
+        width:calc(100% - 20px);
+        margin:10px;
+        padding:8px;
+        border:1px solid #ddd;
+    }
+
+    #wa-send{
+        background:#25D366;
+        border:none;
+        color:white;
+        width:calc(100% - 20px);
+        margin:10px;
+        padding:10px;
+        border-radius:6px;
+        cursor:pointer;
+    }
+</style>
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function(){
+
+const button = document.getElementById("wa-button");
+const popup = document.getElementById("wa-popup");
+const messages = document.querySelectorAll(".wa-msg");
+const input = document.getElementById("wa-input");
+const send = document.getElementById("wa-send");
+
+const phone = "22392516405";
+
+button.addEventListener("click", function(){
+    popup.style.display = popup.style.display === "block" ? "none" : "block";
+});
+
+messages.forEach(function(msg){
+    msg.addEventListener("click", function(){
+        input.value = msg.innerText;
+        input.focus();
+    });
+});
+
+send.addEventListener("click", function(){
+
+    const text = input.value.trim();
+
+    if(text !== ""){
+        const url = "https://wa.me/"+phone+"?text="+encodeURIComponent(text);
+        window.open(url,"_blank");
+    }
+
+});
+
+});
+
+</script>
+
 <!--Scroll to top-->
 <script src="{{ asset('assets/js/jquery.js') }} "></script>
 <script src="{{ asset('assets/js/popper.min.js') }} "></script>
