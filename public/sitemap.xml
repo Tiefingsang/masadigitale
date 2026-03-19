@@ -1,35 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Page d'accueil -->
+
+  <!-- Accueil -->
   <url>
     <loc>https://www.masadigitale.com/</loc>
-    <lastmod>2025-09-07</lastmod>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- Pages principales -->
   <url>
     <loc>https://www.masadigitale.com/services</loc>
-    <lastmod>2025-09-07</lastmod>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://www.masadigitale.com/about</loc>
-    <lastmod>2025-09-07</lastmod>
-    <priority>0.8</priority>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
     <loc>https://www.masadigitale.com/contact</loc>
-    <lastmod>2025-09-07</lastmod>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <url>
+    <loc>https://www.masadigitale.com/formation</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <url>
+    <loc>https://www.masadigitale.com/equipe</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <url>
+    <loc>https://www.masadigitale.com/projets</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Services détaillés (IMPORTANT SEO) -->
+  <url>
+    <loc>https://masadigitale.com/services-detail?slug=maintenance-informatique-support-technique-pour-entreprises</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://masadigitale.com/services-detail?slug=creation-de-sites-web-modernes-et-professionnels</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://masadigitale.com/services-detail?slug=creation-d-applications-mobiles</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://www.masadigitale.com/services/formation</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
-  <!-- Exemple blog (si tu as un blog) -->
+  <!-- SEO local (très puissant pour toi) -->
+  <url>
+    <loc>https://masadigitale.com/services-detail?slug=maintenance-informatique-support-technique-pour-entreprises</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>http://masadigitale.com/blogs-detail?slug=pourquoi-creer-un-site-e-commerce-est-devenu-essentiel-pour-tout-commercant</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://masadigitale.com/blogs-detail?slug=pourquoi-chaque-entreprise-moderne-a-besoin-dun-site-web-en-2025</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog -->
   <url>
     <loc>https://www.masadigitale.com/blog</loc>
-    <lastmod>2025-09-07</lastmod>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Exemples articles (à remplacer dynamiquement) -->
+  <url>
+    <loc>https://www.masadigitale.com/blog/transformation-digitale-pme-afrique</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <url>
+    <loc>https://www.masadigitale.com/blog/securite-informatique-entreprise</loc>
+    <lastmod>2026-03-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>

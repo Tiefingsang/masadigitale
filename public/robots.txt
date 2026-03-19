@@ -1,5 +1,13 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.masadigitale.com/sitemap.xml
+Disallow: /admin
+Disallow: /login
+Disallow: /register
+Disallow: /password
+Disallow: /storage
+Disallow: /vendor
 
+Crawl-delay: 5
+
+Sitemap: https://www.masadigitale.com/sitemap.xml

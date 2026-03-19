@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title', 'Nos services digitaux - Masadigitale Mali')
-@section('meta_description', 'Découvrez nos services digitaux : création de sites web, SEO, publicité Facebook, design graphique et applications au Mali.')
+@section('meta_description', 'Découvrez nos services digitaux : création de sites web, SEO, publicité Facebook, design graphique et applications au Mali en Afrique.')
 
 @section('content')
 
@@ -11,7 +11,7 @@
         <h1>Nos Services</h1>
         <ul class="bread-crumb clearfix">
             <li><a href="{{ route('home.index') }}">Accueil</a></li>
-            <li>Services</li>
+            <li>Services de masadigitale</li>
         </ul>
     </div>
 </section>

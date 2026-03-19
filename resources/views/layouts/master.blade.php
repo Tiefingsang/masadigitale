@@ -5,18 +5,18 @@
 <head>
     <meta charset="utf-8">
 
-    <title>@yield('title', 'Masadigitale - Agence digitale au Mali')</title>
+    <title>@yield('title', 'Masadigitale - Entreprise de solution digital au Mali et en Afrique')</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
-    <meta name="description" content="Masadigitale est une agence de marketing digital et de développement technologique basée à Bamako. Publicité Facebook & Instagram, SEO, création de sites web et applications, accompagnement digital.">
-    <meta name="keywords" content="marketing digital Mali, création site web Bamako, agence digitale Mali, SEO Bamako, publicité Facebook Mali, Masadigitale">
+    <meta name="description" content="Masadigitale est une entreprise de marketing digital et de développement technologique basée à Bamako. Publicité Facebook & Instagram, SEO, création de sites web et applications, accompagnement digital.">
+    <meta name="keywords" content="marketing digital Mali, création site web Bamako, agence digitale Mali, SEO Bamako, publicité Facebook Mali, Masadigitale, entreprise de solution ditale au mali">
     <meta name="author" content="Masadigitale">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.masadigitale.com/">
-    <meta property="og:title" content="Masadigitale 🚀 Votre agence de marketing digital au Mali">
+    <meta property="og:title" content="Masadigitale Votre entreprise de marketing digital au Mali">
     <meta property="og:description" content="De l’idée au digital, nous construisons le succès de votre entreprise. Découvrez nos services : sites web, applications, publicité en ligne, SEO, réseaux sociaux.">
     <meta property="og:image" content="https://www.masadigitale.com/assets/images/logo.png">
 
@@ -149,7 +149,7 @@
         </div>
 
         <div class="wa-messages">
-            <div class="wa-msg">Bonjour 👋</div>
+            <div class="wa-msg">Bonjour </div>
             <div class="wa-msg">Je voudrais plus d'informations</div>
             <div class="wa-msg">Je souhaite prendre un rendez-vous</div>
         </div>

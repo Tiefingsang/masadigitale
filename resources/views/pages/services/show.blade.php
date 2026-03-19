@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-@section('title', $serviceFindByTitle->title . ' - Masadigitale Mali')
+@section('title', $serviceFindByTitle->title . ' - Masadigitale Afrique')
 @section('meta_description', $serviceFindByTitle->description ? Str::limit($serviceFindByTitle->description, 150) : 'Découvrez notre service ' . $serviceFindByTitle->title)
 
 @section('content')
